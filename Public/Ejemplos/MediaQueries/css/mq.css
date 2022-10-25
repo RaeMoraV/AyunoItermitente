@@ -11,14 +11,11 @@ body {
     margin: 0;
 }
 
-.contenedor {
-    width: 90vw;
-    height: 100vh;
-    background-color: blanchedalmond;
-    border: 5px solid #000;
-    margin: 0 auto;
-}
+
 
 .caja {
     margin: 10px;
+    border: 2px solid #000;
+    width: 100px;
+    height: 100px;
 }
