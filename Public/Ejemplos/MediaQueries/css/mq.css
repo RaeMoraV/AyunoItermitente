@@ -18,3 +18,7 @@ body {
     border: 5px solid #000;
     margin: 0 auto;
 }
+
+.caja {
+    margin: 10px;
+}
