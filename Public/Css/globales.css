@@ -1,0 +1,23 @@
+:root {
+    --color-black: #000000;
+    --color-lightgreen1: #dfede3;
+    --color-lightgreen2: #77c289;
+    --color-green: #22a241;
+    --color-darkgreen: #286412;
+}
+
+/* BOX SIZING DE PAUL IRISH:  https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+
+
+/* NAV MOBILE */
+
+
+/* NAV DESKTOP */
