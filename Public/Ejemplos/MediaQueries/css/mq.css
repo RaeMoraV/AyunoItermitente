@@ -11,11 +11,27 @@ body {
     margin: 0;
 }
 
-
+.contenedor {
+    width: 90vw;
+    height: 100vh;
+    background-color: blanchedalmond;
+    border: 5px solid #000;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 
 .caja {
     margin: 10px;
     border: 2px solid #000;
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+@media (min-width: 1200px) {
+    .contenedor {
+        flex-direction: row;
+    }
 }
