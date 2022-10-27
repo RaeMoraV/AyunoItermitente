@@ -1,3 +1,5 @@
+/* GENERALES */
+
 :root {
     --color-black: #000000;
     --color-lightgreen1: #dfede3;
@@ -6,18 +8,67 @@
     --color-darkgreen: #286412;
 }
 
-/* BOX SIZING DE PAUL IRISH:  https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
     box-sizing: border-box;
 }
 
 *, *:before, *:after {
-box-sizing: inherit;
+box-sizing: inherit; /* COMPLEMENTO DE BOX SIZING (PAUL IRISH):  https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 
 
 /* NAV MOBILE */
+.navMobile {
+    padding: 20px 30px;
+    background-color: var(--color-darkgreen);
+    display: flex;
+    justify-content: space-between;
+}
 
+.navMobile .logo {
+    height: 45px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.navMobile .logo a {
+    font-size: 40px;
+    color: var(--color-lightgreen1);
+}
+
+.navMobile .menuButton {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navMobile .menuButton .whiteBar {
+    background-color: var(--color-lightgreen1);
+    height: 5px;
+    width: 40px;
+    position: absolute;
+}
+
+.navMobile .menuButton .whiteBar:nth-child(2) {
+    transform: translateY(-12px);
+}
+
+.navMobile .menuButton .whiteBar:nth-child(3) {
+    transform: translateY(12px);
+}
 
 /* NAV DESKTOP */
