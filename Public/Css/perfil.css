@@ -13,10 +13,10 @@
 }
 .sidebar header {
     font-size: 22px;
-    color: white;
+    color: var(--color-lightgreen2);
     text-align: center;
     line-height: 70px;
-    background: #77c289;
+    background: var(--color-lightgreen1);
     user-select: none;
 }
 .sidebar ul a{
