@@ -30,7 +30,7 @@ a {
 /* NAV MOBILE */
 .navMobile {
     padding: 20px 30px;
-    background-color: var(--color-darkgreen);
+    background-color: var(--color-lightgreen2);
     display: flex;
     justify-content: space-between;
 }
