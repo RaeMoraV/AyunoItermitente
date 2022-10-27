@@ -9,14 +9,14 @@
     left: 0;
     width: 250px;
     height: 100%;
-    background: #dfede3;
+    background: #ffffff;
 }
 .sidebar header {
     font-size: 22px;
     color: white;
     text-align: center;
     line-height: 70px;
-    background: #286412;
+    background: #77c289;
     user-select: none;
 }
 .sidebar ul a{
@@ -34,4 +34,9 @@
 }
 ul li:hover a{
     padding-left: 60px;
+    background: #dfede3;
+}
+header{
+    color: black;
+    align-content: center;
 }
