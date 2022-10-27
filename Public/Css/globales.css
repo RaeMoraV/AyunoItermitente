@@ -25,27 +25,31 @@ a {
     text-decoration: none;
 }
 
+/* NAV */
 
-
-/* NAV MOBILE */
-.navMobile {
-    padding: 20px 30px;
-    background-color: var(--color-lightgreen2);
+.navMobile,
+.navDesktop {
+    background-color: var(--color-black);
     display: flex;
     justify-content: space-between;
+    padding: 20px 30px;
 }
 
-.navMobile .logo {
+.navMobile .logo,
+.navDesktop .logo {
     height: 45px;
     width: fit-content;
     display: flex;
     align-items: center;
 }
 
-.navMobile .logo a {
+.navMobile .logo a,
+.navDesktop .logo a {
     font-size: 40px;
     color: var(--color-lightgreen1);
 }
+
+/* NAV MOBILE ONLY */
 
 .navMobile .menuButton {
     position: relative;
@@ -72,4 +76,52 @@ a {
     transform: translateY(12px);
 }
 
-/* NAV DESKTOP */
+/* NAV DESKTOP ONLY */
+
+.navDesktop {
+    display: none;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links li {
+    margin-right: 40px;
+}
+
+.links li:last-child {
+    margin-right: 0;
+    border: 2px solid var(--color-lightgreen1);
+    border-radius: 5px;
+}
+
+.links a {
+    font-size: 20px;
+    width: 120px;
+    padding: 10px 0;
+    display: block;
+    color: var(--color-lightgreen1);
+}
+
+
+
+.links a:last-child {
+    text-align: center;
+    width: 120px;
+    color: var(--color-lightgreen1);
+}
+
+@media (min-width: 768px) {
+    .navDesktop {
+        display: flex;
+    }
+    .navMobile {
+        display: none;
+    }
+
+    .links a:hover {
+        color: var(--color-lightgreen2);
+    }
+}
