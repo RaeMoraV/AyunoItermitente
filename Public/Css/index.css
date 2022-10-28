@@ -23,7 +23,8 @@
 
 .encabezadoBeneficio h2{
     font-weight: bold;
-    font-size: 36px;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
 
@@ -35,8 +36,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
 
 }
 
@@ -83,8 +82,7 @@
     .encabezadoBeneficio {
         flex-direction: column;
         width: 800px;
-        
-        
+            
     }
 
     .beneficio {
@@ -94,13 +92,8 @@
     }
     .beneficio:last-child{
         margin-right: 0;
-    
-    
     }
      
-
-
-
 
     .row {
         display: flex;
