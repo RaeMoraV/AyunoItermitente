@@ -1,0 +1,115 @@
+.beneficioContenedor {
+    display: flex;
+    flex-direction: column;
+    font-family: Century Gothic;
+    background-color: #dfede3;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.encabezadoBeneficio {
+    border: 1px solid #dfede3;
+    max-width: 500px;
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.encabezadoBeneficio h2{
+    font-weight: bold;
+    font-size: 36px;
+}
+
+
+.beneficio {
+
+    max-width: 300px;
+    margin-bottom: 35px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+}
+
+ 
+.icon {
+    border-radius: 50%;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: #286412;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.icon i {
+    font-size:60px;
+    color:white;
+}
+
+
+.text h3{
+    font-weight:bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text p, 
+.text h3,.encabezadoBeneficio p{
+    text-align: center;
+
+    padding: 0 5px 5px 5px;
+    
+}
+
+@media (min-width: 746px) {
+    .beneficioContenedor {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .encabezadoBeneficio {
+        flex-direction: column;
+        width: 800px;
+        
+        
+    }
+
+    .beneficio {
+
+        margin-right: 20px;
+
+    }
+    .beneficio:last-child{
+        margin-right: 0;
+    
+    
+    }
+     
+
+
+
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .fa fa-heartbeat {
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+}
