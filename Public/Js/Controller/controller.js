@@ -1,5 +1,7 @@
 document.getElementById('menuButton').addEventListener('click', mostrarMenu);
 
+document.getElementById('backMenu').addEventListener('click', ocultarMenu);
+
 let nav = document.getElementById('menu');
 let backMenu = document.getElementById('backMenu');
 

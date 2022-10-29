@@ -10,14 +10,12 @@
 
 
 
-.seccionQueEs div {
- 
-    max-width: 500px;
+.contenedorTexto {
+    width: 500px;
     margin: 0px;
     padding: 10px;
     text-align: center; 
     font-family: Century Gothic;
-    
 }
 
 .buttonInformacion {
