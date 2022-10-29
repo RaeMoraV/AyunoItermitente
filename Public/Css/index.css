@@ -1,3 +1,50 @@
+.seccionQueEs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-image: url(../Img/imgIndex.jpg);
+    width: 100%;
+}
+
+
+
+.seccionQueEs div {
+ 
+    max-width: 500px;
+    margin: 0px;
+    padding: 10px;
+    text-align: center; 
+    font-family: Century Gothic;
+    
+}
+
+.buttonInformacion {
+    background-color: #286412;
+      border: 2px;
+      color: #000000;
+      text-align: center;
+      color: #fff;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      border-radius: 5%;
+}
+
+.buttonInformacion:hover {
+    box-shadow: inset 1px 4px 6px 2px rgba(0,0,0,.1);
+    background: #000000;
+
+}
+
+@media (min-width: 1048px){
+    #fondoSeccionQueEs {
+        background-size: cover;
+    }
+
+}
+
+/*estilos de la seccion beneficios*/
 .beneficioContenedor {
     display: flex;
     flex-direction: column;
@@ -106,3 +153,6 @@
         margin-left: 20px;
     }
 }
+/*Hasta aqui los estilos de la seccion beneficios*/
+
+
