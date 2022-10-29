@@ -91,7 +91,7 @@ a {
     height: 100vh;
     background: var(--color-lightgreen1);
     z-index: 1;
-    
+    transition: all .5s;
 }
 
 #backMenu {
@@ -102,6 +102,7 @@ a {
     height: 100vh;
     background-color: rgba(0,0,0,0.5);
     display: none;
+    transition: all .5s;
 }
 
 #menu a {
@@ -158,9 +159,18 @@ a {
 @media (min-width: 768px) {
     .navDesktop {
         display: flex;
+        height: 70px;
     }
     .navMobile {
         display: none;
+    }
+
+    .navDesktop .logo {
+        margin-left: 40px;
+    }
+
+    .navDesktop .links {
+        margin-right: 40px;
     }
 
     .navDesktop .links a:hover {
