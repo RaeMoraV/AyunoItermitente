@@ -53,7 +53,7 @@ a {
 
 /* NAV MOBILE ONLY */
 
-.navMobile .menuButton {
+.navMobile #menuButton {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -65,22 +65,22 @@ a {
     z-index: 2;
 }
 
-.navMobile .menuButton .whiteBar {
+.navMobile #menuButton .whiteBar {
     background-color: var(--color-lightgreen1);
     height: 5px;
     width: 40px;
     position: absolute;
 }
 
-.navMobile .menuButton .whiteBar:nth-child(2) {
+.navMobile #menuButton .whiteBar:nth-child(2) {
     transform: translateY(-12px);
 }
 
-.navMobile .menuButton .whiteBar:nth-child(3) {
+.navMobile #menuButton .whiteBar:nth-child(3) {
     transform: translateY(12px);
 }
 
-.menu {
+#menu {
     position: fixed;
     top: 0;
     right: -250px;
@@ -94,7 +94,7 @@ a {
     
 }
 
-.back-menu {
+#backMenu {
     position: fixed;
     top: 0;
     left: 0;
@@ -104,13 +104,13 @@ a {
     display: none;
 }
 
-.menu a {
+#menu a {
     font-size: 20px;
     color: var(--color-black);
     margin-bottom: 25px;
 }
 
-.menu a:hover {
+#menu a:hover {
     font-size: 20px;
     color: var(--color-green);
 }
