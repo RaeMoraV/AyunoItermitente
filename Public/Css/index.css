@@ -6,18 +6,24 @@
     background-size: cover;
     background-image: url(../Img/imgIndex.jpg);
     width: 100%;
+    height:700px;
 }
 
-
-
-.seccionQueEs div {
- 
+.textQueEs {
+    
     max-width: 500px;
-    margin: 0px;
+    background: rgba(0,0,0,.8);
+    margin: 20px 0;
     padding: 10px;
     text-align: center; 
     font-family: Century Gothic;
+    color: #fff;
     
+}
+
+.textQueEs h3{
+    font-size: 20px;
+    margin-bottom:10px;
 }
 
 .buttonInformacion {
@@ -29,6 +35,10 @@
       margin-top: 15px;
       margin-bottom: 10px;
       border-radius: 5%;
+      height: 35px;
+      width: 100px;
+      
+
 }
 
 .buttonInformacion:hover {
@@ -37,12 +47,15 @@
 
 }
 
+
 @media (min-width: 1048px){
     #fondoSeccionQueEs {
         background-size: cover;
     }
 
 }
+
+/*Termina estilos de la seccion Que es*/
 
 /*estilos de la seccion beneficios*/
 .beneficioContenedor {
