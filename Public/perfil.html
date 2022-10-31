@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- Styles Links -->
     <link rel="stylesheet" href="./Css/reset.css">
     <link rel="stylesheet" href="./Css/globales.css">
@@ -17,8 +17,7 @@
     <!-- META Info -->
     <title>Perfil</title>
 </head>
-
-<body>
+<body id="body">
     <header>
         <nav class="navMobile">
             <div class="logo">
@@ -52,18 +51,71 @@
         </section>
     </header>
     <main>
-        <aside class="sidebar">
-            <h1>Perfil</h1>
-            <ul>
-                <li><a href="#">Información</a></li>
-                <li><a href="#">Estadísticas</a></li>
-                <li><a href="#">Peso</a></li>
-                <li><a href="#">Enfermedades</a></li>
-                <li><a href="#">Actividad física</a></li>
-                <li><a href="#">Logros y Objetivos</a></li>
-                <li><a href="#">Plan de ayuno</a></li>
-                <li><a href="#">Recetas</a></li>
-            </ul>
+        <aside class="menu__side" id="menu_side">
+            <div class="name__page">
+                <i class="fas fa-home"></i>
+                
+            </div>
+    
+            <div class="options__menu">	
+    
+                <a href="#" class="selected">
+                    <div class="option">
+                        <i class="fa-solid fa-person" title="Informacion"></i>
+                        <h4>Informacion</h4>
+                    </div>
+                </a>
+        
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-chart-simple" title="Estadisticas"></i>
+                        <h4>Estadisticas</h4>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-weight-scale" title="Peso"></i>
+                        <h4>Peso</h4>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-laptop-medical" title="Enfermedades"></i>
+                        <h4>Enfermedades</h4>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-person-running" title="Actividades Fisica"></i>
+                        <h4>Actividades Fisica</h4>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-medal" title="Logros y Objetivos"></i>
+                        <h4>Logros y Objetivos</h4>
+                    </div>
+                </a>
+    
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-carrot" title="Plan de Ayuno"></i>
+                        <h4>Plan de Ayuno</h4>
+                    </div>
+                </a>
+    
+                <a href="#">
+                    <div class="option">
+                        <i class="fa-solid fa-kitchen-set" title="Recetas"></i>
+                        <h4>Recetas</h4>
+                    </div>
+                </a>
+    
+            </div>
         </aside>
         <section class="container" id="informacion">
             <h2>Informacion</h2>
@@ -95,7 +147,6 @@
             </div>
         </section>
     </main>
-    
 
     <script src="./Js/Controller/controller.js"></script>
 </body>
