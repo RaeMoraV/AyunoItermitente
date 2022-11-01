@@ -32,7 +32,8 @@ a {
     background-color: var(--color-lightgreen2);
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
+    align-items: center;
+    height: 55px;
 }
 
 .navMobile .logo,
@@ -41,6 +42,7 @@ a {
     width: fit-content;
     display: flex;
     align-items: center;
+    margin-left: 20px;
 }
 
 .navMobile .logo a,
@@ -51,7 +53,7 @@ a {
 
 /* NAV MOBILE ONLY */
 
-.navMobile .menuButton {
+.navMobile #menuButton {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -59,21 +61,60 @@ a {
     height: 45px;
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
+    z-index: 2;
 }
 
-.navMobile .menuButton .whiteBar {
+.navMobile #menuButton .whiteBar {
     background-color: var(--color-lightgreen1);
     height: 5px;
     width: 40px;
     position: absolute;
 }
 
-.navMobile .menuButton .whiteBar:nth-child(2) {
+.navMobile #menuButton .whiteBar:nth-child(2) {
     transform: translateY(-12px);
 }
 
-.navMobile .menuButton .whiteBar:nth-child(3) {
+.navMobile #menuButton .whiteBar:nth-child(3) {
     transform: translateY(12px);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 20px;
+    width: 250px;
+    height: 100vh;
+    background: var(--color-lightgreen1);
+    z-index: 100;
+    transition: all .5s;
+}
+
+#backMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    transition: all .5s;
+    z-index: 50;
+}
+
+#menu a {
+    font-size: 20px;
+    color: var(--color-black);
+    margin-bottom: 25px;
+}
+
+#menu a:hover {
+    font-size: 20px;
+    color: var(--color-green);
 }
 
 /* NAV DESKTOP ONLY */
@@ -105,8 +146,6 @@ a {
     color: var(--color-lightgreen1);
 }
 
-
-
 .navDesktop .links a:last-child {
     text-align: center;
     width: 120px;
@@ -121,9 +160,18 @@ a {
 @media (min-width: 768px) {
     .navDesktop {
         display: flex;
+        height: 70px;
     }
     .navMobile {
         display: none;
+    }
+
+    .navDesktop .logo {
+        margin-left: 40px;
+    }
+
+    .navDesktop .links {
+        margin-right: 40px;
     }
 
     .navDesktop .links a:hover {
