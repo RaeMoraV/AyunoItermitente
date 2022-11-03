@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 *{
     margin: 0;
@@ -9,19 +8,21 @@
 
 main {
     display: flex;
+    height: 80vh;
 }
-
 .sidebar{
-    width: 250px;
+    position: block;
+    left: 0;
+    min-width: 250px;
     height: 100%;
-    background: #ffffff;
+    background: #dfede3;
 }
 .sidebar h1 {
     font-size: 22px;
-    color: var(--color-lightgreen2);
+    color: var(--color-green);
     text-align: center;
     line-height: 70px;
-    background: var(--color-lightgreen1);
+    background: var(color-lightgreen);
     user-select: none;
 }
 .sidebar ul a{
@@ -29,33 +30,16 @@ main {
     height: 100%;
     width: 100%;
     line-height: 65px;
-    font-size: 20px;
+    font-size: 18px;
     color: black;
-    padding-left: 40px;
+    padding-left: 20px;
     box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid rgba(203, 203, 203, 0.1);
+    transition: .2s;
 }
-
-body{
-    margin-left: 80px;
-    margin-top: 80px;
-    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-
-main{
-    padding: 20px;
-}
-
-.HeaderMenu{
-    width: 100%;
-    height: 80px;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    position: relative;
-    top: 0;
-    
+ul li:hover a{
+    padding-left: 30px;
+    background-color: var(--color-green);
 }
 
 .container {
@@ -63,7 +47,14 @@ main{
     width: 100%;
 }
 
-#informacion h2 {
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+}
+
+#informacion h2,
+#peso h2 {
     font-size: 40px;
     text-transform: uppercase;
     margin-bottom: 40px;
@@ -72,149 +63,113 @@ main{
 
 #informacion .contenido {
     display: flex;
+    justify-content: space-between;
 }
 
 #informacion .contenido .datos h3 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 20px;
     font-weight: 600;
 }
 
 #informacion .separador {
     width: 3px;
-    height: 250px;
+    height: 350px;
     background-color: rgba(0, 0, 0, .3);
-    margin: 0 100px;
     align-self: center;
 }
 
 #informacion .contenido .valores p {
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+#informacion .fotoRecomendaciones {
+    width: 300px;
+}
+
+#informacion .fotoRecomendaciones .foto {
+    margin-bottom: 30px;
+}
+
+#informacion .fotoRecomendaciones .foto img {
+    width: 100%;
+}
+
+#informacion .fotoRecomendaciones .recomendaciones {
+    width: 100%;
+    height: 125px;
+    background-color: #bbbbbb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#informacion .fotoRecomendaciones .recomendaciones h3 {
     margin-bottom: 20px;
     font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }
-.icon__menu{
-    width: 50px;
-    height: 100%;
+
+#informacion .fotoRecomendaciones .recomendaciones .proteina,
+#informacion .fotoRecomendaciones .recomendaciones .agua {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(10px);
+    margin-bottom: 15px;
 }
 
-.icon__menu i{
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
+.fotoRecomendaciones .recomendaciones .proteina p,
+.fotoRecomendaciones .recomendaciones .agua p {
+    margin-left: 10px;
 }
 
-.menu__side{
-    width: 80px;
-    height: 100%;
-    background: #22a241;
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: white;
-    font-size: 18px;
-    z-index: 300;
-    overflow: hidden;
-    overflow-y: scroll;
-    border-right: 20px solid #22a241;
-    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+/* Estilos Para Tablas de Datos */
+
+.datosEstadisticas {
+    width: 700px;
 }
 
-/*Ocultar scroll para chrome, safari y opera*/
-.menu__side::-webkit-scrollbar{
-    display: none;
+.datosEstadisticas td,
+.datosEstadisticas th {
+    width: calc(100% / 3);
+    border: 1px solid #000;
 }
 
-/*Ocultar scroll para IE, Edge y Firefox*/
-.menu__side{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+/* Estilos Registros Nuevos */
+
+.ingresoDatos {
+    background-color: #bbbbbb;
+    width: 300px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-
-.name__page{
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+.ingresoDatos h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
-.name__page i{
-    width: 20px;
-    margin-right: 20px;
+.ingresoDatos input {
+    width: 20%;
 }
 
-.options__menu{
-    padding: 20px 30px;
-    position: absolute;
-    top: 80px;
+.ingresoDatos input {
+    width: 80%;
+    margin-left: auto;
 }
 
-.options__menu a{
-    color: #ffffffb2;
-    cursor: default;
+.ingresoDatos .field {
+    width: 100%;
+}
+
+.buttonRegistro {
     display: block;
-    position: relative;
-    transition: color 300ms;
+    margin: 15px auto 0;
+    font-size: 15px;
+    font-weight: 700;
+    width: 50%;
+    border: none;
 }
 
-.options__menu a:hover{
-    color: white;
-}
-
-.options__menu .option{
-    padding: 20px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.options__menu .option i{
-    width: 20px;
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-.options__menu .option h4{
-    font-weight: 300;
-    cursor: pointer;
-}
-
-a.selected{
-    color: #fff;
-}
-
-.selected:before{
-    content: '';
-    width: 3px;
-    height: 80%;
-    background: white;
-    position: absolute;
-    top: 10%;
-    left: -30px;
-}
-
-/*Clases para usar en JavaScript*/
-
-.body_move{
-    margin-left: 250px;
-}
-
-.menu__side_move{
-    width: 250px;
-}
-
-
-@media screen and (max-width: 760px){
-    .body_move{
-        margin-left: 0px;
-    }
-
-    .menu__side_move{
-        width: 80px;
-        left: -80px;
-    }
-}
+/*  */

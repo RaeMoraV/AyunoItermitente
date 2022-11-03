@@ -14,6 +14,10 @@
     <!-- Icons Repository (https://fontawesome.com/)-->
     <script src="https://kit.fontawesome.com/0e797b15b3.js" crossorigin="anonymous"></script>
 
+    <!-- Plotly Graficos -->
+
+    <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+
     <!-- META Info -->
     <title>Perfil</title>
 </head>
@@ -51,101 +55,152 @@
         </section>
     </header>
     <main>
-        <aside class="menu__side" id="menu_side">
-            <div class="name__page">
-                <i class="fas fa-home"></i>
-                
-            </div>
-    
-            <div class="options__menu">	
-    
-                <a href="#" class="selected">
-                    <div class="option">
-                        <i class="fa-solid fa-person" title="Informacion"></i>
-                        <h4>Informacion</h4>
-                    </div>
-                </a>
-        
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-chart-simple" title="Estadisticas"></i>
-                        <h4>Estadisticas</h4>
-                    </div>
-                </a>
-                
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-weight-scale" title="Peso"></i>
-                        <h4>Peso</h4>
-                    </div>
-                </a>
-                
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-laptop-medical" title="Enfermedades"></i>
-                        <h4>Enfermedades</h4>
-                    </div>
-                </a>
-                
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-person-running" title="Actividades Fisica"></i>
-                        <h4>Actividades Fisica</h4>
-                    </div>
-                </a>
-                
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-medal" title="Logros y Objetivos"></i>
-                        <h4>Logros y Objetivos</h4>
-                    </div>
-                </a>
-    
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-carrot" title="Plan de Ayuno"></i>
-                        <h4>Plan de Ayuno</h4>
-                    </div>
-                </a>
-    
-                <a href="#">
-                    <div class="option">
-                        <i class="fa-solid fa-kitchen-set" title="Recetas"></i>
-                        <h4>Recetas</h4>
-                    </div>
-                </a>
-    
-            </div>
+        <aside class="sidebar">
+            <h1>Perfil</h1>
+            <ul>
+                <li><a href="#">Información</a></li>
+                <li><a href="#">Estadísticas</a></li>
+                <li><a href="#">Peso</a></li>
+                <li><a href="#">Enfermedades</a></li>
+                <li><a href="#">Actividad física</a></li>
+                <li><a href="#">Logros y Objetivos</a></li>
+                <li><a href="#">Plan de ayuno</a></li>
+                <li><a href="#">Recetas</a></li>
+            </ul>
         </aside>
-        <section class="container" id="informacion">
-            <h2>Informacion</h2>
-            <div class="contenido">
-                <div class="datos">
-                    <h3>Nombre:</h3>
-                    <h3>Apellidos</h3>
-                    <h3>Edad:</h3>
-                    <h3>Genero:</h3>
-                    <h3>Estatura:</h3>
-                    <h3>IMC:</h3>
-                    <h3>Correo Electronico:</h3>
-                    <h3>Peso Deseado:</h3>
-                    <h3>Actividad Fisica:</h3>
+        <div class="sectionContainer">
+            <section class="container" id="informacion">
+                <h2>Informacion</h2>
+                <div class="contenido">
+                    <div class="datos">
+                        <h3>Nombre:</h3>
+                        <h3>Apellidos</h3>
+                        <h3>Edad:</h3>
+                        <h3>Genero:</h3>
+                        <h3>Estatura:</h3>
+                        <h3>IMC:</h3>
+                        <h3>Correo Electronico:</h3>
+                        <h3>Peso Deseado:</h3>
+                        <h3>Actividad Fisica:</h3>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="valores">
+                        <p>Lorem Ipsum</p>
+                        <p>Quisque Pretium</p>
+                        <p>25</p>
+                        <p>Masculino</p>
+                        <p>1.90</p>
+                        <p>15</p>
+                        <p>lorem@ipsum.com</p>
+                        <p>80</p>
+                        <p>Si</p>
+                    </div>
+                    <div class="fotoRecomendaciones">
+                        <figure class="foto">
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="">
+                        </figure>
+                        <div class="recomendaciones">
+                            <h3>Recomendaciones</h3>
+                            <div class="proteina">
+                                <h4>Proteina: </h4>
+                                <p>##</p>
+                            </div>
+                            <div class="agua">
+                                <h4>Agua: </h4>
+                                <p>##</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="separador"></div>
-                <div class="valores">
-                    <p>Lorem Ipsum</p>
-                    <p>Quisque Pretium</p>
-                    <p>25</p>
-                    <p>Masculino</p>
-                    <p>1.90</p>
-                    <p>15</p>
-                    <p>lorem@ipsum.com</p>
-                    <p>80</p>
-                    <p>Si</p>
+            </section>
+            <section class="container" id="peso">
+                <h2>Peso</h2>
+                <div class="contenido">
+                    <table class="datosEstadisticas">
+                        <thead>
+                            <tr>
+                                <th>Fecha Registro</th>
+                                <th>Peso (KG)</th>
+                                <th>IMC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="ingresoDatos">
+                        <h3>Registrar Peso</h3>
+                        <form>
+                            <div class="field">
+                                <label for="inputPeso">Peso: </label>
+                                <input type="number" name="" id="inputPeso">
+                            </div>
+                            <button class="buttonRegistro" id="buttonRegistro" type="button">Hacer Registro</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="fotoRecomendaciones"></div>
-            </div>
-        </section>
+            </section>
+            <section class="container" id="enfermedades">
+                <h2>Peso</h2>
+                <div class="contenido">
+                    <table class="datosEstadisticas">
+                        <thead>
+                            <tr>
+                                <th>Fecha Registro</th>
+                                <th>Peso (KG)</th>
+                                <th>IMC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ingresoDatos">
+                        <h3>Registrar Peso</h3>
+                        <form>
+                            <div class="field">
+                                <label for="">Peso: </label>
+                                <input type="number" name="" id="">
+                            </div>
+                            <button class="buttonRegistro" type="submit">Hacer Registro</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="container" id="actFisica">
+                <h2>Peso</h2>
+                <div class="contenido">
+                    <table class="datosEstadisticas">
+                        <thead>
+                            <tr>
+                                <th>Fecha Registro</th>
+                                <th>Peso (KG)</th>
+                                <th>IMC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ingresoDatos">
+                        <h3>Registrar Peso</h3>
+                        <form>
+                            <div class="field">
+                                <label for="">Peso: </label>
+                                <input type="number" name="" id="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <script src="./Js/Controller/controller.js"></script>
