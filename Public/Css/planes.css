@@ -2,64 +2,86 @@
     width: 100%;
     background-color: #4CAF50;
     color: rgb(2, 0, 0);
-    padding: 14px 20px;
+ 
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
 
-  div{
-    display: flex;
-    justify-content: center;
-  }
+  
 
   
-  
+
+ 
+
   h1 {
     margin: 0;
     font-size: 8rem;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    
   }
   
+.contenidoContactenos{
+  display: flex;
+  justify-content: center;
+}
 
-  #cuadros {
-    margin-top: 70px !important;
-    margin-bottom: -35px !important;
-    padding-top: 10px !important;
-    padding-bottom: 70px !important;
-    background: #ffffff url(http://skilled.aislinthemes.com/app/uploads/2015/08/pricing-plans.png?id=10681) !important;
-    background-position: 0 0 !important;
-    background-repeat: no-repeat !important;
+  #fobd {
+    margin-top: 70px ;
+    margin-bottom: -35px ;
+    padding-top: 10px ;
+    padding-bottom: 70px ;
+    background: #797777  ;
+    background-position: 0 0 ;
+
     }
+    
     .container {
         width: 75%;
         height: 300px;
         border: 1px solid black;
-        display: -webkit-flex; /* Safari */
         display: flex;
         margin: auto;
+        display: flex;
+        justify-content: center;
     }
     
-    .center {
-    text-align: center;
-    }
+   
     
     .four-column {
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    display: flex;
+    justify-content: center;
     }
-    .frame-item {
+
+    .cuadro1 {
       padding: 1em;
         border: 1px solid #B2B2B2;
-        -webkit-flex: 1;  /* Safari 6.1+ */
-        -ms-flex: 1;  /* IE 10 */    
+        -webkit-flex: 1;  
+        -ms-flex: 1;    
         flex: 1;
+        
     }
     
    
+    .cuadro2 {
+      padding: 1em;
+        border: 1px solid #B2B2B2;
+        -webkit-flex: 1;  
+        -ms-flex: 1;   
+        flex: 1;
+    }
 
-
-  
+    .cuadro3 {
+      padding: 1em;
+        border: 1px solid #B2B2B2;
+        -webkit-flex: 1;  
+        -ms-flex: 1;     
+        flex: 1;
+    }
