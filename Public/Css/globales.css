@@ -182,7 +182,7 @@ a {
 
 /* FOOTER */
 
-.footerMobile, .footerDesktop{
+.footerBox{
     background-color: var(--color-lightgreen2);
     display: flex;
     justify-content: space-between;
@@ -190,25 +190,19 @@ a {
     height: 55px;
 }
 
-.footerDesktop {
-    display: none;
-}
 
 
 @media (min-width: 768px) {
-    .footerDesktop {
+    .footerBox {
         display: flex;
         height: 70px;
-    }
-    .footerMobile {
-        display: none;
     }
 
     .footerDesktop .logo {
         margin-left: 40px;
     }
 
-    .footerDesktop .social {
+    .footerBox .social {
         margin-right: 40px;
     }
 
