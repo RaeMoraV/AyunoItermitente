@@ -124,12 +124,12 @@ ul li:hover a{
 
 /* Estilos Para Tablas de Datos */
 
-.datosEstadisticas {
+.datosPeso {
     width: 700px;
 }
 
-.datosEstadisticas td,
-.datosEstadisticas th {
+.datosPeso td,
+.datosPeso th {
     width: calc(100% / 3);
     border: 1px solid #000;
 }
@@ -138,7 +138,7 @@ ul li:hover a{
 
 .ingresoDatos {
     background-color: #bbbbbb;
-    width: 300px;
+    width: 400px;
     height: fit-content;
     padding: 10px;
     border-radius: 5px;
@@ -150,18 +150,21 @@ ul li:hover a{
     font-weight: 700;
 }
 
-.ingresoDatos input {
-    width: 20%;
-}
-
-.ingresoDatos input {
-    width: 80%;
-    margin-left: auto;
-}
-
 .ingresoDatos .field {
-    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
 }
+
+.ingresoDatos .field label {
+    width: 100px;
+}
+
+.ingresoDatos .field input {
+    width: 280px;
+    margin-left: 10px;
+    border: none;
+}
+
 
 .buttonRegistro {
     display: block;
