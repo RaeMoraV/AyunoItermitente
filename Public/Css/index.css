@@ -435,10 +435,16 @@
 
 /*Seccion de planes por Sebas*/
 
+.contenedorPlanes{
+    font-family: Century Gothic;
+    
+
+}
+
 .planesTitulo {
     width: 100%;
-    background-color: #4CAF50;
-    color: rgb(2, 0, 0);
+    background-color: #286412;
+    color: white;
  
     margin: 8px 0;
     border: none;
@@ -454,7 +460,7 @@
 
   h1 {
     margin: 0;
-    font-size: 8rem;
+    font-size: 6rem;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
