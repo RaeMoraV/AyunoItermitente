@@ -1,4 +1,4 @@
-/*estilos de la seccion Que es*/
+/*estilos de la seccion Que es por SVC*/
 .seccionQueEs{
     display: flex;
     justify-content: center;
@@ -77,7 +77,7 @@
 
 /*Termina estilos de la seccion Que es*/
 
-/*estilos de la seccion beneficios*/
+/*estilos de la seccion beneficios por SVC*/
 .beneficioContenedor {
     display: flex;
     flex-direction: column;
