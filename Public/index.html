@@ -49,8 +49,39 @@
                 <li><a href="perfil.html">Ver Perfil</a></li>
             </ul>
         </nav>
-        <section class="banner">
-
+        <section class="bannerPrincipal">
+            <div class="textPrincipal">
+                <h2> Ayuno Intermitente</h2>
+                <p> Cuida tu salud y mejora tu estilo de vida. Brindamos una guia completa, segura y beneficiosa para planes de ayuno. Lleva registro de tus logros,
+                    recetas y actividades que beneficiaran tu productividad, estado fisico y mental. </p>
+            </div>
+            <section class="contenedorRegistroPrincipal">
+                <form action="" id="registroPrincipal">
+                    <div class="formPrincipal">
+                        <label for="txtNombre">Nombre</label> <input type="text" name="" id="txtNombre" required/>
+                        <label for="txtApellido">Apellido</label> <input type="text" name="" id="txtApellido" required/>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtEmail">Correo Electronico</label>
+                        <input type="email" name="" id="txtEmail" required/>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtDate">Fecha de Nacimiento</label> <input type="date" name="" id="txtDate" required/>
+                        <label for="txtGenero">Genero</label> <input type="text" name="" id="txtGenero" required/>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtEstatura">Estatura</label> <img class="fotoUsuario">
+                        <input type="number" name="" id="txtEstatura" required/> <button type="button" class="btnFotoUsuario">Subir foto</button>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtPesoDeseado">Peso Deseado</label>
+                        <input type="number" name="" id="txtPesoDeseado" required/>
+                    </div>
+                    <button class="btnRegistrarse" type="button">
+                        Registrarse
+                    </button>
+                </form> 
+            </section>   
         </section>
     </header>
     <main>
@@ -262,7 +293,7 @@
         
     </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="Js/Controller/controller.js"></script>
 </body>
 
