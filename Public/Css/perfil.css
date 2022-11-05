@@ -8,8 +8,10 @@
 
 main {
     display: flex;
-    height: 80vh;
+    height: 200vh;
 }
+
+/* Estilos SideMenu--------------------------- */
 .sidebar{
     position: block;
     left: 0;
@@ -42,6 +44,7 @@ ul li:hover a{
     background-color: var(--color-green);
 }
 
+/* Estilos XXXXXXXXXXXXXX--------------------------- */
 .container {
     margin: 50px 0 0 60px;
     width: 100%;
@@ -56,7 +59,8 @@ ul li:hover a{
 }
 
 #informacion h2,
-#peso h2 {
+#peso h2,
+#planAyuno h2 {
     font-size: 40px;
     text-transform: uppercase;
     margin-bottom: 40px;
@@ -178,3 +182,5 @@ ul li:hover a{
 }
 
 /*  */
+
+/* Estilos Plan de ayuno---------------------------- */
