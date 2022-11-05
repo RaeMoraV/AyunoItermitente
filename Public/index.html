@@ -49,8 +49,39 @@
                 <li><a href="perfil.html">Ver Perfil</a></li>
             </ul>
         </nav>
-        <section class="banner">
-
+        <section class="bannerPrincipal">
+            <div class="textPrincipal">
+                <h2> Ayuno Intermitente</h2>
+                <p> Cuida tu salud y mejora tu estilo de vida. Brindamos una guia completa, segura y beneficiosa para planes de ayuno. Lleva registro de tus logros,
+                    recetas y actividades que beneficiaran tu productividad, estado fisico y mental. </p>
+            </div>
+            <section class="contenedorRegistroPrincipal">
+                <form action="" id="registroPrincipal">
+                    <div class="formPrincipal">
+                        <label for="txtNombre">Nombre</label> <input type="text" name="" id="txtNombre" required/>
+                        <label for="txtApellido">Apellido</label> <input type="text" name="" id="txtApellido" required/>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtEmail">Correo Electronico</label>
+                        <input type="email" name="" id="txtEmail" required/>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtDate">Fecha de Nacimiento</label> <input type="date" name="" id="txtDate" required/>
+                        <label for="txtGenero">Genero</label> <input type="text" name="" id="txtGenero" required/>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtEstatura">Estatura</label> <img class="fotoUsuario">
+                        <input type="number" name="" id="txtEstatura" required/> <button type="button" class="btnFotoUsuario">Subir foto</button>
+                    </div>
+                    <div class="formPrincipal">
+                        <label for="txtPesoDeseado">Peso Deseado</label>
+                        <input type="number" name="" id="txtPesoDeseado" required/>
+                    </div>
+                    <button class="btnRegistrarse" type="button">
+                        Registrarse
+                    </button>
+                </form> 
+            </section>   
         </section>
     </header>
     <main>
@@ -136,60 +167,64 @@
             </div>
         </section>
     </section>
-    <section class="planesImagen">
 
-        <div class="planesTitulo">
-            <h1>Planes</h1>
-        </div>
+    <section class="contenedorPlanes">
+        <section class="planesImagen">
 
-
-        <div class="contenidoContactenos">
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-        </div>
-
-    </section>
-
-    <section>
-        
-
-        <div id="cuadros">
+            <div class="planesTitulo">
+                <h1>Planes</h1>
+            </div>
+    
+    
+            <div class="contenidoContactenos">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+    
+        </section>
+    
+        <section>
             
-            
-            <div class="container">
-              <div class="cuadro1">
-               <h2>Plan 1</h2>
-               <p> Ut mattis mattis pharetra. Donec egestas pharetra nisi vitae euismod. Praesent eu lobortis mauris: 
-                Aenean mollis odio Curabitur eleifend maximus Nullam commodo Sed et odio at leo ultricies</p>
+    
+            <div id="cuadros">
                 
-            
+                
+                <div class="container">
+                  <div class="cuadro1">
+                   <h2>Plan 1</h2>
+                   <p> Ut mattis mattis pharetra. Donec egestas pharetra nisi vitae euismod. Praesent eu lobortis mauris: 
+                    Aenean mollis odio Curabitur eleifend maximus Nullam commodo Sed et odio at leo ultricies</p>
+                    
+                
+                  </div>
+    
+    
+    
+                  <div class="cuadro2">
+                    <h2>Plan 2</h2>
+                    <p> Ut mattis mattis pharetra. Donec egestas pharetra nisi vitae euismod. Praesent eu lobortis mauris: 
+                        Aenean mollis odio Curabitur eleifend maximus Nullam commodo Sed et odio at leo ultricies</p>
+                </div>
+              
+    
+    
+                  <div class="cuadro3">
+                    <h2>Plan 3</h2>
+                    <p> Ut mattis mattis pharetra. Donec egestas pharetra nisi vitae euismod. Praesent eu lobortis mauris: 
+                        Aenean mollis odio Curabitur eleifend maximus Nullam commodo Sed et odio at leo ultricies</p>
+                </div>
+              
+                </div>
+                
               </div>
-
-
-
-              <div class="cuadro2">
-                <h2>Plan 2</h2>
-                <p> Ut mattis mattis pharetra. Donec egestas pharetra nisi vitae euismod. Praesent eu lobortis mauris: 
-                    Aenean mollis odio Curabitur eleifend maximus Nullam commodo Sed et odio at leo ultricies</p>
-            </div>
-          
-
-
-              <div class="cuadro3">
-                <h2>Plan 3</h2>
-                <p> Ut mattis mattis pharetra. Donec egestas pharetra nisi vitae euismod. Praesent eu lobortis mauris: 
-                    Aenean mollis odio Curabitur eleifend maximus Nullam commodo Sed et odio at leo ultricies</p>
-            </div>
-          
-            </div>
-            
-          </div>
-
-            
+    
+                
+        </section>
     </section>
+    
 
         <section id="seccionSlider">
             <h2>Te Recomendamos</h2>
@@ -257,8 +292,34 @@
         
         
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <footer class="footerContainer">
+        <nav class="footerIntern">
+            <div class="logo">
+                <a href="#">OM</a>
+            </div>
+            <div class="textFooter">
+                <ul class="links">
+                    <li><a href="./terminosCondiciones.html">Terminos y Condiciones</a></li>
+                    <li><a href="./perfil.html">Perfil</a></li>
+                </ul>
+                <p class="disclaimer"></p>
+            </div>
+            <div class="social">
+                <h2>Siguenos</h2>
+                <a href="http://facebook.com" class="fa fa-facebook"></a>
+                <a href="http://instagram.com" class="fa fa-instagram"></a>
+                <a href="http://twitter.com" class="fa fa-twitter"></a>
+               
+            </div>
+       </nav>
+       <div class="footerContainerDos">
+        <small> &copy; 2022 <b>OM</b>-Todos los Derechos Reservados</small>
 
+       </div>
 
+        
+    </footer>
     <script src="Js/Controller/controller.js"></script>
 </body>
 
