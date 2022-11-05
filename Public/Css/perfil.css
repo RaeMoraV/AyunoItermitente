@@ -48,9 +48,11 @@ ul li:hover a{
 }
 
 .contenido {
+    width: 1200px;
+}
+.contenido .dosHijos {
     display: flex;
     justify-content: space-between;
-    width: 1200px;
 }
 
 #informacion h2,
@@ -122,7 +124,7 @@ ul li:hover a{
     margin-left: 10px;
 }
 
-/* Estilos Para Tablas de Datos */
+/* Estilos Para Tablas de Datos (PESO) */
 
 .datosPeso {
     width: 700px;
@@ -138,7 +140,7 @@ ul li:hover a{
 
 .ingresoDatos {
     background-color: #bbbbbb;
-    width: 400px;
+    width: 300px;
     height: fit-content;
     padding: 10px;
     border-radius: 5px;
@@ -160,7 +162,7 @@ ul li:hover a{
 }
 
 .ingresoDatos .field input {
-    width: 280px;
+    width: 200px;
     margin-left: 10px;
     border: none;
 }

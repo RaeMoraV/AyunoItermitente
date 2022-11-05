@@ -20,26 +20,31 @@ function ocultarMenu() {
 /* Perfil - Seccion Informacion */
 
 
-/* Perfil - Seccion Peso */
+/* Perfil - Seccion Peso - Tabla */
 
 let btnPeso = document.querySelector('#buttonRegistro');
 let inputPeso = document.querySelector('#inputPeso');
 let inputFechaPeso = document.querySelector('#inputFecha');
 // let ims = document.querySelector('#buttonRegistro');
 
-btnPeso.addEventListener('click', getPeso)
+graficoPeso();
 
-function getPeso() {
+btnPeso.addEventListener('click', getPesoFecha)
+
+function getPesoFecha() {
     let nPeso = Number(inputPeso.value);
     let sFecha = inputFechaPeso.value;
 
-    registrarPeso (nPeso, sFecha);
+    registrarPesoYFecha (nPeso, sFecha);
+    registrarPeso (nPeso);
+    registrarFecha (sFecha);
+
     imprimirPeso();
 }
 
 function imprimirPeso() {
     let tbody = document.querySelector('#datosPeso tbody');
-    let listaPesos = listarPesos();
+    let listaPesos = listarPesosYFechas();
 
     tbody.innerHTML = '';
 
@@ -51,6 +56,29 @@ function imprimirPeso() {
         celdaFecha.innerHTML = listaPesos[i][0];
         celdaPeso.innerHTML = listaPesos[i][1];
     }
+
+    graficoPeso();
 }
 
-/* Perfil - Seccion Enfermedades */
+/* Perfil - Seccion Peso - Grafico  */
+
+function graficoPeso() {
+    let graphPeso = document.getElementById('graphPeso');
+    let yArray = [1,2,3,4,5,6,7,8,9,10,11,12];
+    let xArray = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+    let data = [{
+        x: xArray,
+        y: yArray,
+    }];
+
+    let layout = {
+        xaxis: {range: [1, 24], title: "Mes"},
+        yaxis: {range: [20, 500], title: "Peso"},
+        title: "Peso a travez de la historia"
+      };
+
+    Plotly.newPlot(graphPeso, data, layout);
+}
+
+
