@@ -11,6 +11,7 @@ main {
     height: 200vh;
 }
 
+
 /* Estilos SideMenu--------------------------- */
 .sidebar{
     position: block;
@@ -43,6 +44,7 @@ ul li:hover a{
     padding-left: 30px;
     background-color: var(--color-green);
 }
+
 
 /* Estilos XXXXXXXXXXXXXX--------------------------- */
 .container {
@@ -184,3 +186,52 @@ ul li:hover a{
 /*  */
 
 /* Estilos Plan de ayuno---------------------------- */
+#planAyuno {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#planAyuno .contenedorTiposAyuno{
+    border-radius:10px;
+    background-image: url(../Img/perfil/background-tiposayunos\ \(2\).jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+    
+}
+#planAyuno .contenedorTiposAyuno .contenedorTituloTipos{
+    opacity: 1;
+}
+#planAyuno .contenedorTiposAyuno h3{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: left;
+    background-color: rgba(217, 234, 218, 0.8);
+    padding: 10px;
+    border-radius:10px;
+    
+}
+
+#planAyuno .tiposAyuno{
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#planAyuno .tiposAyuno div{
+    padding: 20px;
+    height: 250px;
+    max-width: 30%;
+    background-color: rgba(217, 234, 218, 0.8);
+    border-radius:10px;
+    text-align: justify;
+}
