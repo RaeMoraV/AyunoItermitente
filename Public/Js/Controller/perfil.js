@@ -1,21 +1,4 @@
-/* NAV Mobile Menu */
-
-document.getElementById('menuButton').addEventListener('click', mostrarMenu);
-document.getElementById('backMenu').addEventListener('click', ocultarMenu);
-
-let nav = document.getElementById('menu');
-let backMenu = document.getElementById('backMenu');
-
-function mostrarMenu() {
-    nav.style.right = '0px';
-    backMenu.style.display = 'block';
-};
-
-function ocultarMenu() {
-    nav.style.right = '-250px';
-    backMenu.style.display = 'none';
-}
-
+'use strict';
 
 /* Perfil - Seccion Informacion */
 
@@ -25,7 +8,6 @@ function ocultarMenu() {
 let btnPeso = document.querySelector('#buttonRegistro');
 let inputPeso = document.querySelector('#inputPeso');
 let inputFechaPeso = document.querySelector('#inputFecha');
-// let ims = document.querySelector('#buttonRegistro');
 
 graficoPeso();
 
@@ -33,7 +15,8 @@ btnPeso.addEventListener('click', getPesoFecha)
 
 function getPesoFecha() {
     let nPeso = Number(inputPeso.value);
-    let sFecha = inputFechaPeso.value;
+    let sFecha = [];
+    sFecha = inputFechaPeso.value;
 
     registrarPesoYFecha (nPeso, sFecha);
     registrarPeso (nPeso);
@@ -52,20 +35,20 @@ function imprimirPeso() {
         let fila = tbody.insertRow();
         let celdaPeso = fila.insertCell();
         let celdaFecha = fila.insertCell();
+        let celdaIMC = fila.insertCell();
 
         celdaFecha.innerHTML = listaPesos[i][0];
         celdaPeso.innerHTML = listaPesos[i][1];
+        celdaIMC.innerHTML = listaPesos[i][2];
     }
-
-    graficoPeso();
 }
 
 /* Perfil - Seccion Peso - Grafico  */
 
 function graficoPeso() {
     let graphPeso = document.getElementById('graphPeso');
-    let yArray = [1,2,3,4,5,6,7,8,9,10,11,12];
-    let xArray = [1,2,3,4,5,6,7,8,9,10,11,12];
+    let yArray = listaPeso;
+    let xArray = listaMeses;
 
     let data = [{
         x: xArray,
@@ -73,12 +56,9 @@ function graficoPeso() {
     }];
 
     let layout = {
-        xaxis: {range: [1, 24], title: "Mes"},
-        yaxis: {range: [20, 500], title: "Peso"},
-        title: "Peso a travez de la historia"
-      };
+        xaxis: {range: yArray, title: "Mes"},
+        yaxis: {range: xArray, title: "Peso"}
+    };
 
     Plotly.newPlot(graphPeso, data, layout);
 }
-
-

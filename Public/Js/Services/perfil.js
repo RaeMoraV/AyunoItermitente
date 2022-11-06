@@ -1,11 +1,15 @@
+'use strict';
+
 /* Perfil - Seccion Peso */
 let listaPesoYFecha = [];
 let listaPeso = [];
 let listaFecha = [];
+let listaMeses = [];
 
 function registrarPesoYFecha (pnPeso, psFecha) {
     let nuevoPesoYFecha = [];
-    nuevoPesoYFecha.push(pnPeso, psFecha);
+    let imc = pnPeso / Math.round(Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2));
+    nuevoPesoYFecha.push(pnPeso, psFecha, imc);
     listaPesoYFecha.push(nuevoPesoYFecha);
 };
 
@@ -27,6 +31,20 @@ function listarPesos() {
 
 function listarFechas() {
     return listaFecha;
+}
+
+function listarMeses() {
+    let fecha = 0;
+    let newMonth = null;
+
+    for (let i = 0; i < listaFecha.length; i++) {
+        fecha = new Date(listaFecha[i]);
+        newMonth = fecha.getMonth() + 1;
+
+        listaMeses.push(newMonth);
+    };
+
+    return listaMeses;
 }
 
 function listarPesosYFechas() {

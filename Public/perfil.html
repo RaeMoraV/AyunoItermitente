@@ -89,7 +89,7 @@
                         <p>Quisque Pretium</p>
                         <p>25</p>
                         <p>Masculino</p>
-                        <p>1.90</p>
+                        <p id="alturaUsuario">1.90</p>
                         <p>15</p>
                         <p>lorem@ipsum.com</p>
                         <p>80</p>
@@ -117,7 +117,42 @@
                 <h2>Peso</h2>
                 <div class="contenido">
                     <div class="dosHijos">
-                        <table class="datosPeso" id="datosPeso">
+                        <table class="datosTabla tablePeso" id="datosPeso">
+                            <thead>
+                                <tr>
+                                    <th>Fecha Registro</th>
+                                    <th>Peso (KG)</th>
+                                    <th>IMC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="ingresoDatos">
+                            <h3>Registrar Peso</h3>
+                            <form>
+                                <div class="field">
+                                    <label for="inputPeso">Peso: </label>
+                                    <input type="number" name="" id="inputPeso">
+                                </div>
+                                <div class="field">
+                                    <label for="inputFecha">Fecha: </label>
+                                    <input type="date" name="" id="inputFecha">
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistro" type="button">Hacer Registro</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="unHijo">
+                        <div id="graphPeso"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="container" id="peso">
+                <h2>Enfermedades</h2>
+                <div class="contenido">
+                    <div class="dosHijos">
+                        <table class="datosTabla tableEnfermedades" id="datosPeso">
                             <thead>
                                 <tr>
                                     <th>Fecha Registro</th>
@@ -150,8 +185,14 @@
             </section>
         </div>
     </main>
-    <script src="../Public/Js/Services/service.js"></script>
-    <script src="../Public/Js/Controller/controller.js"></script>
+    <script src="../Public/Js/Services/perfil.js"></script>
+    <script src="../Public/Js/Services/globales.js"></script>
+    <script src="../Public/Js/Controller/globales.js"></script>
+    <script src="../Public/Js/Controller/perfil.js"></script>
+
+    <style>
+        
+    </style>
 
 </body>
 

@@ -124,17 +124,34 @@ ul li:hover a{
     margin-left: 10px;
 }
 
-/* Estilos Para Tablas de Datos (PESO) */
+/* Estilos Para Tablas de Datos*/
 
-.datosPeso {
-    width: 700px;
+.datosTabla {
+    width: 100%;
+    max-width: 800px;
+    height: fit-content;
 }
 
-.datosPeso td,
-.datosPeso th {
-    width: calc(100% / 3);
-    border: 1px solid #000;
+.datosTabla td,
+.datosTabla th {
+    font-size: 15px;
+    width: 2%;
+    border-right: 3px solid #adadad;
+    text-align: center;
+    padding: 10px;
 }
+
+.datosTabla th {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.datosTabla td:last-child,
+.datosTabla th:last-child {
+    border-right: 0;
+}
+
+
 
 /* Estilos Registros Nuevos */
 
