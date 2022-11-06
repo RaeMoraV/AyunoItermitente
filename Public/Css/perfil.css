@@ -8,8 +8,11 @@
 
 main {
     display: flex;
-    height: 80vh;
+    height: 200vh;
 }
+
+
+/* Estilos SideMenu--------------------------- */
 .sidebar{
     position: block;
     left: 0;
@@ -42,19 +45,24 @@ ul li:hover a{
     background-color: var(--color-green);
 }
 
+
+/* Estilos XXXXXXXXXXXXXX--------------------------- */
 .container {
     margin: 50px 0 0 60px;
     width: 100%;
 }
 
 .contenido {
+    width: 1200px;
+}
+.contenido .dosHijos {
     display: flex;
     justify-content: space-between;
-    width: 1200px;
 }
 
 #informacion h2,
-#peso h2 {
+#peso h2,
+#planAyuno h2 {
     font-size: 40px;
     text-transform: uppercase;
     margin-bottom: 40px;
@@ -122,7 +130,7 @@ ul li:hover a{
     margin-left: 10px;
 }
 
-/* Estilos Para Tablas de Datos */
+/* Estilos Para Tablas de Datos (PESO) */
 
 .datosPeso {
     width: 700px;
@@ -138,7 +146,7 @@ ul li:hover a{
 
 .ingresoDatos {
     background-color: #bbbbbb;
-    width: 400px;
+    width: 300px;
     height: fit-content;
     padding: 10px;
     border-radius: 5px;
@@ -160,7 +168,7 @@ ul li:hover a{
 }
 
 .ingresoDatos .field input {
-    width: 280px;
+    width: 200px;
     margin-left: 10px;
     border: none;
 }
@@ -176,3 +184,54 @@ ul li:hover a{
 }
 
 /*  */
+
+/* Estilos Plan de ayuno---------------------------- */
+#planAyuno {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#planAyuno .contenedorTiposAyuno{
+    border-radius:10px;
+    background-image: url(../Img/perfil/background-tiposayunos\ \(2\).jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+    
+}
+#planAyuno .contenedorTiposAyuno .contenedorTituloTipos{
+    opacity: 1;
+}
+#planAyuno .contenedorTiposAyuno h3{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: left;
+    background-color: rgba(217, 234, 218, 0.8);
+    padding: 10px;
+    border-radius:10px;
+    
+}
+
+#planAyuno .tiposAyuno{
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#planAyuno .tiposAyuno div{
+    padding: 20px;
+    height: 250px;
+    max-width: 30%;
+    background-color: rgba(217, 234, 218, 0.8);
+    border-radius:10px;
+    text-align: justify;
+}

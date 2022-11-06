@@ -21,7 +21,10 @@
     <!-- META Info -->
     <title>Perfil</title>
 </head>
+
 <body id="body">
+
+    <!-- HEADER------------------------------------------------------>
     <header>
         <nav class="navMobile">
             <div class="logo">
@@ -54,7 +57,11 @@
 
         </section>
     </header>
+
+    <!-- MAIN------------------------------------------------------>
     <main>
+
+        <!-- SIDEMENU------------------------------------------------------>
         <aside class="sidebar">
             <h1>Perfil</h1>
             <ul>
@@ -68,7 +75,12 @@
                 <li><a href="#">Recetas</a></li>
             </ul>
         </aside>
+
+        <!--CONTENEDOR SECCIONES-------------------------------------------------->
         <div class="sectionContainer">
+
+
+            <!-- INFORMACION-------------------------------------------------->
             <section class="container" id="informacion">
                 <h2>Informacion</h2>
                 <div class="contenido">
@@ -113,100 +125,158 @@
                     </div>
                 </div>
             </section>
+
+
+            <!-- PESO------------------------------------------------------>
             <section class="container" id="peso">
                 <h2>Peso</h2>
                 <div class="contenido">
-                    <table class="datosPeso" id="datosPeso">
-                        <thead>
-                            <tr>
-                                <th>Fecha Registro</th>
-                                <th>Peso (KG)</th>
-                                <th>IMC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="dosHijos">
+                        <table class="datosPeso" id="datosPeso">
+                            <thead>
+                                <tr>
+                                    <th>Fecha Registro</th>
+                                    <th>Peso (KG)</th>
+                                    <th>IMC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="ingresoDatos">
+                            <h3>Registrar Peso</h3>
+                            <form>
+                                <div class="field">
+                                    <label for="inputPeso">Peso: </label>
+                                    <input type="number" name="" id="inputPeso">
+                                </div>
+                                <div class="field">
+                                    <label for="inputFecha">Fecha: </label>
+                                    <input type="date" name="" id="inputFecha">
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistro" type="button">Hacer Registro</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="unHijo">
+                        <div id="graphPeso"></div>
+                    </div>
+                </div>
+            </section>
 
-                        </tbody>
-                    </table>
-                    <div class="ingresoDatos">
-                        <h3>Registrar Peso</h3>
-                        <form>
-                            <div class="field">
-                                <label for="inputPeso">Peso: </label>
-                                <input type="number" name="" id="inputPeso">
-                            </div>
-                            <div class="field">
-                                <label for="inputFecha">Fecha: </label>
-                                <input type="date" name="" id="inputFecha">
-                            </div>                            
-                            <button class="buttonRegistro" id="buttonRegistro" type="button">Hacer Registro</button>
-                        </form>
+
+            <!-- ESTADISTICAS--------------------------------------------------->
+
+
+
+
+
+
+            <!-- ENFERMEDADES-------------------------------------------------->
+
+
+
+
+
+
+
+            <!-- ACTIVIDAD FISICA---------------------------------------------->
+
+
+
+
+
+
+
+            <!-- LOGROS Y OBJETIVOS-------------------------------------------->
+
+
+
+
+            <!-- PLAN DE AYUNO------------------------------------------------->
+            <section class="container" id="planAyuno">
+                <div> 
+                    <h2>Plan de Ayuno</h2>
+                </div>
+                <div class="contenedorTiposAyuno"> 
+                    <div class="contenedorTituloTipos">
+                        <h3>Tipos</h3>
+                    </div>
+                    <div class="tiposAyuno">
+                        <div>
+                            <h2>Tipo 1</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec massa ac ipsum tempor vehicula. Phasellus vel mauris gravida, viverra arcu ac, pellentesque elit. Praesent consectetur lacinia ante a varius. Proin cursus gravida pharetra. Donec ac scelerisque ligula. Morbi vel mollis erat, at imperdiet purus. Aenean fermentum, tellus in maximus. </p>
+                        </div>
+
+                        <div>
+                            <h2>Tipo 2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis molestie velit. Morbi ullamcorper condimentum enim, vitae semper ipsum dictum vitae. Ut ac ipsum vulputate, finibus nibh quis, venenatis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie mattis dictum. Fusce laoreet molestie condimentum. Fusce efficitur a orci.</p>
+                        </div>
+
+                        <div>
+                            <h2>Tipo 3</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit orci nec dolor malesuada, in facilisis felis ullamcorper. Maecenas eleifend ante velit, ut porttitor arcu fermentum ac. Duis id erat dapibus, feugiat nisl eu, venenatis eros. Ut vel eros mattis, elementum velit eget, blandit arcu. Fusce nec nisi mattis mi. </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="separadorVertical">Raya vertical</div>
+                <div>
+                    <div>Tabla</div>
+                    <div>
+                        <div>
+                            Formularios
+                        </div>
+                        <div>Recomendaciones</div>
                     </div>
                 </div>
             </section>
-            <section class="container" id="enfermedades">
-                <h2>Peso</h2>
-                <div class="contenido">
-                    <table class="datosEstadisticas">
-                        <thead>
-                            <tr>
-                                <th>Fecha Registro</th>
-                                <th>Peso (KG)</th>
-                                <th>IMC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="ingresoDatos">
-                        <h3>Registrar Peso</h3>
-                        <form>
-                            <div class="field">
-                                <label for="">Peso: </label>
-                                <input type="number" name="" id="">
-                            </div>
-                            <button class="buttonRegistro" type="submit">Hacer Registro</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <section class="container" id="actFisica">
-                <h2>Peso</h2>
-                <div class="contenido">
-                    <table class="datosEstadisticas">
-                        <thead>
-                            <tr>
-                                <th>Fecha Registro</th>
-                                <th>Peso (KG)</th>
-                                <th>IMC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="ingresoDatos">
-                        <h3>Registrar Peso</h3>
-                        <form>
-                            <div class="field">
-                                <label for="">Peso: </label>
-                                <input type="number" name="" id="">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+            
+
+            <!-- RECETAS------------------------------------------------------>
+
+
+
+
         </div>
+
+
+        
     </main>
+
+    <!-- FOOTER------------------------------------------------------>
+    <footer class="footerContainer">
+        <nav class="footerIntern">
+            <div class="logo">
+                <a href="#">OM</a>
+            </div>
+            <div class="textFooter">
+                <ul class="links">
+                    <li><a href="./terminosCondiciones.html">Terminos y Condiciones</a></li>
+                    <li><a href="./perfil.html">Perfil</a></li>
+                </ul>
+                <p class="disclaimer"></p>
+            </div>
+            <div class="social">
+                <h2>Siguenos</h2>
+                <a href="http://facebook.com" class="fa fa-facebook"></a>
+                <a href="http://instagram.com" class="fa fa-instagram"></a>
+                <a href="http://twitter.com" class="fa fa-twitter"></a>
+               
+            </div>
+       </nav>
+       <div class="footerContainerDos">
+        <small> &copy; 2022 <b>OM</b>-Todos los Derechos Reservados</small>
+
+       </div>
+
+        
+    </footer>
+
+
+    <!-- ENLACES A JAVASCRIPT------------------------------------------------------>
     <script src="../Public/Js/Services/service.js"></script>
     <script src="../Public/Js/Controller/controller.js"></script>
 
