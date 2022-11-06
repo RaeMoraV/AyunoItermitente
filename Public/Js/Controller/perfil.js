@@ -1,26 +1,10 @@
 'use strict';
-/* NAV Mobile Menu */
-
-document.getElementById('menuButton').addEventListener('click', mostrarMenu);
-document.getElementById('backMenu').addEventListener('click', ocultarMenu);
-
-let nav = document.getElementById('menu');
-let backMenu = document.getElementById('backMenu');
-
-function mostrarMenu() {
-    nav.style.right = '0px';
-    backMenu.style.display = 'block';
-};
-
-function ocultarMenu() {
-    nav.style.right = '-250px';
-    backMenu.style.display = 'none';
-}
 
 /* SideMenu */
-/*
+
+blockDisplay(null);
+
 let btnSMInfo = document.getElementById('sideMenuInformacion');
-let btnSMEst = document.getElementById('sideMenuEstadistica');
 let btnSMPeso = document.getElementById('sideMenuPeso');
 let btnSMEnf = document.getElementById('sideMenuEnfermedades');
 let btnSMAct = document.getElementById('sideMenuActividad');
@@ -28,23 +12,54 @@ let btnSMLog = document.getElementById('sideMenuLogros');
 let btnSMPlan = document.getElementById('sideMenuPlan');
 let btnSMRec = document.getElementById('sideMenuRecetas');
 
-btnSMInfo.addEventListener('click', blockDisplay(1));
-btnSMEst.addEventListener('click', blockDisplay(2));
-btnSMPeso.addEventListener('click', blockDisplay(3));
-btnSMEnf.addEventListener('click', blockDisplay(4));
-btnSMAct.addEventListener('click', blockDisplay(5));
-btnSMLog.addEventListener('click', blockDisplay(6));
-btnSMPlan.addEventListener('click', blockDisplay(7));
-btnSMRec.addEventListener('click', blockDisplay(8));
+btnSMInfo.addEventListener('click', openInfo);
+btnSMPeso.addEventListener('click', openPeso);
+btnSMEnf.addEventListener('click', openEnfermedades);
+btnSMAct.addEventListener('click', openActividades);
+btnSMLog.addEventListener('click', openLogros);
+btnSMPlan.addEventListener('click', openPlan);
+btnSMRec.addEventListener('click', openRecetas);
+
+function openInfo() {
+    let option = 1;
+    blockDisplay (option);
+}
+
+function openPeso() {
+    let option = 2;
+    blockDisplay (option);
+}
+
+function openEnfermedades() {
+    let option = 3;
+    blockDisplay (option);
+}
+
+function openActividades() {
+    let option = 4;
+    blockDisplay (option);
+}
+
+function openLogros() {
+    let option = 5;
+    blockDisplay (option);
+}
+
+function openPlan() {
+    let option = 6;
+    blockDisplay (option);
+}
+
+function openRecetas() {
+    let option = 7;
+    blockDisplay (option);
+}
 
 
 function blockDisplay(pOpcionSM){
-    console.log(pOpcionSM);
-    
     switch(pOpcionSM){
         case 1:
-            console.log('1');
-            document.getElementById('informacion').style.display='flex';
+            document.getElementById('informacion').style.display='block';
             document.getElementById('peso').style.display='none';
             document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
@@ -54,9 +69,8 @@ function blockDisplay(pOpcionSM){
             document.getElementById('recetas').style.display='none';
             break;
         case 2:
-            console.log('2');
             document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='flex';
+            document.getElementById('peso').style.display='block';
             document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
@@ -65,10 +79,9 @@ function blockDisplay(pOpcionSM){
             document.getElementById('recetas').style.display='none';
             break;
         case 3:
-            console.log('3');
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='flex';
+            document.getElementById('estadisticas').style.display='block';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
@@ -76,51 +89,46 @@ function blockDisplay(pOpcionSM){
             document.getElementById('recetas').style.display='none';
             break;
         case 4:
-            console.log('4');
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
             document.getElementById('estadisticas').style.display='none';
-            document.getElementById('enfermedades').style.display='flex';
+            document.getElementById('enfermedades').style.display='block';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
             document.getElementById('planAyuno').style.display='none';
             document.getElementById('recetas').style.display='none';
             break;
         case 5:
-            console.log(5);
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
             document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='flex';
+            document.getElementById('actividadFisica').style.display='block';
             document.getElementById('logroObjetivos').style.display='none';
             document.getElementById('planAyuno').style.display='none';
             document.getElementById('recetas').style.display='none';
             break;
         case 6:
-            console.log(6);
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
             document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='flex';
+            document.getElementById('logroObjetivos').style.display='block';
             document.getElementById('planAyuno').style.display='none';
             document.getElementById('recetas').style.display='none';
             break;
         case 7:
-            console.log(7);
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
             document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='flex';
+            document.getElementById('planAyuno').style.display='block';
             document.getElementById('recetas').style.display='none';
             break;
         case 8:
-            console.log(8);
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
             document.getElementById('estadisticas').style.display='none';
@@ -128,22 +136,20 @@ function blockDisplay(pOpcionSM){
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
             document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='flex';
+            document.getElementById('recetas').style.display='block';
             break;
         default:
-            console.log("jeje");
-            document.getElementById('informacion').style.display='flex';
-            document.getElementById('peso').style.display='flex';
-            document.getElementById('estadisticas').style.display='flex';
-            document.getElementById('enfermedades').style.display='flex';
-            document.getElementById('actividadFisica').style.display='flex';
-            document.getElementById('logroObjetivos').style.display='flex';
-            document.getElementById('planAyuno').style.display='flex';
-            document.getElementById('recetas').style.display='flex';
+            document.getElementById('informacion').style.display='block';
+            document.getElementById('peso').style.display='none';
+            document.getElementById('estadisticas').style.display='none';
+            document.getElementById('enfermedades').style.display='none';
+            document.getElementById('actividadFisica').style.display='none';
+            document.getElementById('logroObjetivos').style.display='none';
+            document.getElementById('planAyuno').style.display='none';
+            document.getElementById('recetas').style.display='none';
             break;
     }
 }
-*/
 
 /* Perfil - Seccion Informacion */
 

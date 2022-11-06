@@ -19,6 +19,13 @@ box-sizing: inherit; /* COMPLEMENTO DE BOX SIZING (PAUL IRISH):  https://www.pau
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
 }
 
 a {
@@ -186,64 +193,83 @@ a {
     width: 100%;
     background-color:var(--color-lightgreen2);
     color: #fff;
-    
-}
-.footerIntern{
-    width: 100%;
-    max-width:1486px;
-    margin: auto;
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 70px;
-    
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 
-.footerContainer .footerIntern .logo{
+.footerContainer .logo{
     height: 45px;
     width: fit-content;
     display: flex;
     align-items: center;
-    margin: 30px 20px 5px 20px;
     font-size: 40px;
-    
+    margin-left: 40px;
+    height: 60px;
 }
 
-.footerIntern .logo a{
+.footerContainer .logo a{
     color: var(--color-lightgreen1);
-
 }
 
- .textFooter .links {  
+.footerContainer .textFooter {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+}
+
+.footerContainer .textFooter .links {  
     font-size: 20px;
     line-height: 30px;
-    margin: 30px 20px 5px 20px;   
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-content: space-between;
+    width: 100%;
 }
 
-.social h3{
-    font-size: 20px;
-    line-height: 40px;
+.footerContainer .textFooter .links li {  
+    margin-right: 10px;
 }
 
-.textFooter .links a{
+.footerContainer .textFooter .links li:last-child{
+    margin-right: 0;
+}
+
+.footerContainer .textFooter .links a{
     color: var(--color-lightgreen1);
+    text-decoration: underline;
 }
 
 
-.footerIntern .social a{
-    display:inline-block;
+
+.footerContainer .social{
+    margin-right: 40px;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer .social .iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:45px;
     height:45px;
-    line-height:45px;
-    color: var(--color-lightgreen1);
+    background-color: var(--color-lightgreen1);
+    border-radius: 50%;
     margin-right: 10px;
-    font-size: 40px;
-
-
 }
 
- .footerIntern .social{
-    margin: 30px 20px 5px 120px; 
+.footerContainer .social .iconContainer a {
+    font-size: 20px;
+    color: var(--color-lightgreen2);
 }
+
+
 
 
 

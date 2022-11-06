@@ -1,18 +1,26 @@
 .containerTerminos{
-    display: flex;
-    flex-direction: column;
-    background-color: #dfede3;
-    justify-content: center;
-    align-items: center;
-    margin:40px 40px 40px 40px;
-    line-height: 50px;
+    padding: 50px;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.containerTerminos h2{
-
+.containerTerminos h1{
+    text-align: center;
     font-weight:bold;
     font-size: 40px;
     margin-bottom: 24px;
+}
 
+.containerTerminos h2{
+    font-weight:bold;
+    text-align: left;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 24px;
+}
+
+.containerTerminos p{
+    text-align: justify;
+    margin-bottom: 10px;
 }
 
