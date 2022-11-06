@@ -12,7 +12,7 @@
 
 .contactenosTitulo {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 15px;
 }
 
@@ -36,7 +36,6 @@
   height: 40px;
   width: 150px;
   font-size: 16px;
-  font-family: Century Gothic;
 }
 
 .btnConocenos button:hover {
@@ -70,13 +69,12 @@ img {
 .conocenosContenido {
   display: flex;
   flex-direction: column;
-  font-family: Century Gothic;
   align-items: center;
 }
 
 .conocenosContenido h2 {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 15px;
 }
 
