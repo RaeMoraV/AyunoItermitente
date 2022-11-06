@@ -3,6 +3,7 @@ let listaPesoYFecha = [];
 let listaPeso = [];
 let listaFecha = [];
 
+
 function registrarPesoYFecha (pnPeso, psFecha) {
     let nuevoPesoYFecha = [];
     nuevoPesoYFecha.push(pnPeso, psFecha);
@@ -31,4 +32,13 @@ function listarFechas() {
 
 function listarPesosYFechas() {
     return listaPesoYFecha;
+}
+
+/* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
+let listaRegistroAyuno=[];
+
+function registrarAyuno(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno){
+    let nuevoRegistroAyuno =[];
+    nuevoRegistroAyuno.push(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno);
+    listaRegistroAyuno.push(nuevoRegistroAyuno);
 }
