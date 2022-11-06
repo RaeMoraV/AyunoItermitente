@@ -21,7 +21,10 @@
     <!-- META Info -->
     <title>Perfil</title>
 </head>
+
 <body id="body">
+
+    <!-- HEADER------------------------------------------------------>
     <header>
         <nav class="navMobile">
             <div class="logo">
@@ -54,21 +57,30 @@
 
         </section>
     </header>
+
+    <!-- MAIN------------------------------------------------------>
     <main>
+
+        <!-- SIDEMENU------------------------------------------------------>
         <aside class="sidebar">
             <h1>Perfil</h1>
             <ul>
-                <li><a href="#">Información</a></li>
-                <li><a href="#">Estadísticas</a></li>
-                <li><a href="#">Peso</a></li>
-                <li><a href="#">Enfermedades</a></li>
-                <li><a href="#">Actividad física</a></li>
-                <li><a href="#">Logros y Objetivos</a></li>
-                <li><a href="#">Plan de ayuno</a></li>
-                <li><a href="#">Recetas</a></li>
+                <li ><a href="#" id="sideMenuInformacion">Información</a></li>
+                <li ><a href="#" id="sideMenuEstadistica">Estadísticas</a></li>
+                <li ><a href="#" id="sideMenuPeso">Peso</a></li>
+                <li ><a href="#" id="sideMenuEnfermedades">Enfermedades</a></li>
+                <li ><a href="#" id="sideMenuActividad">Actividad física</a></li>
+                <li ><a href="#" id="sideMenuLogros">Logros y Objetivos</a></li>
+                <li ><a href="#" id="sideMenuPlan">Plan de ayuno</a></li>
+                <li ><a href="#" id="sideMenuRecetas">Recetas</a></li>
             </ul>
         </aside>
+
+        <!--CONTENEDOR SECCIONES-------------------------------------------------->
         <div class="sectionContainer">
+
+
+            <!-- INFORMACION-------------------------------------------------->
             <section class="container" id="informacion">
                 <h2>Informacion</h2>
                 <div class="contenido">
@@ -113,6 +125,9 @@
                     </div>
                 </div>
             </section>
+
+
+            <!-- PESO------------------------------------------------------>
             <section class="container" id="peso">
                 <h2>Peso</h2>
                 <div class="contenido">
@@ -148,6 +163,20 @@
                     </div>
                 </div>
             </section>
+            
+
+
+            <!-- ESTADISTICAS--------------------------------------------------->
+            <section class="container" id="estadisticas">
+                ESTADISTICAS
+
+            </section>
+
+
+
+
+
+            <!-- ENFERMEDADES-------------------------------------------------->
             <section class="container" id="peso">
                 <h2>Enfermedades</h2>
                 <div class="contenido">
@@ -183,16 +212,154 @@
                     </div>
                 </div>
             </section>
+
+
+
+
+
+
+            <!-- ACTIVIDAD FISICA---------------------------------------------->
+            <section class="container" id="actividadFisica">
+                ACTIVIDAD
+                
+            </section>
+
+
+
+
+
+
+            <!-- LOGROS Y OBJETIVOS-------------------------------------------->
+            <section class="container" id="logroObjetivos">
+                LOGROS
+                
+            </section>
+
+
+
+            <!-- PLAN DE AYUNO------------------------------------------------->
+            <section class="container" id="planAyuno">
+                <div> 
+                    <h2>Plan de Ayuno</h2>
+                </div>
+                <div class="contenedorTiposAyuno"> 
+                    <div class="contenedorTituloTipos">
+                        <h3>Tipos</h3>
+                    </div>
+                    <div class="tiposAyuno">
+                        <div>
+                            <h2>Tipo 1</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec massa ac ipsum tempor vehicula. Phasellus vel mauris gravida, viverra arcu ac, pellentesque elit. Praesent consectetur lacinia ante a varius. Proin cursus gravida pharetra. Donec ac scelerisque ligula. Morbi vel mollis erat, at imperdiet purus. Aenean fermentum, tellus in maximus. </p>
+                        </div>
+                        <div>
+                            <h2>Tipo 2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis molestie velit. Morbi ullamcorper condimentum enim, vitae semper ipsum dictum vitae. Ut ac ipsum vulputate, finibus nibh quis, venenatis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie mattis dictum. Fusce laoreet molestie condimentum. Fusce efficitur a orci.</p>
+                        </div>
+                        <div>
+                            <h2>Tipo 3</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit orci nec dolor malesuada, in facilisis felis ullamcorper. Maecenas eleifend ante velit, ut porttitor arcu fermentum ac. Duis id erat dapibus, feugiat nisl eu, venenatis eros. Ut vel eros mattis, elementum velit eget, blandit arcu. Fusce nec nisi mattis mi. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separadorVertical"></div>
+
+                <div class="tablaFormularioAyuno">
+                    <div>
+                        <table id="tablaRegistroAyuno">
+                            <thead>
+                                <th>Fecha inicio</th>
+                                <th>Hora inicio</th>
+                                <th>Fecha final</th>
+                                <th>Hora final</th>
+                                <th>Duracion total</th>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    <div>
+                        <div class="ingresoDatosAyuno">
+                            <h3>Registrar ayuno</h3>
+                            <form>
+                                <div class="field">
+                                    <label for="inputTotalHoras">Horas de ayuno: </label>
+                                    <input type="number" name="" id="inputTotalHoras">
+                                    
+                                </div>
+                                <div class="field">
+                                    <label for="inputHora">Hora de inicio: </label>
+                                    <input type="time" name="" id="inputHoraInicioAyuno">
+                                </div>
+                                <div class="field">
+                                    <label for="inputFechaAyuno">Fecha de inicio: </label>
+                                    <input type="date" name="" id="inputFechaInicioAyuno">
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer Registro</button>
+                            </form>
+                        </div>
+                        <div>Recomendaciones</div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- RECETAS------------------------------------------------------>
+            <section class="container" id="recetas">
+                RECETAS
+                
+            </section>
+
+
+
         </div>
+
+
+        
     </main>
-    <script src="../Public/Js/Services/perfil.js"></script>
-    <script src="../Public/Js/Services/globales.js"></script>
-    <script src="../Public/Js/Controller/globales.js"></script>
-    <script src="../Public/Js/Controller/perfil.js"></script>
+
 
     <style>
         
     </style>
+
+    <!-- FOOTER------------------------------------------------------>
+    <footer class="footerContainer">
+        <nav class="footerIntern">
+            <div class="logo">
+                <a href="#">OM</a>
+            </div>
+            <div class="textFooter">
+                <ul class="links">
+                    <li><a href="./terminosCondiciones.html">Terminos y Condiciones</a></li>
+                    <li><a href="./perfil.html">Perfil</a></li>
+                </ul>
+                <p class="disclaimer"></p>
+            </div>
+            <div class="social">
+                <h2>Siguenos</h2>
+                <a href="http://facebook.com" class="fa fa-facebook"></a>
+                <a href="http://instagram.com" class="fa fa-instagram"></a>
+                <a href="http://twitter.com" class="fa fa-twitter"></a>
+               
+            </div>
+       </nav>
+       <div class="footerContainerDos">
+        <small> &copy; 2022 <b>OM</b>-Todos los Derechos Reservados</small>
+
+       </div>
+
+        
+    </footer>
+
+
+    <!-- ENLACES A JAVASCRIPT------------------------------------------------------>
+    <script src="../Public/Js/Services/perfil.js"></script>
+    <script src="../Public/Js/Services/globales.js"></script>
+    <script src="../Public/Js/Controller/globales.js"></script>
+    <script src="../Public/Js/Controller/perfil.js"></script>
 
 </body>
 

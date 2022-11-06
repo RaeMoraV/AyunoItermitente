@@ -6,6 +6,7 @@ let listaPeso = [];
 let listaFecha = [];
 let listaMeses = [];
 
+
 function registrarPesoYFecha (pnPeso, psFecha) {
     let nuevoPesoYFecha = [];
     let imc = pnPeso / Math.round(Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2));
@@ -49,4 +50,13 @@ function listarMeses() {
 
 function listarPesosYFechas() {
     return listaPesoYFecha;
+}
+
+/* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
+let listaRegistroAyuno=[];
+
+function registrarAyuno(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno){
+    let nuevoRegistroAyuno =[];
+    nuevoRegistroAyuno.push(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno);
+    listaRegistroAyuno.push(nuevoRegistroAyuno);
 }

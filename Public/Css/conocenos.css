@@ -12,7 +12,7 @@
 
 .contactenosTitulo {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 15px;
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.btnConocenos {
+.btnConocenos button {
   background-color: #286412;
   border: 2px;
   text-align: center;
@@ -36,10 +36,9 @@
   height: 40px;
   width: 150px;
   font-size: 16px;
-  font-family: Century Gothic;
 }
 
-.btnConocenos:hover {
+.btnConocenos button:hover {
   box-shadow: inset 1px 4px 6px 2px rgba(0,0,0,.1);
   background: #000000;
 }
@@ -70,13 +69,12 @@ img {
 .conocenosContenido {
   display: flex;
   flex-direction: column;
-  font-family: Century Gothic;
   align-items: center;
 }
 
 .conocenosContenido h2 {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 15px;
 }
 
@@ -90,12 +88,12 @@ img {
 }
 
 .contenedorImage {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 20px;
-  width: 20px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.contenedorImage img {
+  width: 100%;
 }
 
 #btnContactenos {
@@ -107,4 +105,13 @@ img {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media (min-width: 1800px) {
+  .conocenosInfo {
+    flex-direction: row;
+  }
+  .conocenosContenido {
+    align-items: flex-start;
+  }
 }
