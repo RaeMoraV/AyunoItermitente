@@ -1,3 +1,7 @@
+html {
+    overflow-x: auto;
+}
+
 /*estilos de la seccion Que es por SVC*/
 .seccionQueEs{
     display: flex;
@@ -16,13 +20,12 @@
     background: #dfede3;
     margin: 20px 0;
     padding: 10px;
-    text-align: center; 
-    font-family: Century Gothic;
+    text-align: center;
     color: black;    
 }
 
-.textQueEs h3{
-    font-size: 20px;
+.textQueEs h2{
+    font-size: 40px;
     margin-bottom:10px;
 }
 
@@ -30,17 +33,21 @@
     background-color: #286412;
       border: 2px;
       text-align: center;
-      color: #fff;
       margin-top: 15px;
       margin-bottom: 10px;
       border-radius: 5%;
       height: 40px;
       width: 150px;
       font-size: 16px;
-      font-family: Century Gothic;
-      
 
 }
+    
+.buttonText {
+    color: white;
+
+}
+
+
 
 .buttonInformacion:hover {
     box-shadow: inset 1px 4px 6px 2px rgba(0,0,0,.1);
@@ -81,7 +88,6 @@
 .beneficioContenedor {
     display: flex;
     flex-direction: column;
-    font-family: Century Gothic;
     background-color: #dfede3;
     justify-content: center;
     align-items: center;
@@ -132,7 +138,7 @@
 
 }
 
-.icon i {
+.beneficio .icon i {
     font-size:60px;
     color:white;
 }
@@ -394,16 +400,16 @@
     margin: 20px 0;
     padding: 10px;
     text-align: center; 
-    font-family: Century Gothic;
     color: #fff;
     border-radius: 5%;
     
     
 }
 
-.textRecomendacion h3{
-    font-size: 20px;
-    margin-bottom:10px;
+.textRecomendacion h2{
+    font-size: 40px;
+    margin-bottom:20px;
+    margin-top: 40px;
 }
 
 @media (min-width :1048px){
@@ -435,11 +441,6 @@
 
 /*Seccion de planes por Sebas*/
 
-.contenedorPlanes{
-    font-family: Century Gothic;
-    
-
-}
 
 .planesTitulo {
     width: 100%;
@@ -458,9 +459,9 @@
 
  
 
-  h1 {
+  h2 {
     margin: 0;
-    font-size: 6rem;
+    font-size: 40px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -528,3 +529,9 @@
         -ms-flex: 1;     
         flex: 1;
     }
+
+
+    /*Pruebas*/
+
+
+
