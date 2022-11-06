@@ -7,7 +7,7 @@
 }
 
 main {
-    display: flex;
+    display:flex;
     height: 100%;
 }
 
@@ -41,6 +41,23 @@ main {
     transition: .2s;
 }
 ul li:hover a{
+    padding-left: 30px;
+    background-color: var(--color-green);
+}
+
+.sidebar ul button{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 18px;
+    color: black;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(203, 203, 203, 0.1);
+    transition: .2s;
+}
+ul li:hover button{
     padding-left: 30px;
     background-color: var(--color-green);
 }
