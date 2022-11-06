@@ -207,27 +207,54 @@
                             <h2>Tipo 1</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec massa ac ipsum tempor vehicula. Phasellus vel mauris gravida, viverra arcu ac, pellentesque elit. Praesent consectetur lacinia ante a varius. Proin cursus gravida pharetra. Donec ac scelerisque ligula. Morbi vel mollis erat, at imperdiet purus. Aenean fermentum, tellus in maximus. </p>
                         </div>
-
                         <div>
                             <h2>Tipo 2</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis molestie velit. Morbi ullamcorper condimentum enim, vitae semper ipsum dictum vitae. Ut ac ipsum vulputate, finibus nibh quis, venenatis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie mattis dictum. Fusce laoreet molestie condimentum. Fusce efficitur a orci.</p>
                         </div>
-
                         <div>
                             <h2>Tipo 3</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit orci nec dolor malesuada, in facilisis felis ullamcorper. Maecenas eleifend ante velit, ut porttitor arcu fermentum ac. Duis id erat dapibus, feugiat nisl eu, venenatis eros. Ut vel eros mattis, elementum velit eget, blandit arcu. Fusce nec nisi mattis mi. </p>
                         </div>
-
-
                     </div>
                 </div>
 
-                <div class="separadorVertical">Raya vertical</div>
-                <div>
-                    <div>Tabla</div>
+                <div class="separadorVertical"></div>
+
+                <div class="tablaFormularioAyuno">
                     <div>
-                        <div>
-                            Formularios
+                        <table id="tablaRegistroAyuno">
+                            <thead>
+                                <th>Fecha inicio</th>
+                                <th>Hora inicio</th>
+                                <th>Fecha final</th>
+                                <th>Hora final</th>
+                                <th>Duracion total</th>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    <div>
+                        <div class="ingresoDatosAyuno">
+                            <h3>Registrar ayuno</h3>
+                            <form>
+                                <div class="field">
+                                    <label for="inputTotalHoras">Horas de ayuno: </label>
+                                    <input type="number" name="" id="inputTotalHoras">
+                                    
+                                </div>
+                                <div class="field">
+                                    <label for="inputHora">Hora de inicio: </label>
+                                    <input type="time" name="" id="inputHoraInicioAyuno">
+                                </div>
+                                <div class="field">
+                                    <label for="inputFechaAyuno">Fecha de inicio: </label>
+                                    <input type="date" name="" id="inputFechaInicioAyuno">
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer Registro</button>
+                            </form>
                         </div>
                         <div>Recomendaciones</div>
                     </div>

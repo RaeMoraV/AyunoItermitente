@@ -1,3 +1,4 @@
+'use strict';
 /* NAV Mobile Menu */
 
 document.getElementById('menuButton').addEventListener('click', mostrarMenu);
@@ -81,4 +82,29 @@ function graficoPeso() {
     Plotly.newPlot(graphPeso, data, layout);
 }
 
+/* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
+let btnAyuno = document.getElementById("buttonRegistroAyuno");
+let inputTotalHoras = document.getElementById("inputTotalHoras");
+let inputHoraInicioAyuno = document.getElementById("inputHoraInicioAyuno");
+let inputFechaInicioAyuno = document.getElementById("inputFechaInicioAyuno");
 
+btnAyuno.addEventListener('click',obtenerDatosAyuno);
+
+function obtenerDatosAyuno(){
+    let nTotalHoras = inputTotalHoras.value;
+    let nHoraInicioAyuno = inputHoraInicioAyuno.value;
+    let nFechaInicioAyuno = inputFechaInicioAyuno.value;
+    let nHoraFinalAyuno;
+    let nFechaFinalAyno;
+    
+    if(parseInt(nHoraInicioAyuno.split(":")[0])+parseInt(nTotalHoras)>24){
+        nHoraFinalAyuno
+        
+    }
+    else{
+        
+    }
+    registrarAyuno(nTotalHoras,nHoraInicioAyuno,nFechaInicioAyuno)
+       
+    
+}
