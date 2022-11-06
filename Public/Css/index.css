@@ -568,7 +568,12 @@ input {
     background-position: 0 0 ;
 
     }
-    
+    @media (min-width: 746px) {
+        .beneficioContenedor {
+            flex-direction: column;
+            align-items: center;
+            
+        } 
     .container {
         width: 75%;
         height: 300px;
@@ -589,7 +594,7 @@ input {
     display: flex;
     justify-content: center;
     }
-
+    
     .cuadro1 {
       padding: 1em;
         border: 1px solid #B2B2B2;
@@ -615,3 +620,5 @@ input {
         -ms-flex: 1;     
         flex: 1;
     }
+
+}
