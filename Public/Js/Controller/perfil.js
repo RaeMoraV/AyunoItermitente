@@ -122,11 +122,11 @@ function blockDisplay(pOpcionSM){
             document.getElementById('recetas').style.display='block';
             break;
         default:
-            document.getElementById('informacion').style.display='block';
+            document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
+            document.getElementById('logroObjetivos').style.display='block';
             document.getElementById('planAyuno').style.display='none';
             document.getElementById('recetas').style.display='none';
             break;
@@ -417,6 +417,7 @@ function orderEnfermedadTable () {
     }
 }
 
+/* Perfil - Logros - Tabla  ---------------------------------------*/
 
 
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
