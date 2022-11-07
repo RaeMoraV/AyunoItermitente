@@ -1,4 +1,4 @@
-'use strict';
+
 
 /* SideMenu */
 
@@ -131,7 +131,7 @@ function blockDisplay(pOpcionSM){
             document.getElementById('recetas').style.display='none';
             break;
     }
-};
+}
 
 /* Perfil - Seccion Informacion */
 
@@ -156,7 +156,7 @@ function getPesoFecha() {
     registrarFecha (sFecha);
 
     imprimirPeso();
-};
+}
 
 function imprimirPeso() {
     let tbody = document.querySelector('#datosPeso tbody');
@@ -176,7 +176,7 @@ function imprimirPeso() {
     }
 
     orderPesoYFechaTable ();
-};
+}
 
 function orderPesoYFechaTable () {
     let table;
@@ -210,7 +210,7 @@ function orderPesoYFechaTable () {
             switching = true;
         }
     }
-};
+}
 
 /* Perfil - Seccion Peso - Grafico  */
 
@@ -230,7 +230,7 @@ function graficoPeso() {
     };
 
     Plotly.newPlot(graphPeso, data, layout);
-};
+}
 
 
 /* Perfil - Seccion Enfermedades - Tabla */
@@ -262,7 +262,7 @@ function getEnfermedad() {
 
     registrarEnfermedad (sNombre, sDescripcion, sEstado, sTratamiento);
     imprimirEnfermedad();
-};
+}
 
 function imprimirEnfermedad() {
     let tbody = document.querySelector('#datosEnfermedad tbody');
@@ -284,7 +284,7 @@ function imprimirEnfermedad() {
     }
 
     orderEnfermedadTable ();
-};
+}
 
 function orderEnfermedadTable () {
     let table;
@@ -318,7 +318,7 @@ function orderEnfermedadTable () {
             switching = true;
         }
     }
-};
+}
 
 /* Perfil - Seccion Actividades - Tabla */
 
@@ -360,7 +360,7 @@ function getEnfermedad() {
 
     registrarEnfermedad (sNombre, sDescripcion, sEstado, sTratamiento);
     imprimirEnfermedad();
-};
+}
 
 function imprimirEnfermedad() {
     let tbody = document.querySelector('#datosEnfermedad tbody');
@@ -382,7 +382,7 @@ function imprimirEnfermedad() {
     }
 
     orderEnfermedadTable ();
-};
+}
 
 function orderEnfermedadTable () {
     let table;
@@ -416,32 +416,8 @@ function orderEnfermedadTable () {
             switching = true;
         }
     }
-};
+}
 
 
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
-let btnAyuno = document.getElementById("buttonRegistroAyuno");
-let totalHoras = document.getElementById("inputTotalHoras");
-let horaInicioAyuno = document.getElementById("inputHoraInicioAyuno");
-let fechaInicioAyuno = document.getElementById("inputFechaInicioAyuno");
-
-
-btnAyuno.addEventListener('click',obtenerDatosAyuno);
-
-function obtenerDatosAyuno(){
-    let nTotalHoras = totalHoras.value;
-    let nHoraInicioAyuno = horaInicioAyuno.value;
-    let nFechaInicioAyuno = fechaInicioAyuno.value;
-    let nValorHoraAyuno = nHoraInicioAyuno.split(":")[0];
-    let nValorMinutoAyuno = nHoraInicioAyuno.split(":")[1];
-    let nHoraFinalAyuno
-    let nFechaFinalAyuno;
-    let fechaIngresadaAyuno = new Date(nFechaInicioAyuno+","+nValorHoraAyuno+","+nValorMinutoAyuno);
-    console.log(fechaIngresadaAyuno);
-    //let fechaFinalAyuno = new Date();
-    
-   
-    registrarAyuno(nTotalHoras,nHoraInicioAyuno,nFechaInicioAyuno);
-       
-    
-};
+let 

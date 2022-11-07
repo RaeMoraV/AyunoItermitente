@@ -278,7 +278,8 @@ ul li:hover button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
+    padding: 60px;
 }
 #planAyuno .contenedorTiposAyuno{
     border-radius:10px;
@@ -387,3 +388,12 @@ border-radius: 10px;
     margin-top: 80px;
 }
 
+@media (min-width: 1137px) {
+    .contenedorTiposAyuno {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
+}
