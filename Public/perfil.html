@@ -289,44 +289,53 @@
 
             <!-- LOGROS Y OBJETIVOS-------------------------------------------->
             <section class="container" id="logroObjetivos">
-                VACIO
-                <!--
-                <div class="tablaFormularioAyuno">
-                    <div tablaAyuno>
-                        <table class="datosTabla" id="tablaRegistroAyuno">
+                <h2>Logros y objetivos</h2>
+                <div class="contenido">
+                    <div class="dosHijos">
+                        <table class="datosTabla tableActividades" id="datosLogros">
                             <thead>
-                                <th>Descripcion de Meta</th>
-                                <th>Estado</th>
-                                <th>Actualizar</th>
+                                <tr>
+                                    <th>Tipo de logro</th>
+                                    <th>Condicion de logro</th>
+                                    <th>Nombre del logro</th>
+                                    <th>Medalla</th>
+                                    <th>Estado</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                
                             </tbody>
-                            
                         </table>
-                    </div>
-                    <div class="ingresoDatos">
-                        <div class="ingresoDatosAyuno">
-                            <h3>Registrar ayuno</h3>
+                        <div class="ingresoDatos">
+                            <h3>Agregar meta</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputTotalHoras">Horas de ayuno: </label>
-                                    <input type="number" name="" id="inputTotalHoras">
+                                    <label for="inputNombreMeta">Tipo de meta:<span> *</span> </label>
+                                    <select name="" id="inputNombreMeta">
+                                        <option value="">--Seleccione--</option>
+                                        <option value="peso">Logro por reducción de peso</option>
+                                        <option value="imc">Logro por reducción o aumento del IMC</option>
+                                        <option value="cantidadHoras">Logro por cantidad de horas de ayuno</option>
+                                        <option value="diasAyuno">Logro por días de ayuno finalizados</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="inputindicadorPeso">Indicador:<span> *</span> </label>
+                                    <input type="number" name="" id="inputindicadorPeso">
                                     
                                 </div>
-                                <div class="field">
-                                    <label for="inputHora">Hora de inicio: </label>
-                                    <input type="time" name="" id="inputHoraInicioAyuno">
-                                </div>
-                                <div class="field">
-                                    <label for="inputFechaAyuno">Fecha de inicio: </label>
-                                    <input type="date" name="" id="inputFechaInicioAyuno">
-                                </div>
-                                <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer Registro</button>
+                                
+                                <div class="fieldTiempos">
+                                   
+                                  </div>
+                                <button class="buttonRegistro" id="buttonRegistroMeta" type="button">Hacer Registro</button>
+                                <button class="buttonRegistro" id="buttonActualizarMetas" type="button">Actualizar estados</button>
                             </form>
                         </div>
                     </div>
-                </div>--->
+                    <div class="unHijo">
+                        <div id="graphActividad"></div>
+                    </div>
+                </div>
             </section>
 
 
