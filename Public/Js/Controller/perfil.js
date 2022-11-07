@@ -331,7 +331,7 @@ let inputNombreActividad = document.querySelector('#inputNombreActividad');
 let inputInicioActividad = document.querySelector('#inicioHora').value + ':' + document.querySelector('#inicioMinutos').value + ':' + document.querySelector('#inicioSegundos').value;
 let inputFinActividad = document.querySelector('#finHora').value + ':' + document.querySelector('#finMinutos').value + ':' + document.querySelector('#finSegundos').value;
 let totalHoras = '';
-//Constantes para obtener el total de tiempo invertido en una actividad
+//Variables para obtener el total de tiempo invertido en una actividad
 let startHour = document.getElementById("inicioHora"); 
 let startMinute = document.getElementById("inicioMinutos");
 let startSecond = document.getElementById("inicioSegundos");
@@ -349,13 +349,13 @@ function getTotalHoras() {
     let startDate = new Date(2020,05,05,startHour.value,startMinute.value,startSecond.value);
     let endDate = new Date(2020,05,05,endHour.value,endMinute.value,endSecond.value);
     let difference = endDate.getTime() - startDate.getTime();
-    if (difference < 0) {
+    if (difference > 0) {
         difference = difference / 1000;
         let hourDifference = Math.floor(difference / 3600);
         difference -= hourDifference * 3600;
         let minuteDifference = Math.floor(difference / 60);
         difference -= minuteDifference * 60;
-        return `${hourDifference} hours, ${minuteDifference} minutes, ${difference} seconds`;
+        return `${hourDifference}:${minuteDifference}:${difference}`;
     };
     
 

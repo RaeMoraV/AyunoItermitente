@@ -72,7 +72,7 @@ let listaActividades = [];
 function registrarActividad (sFecha, sNombre, sInicio, sFin, total) {
     let nuevaActividad = [];
     nuevaActividad.push(sFecha, sNombre, sInicio, sFin, total);
-    listaActividades.push(listaActividades);
+    listaActividades.push(nuevaActividad);
 };
 
 function listarActividades() {

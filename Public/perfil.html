@@ -466,7 +466,68 @@
 
             <!-- RECETAS------------------------------------------------------>
             <section class="container" id="recetas">
-                RECETAS
+                <h2>Recetas</h2>
+                <div class="contenido">
+                    <div class="dosHijos">
+                        <table class="datosTabla tableRecetas" id="datosReceta">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Actividad</th>
+                                    <th>Hora Inicio</th>
+                                    <th>Hora Fin</th>
+                                    <th>Tiempo Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="ingresoDatos">
+                            <h3>Registrar Actividad</h3>
+                            <form>
+                                <div class="field">
+                                    <label for="inputFechaActividad">Fecha:<span> *</span> </label>
+                                    <input type="date" name="" id="inputFechaActividad">
+                                </div>
+                                <div class="field">
+                                    <label for="inputNombreActividad">Actividad:<span> *</span> </label>
+                                    <select name="" id="inputNombreActividad">
+                                        <option value="">--Seleccione--</option>
+                                        <optgroup label="Predeterminadas">
+                                            <option value="Ciclismo">Ciclismo</option>
+                                            <option value="Gimnasio">Gimnasio</option>
+                                            <option value="Yoga">Yoga</option>
+                                            <option value="Caminata">Caminata</option>
+                                            <option value="Correr">Correr</option>
+                                            <option value="Nadar">Nadar</option>
+                                            <option value="Estilo Libre">Estilo Libre</option>
+                                            </optgroup>
+                                            <optgroup label="Personalizadas">
+                                            </optgroup>
+                                    </select>
+                                </div>
+                                <div class="fieldTiempos">
+                                    <div class="inicio">
+                                        <p>Inicio:</p> <br />
+                                        <input type="number" min="0" max="24" id="inicioHora" placeholder="HH" />
+                                        <input type="number" min="0" max="60" id="inicioMinutos" placeholder="MM" />
+                                        <input type="number" min="0" max="60" id="inicioSegundos" placeholder="SS" />
+                                    </div>
+                                    <div class="fin">
+                                        <p>Fin:</p> <br />
+                                        <input type="number" min="0" max="24" id="finHora" placeholder="HH" />
+                                        <input type="number" min="0" max="60" id="finMinutos" placeholder="MM" />
+                                        <input type="number" min="0" max="60" id="finSegundos" placeholder="SS" />
+                                    </div>
+                                    </div>
+                                <button class="buttonRegistro" id="buttonRegistroActividad" type="button">Hacer Registro</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="unHijo">
+                        <div id="graphActividad"></div>
+                    </div>
+                </div>
                 
             </section>
 
