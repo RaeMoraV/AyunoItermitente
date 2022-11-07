@@ -146,14 +146,14 @@
                             <h3>Registrar Peso</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputPeso">Peso: </label>
+                                    <label for="inputPeso">Peso:<span> *</span> </label>
                                     <input type="number" name="" id="inputPeso">
                                 </div>
                                 <div class="field">
-                                    <label for="inputFecha">Fecha: </label>
+                                    <label for="inputFecha">Fecha:<span> *</span> </label>
                                     <input type="date" name="" id="inputFecha">
                                 </div>
-                                <button class="buttonRegistro" id="buttonRegistro" type="button">Hacer Registro</button>
+                                <button class="buttonRegistro" id="buttonRegistroPeso" type="button">Hacer Registro</button>
                             </form>
                         </div>
                     </div>
@@ -162,47 +162,53 @@
                     </div>
                 </div>
             </section>
-            
-
-
-            <!-- ESTADISTICAS--------------------------------------------------->
-            <section class="container" id="estadisticas">
-                ESTADISTICAS
-
-            </section>
-
-
-
-
 
             <!-- ENFERMEDADES-------------------------------------------------->
             <section class="container" id="enfermedades">
                 <h2>Enfermedades</h2>
                 <div class="contenido">
                     <div class="dosHijos">
-                        <table class="datosTabla tableEnfermedades" id="datosPeso">
+                        <table class="datosTabla tableEnfermedades" id="datosEnfermedad">
                             <thead>
                                 <tr>
-                                    <th>Fecha Registro</th>
-                                    <th>Peso (KG)</th>
-                                    <th>IMC</th>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Estado</th>
+                                    <th>Tratamiento</th>
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
                         <div class="ingresoDatos">
-                            <h3>Registrar Peso</h3>
+                            <h3>Registrar Enfermedad</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputPeso">Peso: </label>
-                                    <input type="number" name="" id="inputPeso">
+                                    <label for="inputNombreEnfermedad">Nombre:<span> *</span> </label>
+                                    <input type="text" name="" id="inputNombreEnfermedad">
                                 </div>
                                 <div class="field">
-                                    <label for="inputFecha">Fecha: </label>
-                                    <input type="date" name="" id="inputFecha">
+                                    <label for="inputDescripcionEnfermedad">Descripcion:<span> *</span> </label>
+                                    <input type="text" name="" id="inputDescripcionEnfermedad">
                                 </div>
-                                <button class="buttonRegistro" id="buttonRegistro" type="button">Hacer Registro</button>
+                                <div class="fieldRadio">
+                                    <p>Estado:<span> *</span></p>
+                                    <div class="radioContainer">
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputEstadoEnfermedad" id="radioNoConcurrencia" value="No">
+                                            <label for="radioNoConcurrencia">No Concurrente</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputEstadoEnfermedad" id="radioConcurrencia" value="Si">
+                                            <label for="radioConcurrencia">Concurrente</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="inputTratamientoEnfermedad">Tratamiento: </label>
+                                    <input type="text" name="" id="inputTratamientoEnfermedad">
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistroEnfermedad" type="button">Hacer Registro</button>
                             </form>
                         </div>
                     </div>

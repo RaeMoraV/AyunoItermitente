@@ -1,6 +1,6 @@
 'use strict';
 
-/* Perfil - Seccion Peso */
+/* Perfil - Seccion Peso ---------------------------------------*/
 let listaPesoYFecha = [];
 let listaPeso = [];
 let listaFecha = [];
@@ -26,6 +26,7 @@ function registrarFecha (psFecha) {
     listaFecha.push(nuevaFecha);
 };
 
+
 function listarPesos() {
     return listaPeso;
 }
@@ -50,6 +51,19 @@ function listarMeses() {
 
 function listarPesosYFechas() {
     return listaPesoYFecha;
+}
+
+/* Perfil - Seccion Enfermedades ---------------------------------------*/
+let listaEnfermedades = [];
+
+function registrarEnfermedad (sNombre, sDescripcion, sEstado, sTratamiento) {
+    let nuevaEnfermedad = [];
+    nuevaEnfermedad.push(sNombre, sDescripcion, sEstado, sTratamiento);
+    listaEnfermedades.push(nuevaEnfermedad);
+};
+
+function listarEnfermedades() {
+    return listaEnfermedades;
 }
 
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/

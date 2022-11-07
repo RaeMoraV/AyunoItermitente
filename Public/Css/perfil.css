@@ -8,7 +8,8 @@
 
 main {
     display:flex;
-    height: 100%;
+    min-height: 100%;
+    padding: auto;
 }
 
 
@@ -63,14 +64,21 @@ ul li:hover button{
 }
 
 
-/* Estilos XXXXXXXXXXXXXX--------------------------- */
+/* Estilos Informacion--------------------------- */
+
+.sectionContainer {
+    width: 100%;
+}
+
 .container {
     margin: 50px 0 0 60px;
     width: 100%;
 }
 
 .contenido {
-    width: 1200px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 .contenido .dosHijos {
     display: flex;
@@ -79,6 +87,7 @@ ul li:hover button{
 
 #informacion h2,
 #peso h2,
+#enfermedades h2,
 #planAyuno h2 {
     font-size: 40px;
     text-transform: uppercase;
@@ -179,32 +188,73 @@ ul li:hover button{
 /* Estilos Registros Nuevos */
 
 .ingresoDatos {
-    background-color: #bbbbbb;
-    width: 300px;
+    background-color: var(--color-green);
+    width: 350px;
     height: fit-content;
     padding: 10px;
     border-radius: 5px;
 }
 
 .ingresoDatos h3 {
+    color: var(--color-lightgreen1);
     text-align: center;
     margin-bottom: 15px;
     font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 .ingresoDatos .field {
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+.ingresoDatos .field span {
+    color: rgba(255, 0, 0, 1);
+}
+
+.fieldRadio {
+    display: flex;
+    flex-direction: column;
 }
 
 .ingresoDatos .field label {
-    width: 100px;
+    color: var(--color-lightgreen1);
+    width: 140px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .ingresoDatos .field input {
     width: 200px;
     margin-left: 10px;
     border: none;
+}
+
+.ingresoDatos .fieldRadio {
+    margin-bottom: 25px;
+}
+
+.ingresoDatos .fieldRadio span {
+    color: rgba(255, 0, 0, 1);
+}
+
+.ingresoDatos .fieldRadio input {
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.ingresoDatos .fieldRadio label {
+    color: var(--color-lightgreen1);
+    margin-bottom: 5px;
+}
+
+.ingresoDatos .fieldRadio p {
+    color: var(--color-lightgreen1);
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
 }
 
 
