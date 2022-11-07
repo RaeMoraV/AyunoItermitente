@@ -61,7 +61,6 @@ function blockDisplay(pOpcionSM){
         case 1:
             document.getElementById('informacion').style.display='block';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
@@ -71,7 +70,6 @@ function blockDisplay(pOpcionSM){
         case 2:
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='block';
-            document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
@@ -81,8 +79,7 @@ function blockDisplay(pOpcionSM){
         case 3:
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='block';
-            document.getElementById('enfermedades').style.display='none';
+            document.getElementById('enfermedades').style.display='block';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
             document.getElementById('planAyuno').style.display='none';
@@ -91,9 +88,8 @@ function blockDisplay(pOpcionSM){
         case 4:
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
-            document.getElementById('enfermedades').style.display='block';
-            document.getElementById('actividadFisica').style.display='none';
+            document.getElementById('enfermedades').style.display='none';
+            document.getElementById('actividadFisica').style.display='block';
             document.getElementById('logroObjetivos').style.display='none';
             document.getElementById('planAyuno').style.display='none';
             document.getElementById('recetas').style.display='none';
@@ -101,37 +97,24 @@ function blockDisplay(pOpcionSM){
         case 5:
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='block';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
-            break;
-        case 6:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='block';
             document.getElementById('planAyuno').style.display='none';
             document.getElementById('recetas').style.display='none';
             break;
-        case 7:
+        case 6:
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
             document.getElementById('planAyuno').style.display='block';
             document.getElementById('recetas').style.display='none';
             break;
-        case 8:
+        case 7:
             document.getElementById('informacion').style.display='none';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
@@ -141,7 +124,6 @@ function blockDisplay(pOpcionSM){
         default:
             document.getElementById('informacion').style.display='block';
             document.getElementById('peso').style.display='none';
-            document.getElementById('estadisticas').style.display='none';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
