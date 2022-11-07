@@ -419,5 +419,37 @@ function orderEnfermedadTable () {
 }
 
 
+
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
-let 
+let btnRegistroAyuno = document.getElementById("buttonRegistroAyuno");
+let valorTotalHorasAyuno = document.getElementById("inputTotalHorasAyuno");
+let valorHoraInicioAyuno = document.getElementById("inputHoraInicioAyuno");
+let valorFechaAyuno = document.getElementById("inputFechaAyuno");
+
+
+btnRegistroAyuno.addEventListener("click",getAyunoData);
+
+function getAyunoData(){
+    
+    let nNumeroHora = valorTotalHorasAyuno.value; //String  12
+    let sFechaAyuno = valorFechaAyuno.value; //String 3 nov 2022 = 2022-11-03
+    let nHoraInicioAyuno = valorHoraInicioAyuno.value;//String 12:22
+    let valorAnio=sFechaAyuno.split("-")[0];
+    let valorMes=sFechaAyuno.split("-")[1];
+    valorMes=Number(valorMes)-1; // Hay que restarle 1 porque los meses empiezan en zero
+    let valorDia=sFechaAyuno.split("-")[2];
+    let valorHora=nHoraInicioAyuno.split(":")[0];
+    let valorMin=nHoraInicioAyuno.split(":")[1];
+    let fechaAyunoHoy = new Date(valorAnio,valorMes,valorDia,valorHora,valorMin);
+    
+    
+    alert(fechaAyunoHoy);
+  
+
+
+}
+
+function alertaEntre(){
+    alert("Wiiiii");
+    console.log("Hola??")
+};
