@@ -7,8 +7,8 @@
     background-size: cover;
     background-image: url(../Img/index/portada.jpg);
     width: 100%;
-    height:700px;
-  }
+    height: 700px;
+}
 
 .textPrincipal h2 {
     font-weight: bold;
@@ -22,7 +22,7 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 }
 
 .contenedorRegistroPrincipal {
@@ -76,16 +76,16 @@ input {
     height: 40px;
     width: 150px;
     font-size: 16px;
-  }
-  
-  .btnRegistrarse:hover {
-    box-shadow: inset 1px 4px 6px 2px rgba(0,0,0,.1);
+}
+
+.btnRegistrarse:hover {
+    box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
     background: #000000;
-  }
+}
 
 /*estilos de la seccion Que es por SVC*/
 
-.seccionQueEs{
+.seccionQueEs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,37 +93,37 @@ input {
     background-size: cover;
     background-image: url(../Img/index/imgIndex.jpg);
     width: 100%;
-    height:700px;
+    height: 700px;
 }
 
 .textQueEs {
-    
+
     max-width: 500px;
     background: #dfede3;
     margin: 20px 0;
     padding: 10px;
     text-align: center;
-    color: black;    
+    color: black;
 }
 
-.textQueEs h2{
+.textQueEs h2 {
     font-size: 40px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .buttonInformacion {
     background-color: #286412;
-      border: 2px;
-      text-align: center;
-      margin-top: 15px;
-      margin-bottom: 10px;
-      border-radius: 5%;
-      height: 40px;
-      width: 150px;
-      font-size: 16px;
+    border: 2px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
 
 }
-    
+
 .buttonText {
     color: white;
 
@@ -132,13 +132,13 @@ input {
 
 
 .buttonInformacion:hover {
-    box-shadow: inset 1px 4px 6px 2px rgba(0,0,0,.1);
+    box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
     background: #000000;
 
 }
 
 
-@media (min-width: 1048px){
+@media (min-width: 1048px) {
     #fondoSeccionQueEs {
         background-size: cover;
     }
@@ -149,12 +149,13 @@ input {
 
     }
 
-    .textQueEs p{
-        margin:40px 40px 40px 40px;
+    .textQueEs p {
+        margin: 40px 40px 40px 40px;
         line-height: 40px;
     }
-    .textQueEs h3{
-        margin:40px 40px 40px 40px;
+
+    .textQueEs h3 {
+        margin: 40px 40px 40px 40px;
     }
 
     .buttonInformacion {
@@ -173,7 +174,7 @@ input {
     background-color: #dfede3;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .encabezadoBeneficio {
@@ -185,11 +186,11 @@ input {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    
-    
+
+
 }
 
-.encabezadoBeneficio h2{
+.encabezadoBeneficio h2 {
     font-weight: bold;
     font-size: 32px;
     margin-bottom: 15px;
@@ -207,7 +208,7 @@ input {
 
 }
 
- 
+
 .icon {
     border-radius: 50%;
     min-width: 100px;
@@ -221,36 +222,37 @@ input {
 }
 
 .beneficio .icon i {
-    font-size:60px;
-    color:white;
+    font-size: 60px;
+    color: white;
 }
 
 
-.text h3{
-    font-weight:bold;
+.text h3 {
+    font-weight: bold;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-.text p, 
-.text h3,.encabezadoBeneficio p{
+.text p,
+.text h3,
+.encabezadoBeneficio p {
     text-align: center;
 
     padding: 0 5px 5px 5px;
-    
+
 }
 
 @media (min-width: 746px) {
     .beneficioContenedor {
         flex-direction: column;
         align-items: center;
-        
+
     }
 
     .encabezadoBeneficio {
         flex-direction: column;
         width: 800px;
-            
+
     }
 
     .beneficio {
@@ -258,10 +260,11 @@ input {
         margin-right: 20px;
 
     }
-    .beneficio:last-child{
+
+    .beneficio:last-child {
         margin-right: 0;
     }
-     
+
 
     .row {
         display: flex;
@@ -274,6 +277,7 @@ input {
         margin-left: 20px;
     }
 }
+
 /*Hasta aqui los estilos de la seccion beneficios hecho por SVC*/
 
 /* Seccion Slider de Recetas */
@@ -307,7 +311,8 @@ input {
     max-width: 100%;
     height: 100%;
     max-height: 600px;
-    transform-style: preserve-3d;    display: flex;
+    transform-style: preserve-3d;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -347,7 +352,7 @@ input {
     width: 100%;
     height: 100%;
     padding: 10px;
-    background: linear-gradient(180deg, rgba(2,0,36,0) 50%, rgba(41,41,41,1) 100%);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 0) 50%, rgba(41, 41, 41, 1) 100%);
 }
 
 
@@ -375,86 +380,86 @@ input {
     font-size: 14px;
 }
 
-#slider-opt1:checked ~ .cards #slider-img7,
-#slider-opt2:checked ~ .cards #slider-img1,
-#slider-opt3:checked ~ .cards #slider-img2,
-#slider-opt4:checked ~ .cards #slider-img3,
-#slider-opt5:checked ~ .cards #slider-img4,
-#slider-opt6:checked ~ .cards #slider-img5,
-#slider-opt7:checked ~ .cards #slider-img6 {
+#slider-opt1:checked~.cards #slider-img7,
+#slider-opt2:checked~.cards #slider-img1,
+#slider-opt3:checked~.cards #slider-img2,
+#slider-opt4:checked~.cards #slider-img3,
+#slider-opt5:checked~.cards #slider-img4,
+#slider-opt6:checked~.cards #slider-img5,
+#slider-opt7:checked~.cards #slider-img6 {
     transform: translateX(-30%) scale(0.9);
     opacity: 0.8;
     z-index: 3;
 }
 
-#slider-opt1:checked ~ .cards #slider-img6,
-#slider-opt2:checked ~ .cards #slider-img7,
-#slider-opt3:checked ~ .cards #slider-img1,
-#slider-opt4:checked ~ .cards #slider-img2,
-#slider-opt5:checked ~ .cards #slider-img3,
-#slider-opt6:checked ~ .cards #slider-img4,
-#slider-opt7:checked ~ .cards #slider-img5 {
+#slider-opt1:checked~.cards #slider-img6,
+#slider-opt2:checked~.cards #slider-img7,
+#slider-opt3:checked~.cards #slider-img1,
+#slider-opt4:checked~.cards #slider-img2,
+#slider-opt5:checked~.cards #slider-img3,
+#slider-opt6:checked~.cards #slider-img4,
+#slider-opt7:checked~.cards #slider-img5 {
     transform: translateX(-60%) scale(0.85);
     opacity: 0.4;
     z-index: 2;
 }
 
-#slider-opt1:checked ~ .cards #slider-img5,
-#slider-opt2:checked ~ .cards #slider-img6,
-#slider-opt3:checked ~ .cards #slider-img7,
-#slider-opt4:checked ~ .cards #slider-img1,
-#slider-opt5:checked ~ .cards #slider-img2,
-#slider-opt6:checked ~ .cards #slider-img3,
-#slider-opt7:checked ~ .cards #slider-img4 {
+#slider-opt1:checked~.cards #slider-img5,
+#slider-opt2:checked~.cards #slider-img6,
+#slider-opt3:checked~.cards #slider-img7,
+#slider-opt4:checked~.cards #slider-img1,
+#slider-opt5:checked~.cards #slider-img2,
+#slider-opt6:checked~.cards #slider-img3,
+#slider-opt7:checked~.cards #slider-img4 {
     transform: translateX(-90%) scale(0.8);
     opacity: 0.2;
     z-index: 1;
 }
 
-#slider-opt1:checked ~ .cards #slider-img4,
-#slider-opt2:checked ~ .cards #slider-img5,
-#slider-opt3:checked ~ .cards #slider-img6,
-#slider-opt4:checked ~ .cards #slider-img7,
-#slider-opt5:checked ~ .cards #slider-img1,
-#slider-opt6:checked ~ .cards #slider-img2,
-#slider-opt7:checked ~ .cards #slider-img3 {
+#slider-opt1:checked~.cards #slider-img4,
+#slider-opt2:checked~.cards #slider-img5,
+#slider-opt3:checked~.cards #slider-img6,
+#slider-opt4:checked~.cards #slider-img7,
+#slider-opt5:checked~.cards #slider-img1,
+#slider-opt6:checked~.cards #slider-img2,
+#slider-opt7:checked~.cards #slider-img3 {
     transform: translateX(90%) scale(0.8);
     opacity: 0.2;
     z-index: 1;
 }
 
-#slider-opt1:checked ~ .cards #slider-img3,
-#slider-opt2:checked ~ .cards #slider-img4,
-#slider-opt3:checked ~ .cards #slider-img5,
-#slider-opt4:checked ~ .cards #slider-img6,
-#slider-opt5:checked ~ .cards #slider-img7,
-#slider-opt6:checked ~ .cards #slider-img1,
-#slider-opt7:checked ~ .cards #slider-img2 {
+#slider-opt1:checked~.cards #slider-img3,
+#slider-opt2:checked~.cards #slider-img4,
+#slider-opt3:checked~.cards #slider-img5,
+#slider-opt4:checked~.cards #slider-img6,
+#slider-opt5:checked~.cards #slider-img7,
+#slider-opt6:checked~.cards #slider-img1,
+#slider-opt7:checked~.cards #slider-img2 {
     transform: translateX(60%) scale(0.85);
     opacity: 0.4;
     z-index: 2;
 }
 
-#slider-opt1:checked ~ .cards #slider-img2,
-#slider-opt2:checked ~ .cards #slider-img3,
-#slider-opt3:checked ~ .cards #slider-img4,
-#slider-opt4:checked ~ .cards #slider-img5,
-#slider-opt5:checked ~ .cards #slider-img6,
-#slider-opt6:checked ~ .cards #slider-img7,
-#slider-opt7:checked ~ .cards #slider-img1 {
+#slider-opt1:checked~.cards #slider-img2,
+#slider-opt2:checked~.cards #slider-img3,
+#slider-opt3:checked~.cards #slider-img4,
+#slider-opt4:checked~.cards #slider-img5,
+#slider-opt5:checked~.cards #slider-img6,
+#slider-opt6:checked~.cards #slider-img7,
+#slider-opt7:checked~.cards #slider-img1 {
     transform: translateX(30%) scale(0.9);
     opacity: 0.8;
     z-index: 3;
 }
 
 
-#slider-opt1:checked ~ .cards #slider-img1,
-#slider-opt2:checked ~ .cards #slider-img2,
-#slider-opt3:checked ~ .cards #slider-img3,
-#slider-opt4:checked ~ .cards #slider-img4,
-#slider-opt5:checked ~ .cards #slider-img5,
-#slider-opt6:checked ~ .cards #slider-img6,
-#slider-opt7:checked ~ .cards #slider-img7 {
+#slider-opt1:checked~.cards #slider-img1,
+#slider-opt2:checked~.cards #slider-img2,
+#slider-opt3:checked~.cards #slider-img3,
+#slider-opt4:checked~.cards #slider-img4,
+#slider-opt5:checked~.cards #slider-img5,
+#slider-opt6:checked~.cards #slider-img6,
+#slider-opt7:checked~.cards #slider-img7 {
     transform: translateX(0) scale(1);
     z-index: 5;
 }
@@ -464,7 +469,7 @@ input {
 
 /*Seccion Recomendacion de usuario hecho por SVC*/
 
-.seccionRecommendUser{
+.seccionRecommendUser {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -472,50 +477,51 @@ input {
     background-size: cover;
     background-image: url(../Img/index/bottomsection.jpg);
     width: 100%;
-    height:700px;
+    height: 700px;
 }
 
 .textRecomendacion {
-    
+
     max-width: 500px;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     margin: 20px 0;
     padding: 10px;
-    text-align: center; 
+    text-align: center;
     color: #fff;
     border-radius: 5%;
-    
-    
+
+
 }
 
-.textRecomendacion h2{
+.textRecomendacion h2 {
     font-size: 40px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     margin-top: 40px;
 }
 
-@media (min-width :1048px){
+@media (min-width :1048px) {
 
     .textRecomendacion {
         height: 700px;
         margin: 80px 40px 80px 600px;
-            
+
     }
 
-    .textRecomendacion p{
+    .textRecomendacion p {
 
-        margin:40px 40px 40px 40px;
+        margin: 40px 40px 40px 40px;
         line-height: 60px;
 
     }
- 
-    
-    .textRecomendacion h3{
+
+
+    .textRecomendacion h3 {
         font-size: 25px;
-        margin:40px 40px 40px 40px;
+        margin: 40px 40px 40px 40px;
     }
 
 }
+
 /*Fin de Seccion Recomendacion de usuario hecho por SVC*/
 
 
@@ -523,153 +529,136 @@ input {
 
 /*Seccion de planes por Sebas*/
 
-
-.planesTitulo {
+--------------------------------------------------------------------------------------------------------------
+ .titulo {
     width: 100%;
-    background-color: #286412;
     color: white;
- 
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
 
-  
-
-  
-
- 
-
-  h2 {
+h2 {
     margin: 0;
     font-size: 40px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
-    
-  }
-  
-.contenidoContactenos{
-  display: flex;
-  justify-content: center;
-}
-
-  #fobd {
-    margin-top: 70px ;
-    margin-bottom: -35px ;
-    padding-top: 10px ;
-    padding-bottom: 70px ;
-    background: #797777  ;
-    background-position: 0 0 ;
-
-    }
-   
-    .container {
-        width: 75%;
-        height: 300px;
-        border: 1px solid black;
-        display: flex;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-    }
-    
-   
-    @media (min-width: 746px) {
-        .beneficioContenedor {
-            flex-direction: column;
-            align-items: center;
-            
-        } 
-        
-
-
-    body {
-        font-family: monospace;
-    }
-    
-    .container {
-        width: 100%;
-        max-width: 1000px;
-        margin: auto;
-    }
-    
-    .table {
-        width: 100%;
-        border: 1px solid #ccc;
-        border-collapse: collapse;
-        margin: 0;
-        padding: 0;
-        table-layout: fixed;
-    }
-    
-    .table caption {
-        font-size: 28px;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin: 8px 0px;
-    }
-    
-    .table tr {
-        background-color: #f8f8f8;
-        border: 1px solid #ddd;
-    }
-    
-    .table th, .table td {
-        font-size: 16px;
-        padding: 8px;
-        text-align: center;
-    }
-    
-    .table thead th{ 
-        text-transform: uppercase;
-        background-color: #ddd;
-    }
-    
-    .table tbody tr:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-    
-    .table tbody td:hover {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    
-    @media screen and (max-width: 600px) {
-        .table {
-            border: 0px;
-        }
-        .table caption {
-            font-size: 22px;
-        }
-        .table thead {
-            display: none;
-        }
-        .table tr {
-            margin-bottom: 8px;
-            border-bottom: 4px solid #ddd;
-            display: block;
-        }
-        .table th, .table td {
-            font-size: 12px;
-        }
-        .table td {
-            display: block;
-            border-bottom: 1px solid #ddd;
-            text-align: right;
-        }
-        .table  td:last-child {
-            border-bottom: 0px;
-        }
-        .table td::before {
-            content: attr(data-label);
-            font-weight: bold;
-            text-transform: uppercase;
-            float: left;
-        }
-    }
-    /*Pruebas*/
-
-
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 15px;
 
 }
+
+.texto {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 75%;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+
+/*Pruebas*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+/*Cards*/
+.container-card{
+	width: 100%;
+	display: flex;
+	max-width: 1100px;
+	margin: auto;
+}
+.title-cards{
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	margin-top: 20px;
+	text-align: center;
+	color: #7a7a7a;
+}
+.card{
+	width: 100%;
+	margin: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	background:#fff;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
+}
+.card:hover{
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%);
+}
+.card img{
+	width: 100%;
+	height: 210px;
+}
+.card .contenido-card{
+	padding: 15px;
+	text-align: center;
+}
+.card .contenido-card h3{
+	margin-bottom: 15px;
+	color: #7a7a7a;
+}
+.card .contenido-card p{
+	line-height: 1.8;
+	color: #6a6a6a;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.card .contenido-card a{
+	display: inline-block;
+	padding: 10px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #2fb4cc;
+	border: 1px solid #2fb4cc;
+	border-radius: 4px;
+	transition: all 400ms ease;
+	margin-bottom: 5px;
+}
+.card .contenido-card a:hover{
+	background: #2fb4cc;
+	color: #fff;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+	.container-card{
+		flex-wrap: wrap;
+	}
+	.card{
+		margin: 15px;
+	}
+}
+
