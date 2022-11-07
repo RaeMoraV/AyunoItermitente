@@ -57,31 +57,39 @@
                 <p> Cuida tu salud y mejora tu estilo de vida. Brindamos una guia completa, segura y beneficiosa para
                     planes de ayuno. Lleva registro de tus logros,
                     recetas y actividades que beneficiaran tu productividad, estado fisico y mental. </p>
+
+                <button type="button" id="btnRegistrateYa">
+                    Registrate Ya!
+                </button>
+            </div>
             </div>
             <section class="contenedorRegistroPrincipal">
-                <form action="" id="registroPrincipal">
+                <form action="" class="registroPrincipal">
                     <div class="formPrincipal">
-                        <label for="txtNombre">Nombre</label> <input type="text" name="" id="txtNombre" required />
-                        <label for="txtApellido">Apellido</label> <input type="text" name="" id="txtApellido"
+                        <label for="txtNombre"></label> <input type="text" name="" id="txtNombre" placeholder="Nombre" required />
+                        <label for="txtApellido"></label> <input type="text" name="" id="txtApellido" placeholder="Apellido"
                             required />
                     </div>
                     <div class="formPrincipal">
-                        <label for="txtEmail">Correo Electronico</label>
-                        <input type="email" name="" id="txtEmail" required />
+                        <label for="txtEmail"></label>
+                        <input type="email" name="" id="txtEmail" placeholder="Correo electronico" required />
                     </div>
                     <div class="formPrincipal">
-                        <label for="txtDate">Fecha de Nacimiento</label> <input type="date" name="" id="txtDate"
+                        <label for="txtDate"></label> <input type="date" name="" id="txtDate" placeholder="Fecha de Ncimiento"
                             required />
-                        <label for="txtGenero">Genero</label> <input type="text" name="" id="txtGenero" required />
+                        <label for="txtGenero"></label> <input type="text" name="" id="txtGenero" placeholder="Genero" required />
                     </div>
                     <div class="formPrincipal">
-                        <label for="txtEstatura">Estatura</label> <img class="fotoUsuario">
-                        <input type="number" name="" id="txtEstatura" required /> <button type="button"
-                            class="btnFotoUsuario">Subir foto</button>
+                        <label for="txtEstatura"></label>
+                        <input type="number" name="" id="txtEstatura" placeholder="Estatura" required />
                     </div>
                     <div class="formPrincipal">
-                        <label for="txtPesoDeseado">Peso Deseado</label>
-                        <input type="number" name="" id="txtPesoDeseado" required />
+                        <label for="txtPesoDeseado"></label>
+                        <input type="number" name="" id="txtPesoDeseado" placeholder="Peso Deaseado" required />
+                    </div>
+                    <div class="formPrincipal">
+                        <img type="button">
+                        <input type="file" id="fotoUsuario" capture>
                     </div>
                     <button class="btnRegistrarse" type="button">
                         Registrarse
