@@ -180,7 +180,7 @@ ul li:hover button{
 
 .ingresoDatos {
     background-color: #bbbbbb;
-    width: 300px;
+    width: 400px;
     height: fit-content;
     padding: 10px;
     border-radius: 5px;
@@ -223,12 +223,11 @@ ul li:hover button{
 
 /* Estilos Plan de ayuno---------------------------- */
 #planAyuno {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
 }
 #planAyuno .contenedorTiposAyuno{
     border-radius:10px;
@@ -237,14 +236,13 @@ ul li:hover button{
     background-position: center;
     padding: 20px;
     height: 400px;
-    width: 100%;
-    margin-right: 30px;
+    width: 90%;
     border: 1px solid black;
-    
 }
 #planAyuno .contenedorTiposAyuno .contenedorTituloTipos{
     opacity: 1;
 }
+
 #planAyuno .contenedorTiposAyuno h3{
     font-size: 30px;
     font-weight: 600;
@@ -252,7 +250,6 @@ ul li:hover button{
     background-color: rgba(217, 234, 218, 0.8);
     padding: 10px;
     border-radius:10px;
-    
 }
 
 #planAyuno .tiposAyuno{
@@ -277,23 +274,25 @@ ul li:hover button{
 }
 
 #planAyuno .separadorVertical{
-    width: 100%;
+    width: 90%;
     height: 3px;
     background-color: rgba(0, 0, 0, .3);
-    align-self: center;
-    margin: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
 }
 #planAyuno .tablaFormularioAyuno{
     width: 90%;
-    height: 200px;
+    height: 600px;
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    justify-content: flex-start;
+    align-items: flex-start; 
     justify-content: space-evenly;
 }
-#planAyuno .tablaFormularioAyuno div{
 
-    background-color: #bbbbbb;
+.ingresoDatosAyuno{
+    background-color: ;
 }
 .ingresoDatosAyuno .field {
     display: flex;
@@ -309,3 +308,31 @@ ul li:hover button{
     margin-left: 10px;
     border: none;
 }
+
+.ingresoDatosAyuno h3{
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.recomendacionAyuno h3{
+    padding-top: 20px;
+}
+.recomendacionAyuno{
+background-color: white;
+margin-top: 20px;
+border-radius: 10px;
+}
+.parrafoImagenAyuno{
+    display: flex;
+    flex-direction: row;
+}
+.parrafoImagenAyuno p{
+    padding: 10px;
+    text-align: justify;
+}
+.parrafoImagenAyuno img{
+    margin: 10px;
+    border-radius: 5px;
+    margin-top: 80px;
+}
+
