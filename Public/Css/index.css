@@ -107,8 +107,9 @@ input {
 }
 
 .textQueEs h2{
-    font-size: 40px;
+    font-size: 32px;
     margin-bottom:10px;
+    font-weight: bold;
 }
 
 .buttonInformacion {
@@ -153,8 +154,9 @@ input {
         margin:40px 40px 40px 40px;
         line-height: 40px;
     }
-    .textQueEs h3{
+    .textQueEs h2{
         margin:40px 40px 40px 40px;
+        font-weight:bold;
     }
 
     .buttonInformacion {
@@ -285,7 +287,7 @@ input {
 }
 
 #seccionSlider h2 {
-    font-size: 40px;
+    font-size: 32px;
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
@@ -489,7 +491,7 @@ input {
 }
 
 .textRecomendacion h2{
-    font-size: 40px;
+    font-size: 32px;
     margin-bottom:20px;
     margin-top: 40px;
 }
@@ -543,7 +545,7 @@ input {
 
   h2 {
     margin: 0;
-    font-size: 40px;
+    font-size: 32px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
