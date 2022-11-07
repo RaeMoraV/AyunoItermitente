@@ -564,12 +564,7 @@ input {
     background-position: 0 0 ;
 
     }
-    @media (min-width: 746px) {
-        .beneficioContenedor {
-            flex-direction: column;
-            align-items: center;
-            
-        } 
+   
     .container {
         width: 75%;
         height: 300px;
@@ -581,43 +576,98 @@ input {
     }
     
    
-    
-    .four-column {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    display: flex;
-    justify-content: center;
-    }
-    
-    .cuadro1 {
-      padding: 1em;
-        border: 1px solid #B2B2B2;
-        -webkit-flex: 1;  
-        -ms-flex: 1;    
-        flex: 1;
+    @media (min-width: 746px) {
+        .beneficioContenedor {
+            flex-direction: column;
+            align-items: center;
+            
+        } 
         
+
+
+    body {
+        font-family: monospace;
     }
     
-   
-    .cuadro2 {
-      padding: 1em;
-        border: 1px solid #B2B2B2;
-        -webkit-flex: 1;  
-        -ms-flex: 1;   
-        flex: 1;
+    .container {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
     }
-
-    .cuadro3 {
-      padding: 1em;
-        border: 1px solid #B2B2B2;
-        -webkit-flex: 1;  
-        -ms-flex: 1;     
-        flex: 1;
+    
+    .table {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        table-layout: fixed;
     }
-
-
+    
+    .table caption {
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 8px 0px;
+    }
+    
+    .table tr {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+    }
+    
+    .table th, .table td {
+        font-size: 16px;
+        padding: 8px;
+        text-align: center;
+    }
+    
+    .table thead th{ 
+        text-transform: uppercase;
+        background-color: #ddd;
+    }
+    
+    .table tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .table tbody td:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    @media screen and (max-width: 600px) {
+        .table {
+            border: 0px;
+        }
+        .table caption {
+            font-size: 22px;
+        }
+        .table thead {
+            display: none;
+        }
+        .table tr {
+            margin-bottom: 8px;
+            border-bottom: 4px solid #ddd;
+            display: block;
+        }
+        .table th, .table td {
+            font-size: 12px;
+        }
+        .table td {
+            display: block;
+            border-bottom: 1px solid #ddd;
+            text-align: right;
+        }
+        .table  td:last-child {
+            border-bottom: 0px;
+        }
+        .table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            text-transform: uppercase;
+            float: left;
+        }
+    }
     /*Pruebas*/
 
 
