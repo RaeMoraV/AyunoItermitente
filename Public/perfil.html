@@ -163,6 +163,7 @@
                 </div>
             </section>
 
+            
             <!-- ENFERMEDADES-------------------------------------------------->
             <section class="container" id="enfermedades">
                 <h2>Enfermedades</h2>
@@ -218,11 +219,6 @@
                 </div>
             </section>
 
-
-
-
-
-
             <!-- ACTIVIDAD FISICA---------------------------------------------->
             <section class="container" id="actividadFisica">
                 ACTIVIDAD
@@ -230,54 +226,16 @@
             </section>
 
 
-
-
-
-
             <!-- LOGROS Y OBJETIVOS-------------------------------------------->
             <section class="container" id="logroObjetivos">
-                LOGROS
                 
-            </section>
-
-
-
-            <!-- PLAN DE AYUNO------------------------------------------------->
-            <section class="container" id="planAyuno">
-                <div> 
-                    <h2>Plan de Ayuno</h2>
-                </div>
-                <div class="contenedorTiposAyuno"> 
-                    <div class="contenedorTituloTipos">
-                        <h3>Tipos</h3>
-                    </div>
-                    <div class="tiposAyuno">
-                        <div>
-                            <h2>Tipo 1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec massa ac ipsum tempor vehicula. Phasellus vel mauris gravida, viverra arcu ac, pellentesque elit. Praesent consectetur lacinia ante a varius. Proin cursus gravida pharetra. Donec ac scelerisque ligula. Morbi vel mollis erat, at imperdiet purus. Aenean fermentum, tellus in maximus. </p>
-                        </div>
-                        <div>
-                            <h2>Tipo 2</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis molestie velit. Morbi ullamcorper condimentum enim, vitae semper ipsum dictum vitae. Ut ac ipsum vulputate, finibus nibh quis, venenatis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie mattis dictum. Fusce laoreet molestie condimentum. Fusce efficitur a orci.</p>
-                        </div>
-                        <div>
-                            <h2>Tipo 3</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit orci nec dolor malesuada, in facilisis felis ullamcorper. Maecenas eleifend ante velit, ut porttitor arcu fermentum ac. Duis id erat dapibus, feugiat nisl eu, venenatis eros. Ut vel eros mattis, elementum velit eget, blandit arcu. Fusce nec nisi mattis mi. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="separadorVertical"></div>
-
                 <div class="tablaFormularioAyuno">
-                    <div>
-                        <table id="tablaRegistroAyuno">
+                    <div tablaAyuno>
+                        <table class="datosTabla" id="tablaRegistroAyuno">
                             <thead>
-                                <th>Fecha inicio</th>
-                                <th>Hora inicio</th>
-                                <th>Fecha final</th>
-                                <th>Hora final</th>
-                                <th>Duracion total</th>
+                                <th>Descripcion de Meta</th>
+                                <th>Estado</th>
+                                <th>Actualizar</th>
                             </thead>
                             <tbody>
                                 
@@ -285,7 +243,7 @@
                             
                         </table>
                     </div>
-                    <div>
+                    <div class="ingresoDatos">
                         <div class="ingresoDatosAyuno">
                             <h3>Registrar ayuno</h3>
                             <form>
@@ -305,7 +263,104 @@
                                 <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer Registro</button>
                             </form>
                         </div>
-                        <div>Recomendaciones</div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- PLAN DE AYUNO------------------------------------------------->
+            <section class="container" id="planAyuno">
+                <div> 
+                    <h2>Plan de Ayuno</h2>
+                </div>
+                <div class="contenedorTiposAyuno"> 
+                    <div class="contenedorTituloTipos">
+                        <h3>Opciones</h3>
+                    </div>
+                    <div class="tiposAyuno">
+                        <div>
+                            <h2>Plan 14/10</h2>
+                            <p> Este plan consiste en no ingerir alimentos por 14 Horas
+                                y las proximas 10 horas ingerir alimentos bajos en calorias.
+                                Se sugiere que las horas de ayuno sean nocturnas. Se procede con el plan
+                                por 6 dias y al septimo se ayuna totalmente.
+
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Plan 18/6</h2>
+                            <p>
+                                Este plan consiste en no ingerir alimentos por 18 Horas
+                                y las proximas 6 horas ingerir alimentos bajos en calorias.
+                                Se sugiere que las horas de ayuno sean nocturnas en su mayoria.
+                                Se procede con el plan por 6 dias y al septimo se ayuna totalmente.
+        
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Plan 20/4</h2>
+                            <p>
+                                Este plan consiste en no ingerir alimentos por 20 Horas
+                                y las proximas 4 horas ingerir alimentos no tan bajos en calorias.
+                                Se sugiere que las horas de ayuno sean las nocturnas en su mayoria.
+                                Se procede con el plan los 7 dias de la semana.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separadorVertical"></div>
+
+                <div class="tablaFormularioAyuno">
+                    <div tablaAyuno>
+                        <table class="datosTabla" id="tablaRegistroAyuno">
+                            <thead>
+                                <th>Fecha inicio</th>
+                                <th>Hora inicio</th>
+                                <th>Fecha final</th>
+                                <th>Hora final</th>
+                                <th>Duracion total</th>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    <div class="ingresoDatos">
+                        <div class="ingresoDatosAyuno">
+                            <h3>Registrar ayuno</h3>
+                            <form>
+                                <div class="field">
+                                    <label for="inputTotalHoras">Horas de ayuno: </label>
+                                    <input type="number" name="" id="inputTotalHoras">
+                                    
+                                </div>
+                                <div class="field">
+                                    <label for="inputHora">Hora de inicio: </label>
+                                    <input type="time" name="" id="inputHoraInicioAyuno">
+                                </div>
+                                <div class="field">
+                                    <label for="inputFechaAyuno">Fecha de inicio: </label>
+                                    <input type="date" name="" id="inputFechaInicioAyuno">
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer Registro</button>
+                            </form>
+                        </div>
+                        <div class="recomendacionAyuno">
+                            <h3>Recomendaciones</h3>
+                            <div class="parrafoImagenAyuno">
+                                <p>
+                                    El ayuno intermitente no está indicado para todas las personas. No se recomienda 
+                                    para mujeres que se encuentren en periodos de gestación o lactancia, que padecen 
+                                    de ansiedad o transtornos alimenticios. Tampoco se recomienda para niños. Se recomienda tomar
+                                    mucha agua y consultar con su nutricionista antes de iniciar un plan de ayuno.
+                                </p>
+                                <img src="./Img/perfil/becareful.jpg" alt="Becareful" style="width:128px;height:128px;"> 
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </section>
