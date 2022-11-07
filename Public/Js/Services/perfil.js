@@ -67,7 +67,7 @@ function listarEnfermedades() {
 }
 
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
-/*
+
 let listaRegistroAyuno=[];
 
 function registrarAyuno(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno){
@@ -75,4 +75,4 @@ function registrarAyuno(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno){
     nuevoRegistroAyuno.push(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno);
     listaRegistroAyuno.push(nuevoRegistroAyuno);
 }
-*/
+

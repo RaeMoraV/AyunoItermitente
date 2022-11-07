@@ -383,7 +383,8 @@
                                 <th>Hora inicio</th>
                                 <th>Fecha final</th>
                                 <th>Hora final</th>
-                                <th>Duracion total</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
                             </thead>
                             <tbody>
                                 
@@ -396,18 +397,44 @@
                             <h3>Registrar ayuno</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputTotalHorasAyuno">Horas de ayuno: </label>
-                                    <input type="number" name="" id="inputTotalHorasAyuno">
-                                    
-                                </div>
-                                <div class="field">
-                                    <label for="inputHoraInicioAyuno">Hora de inicio: </label>
+                                    <label for="inputHoraInicioAyuno">Hora de inicio:<span> *</span> </label>
                                     <input type="time" name="" id="inputHoraInicioAyuno">
                                 </div>
                                 <div class="field">
-                                    <label for="inputFechaAyuno">Fecha de inicio: </label>
-                                    <input type="date" name="" id="inputFechaAyuno">
+                                    <label for="inputInicioFechaAyuno">Fecha de inicio:<span> *</span> </label>
+                                    <input type="date" name="" id="inputInicioFechaAyuno">
                                 </div>
+                                <div class="field">
+                                    <label for="inputHoraFinAyuno">Hora de fin:<span> *</span> </label>
+                                    <input type="time" name="" id="inputHoraFinAyuno">
+                                </div>
+                                <div class="field">
+                                    <label for="inputFinFechaAyuno">Fecha de fin:<span> *</span> </label>
+                                    <input type="date" name="" id="inputFinFechaAyuno">
+                                </div>
+                                
+                                <div class="fieldRadio">
+                                    <p>Tipo de Ayuno:<span> *</span></p>
+                                    <div class="radioContainer">
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputTipoAyuno" id="radio1410" value="No">
+                                            <label for="radioNoConcurrencia">14-10 (horas de ayuno - horas de comer)</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputTipoAyuno" id="radio168" value="Si">
+                                            <label for="radioConcurrencia">16-8 (horas de ayuno - horas de comer)</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputTipoAyuno" id="186" value="Si">
+                                            <label for="radioConcurrencia">18-6 (horas de ayuno - horas de comer)</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputTipoAyuno" id="radio204" value="Si">
+                                            <label for="radioConcurrencia">20-4 (horas de ayuno - horas de comer)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer Registro</button>
                             </form>
                         </div>

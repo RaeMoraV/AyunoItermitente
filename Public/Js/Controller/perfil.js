@@ -430,7 +430,7 @@ let valorFechaAyuno = document.getElementById("inputFechaAyuno");
 btnRegistroAyuno.addEventListener("click",getAyunoData);
 
 function getAyunoData(){
-    
+
     let nNumeroHora = valorTotalHorasAyuno.value; //String  12
     let sFechaAyuno = valorFechaAyuno.value; //String 3 nov 2022 = 2022-11-03
     let nHoraInicioAyuno = valorHoraInicioAyuno.value;//String 12:22
@@ -443,7 +443,8 @@ function getAyunoData(){
     let fechaAyunoHoy = new Date(valorAnio,valorMes,valorDia,valorHora,valorMin);
     
     
-    alert(fechaAyunoHoy);
+    alert( typeof fechaAyunoHoy);
+    alert(isNaN(fechaAyunoHoy));
   
 
 
