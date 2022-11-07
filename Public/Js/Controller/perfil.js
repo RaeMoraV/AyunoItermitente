@@ -322,68 +322,82 @@ function orderEnfermedadTable () {
 
 /* Perfil - Seccion Actividades - Tabla */
 
-let btnSActividad = document.querySelector('#buttonRegistroActividad');
+
+
+
+let btnActividad = document.querySelector('#buttonRegistroActividad');
 let inputFechaActividad = document.querySelector('#inputFechaActividad');
 let inputNombreActividad = document.querySelector('#inputNombreActividad');
-let inputInicioActividad = document.querySelector('#inputInicioActividad');
-let inputFinActividad = document.querySelector('#inputFinActividad');
-
+let inputInicioActividad = document.querySelector('#inicioHora').value + ':' + document.querySelector('#inicioMinutos').value + ':' + document.querySelector('#inicioSegundos').value;
+let inputFinActividad = document.querySelector('#finHora').value + ':' + document.querySelector('#finMinutos').value + ':' + document.querySelector('#finSegundos').value;
+let totalHoras = '';
 //Constantes para obtener el total de tiempo invertido en una actividad
-const startHour = document.getElementById("s_h"),
-  startMinute = document.getElementById("s_m"),
-  startSecond = document.getElementById("s_s"),
-  endHour = document.getElementById("e_h"),
-  endMinute = document.getElementById("e_m"),
-  endSecond = document.getElementById("e_s"),
-  output = document.getElementById("output");
+let startHour = document.getElementById("inicioHora"); 
+let startMinute = document.getElementById("inicioMinutos");
+let startSecond = document.getElementById("inicioSegundos");
+let endHour = document.getElementById("finHora");
+let endMinute = document.getElementById("finMinutos");
+let endSecond = document.getElementById("finSegundos");
 
-   
-function radioEstadoEval() {
-    let option;
-    if (document.getElementById('radioNoConcurrencia').checked) {
-        option = document.getElementById('radioNoConcurrencia').value;
-    } else {
-        option = document.getElementById('radioConcurrencia').value;
-    }
 
-    return option;
-} //Evalua cual de los dos radio buttons fue seleccionado
+btnActividad.addEventListener("click", () => {    
+    totalHoras = getTotalHoras();
+    getActividad();   
+});
 
-btnEnfermedad.addEventListener('click', getEnfermedad);
+function getTotalHoras() {
+    let startDate = new Date(2020,05,05,startHour.value,startMinute.value,startSecond.value);
+    let endDate = new Date(2020,05,05,endHour.value,endMinute.value,endSecond.value);
+    let difference = endDate.getTime() - startDate.getTime();
+    if (difference < 0) {
+        difference = difference / 1000;
+        let hourDifference = Math.floor(difference / 3600);
+        difference -= hourDifference * 3600;
+        let minuteDifference = Math.floor(difference / 60);
+        difference -= minuteDifference * 60;
+        return `${hourDifference} hours, ${minuteDifference} minutes, ${difference} seconds`;
+    };
+    
 
-function getEnfermedad() {
-    let sNombre = inputNombreEnfermedad.value;
-    let sDescripcion = inputDescripcionEnfermedad.value;
-    let sEstado = radioEstadoEval();
-    let sTratamiento = inputTratamientoEnfermedad.value;
-
-    registrarEnfermedad (sNombre, sDescripcion, sEstado, sTratamiento);
-    imprimirEnfermedad();
 }
 
-function imprimirEnfermedad() {
-    let tbody = document.querySelector('#datosEnfermedad tbody');
-    let listaEnfermedades = listarEnfermedades();
+function getActividad() {
+    let sFecha = [];
+    sFecha = inputFechaActividad.value;
+    let sNombre = inputNombreActividad.value;
+    let sInicio = inputInicioActividad;
+    let sFin = inputFinActividad;
+    let sTotal = totalHoras;
+
+    registrarActividad (sFecha, sNombre, sInicio, sFin, sTotal);
+    imprimirActividad();
+}
+
+function imprimirActividad() {
+    let tbody = document.querySelector('#datosActividad tbody');
+    let listaActividades = listarActividades();
 
     tbody.innerHTML = '';
 
-    for (let i = 0; i < listaEnfermedades.length; i++) {
+    for (let i = 0; i < listaActividades.length; i++) {
         let fila = tbody.insertRow();
+        let celdaFecha = fila.insertCell();
         let celdaNombre = fila.insertCell();
-        let celdaDescripcion = fila.insertCell();
-        let celdaEstado = fila.insertCell();
-        let celdaTratamiento = fila.insertCell();
+        let celdaInicio = fila.insertCell();
+        let celdaFin = fila.insertCell();
+        let celdaTotal = fila.insertCell();
 
-        celdaNombre.innerHTML = listaEnfermedades[i][0];
-        celdaDescripcion.innerHTML = listaEnfermedades[i][1];
-        celdaEstado.innerHTML = listaEnfermedades[i][2];
-        celdaTratamiento.innerHTML = listaEnfermedades[i][3];
+        celdaFecha.innerHTML = listaActividades[i][0];
+        celdaNombre.innerHTML = listaActividades[i][1];
+        celdaInicio.innerHTML = listaActividades[i][2];
+        celdaFin.innerHTML = listaActividades[i][3];
+        celdaTotal.innerHTML = listaActividades[i][4];
     }
 
-    orderEnfermedadTable ();
+    orderActividadTable ();
 }
 
-function orderEnfermedadTable () {
+function orderActividadTable () {
     let table;
     let rows;
     let switching;
@@ -392,7 +406,7 @@ function orderEnfermedadTable () {
     let y;
     let shouldSwitch;
     
-    table = document.getElementById('datosEnfermedad');
+    table = document.getElementById('datosActividad');
     switching = true;
 
     while (switching) {

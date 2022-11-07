@@ -66,6 +66,19 @@ function listarEnfermedades() {
     return listaEnfermedades;
 }
 
+/* Perfil - Seccion Actividades ---------------------------------------*/
+let listaActividades = [];
+
+function registrarActividad (sFecha, sNombre, sInicio, sFin, total) {
+    let nuevaActividad = [];
+    nuevaActividad.push(sFecha, sNombre, sInicio, sFin, total);
+    listaActividades.push(listaActividades);
+};
+
+function listarActividades() {
+    return listaActividades;
+}
+
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
 
 let listaRegistroAyuno=[];
