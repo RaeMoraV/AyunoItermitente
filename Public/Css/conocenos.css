@@ -120,3 +120,30 @@ img {
     align-items: flex-start;
   }
 }
+
+.EquipoTitulo{
+  text-align: center;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.EquipoTitulo h2{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 10px;
+}
+
+.EquipoTitulo p{
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+  background-color:#77c289 ;
+  border-radius: 10px;
+  width: 50%;
+  height: 20px;
+  color: #fff;
+  justify-content: center;
+  
+}
+

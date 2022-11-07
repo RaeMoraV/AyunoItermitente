@@ -317,7 +317,7 @@ ul li:hover button{
 #planAyuno .tiposAyuno div{
     padding: 20px;
     height: 250px;
-    max-width: 30%;
+    max-width: 20%;
     background-color: rgba(217, 234, 218, 0.8);
     border-radius:10px;
     text-align: justify;
@@ -399,3 +399,4 @@ border-radius: 10px;
 
 
 }
+
