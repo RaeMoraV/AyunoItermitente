@@ -529,7 +529,7 @@ input {
 
 /*Seccion de planes por Sebas*/
 
---------------------------------------------------------------------------------------------------------------
+
  .titulo {
     width: 100%;
     color: white;
@@ -581,8 +581,6 @@ h2 {
 
 
 
-/*Pruebas*/
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 *{
     margin: 0;
@@ -590,7 +588,7 @@ h2 {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-/*Cards*/
+
 .container-card{
 	width: 100%;
 	display: flex;
@@ -604,7 +602,7 @@ h2 {
 	padding: 20px;
 	margin-top: 20px;
 	text-align: center;
-	color: #7a7a7a;
+	color: #000000;
 }
 .card{
 	width: 100%;
@@ -661,4 +659,3 @@ h2 {
 		margin: 15px;
 	}
 }
-
