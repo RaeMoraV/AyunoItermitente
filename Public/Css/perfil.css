@@ -230,6 +230,8 @@ ul li:hover button{
     width: 200px;
     margin-left: 10px;
     border: none;
+    border-radius: 2px;
+    padding-left: 5px;
 }
 
 .ingresoDatos .fieldRadio {

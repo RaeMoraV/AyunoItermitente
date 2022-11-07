@@ -335,7 +335,6 @@ const startHour = document.getElementById("s_h"),
   endHour = document.getElementById("e_h"),
   endMinute = document.getElementById("e_m"),
   endSecond = document.getElementById("e_s"),
-  button = document.getElementById("button"),
   output = document.getElementById("output");
 
    
