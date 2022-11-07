@@ -71,11 +71,18 @@ ul li:hover button{
 }
 
 .container {
-    margin: 50px 0 0 60px;
+    margin: 50px 0 0 0;
     width: 100%;
 }
 
-.contenido {
+.container h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.container .contenido {
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
@@ -85,15 +92,7 @@ ul li:hover button{
     justify-content: space-between;
 }
 
-#informacion h2,
-#peso h2,
-#enfermedades h2,
-#planAyuno h2 {
-    font-size: 32px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    text-align: center;
-}
+
 
 #informacion .contenido {
     display: flex;
@@ -160,7 +159,7 @@ ul li:hover button{
 
 .datosTabla {
     width: 100%;
-    max-width: 800px;
+    max-width: 1100px;
     height: fit-content;
 }
 
@@ -193,6 +192,7 @@ ul li:hover button{
     height: fit-content;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 11px 10px 15px -2px rgba(166,166,166,0.75);
 }
 
 .ingresoDatos h3 {
@@ -225,7 +225,8 @@ ul li:hover button{
     text-transform: uppercase;
 }
 
-.ingresoDatos .field input {
+.ingresoDatos .field input,
+.ingresoDatos .field select {
     width: 200px;
     margin-left: 10px;
     border: none;
@@ -341,9 +342,9 @@ ul li:hover button{
     justify-content: space-evenly;
 }
 
-.ingresoDatosAyuno{
+/* .ingresoDatosAyuno{
     background-color: ;
-}
+} */
 .ingresoDatosAyuno .field {
     display: flex;
     margin-bottom: 5px;
