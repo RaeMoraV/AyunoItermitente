@@ -70,9 +70,13 @@ function listarEnfermedades() {
 
 let listaRegistroAyuno=[];
 
-function registrarAyuno(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno){
+function registrarAyuno(pFechaInicio,pHoraInicio,pFechaFin,pHoraFin,pTipoAyuno,pEstadoAyuno){
     let nuevoRegistroAyuno =[];
-    nuevoRegistroAyuno.push(pnTotalHoras,pnHoraInicioAyuno,pnFechaInicioAyuno);
+    nuevoRegistroAyuno.push(pFechaInicio,pHoraInicio,pFechaFin,pHoraFin,pTipoAyuno,pEstadoAyuno);
     listaRegistroAyuno.push(nuevoRegistroAyuno);
+}
+
+function listarRegistroAyuno() {
+    return listaRegistroAyuno;
 }
 
