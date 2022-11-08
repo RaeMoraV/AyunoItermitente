@@ -5,21 +5,21 @@ let inputApellido = document.getElementById('txtApellido');
 let inputEmail = document.getElementById('txtEmail');
 let inputGenero = document.getElementById('txtGenero');
 let inputEstatura = document.getElementById('txtEstatura');
-let inputPesoDeaseado = document.getElementById('txtPesoDeseado');
+let inputPesoDeseado = document.getElementById('txtPesoDeseado');
 
 function Registrarse(){
-    let Nombre = inputNombre.value;
-    let Apellido = inputApellido.value;
-    let Email = inputEmail.value;
-    let Genero = inputGenero.val;
-    let Estatura = inputEstatura.value;
-    let PesoDeseado = inputPesoDeseado.value;
+    let nombre = inputNombre.value;
+    let apellido = inputApellido.value;
+    let email = inputEmail.value;
+    let genero = inputGenero.val;
+    let estatura = inputEstatura.value;
+    let pesoDeseado = inputPesoDeseado.value;
 
-    if(ValidarInputs(Nombre, Apellido, Email, Genero, Estatura, PesoDeseado) == false){
+    if(ValidarInputs(nombre, apellido, email, genero, estatura, pesoDeseado) == false){
         return;
     }
 
-    let result = RegistroUsuario(Nombre, Apellido, Email, Genero, Estatura, PesoDeseado);
+    let result = RegistroUsuario(nombre, apellido, email, genero, estatura, pesoDeseado);
 
     if (result != null) {
         RedireccionarUsuario(result);
@@ -78,7 +78,7 @@ function ValidarInputs(pNombre, pApellido, pEmail, pGenero, pEstatura, pPesoDese
         Swal.fire({
             icon:'error',
             title:'Error',
-            text:'PeroDeseado es requerido!'
+            text:'PesoDeseado es requerido!'
         });
         bandera = false;
     }
