@@ -622,6 +622,13 @@ h2 {
     margin: auto;
 }
 
+.listasPlanes {
+    line-height: 50px;
+    text-align: left;
+}
+
+
+
 
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
@@ -629,7 +636,7 @@ h2 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+
 }
 
 .container-card{
