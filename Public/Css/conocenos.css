@@ -147,3 +147,24 @@ img {
   
 }
 
+#sectionDosColumnas{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+
+.fondoNegro{
+  margin: 15px;
+  background-color: #286412;
+  border-radius: 10px;
+}
+.parafoColumna{
+  margin-top: 15px;
+  margin-left: 15px;
+  display: inline-block;
+  line-height: 2;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+
+}
