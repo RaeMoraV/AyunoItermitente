@@ -481,60 +481,59 @@
                         <table class="datosTabla tableRecetas" id="datosReceta">
                             <thead>
                                 <tr>
-                                    <th>Fecha</th>
-                                    <th>Actividad</th>
-                                    <th>Hora Inicio</th>
-                                    <th>Hora Fin</th>
+                                    <th>Nombre</th>
+                                    <th>Ingredientes</th>
+                                    <th>Pasos para prepararla</th>
                                     <th>Tiempo Total</th>
+                                    <th>Tipo de comida</th>
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
                         <div class="ingresoDatos">
-                            <h3>Registrar Actividad</h3>
+                            <h3>Registrar Receta</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputFechaActividad">Fecha:<span> *</span> </label>
-                                    <input type="date" name="" id="inputFechaActividad">
+                                    <label for="inputNombreReceta">Nombre:<span> *</span> </label>
+                                    <input type="text" name="" id="inputNombreReceta">
                                 </div>
                                 <div class="field">
-                                    <label for="inputNombreActividad">Actividad:<span> *</span> </label>
-                                    <select name="" id="inputNombreActividad">
-                                        <option value="">--Seleccione--</option>
-                                        <optgroup label="Predeterminadas">
-                                            <option value="Ciclismo">Ciclismo</option>
-                                            <option value="Gimnasio">Gimnasio</option>
-                                            <option value="Yoga">Yoga</option>
-                                            <option value="Caminata">Caminata</option>
-                                            <option value="Correr">Correr</option>
-                                            <option value="Nadar">Nadar</option>
-                                            <option value="Estilo Libre">Estilo Libre</option>
-                                            </optgroup>
-                                            <optgroup label="Personalizadas">
-                                            </optgroup>
-                                    </select>
+                                    <label for="inputIngredientesReceta">Ingredientes:<span> *</span> </label>
+                                    <input type="text" name="" id="inputIngredientesReceta">
                                 </div>
-                                <div class="fieldTiempos">
-                                    <div class="inicio">
-                                        <p>Inicio:</p> <br />
-                                        <input type="number" min="0" max="24" id="inicioHora" placeholder="HH" />
-                                        <input type="number" min="0" max="60" id="inicioMinutos" placeholder="MM" />
-                                        <input type="number" min="0" max="60" id="inicioSegundos" placeholder="SS" />
+                                <div class="field">
+                                    <label for="inputPreparacionReceta">Preparacion:<span> *</span> </label>
+                                    <input type="text" name="" id="inputPreparacionReceta">
+                                </div>
+                                <div class="field">
+                                    <label for="inputTiempoReceta">Tiempo Preparacion:<span> *</span> </label>
+                                    <input type="number" name="" id="inputTiempoReceta">
+                                </div>
+                                <div class="fieldRadio">
+                                    <p>Tipo de Ayuno:<span> *</span></p>
+                                    <div class="radioContainer">
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputReceta" id="inputRecetaDesayuno" value="Desayuno">
+                                            <label for="inputRecetaDesayuno">Desayuno</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputReceta" id="inputRecetaAlmuerzo" value="Almuerzo">
+                                            <label for="inputRecetaAlmuerzo">Almuerzo</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputReceta" id="inputRecetaCena" value="Cena">
+                                            <label for="inputRecetaCena">Cena</label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputReceta" id="inputRecetaMerienda" value="Merienda">
+                                            <label for="inputRecetaMerienda">Merienda</label>
+                                        </div>
                                     </div>
-                                    <div class="fin">
-                                        <p>Fin:</p> <br />
-                                        <input type="number" min="0" max="24" id="finHora" placeholder="HH" />
-                                        <input type="number" min="0" max="60" id="finMinutos" placeholder="MM" />
-                                        <input type="number" min="0" max="60" id="finSegundos" placeholder="SS" />
-                                    </div>
-                                    </div>
-                                <button class="buttonRegistro" id="buttonRegistroActividad" type="button">Hacer Registro</button>
+                                </div>
+                                <button class="buttonRegistro" id="buttonRegistroReceta" type="button">Hacer Registro</button>
                             </form>
                         </div>
-                    </div>
-                    <div class="unHijo">
-                        <div id="graphActividad"></div>
                     </div>
                 </div>
                 
