@@ -1,43 +1,86 @@
-//referencias al DOM
-const nombre = document.querySelector("txtNombre");
-const apellido = document.querySelector("txtApellido");
-const email = document.querySelector("txtEmail");
-const genero = document.querySelector("txtGenero");
-const estatura = document.querySelector("txtEstatura");
-const peso = document.querySelector("txtPesoDeaseado");
+'use strict';
 
-const btnGuardar = document.querySelector("txt-guardar");
+let inputNombre = document.getElementById('txtNombre');
+let inputApellido = document.getElementById('txtApellido');
+let inputEmail = document.getElementById('txtEmail');
+let inputGenero = document.getElementById('txtGenero');
+let inputEstatura = document.getElementById('txtEstatura');
+let inputPesoDeaseado = document.getElementById('txtPesoDeseado');
 
-function validarCamposVacios() {
-    let campos_requeridos = document.querySelectorAll("#frm-registro [required]");
-    let error = false;
-    for (let i = 0; i < campos_requeridos.length; i++) {
-        if (campos_requeridos [i].value == '') {
-            campos_requeridos [i].classList.add ("error");
-            error = true;
-        } else {
-            campos_requeridos [i].classList.remove("error");
-        }
+function Registrarse(){
+    let Nombre = inputNombre.value;
+    let Apellido = inputApellido.value;
+    let Email = inputEmail.value;
+    let Genero = inputGenero.val;
+    let Estatura = inputEstatura.value;
+    let PesoDeseado = inputPesoDeseado.value;
+
+    if(ValidarInputs(Nombre, Apellido, Email, Genero, Estatura, PesoDeseado) == false){
+        return;
     }
-    return error
-}
 
-function obtenerDatos () {
-    let validacionVacios = validarCamposVacios ();
-    let validacionCedula = validarCedula ();
-    if (validacionVacios) {
-        Swal.fire ({
-            icon: "warning",
-            title: "Campos en blacno",
-            text: "Revise los campos de senalados",
-        })
-    } else {
-        Swal.fire ({
-            icon: "success",
-            title: "Formulario completo",
-            text: "Informacion registrada correctamente",
-        })
+    let result = RegistroUsuario(Nombre, Apellido, Email, Genero, Estatura, PesoDeseado);
+
+    if (result != null) {
+        RedireccionarUsuario(result);
+    }else{
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Usuario y Contraseña incorrectos!'
+        });
     }
 }
 
-btnRegistrarse.addEventListener ("click", obtenerDatos);
+function ValidarInputs(pNombre, pApellido, pEmail, pGenero, pEstatura, pPesoDeseado){
+    let bandera = true;
+    if (pNombre == null || pNombre == undefined || pNombre == '') {        
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Nombre es requerido!'
+        });
+        bandera = false;
+    }
+    if (pApellido == null || pApellido == undefined || pApellido == '') {        
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Apellido es requerido!'
+        });
+        bandera = false;
+    }
+    if (pEmail == null || pEmail == undefined || pEmail == '') {        
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Email es requerido!'
+        });
+        bandera = false;
+    }
+    if (pGenero == null || pGenero == undefined || pGenero == '') {        
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Genero es requerido!'
+        });
+        bandera = false;
+    }
+    if (pEstatura == null || pEstatura == undefined || pEstatura == '') {        
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'Estatura es requerida!'
+        });
+        bandera = false;
+    }
+    if (pPesoDeseado == null || pPesoDeseado == undefined || pPesoDeseado == '') {        
+        Swal.fire({
+            icon:'error',
+            title:'Error',
+            text:'PeroDeseado es requerido!'
+        });
+        bandera = false;
+    }
+    return bandera;
+}

@@ -93,3 +93,15 @@ function listarRegistroAyuno() {
     return listaRegistroAyuno;
 }
 
+/* Perfil - Seccion Recetas ---------------------------------------*/
+let listaRecetas = [];
+
+function registrarRecetas (sNombre, sIngredientes, sPreparacion, sTiempoReceta, sTipo) {
+    let nuevaReceta = [];
+    nuevaReceta.push(sNombre, sIngredientes, sPreparacion, sTiempoReceta, sTipo);
+    listaRecetas.push(nuevaReceta);
+};
+
+function listarRecetas() {
+    return listaRecetas;
+}
