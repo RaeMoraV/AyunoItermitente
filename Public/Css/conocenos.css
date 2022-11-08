@@ -121,6 +121,19 @@ img {
   }
 }
 
+.sobreEquipo{
+  margin-left: 160px;
+  margin-bottom: 60px;
+}
+.integrantesHermes{
+  margin-top: 50px;
+  margin-left: 160px;
+  margin-bottom: 60px;
+}
+.contactenosTitulo h2{
+  font-size: 80px;
+  padding-bottom: 20px;
+}
 .EquipoTitulo{
   text-align: center;
   padding: 50px;
@@ -167,4 +180,24 @@ img {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: medium;
 
+}
+
+.parafo{
+  margin-top: 15px;
+  margin-left: 15px;
+  line-height: 2;
+  color: black;
+  font-size: medium;
+}
+
+.integrantes img{
+  height: 200px;
+  width: 200px;
+}
+
+.integrantes{
+  display: flex;
+}
+.integrantes div{
+  margin-left: 30px;
 }
