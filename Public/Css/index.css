@@ -706,21 +706,8 @@ h2 {
 	font-size: 14px;
 	margin-bottom: 5px;
 }
-.card .contenido-card a{
-	display: inline-block;
-	padding: 10px;
-	margin-top: 10px;
-	text-decoration: none;
-	color: #2fb4cc;
-	border: 1px solid #2fb4cc;
-	border-radius: 4px;
-	transition: all 400ms ease;
-	margin-bottom: 5px;
-}
-.card .contenido-card a:hover{
-	background: #2fb4cc;
-	color: #fff;
-}
+
+
 
 @media (min-width:768px){
 
