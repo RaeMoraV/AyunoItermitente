@@ -6,6 +6,44 @@ let inputEmail = document.getElementById('txtEmail');
 let inputGenero = document.getElementById('txtGenero');
 let inputEstatura = document.getElementById('txtEstatura');
 let inputPesoDeseado = document.getElementById('txtPesoDeseado');
+let formularioFecha = document.getElementById('numAnio');
+
+const anioInicio = 1900;
+
+const fondoNegro = document.querySelector('.fondoNegro');
+
+//Formulario
+const btnRegistrateYa = document.querySelector('#btnRegistrateYa');
+const fotoPerfil = document.querySelector('#fotoPerfil');
+let fotoSubida = "";
+
+btnRegistrateYa.addEventListener('click', function(){
+    document.querySelector('#formularioInscripcion').style.display = 'flex';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+});
+
+fondoNegro.addEventListener('click', function(){
+    document.querySelector('#formularioInscripcion').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+});
+
+btnRegistrateYa.addEventListener('click', function(){
+    document.querySelector('#formularioInscripcion').style.display = 'flex';
+    document.querySelector('.fondoNegro').style.display = 'block';
+});
+
+fotoPerfil.addEventListener ('change', function(){
+     const reader = new FileReader();
+     reader.addEventListener('load', () => {
+        fotoSubida = reader.result;
+        document.querySelector("#showPhoto").style.backgroundImage = `url(${fotoSubida})`;
+     });
+     reader.readAsDataURL(this.files[0]);
+})
+
+llenarSelectAnio();
 
 function Registrarse(){
     let nombre = inputNombre.value;
@@ -29,6 +67,15 @@ function Registrarse(){
             title:'Error',
             text:'Usuario y Contraseña incorrectos!'
         });
+    }
+}
+
+function llenarSelectAnio() { 
+    let anioActual = Number(new Date('1,1,2030').getFullYear());
+    for (let index = anioActual; index > anioInicio - 1; index--) {
+        let select = formularioFecha.innerHTML;
+        let newYear = '<option value="' + index + '">' + index + '</option>';
+        document.getElementById('numAnio').innerHTML = select + newYear;
     }
 }
 
