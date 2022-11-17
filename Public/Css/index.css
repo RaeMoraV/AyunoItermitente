@@ -700,7 +700,7 @@
 
 
 
-h2 { a
+h2 { 
     margin: 0;
     font-size: 32px;
     text-transform: uppercase;
@@ -712,7 +712,7 @@ h2 { a
 
 }
 
-.texto { a
+.texto { 
     display: flex;
     justify-content: center;
     display: flex;
@@ -722,13 +722,13 @@ h2 { a
 }
 
 
-.listasPlanes { a
+.listasPlanes { 
     line-height: 50px;
     text-align: left;
 }
 
 
-.container-card{ a
+.container-card{ 
 	width: 100%;
 	display: flex;
     flex-direction: column;
@@ -736,7 +736,7 @@ h2 { a
 	margin: auto;
     background-color:#dfede3 ;
 }
-.title-cards{ a
+.title-cards{ 
    
 	width: 100%;
 	max-width: 1080px;
@@ -747,7 +747,7 @@ h2 { a
 	color: #000000;
     background-color:#dfede3 ;
 }
-.card{ a 
+.card{ 
     
 	width: 100%;
 	margin: 20px;
