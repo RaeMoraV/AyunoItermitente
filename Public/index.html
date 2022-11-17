@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <div class="fondoNegro"></div>
     <header>
         <nav class="navMobile">
             <div class="logo">
@@ -60,40 +61,136 @@
                     Regístrate Ya!
                 </button>
             </div>
-            </div>
-            <section class="contenedorRegistroPrincipal">
-                <form action="" class="registroPrincipal">
-                    <div class="formPrincipal">
-                        <label for="txtNombre"></label> <input type="text" name="" id="txtNombre" placeholder="Nombre" required />
-                        <label for="txtApellido"></label> <input type="text" name="" id="txtApellido" placeholder="Apellido"
-                            required />
+        </section>
+        <section id="formularioInscripcion">
+            <h2>Formulario de Registro</h2>
+            <form action="" class="registroPrincipal">
+                <div class="formSection">
+                    <div class="field">
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="" id="txtNombre" placeholder="Nombre" required />
                     </div>
-                    <div class="formPrincipal">
-                        <label for="txtEmail"></label>
-                        <input type="email" name="" id="txtEmail" placeholder="Correo electronico" required />
+                    <div class="field">
+                        <label for="txtApellido">Apellido</label>
+                        <input type="text" name="" id="txtApellido" placeholder="Apellido" required />
                     </div>
-                    <div class="formPrincipal">
-                        <label for="txtDate"></label> <input type="date" name="" id="txtDate" placeholder="Fecha de Ncimiento" required />
-                        <label for="txtGenero"></label> <input type="text" name="" id="txtGenero" placeholder="Genero" required />
+                </div>
+                <div class="formSection">
+                    <div class="field email">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" name="" id="txtEmail" placeholder="Correo electrónico" required />
                     </div>
-                    <div class="formPrincipal">
-                        <label for="txtEstatura"></label>
+                </div>
+                <div class="formSection">
+                    <div class="fieldSelect">
+                        <p>Fecha de Nacimiento</p>
+                        <div class="selectFechas">
+                            <select name="" id="numDia">
+                                <option value="null">Dia</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select name="" id="numMes" class="fecha">
+                                <option value="null">Mes</option>
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero</option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Setiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <select name="" id="numAnio">
+                                <option value="12">Año</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="formSection">
+                    <div class="fieldRadio">
+                        <div class="radioOptions">
+                            <p>Sexo</p>
+                            <div class="option">
+                                <input type="radio" id="optionMasculino" name="generoRadio">
+                                <label for="optionMasculino">Hombre</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="optionFemenino" name="generoRadio">
+                                <label for="optionFemenino">Mujer</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="optionOtroSexo" name="generoRadio">
+                                <label for="optionOtroSexo">Otro</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formSection">
+                    <div class="field">
+                        <label for="txtEstatura">Estatura</label>
                         <input type="number" name="" id="txtEstatura" placeholder="Estatura" required />
                     </div>
-                    <div class="formPrincipal">
-                        <label for="txtPesoDeseado"></label>
-                        <input type="number" name="" id="txtPesoDeseado" placeholder="Peso Deaseado" required />
+                    <div class="field">
+                        <label for="txtPesoDeseado">Peso Deseado</label>
+                        <input type="number" name="" id="txtPesoDeseado" placeholder="Peso Deseado" required />
                     </div>
-                    <div class="formPrincipal">
-                        <img type="button">
-                        <input type="file" id="fotoUsuario" capture>
+                </div>
+                <div class="formSection">
+                    <div class="fieldFile">
+                        <p>Foto de Perfil</p>
+                        <div class="foto">
+                            <div class="showPhoto" id="showPhoto"></div>
+                            <div class="uploadPhoto">
+                                <label for="fotoPerfil" class="inputFotoPerfil">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <input type="file" id="fotoPerfil" capture>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btnRegistrarse" type="button" onclick="Registrarse()">Registrarse</button>
-                </form>
-            </section>
+                </div>
+                <button class="btnRegistrarse" type="button" onclick="Registrarse()">Registrarse</button>
+            </form>
         </section>
+        
     </header>
     <main>
+        
         <section class="seccionQueEs">
 
             <div class="textQueEs">
@@ -126,19 +223,19 @@
                     <div class="text">
                         <h3>Previene el cáncer</h3>
                         <p>El ayuno es una forma concreta de prevenir el cáncer.
-                           En ausencia de azúcares las células  cancerígenas se quedan
-                           sin energía y aumentan su estrés oxidativo, lo cual termina con ellas.
-                       </p>
-                        
+                            En ausencia de azúcares las células cancerígenas se quedan
+                            sin energía y aumentan su estrés oxidativo, lo cual termina con ellas.
+                        </p>
+
                     </div>
                 </div>
                 <div class="beneficio">
                     <div class="icon"><i class="fa fa-heartbeat"></i></div>
                     <div class="text">
                         <h3>Ayuda a bajar de Peso</h3>
-                        <p>Uno de los  beneficios  importantes del ayuno intermitente es la pérdida de peso. 
-                          Esto se vincula con la constante disminución de grasa  innecesaria, que se almacena
-                          en músculos e hígado principalmente.
+                        <p>Uno de los beneficios importantes del ayuno intermitente es la pérdida de peso.
+                            Esto se vincula con la constante disminución de grasa innecesaria, que se almacena
+                            en músculos e hígado principalmente.
                         </p>
 
                     </div>
@@ -147,11 +244,11 @@
                     <div class="icon"><i class="fa fa-heartbeat"></i></div>
                     <div class="text">
                         <h3>Beneficia el corazón</h3>
-                        <p>Varios estudios en animales demuestran que el ayuno intermitente puede 
-                           minimizar algunos factores de riesgo  enfermedades cardíacas, los niveles
-                           de colesterol, los triglicéridos y los marcadores inflamatorios. 
+                        <p>Varios estudios en animales demuestran que el ayuno intermitente puede
+                            minimizar algunos factores de riesgo enfermedades cardíacas, los niveles
+                            de colesterol, los triglicéridos y los marcadores inflamatorios.
                         </p>
-                        
+
                     </div>
                 </div>
             </div>
@@ -160,22 +257,22 @@
                     <div class="icon"><i class="fa fa-heartbeat"></i></div>
                     <div class="text">
                         <h3><strong>Previene Diabetes 2</strong></h3>
-                        <p>Una investigación en ratones con diabetes mostró que el ayuno 
-                           intermitente mejora las tasas de longevidad y protege contra la 
-                           retinopatía diabética. Además previene el desarrollo de la 
-                           diabetes tipo 2.
+                        <p>Una investigación en ratones con diabetes mostró que el ayuno
+                            intermitente mejora las tasas de longevidad y protege contra la
+                            retinopatía diabética. Además previene el desarrollo de la
+                            diabetes tipo 2.
                         </p>
-                        
+
                     </div>
                 </div>
                 <div class="beneficio">
                     <div class="icon"><i class="fa fa-heartbeat"></i></div>
                     <div class="text">
                         <h3> Beneficia tu cerebro</h3>
-                        <p>El ayuno desarrolla nuevas células nerviosas, lo que  beneficia
-                           la actividad cerebral. Además, aumenta los niveles de una hormona
-                           cerebral llamada BDNF la cual se ha encontrado deficiente
-                           en algunos problemas cerebrales.
+                        <p>El ayuno desarrolla nuevas células nerviosas, lo que beneficia
+                            la actividad cerebral. Además, aumenta los niveles de una hormona
+                            cerebral llamada BDNF la cual se ha encontrado deficiente
+                            en algunos problemas cerebrales.
                         </p>
 
                     </div>
@@ -185,10 +282,10 @@
                     <div class="text">
                         <h3>Reduce la inflamación</h3>
                         <p>Se ha demostrado que el ayuno también puede disminuir el daño oxidativo
-                           y la hinchazón en el cuerpo. Esto debería obtener beneficios contra el
-                           envejecimiento y el aumento de varias enfermedades
+                            y la hinchazón en el cuerpo. Esto debería obtener beneficios contra el
+                            envejecimiento y el aumento de varias enfermedades
                         </p>
-                        
+
                     </div>
                 </div>
             </div>
@@ -208,7 +305,7 @@
                     Puede elegir entre una variedad de diferentes horarios de ayuno intermitente.
                 </p>
             </div>
-            
+
             <div class="container-card">
 
                 <div class="card">
@@ -220,10 +317,10 @@
 
                         <ul class="listasPlanes">
                             <li>• Resultados en un mes.</li>
-                                        
+
                             <li>• Se puede tomar café.</li>
                             <li>• Se recomienda para empezar.</li>
-                            
+
                         </ul>
 
                     </div>
@@ -233,13 +330,13 @@
                     <div class="contenido-card">
                         <h3>Plan 16/8</h3>
                         <p> El método de ayuno intermitente 16:8 es el más popular y uno de los más efectivos.</p>
-                
-                            <ul class="listasPlanes">
-                                <li>• Recomendado después del primer plan.</li>
-                                <li>• Se presentan resultados en dos semanas.</li>
-                                <li>• Se adapta a cualquier estilo de vida.</li>
-                                
-                            </ul>
+
+                        <ul class="listasPlanes">
+                            <li>• Recomendado después del primer plan.</li>
+                            <li>• Se presentan resultados en dos semanas.</li>
+                            <li>• Se adapta a cualquier estilo de vida.</li>
+
+                        </ul>
 
                     </div>
                 </div>
@@ -253,7 +350,7 @@
                             <li>•Beneficia la salud del corazon en una semana.</li>
                             <li>•Pérdida de peso en la primera semana .</li>
                             <li>•No se recomienda para personas con problemas de azúcar baja.</li>
-                           
+
                         </ul>
 
                     </div>
@@ -293,7 +390,8 @@
                                         1 diente de ajo picado
                                         sal o pimienta al gusto
                                         Preparacion: Pelar los aguacates y hacerles un puré con un tenedor.
-                                        Añadir la cebolla, el zumo de lima, el tomate, el aceite de oliva, el cilantro y el ajo.
+                                        Añadir la cebolla, el zumo de lima, el tomate, el aceite de oliva, el cilantro y
+                                        el ajo.
                                         Salpimentar y mezclar bien hasta que este todo combinado.
                                     </p>
                                 </div>
@@ -363,8 +461,8 @@
                                         1 naranja, el jugo y la cáscara
                                         1 lima, el jugo
                                         1 limón, el jugo
-                                        4 cda. aceite de coco 
-                                        1 (110 g) cebolla amarilla en rodajas 
+                                        4 cda. aceite de coco
+                                        1 (110 g) cebolla amarilla en rodajas
                                         2 (280 g) pimientos verdes en rodajas
                                     </p>
                                 </div>
@@ -438,15 +536,15 @@
         </section>
 
         <section class="seccionRecommendUser">
-            <div  class="textRecomendacion">
+            <div class="textRecomendacion">
                 <h2>Om me cambió la vida</h2>
                 <p>"El ayuno intermitente era un término desconocido para mí y algo
-                    que me causaba un poco de curiosidad. Siempre creí que ayunar era 
+                    que me causaba un poco de curiosidad. Siempre creí que ayunar era
                     morirse de hambre o una dieta extremada. Hasta que una amiga me
-                    recomendó OM. Es lo mejor que le ha pasado a mi salud y mi estómago 
+                    recomendó OM. Es lo mejor que le ha pasado a mi salud y mi estómago
                     que estaba dañado por el alcoholismo."
-                     <br>
-                   Keyla Sánchez
+                    <br>
+                    Keyla Sánchez
                 </p>
 
 
@@ -484,7 +582,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="Js/Controller/controller.js"></script>
     <script src="Js/Controller/index.js"></script>
 </body>
 

@@ -1,4 +1,6 @@
 /*Estilos de la seccion Banner Principal*/
+
+
 .bannerPrincipal {
     display: flex;
     justify-content:space-evenly;
@@ -21,6 +23,7 @@
     font-weight: bold;
     font-size: 32px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .textPrincipal p {
@@ -29,20 +32,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.contenedorRegistroPrincipal {
-    display: flex;
-    justify-content: center;
-    max-width: 600px;
-    height: 500px;
-    background-color: #ffffff;
-    opacity: 80%;
-    border-radius: 35px;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-    border-radius: 5px;
 }
 
 #btnRegistrateYa {
@@ -61,68 +50,198 @@
     background: #000000;
 }
 
-.formPrincipal {
-    width: 150%;
-    height: 35px;
-    margin: 15px;
-    padding-top: 25px;
+.fondoNegro {
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw; 
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 50;
 }
 
-#txtEmail {
-    width: 61%;
-}
+/* Formulario de Registro */
 
-label {
-    font-size: 18px;
-}
-
-input {
+#formularioInscripcion {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    display: none;
+    flex-direction: column;
     justify-content: center;
-    width: 30%;
-    border-radius: 10px;
-    border: 1px solid rgb(80, 80, 80);
-    font-size: 16px;
-    height: 40px;
-    margin-top: 10px;
+    align-items: center;
+    transform: translateX(50%) translateY(-50%);
+    width: 100%;
+    max-width: 600px;
+    max-height: fit-content;
+    border-radius: 5px;
+    background-color: #ffffff;
+    z-index: 100;
+    padding: 30px;
+
+}
+
+#formularioInscripcion h2 {
     text-align: center;
 }
 
-#fotoUsuario {
-    width: 150px;
-    height: 150px;
-    background-color: #ffffff;
-    border-radius: 15px;
+.registroPrincipal {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.registroPrincipal .formSection {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.registroPrincipal .field {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.registroPrincipal .formSection:last-child .field {
+    margin-bottom: 0;
+}
+
+.registroPrincipal .formSection .field:last-child {
+    margin-right: 0;
+}
+
+.registroPrincipal .fieldRadio {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.registroPrincipal .fieldSelect {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.registroPrincipal .fieldFile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.registroPrincipal .fieldSelect .selectFechas {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.registroPrincipal .fieldSelect .selectFechas select {
+    width: 100%;
+    margin-right: 20px;
+    height: 40px;
+}
+
+.registroPrincipal .fieldSelect .selectFechas select:last-child {
+    margin-right: 0;
+}
+
+
+
+.registroPrincipal .fieldRadio .option {
+    margin-bottom: 5px;
+}
+
+.registroPrincipal .field input,
+.registroPrincipal .fieldSelect .selectFechas select {
+    border-radius: 5px;
+    border: 1px solid rgb(80, 80, 80);
+    font-size: 16px;
+    height: 40px;
+    text-align: left;
+    padding-left: 10px;
+    color: #5b5b5b;
+}
+
+.registroPrincipal .field label,
+.registroPrincipal .fieldRadio p,
+.registroPrincipal .fieldSelect p,
+.registroPrincipal .fieldSelect label,
+.fieldFile p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5b5b5b;
+    margin-bottom: 5px;
+}
+
+.registroPrincipal .email {
+    width: 100%;
 }
 
 .btnRegistrarse {
     background-color: #8faf69;
     border: 2px;
-    text-align: center;
-    color: #fff;
-    border-radius: 5%;
+    color: #ffffff;
+    border-radius: 5px;
     height: 40px;
-    width: 150px;
-    font-size: 16px;
-    margin-left: 33%;
-    margin-top: 8%;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px auto 0;
 }
 
 .btnRegistrarse:hover {
-    box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
-    background: #000000;
+    background: #379914;
 }
 
-@media (max-width: 746px) {
-    .contenedorRegistroPrincipal {
-        display:none
-    }
+.foto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-@media (min-width: 746px) {
-    #btnRegistrateYa {
-        display:none
-    }
-} 
+.showPhoto {
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 3px solid #5b5b5b;
+    border-bottom: none;
+}
+
+.inputFotoPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 30px;
+    background-color: #5b5b5b;
+    cursor: pointer;
+}
+
+.inputFotoPerfil:hover {
+    background-color: #9a9a9a;
+}
+
+.inputFotoPerfil i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#fotoPerfil {
+    display: none;
+}
+
+/*Prueba*/
+
+
+
 
 /*estilos de la seccion Que es por SVC*/
 
