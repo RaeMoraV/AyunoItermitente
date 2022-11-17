@@ -12,20 +12,31 @@ main {
     padding: auto;
 }
 
+body{
+    position: relative;
+}
 
 /* Estilos SideMenu--------------------------- */
-.sidebar{
-    position: block;
-    left: 0;
-    min-width: 250px;
-    height: 100%;
-    background: #dfede3;
+.sidebarQuieto{
+    position:fixed;
+    top: 100px;
+    left: 15px;
 }
+.sidebar{
+    min-width: 250px;
+    background: #dfede3;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  13px 13px 26px #afafaf,
+                -13px -13px 26px #ffffff;
+}
+
 .sidebar h1 {
-    font-size: 22px;
+    font-size: 40px;
+    font-weight: 100px;
     color: var(--color-green);
     text-align: center;
-    line-height: 70px;
+    line-height: 50px;
     background: var(color-lightgreen);
     user-select: none;
 }
@@ -34,7 +45,8 @@ main {
     height: 100%;
     width: 100%;
     line-height: 65px;
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: 30px;
     color: black;
     padding-left: 20px;
     box-sizing: border-box;
@@ -44,13 +56,17 @@ main {
 ul li:hover a{
     padding-left: 30px;
     background-color: var(--color-green);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  13px 13px 26px #afafaf,
+                -13px -13px 26px #ffffff;
 }
 
 .sidebar ul button{
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 65px;
+    line-height: 30px;
     font-size: 18px;
     color: black;
     padding-left: 20px;
@@ -68,6 +84,10 @@ ul li:hover button{
 
 .sectionContainer {
     width: 100%;
+    margin-left: 300px;
+    
+    justify-content: center;
+    display:flex;
 }
 
 .container {
