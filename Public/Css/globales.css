@@ -18,7 +18,7 @@ box-sizing: inherit; /* COMPLEMENTO DE BOX SIZING (PAUL IRISH):  https://www.pau
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Inter;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -37,7 +37,7 @@ a {
 
 .navMobile,
 .navDesktop {
-    background-color: var(--color-lightgreen2);
+    background-color: #8faf69;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -192,7 +192,7 @@ a {
 
 .footerContainer{
     width: 100%;
-    background-color:var(--color-lightgreen2);
+    background-color:#8faf69;
     color: #fff;
     display: flex;
     justify-content: space-between;
