@@ -696,21 +696,11 @@
 
 
 /*Seccion de planes por Sebas*/
+/*planes*/
 
 
- .titulo {
-    width: 100%;
-    color: white;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
 
-h2 {
+h2 { a
     margin: 0;
     font-size: 32px;
     text-transform: uppercase;
@@ -722,7 +712,7 @@ h2 {
 
 }
 
-.texto {
+.texto { a
     display: flex;
     justify-content: center;
     display: flex;
@@ -731,40 +721,14 @@ h2 {
     align-items: center;
 }
 
-.container {
-    width: 75%;
-    height: 300px;
-    border: 1px solid black;
-    display: flex;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
 
-.container {
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.listasPlanes {
+.listasPlanes { a
     line-height: 50px;
     text-align: left;
 }
 
 
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
-.container-card{
+.container-card{ a
 	width: 100%;
 	display: flex;
     flex-direction: column;
@@ -772,7 +736,7 @@ h2 {
 	margin: auto;
     background-color:#dfede3 ;
 }
-.title-cards{
+.title-cards{ a
    
 	width: 100%;
 	max-width: 1080px;
@@ -783,7 +747,7 @@ h2 {
 	color: #000000;
     background-color:#dfede3 ;
 }
-.card{
+.card{ a 
     
 	width: 100%;
 	margin: 20px;
@@ -795,31 +759,22 @@ h2 {
 	cursor: default;
     flex-wrap: wrap;
 }
+
+/*sombra de las tarjetas*/
 .card:hover{
     
 	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
 	transform: translateY(-3%);
 }
-.card img{
-   
-	width: 100%;
-	height: 210px;
 
-}
+/*texto de las tarjetas*/
 .card .contenido-card{ 
 	padding: 15px;
 	text-align: center;
     
 }
 
-.texto {
-    background-color: #dfede3;
-
-}
-.card .contenido-card h3{
-	margin-bottom: 15px;
-
-}
+/*alineación del texto tarjetas*/
 .card .contenido-card p{   
 	line-height: 1.8;
 	font-size: 14px;
@@ -827,7 +782,7 @@ h2 {
 }
 
 
-
+/*tarjeta cuadro*/
 @media (min-width:768px){
 
     .container-card{
