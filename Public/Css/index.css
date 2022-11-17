@@ -698,55 +698,55 @@
 /*Seccion de planes por Sebas*/
 /*planes*/
 
+.contenidoPlanes{
+    justify-content:space-evenly;
+    flex-direction: row;
+    background-size: cover;
+    background-image: url(../Img/index/planes.jpg);
+    margin: auto;
+}
 
 
-h2 { 
-    margin: 0;
-    font-size: 32px;
-    text-transform: uppercase;
-    display: flex;
+.titulo{ 
+    line-height: 50px;
+    font-family: Verdana;  
+    color: #fff; 
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     justify-content: center;
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+    display: flex;
     font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 15px;
-
+    font-size: 50px; 
+ 
 }
 
 .texto { 
     display: flex;
     justify-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.listasPlanes { 
+    font-size: 20px;
+    color: #fff; 
     line-height: 50px;
-    text-align: left;
+    font-family: Verdana; 
+    margin: auto; 
 }
+
+
 
 
 .container-card{ 
+    
 	width: 100%;
 	display: flex;
     flex-direction: column;
 	max-width: 1100px;
 	margin: auto;
-    background-color:#dfede3 ;
+    
 }
-.title-cards{ 
-   
-	width: 100%;
-	max-width: 1080px;
-	margin: auto;
-	padding: 20px;
-	margin-top: 20px;
-	text-align: center;
-	color: #000000;
-    background-color:#dfede3 ;
-}
+
 .card{ 
     
 	width: 100%;
@@ -760,6 +760,8 @@ h2 {
     flex-wrap: wrap;
 }
 
+
+
 /*sombra de las tarjetas*/
 .card:hover{
     
@@ -771,6 +773,7 @@ h2 {
 .card .contenido-card{ 
 	padding: 15px;
 	text-align: center;
+    margin: auto;
     
 }
 
@@ -779,6 +782,44 @@ h2 {
 	line-height: 1.8;
 	font-size: 14px;
 	margin-bottom: 5px;
+    margin: auto;
+}
+
+
+.listasPlanes { 
+    line-height: 30px;
+    text-align: left;
+    margin: auto;
+}
+
+
+
+.subtitulo{
+    display: flex;
+    justify-content: center;
+    font-size: 25px; 
+    font-family: Verdana;  
+    line-height: 50px;
+    color: #fff; 
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+    font-weight: bold; 
+
+    
+}
+
+
+.explicacion{
+    display: flex;
+    justify-content: center;
+    font-size: 25px; 
+    font-family: Arial; 
+    line-height: 50px; 
+    margin: auto;
 }
 
 
@@ -798,3 +839,10 @@ h2 {
         height: 500px;
     }
 }
+
+
+/*final Planes*/
+
+
+
+
