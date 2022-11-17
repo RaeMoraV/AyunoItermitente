@@ -53,7 +53,7 @@ body{
     border-bottom: 1px solid rgba(203, 203, 203, 0.1);
     transition: .2s;
 }
-ul li:hover a{
+.sidebar ul li:hover a{
     padding-left: 30px;
     background-color: var(--color-green);
     border-radius: 20px;
@@ -72,7 +72,7 @@ ul li:hover a{
     padding-left: 20px;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(203, 203, 203, 0.1);
-    transition: .2s;
+    transition: .5s;
 }
 ul li:hover button{
     padding-left: 30px;
@@ -208,9 +208,9 @@ ul li:hover button{
 
 .ingresoDatos {
     background-color: var(--color-green);
-    width: 350px;
+    max-width: 500px;
     height: fit-content;
-    padding: 10px;
+    padding: 30px;
     border-radius: 5px;
     box-shadow: 11px 10px 15px -2px rgba(166,166,166,0.75);
 }
@@ -218,10 +218,10 @@ ul li:hover button{
 .ingresoDatos h3 {
     color: var(--color-lightgreen1);
     text-align: center;
-    margin-bottom: 15px;
-    font-weight: 700;
+    margin-bottom: 40px;
+    font-weight: 1000;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 30px;
 }
 
 .ingresoDatos .field {
@@ -243,6 +243,7 @@ ul li:hover button{
     width: 140px;
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 20px;
 }
 
 .ingresoDatos .field input,
@@ -271,6 +272,7 @@ ul li:hover button{
 .ingresoDatos .fieldRadio label {
     color: var(--color-lightgreen1);
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
 .ingresoDatos .fieldRadio p {
