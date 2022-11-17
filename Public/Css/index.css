@@ -699,16 +699,17 @@
 /*planes*/
 
 .contenidoPlanes{
-    justify-content:space-evenly;
+    justify-content: center;
     flex-direction: row;
     background-size: cover;
     background-image: url(../Img/index/planes.jpg);
     margin: auto;
+    line-height: 90px;
 }
 
 
 .titulo{ 
-    line-height: 50px;
+    line-height: 90px;
     font-family: Verdana;  
     color: #fff; 
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
@@ -729,7 +730,7 @@
     justify-content: center;
     font-size: 20px;
     color: #fff; 
-    line-height: 50px;
+    line-height: 25px;
     font-family: Verdana; 
     margin: auto; 
 }
@@ -738,23 +739,24 @@
 
 
 .container-card{ 
-    
+    justify-content: center;
 	width: 100%;
 	display: flex;
     flex-direction: column;
 	max-width: 1100px;
 	margin: auto;
     
+    
 }
 
 .card{ 
-    
+    justify-content: center;
 	width: 100%;
-	margin: 20px;
-	border-radius: 6px;
+	margin: 50px;
+	border-radius: 9px;
 	overflow: hidden;
 	background:#fff;
-	box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 40px rgba(0,0,0,0.2);
 	transition: all 400ms ease-out;
 	cursor: default;
     flex-wrap: wrap;
@@ -783,6 +785,7 @@
 	font-size: 14px;
 	margin-bottom: 5px;
     margin: auto;
+    justify-content: center;
 }
 
 
@@ -790,12 +793,12 @@
     line-height: 30px;
     text-align: left;
     margin: auto;
+    justify-content: center;
 }
 
 
 
 .subtitulo{
-    display: flex;
     justify-content: center;
     font-size: 25px; 
     font-family: Verdana;  
