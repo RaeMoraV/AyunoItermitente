@@ -12,21 +12,151 @@
     height: 700px;
 }
 
-.textPrincipal {
+.textPrincipal1 {
     max-width: 600px;
+    flex-direction: flex;
+   
+}
+.titulo1{ 
+    line-height: 90px;
+    font-family: Verdana;  
+    color: #fff; 
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    justify-content: center;
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	text-align: flex;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-weight: bold;
+    font-size: 50px; 
+ 
 }
 
-.textPrincipal h2 {
+.explicacion { 
+    display: flex;
+    justify-content: flex;
+    font-size: 20px;
+    color: #fff; 
+    line-height: 25px;
+    font-family: Verdana; 
+    margin: flex; 
+}
+
+
+
+
+
+
+.card{ 
+    justify-content: center;
+	width: 100%;
+	margin: 50px;
+	border-radius: 9px;
+	overflow: hidden;
+	background:#fff;
+	box-shadow: 0px 1px 40px rgba(0,0,0,0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
+    flex-wrap: wrap;
+}
+
+
+
+/*sombra de las tarjetas*/
+.card:hover{
+    
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%);
+}
+
+/*texto de las tarjetas*/
+.card .contenido-card{ 
+	padding: 15px;
+	text-align: center;
+    margin: auto;
+    
+}
+
+/*alineación del texto tarjetas*/
+.card .contenido-card p{   
+	line-height: 1.8;
+	font-size: 14px;
+	margin-bottom: 5px;
+    margin: auto;
+    justify-content: center;
+}
+
+
+.listasPlanes { 
+    line-height: 30px;
+    text-align: left;
+    margin: auto;
+    justify-content: center;
+}
+
+
+
+.subtitulo{
+    justify-content: center;
+    font-size: 25px; 
+    font-family: Verdana;  
+    line-height: 50px;
+    color: #fff; 
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+    font-weight: bold; 
+
+    
+}
+
+
+.explicacion{
+    display: flex;
+    justify-content: center;
+    font-size: 25px; 
+    font-family: Arial; 
+    line-height: 50px; 
+    margin: auto;
+}
+
+
+/*tarjeta cuadro*/
+@media (min-width:768px){
+
+    .container-card{
+        flex-direction: row;
+    }
+    
+	.card{
+		margin: 15px;
+	}
+
+    #seccionSlider .card {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+
+
+
+
+
+.textPrincipal1 h2 {
     font-weight: bold;
     font-size: 32px;
     margin-bottom: 15px;
     text-align: center;
+
 }
 
-.textPrincipal p {
+.textPrincipal1 p {
     margin-bottom: 35px;
     padding: 45px;
     display: flex;
@@ -43,6 +173,7 @@
     height: 40px;
     width: 150px;
     font-size: 16px;
+    flex-direction: flex;
 }
 
 #btnRegistrateYa:hover {
