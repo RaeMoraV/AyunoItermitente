@@ -22,8 +22,17 @@ html::-webkit-scrollbar {
 box-sizing: inherit; /* COMPLEMENTO DE BOX SIZING (PAUL IRISH):  https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.5;
+}
+
 body {
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
