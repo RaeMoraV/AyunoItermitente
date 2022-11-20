@@ -5,6 +5,7 @@ let listaPesoYFecha = [];
 let listaPeso = [];
 let listaFecha = [];
 let listaMeses = [];
+let prueba =[1,2,3];
 
 
 function registrarPesoYFecha (pnPeso, psFecha) {
@@ -15,15 +16,11 @@ function registrarPesoYFecha (pnPeso, psFecha) {
 };
 
 function registrarPeso (pnPeso) {
-    let nuevoPeso = [];
-    nuevoPeso.push(pnPeso);
-    listaPeso.push(nuevoPeso);
+    listaPeso.push(pnPeso);
 };
 
 function registrarFecha (psFecha) {
-    let nuevaFecha = [];
-    nuevaFecha.push(psFecha);
-    listaFecha.push(nuevaFecha);
+    listaFecha.push(psFecha);
 };
 
 
