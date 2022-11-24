@@ -5,7 +5,8 @@ let listaPesoYFecha = [];
 let listaPeso = [];
 let listaFecha = [];
 let listaMeses = [];
-let prueba =[1,2,3];
+
+
 
 
 function registrarPesoYFecha (pnPeso, psFecha) {

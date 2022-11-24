@@ -216,19 +216,20 @@ function orderPesoYFechaTable () {
     }
 }
 
-/* Perfil - Seccion Peso - Grafico  */
+
+/* Perfil - Sección Peso - Gráfico  */
 
 function graficoPeso() {
     let graphPeso = document.getElementById('graphPeso');
+    ordenarPesoFechaTabla();
     let yArray = listarPesos();
     let xArray = listarFechas();
     //let yArray = [1,2,3,4];
     //let xArray = ['2022-11-03','2022-11-04','2022-11-05']; Esto si funciona
-    console.log(yArray);
-    console.log(xArray);
     let data = [{
         x: xArray,
         y: yArray,
+        type: 'scatter'
     }];
 
     let layout = {
@@ -238,6 +239,40 @@ function graficoPeso() {
 
     Plotly.newPlot(graphPeso, data, layout);
 }
+//Función para ordenar los datos antes de hacer gráficos
+function ordenarPesoFechaTabla(){
+    let posicionMin;
+    let valorFechaMin;
+
+    let tempFecha=[];
+    let tempPeso=[];
+    let repetir = listaFecha.length;
+
+    for (let i = 0; i < repetir; i++) { 
+        posicionMin = 0;
+        valorFechaMin = listaFecha[0];
+
+        for (let j = 1; j < repetir; j++) {
+            if(new Date(listaFecha[j])<=new Date(valorFechaMin)){
+                posicionMin=j;
+                valorFechaMin=listaFecha[j];
+                console.log('Nuevo menor');
+            }
+            console.log(j);
+        }
+        tempFecha.push(listaFecha.splice(posicionMin,1)[0]);
+        console.log(tempFecha);
+        tempPeso.push(listaPeso.splice(posicionMin,1)[0]);
+        console.log(tempPeso);
+        console.log(i);
+    }
+
+    listaFecha=tempFecha;
+
+    listaPeso=tempPeso;
+
+}
+
 
 
 /* Perfil - Seccion Enfermedades - Tabla */

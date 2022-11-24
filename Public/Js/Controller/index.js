@@ -28,6 +28,27 @@ const anioInicio = 1900;
 
 const fondoNegro = document.querySelector('.fondoNegro');
 
+
+window.onscroll = function(){
+    console.log(document.documentElement.scrollTop);
+    if(document.documentElement.scrollTop > 100) {
+      document.querySelector('.go-top-container').classList.add('show');
+       
+    }
+    else{
+      document.querySelector('.go-top-container').classList.remove('show');
+    }
+  }
+   
+  document.querySelector('.go-top-container').addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+
+
 //Formulario
 const btnRegistrateYa = document.querySelector('#btnRegistrateYa');
 const fotoPerfil = document.querySelector('#fotoPerfil');

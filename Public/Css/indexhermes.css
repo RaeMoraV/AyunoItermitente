@@ -1,19 +1,26 @@
-/*Estilos de la seccion Banner Principal*/
 
+/*sobrescrito los colores del nav y footer*/
+.navMobile,
+.navDesktop {
+    background-color: #1d2549;
+}
+
+.footerContainer{
+    background-color: #1d2549;
+
+}
+
+
+/*Estilos de la seccion Banner Principal*/
 
 .bannerPrincipal {
    
     background-size: cover;
-    background-image: url(../Img/index/portada.jpg);
+    background-image: url(../Img/HermesImg/primerseccion.jpg);
+    background-color: #1d2549 ;
     width: 100%;
     height: 700px;
     text-align: center;
-}
-.bannerPrincipal::after {
-    content: '';
-    background-color: rgba(0, 0, 0, 1);
-    height: 100%;
-
 }
 
 .textPrincipal1 {
@@ -22,14 +29,14 @@
    
 }
 .titulo1{  
-    color: #fff; 
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;  
+    line-height: 90px;
+    color: #bdf347; 
 	width: 100%;
 	max-width: 1080px;
-	margin: auto;
 	padding: 20px;
     font-weight: bold;
-    font-size: 50px; 
+    font-size: 100px; 
+
  
 }
 
@@ -37,160 +44,13 @@
     display: flex;
     justify-content: flex;
     font-size: 20px;
-    color: rgb(0, 0, 0); 
+    color:#ffffff; 
+    line-height: 25px;
+    font-family: Verdana; 
     margin: flex; 
-    display: flex;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #669999;
-    background-image: url(../Img/index/portada.jpg);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 900px;
+    
 }
 
-.titulo1 {
-
-    line-height: 90px;
-    color: #fff;
-    width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    font-weight: bold;
-    font-size: 90px;
-    flex-direction: column;
-    text-shadow: 7px 3px 5px rgb(0, 0, 0);
-    align-items: center;
-}
-
-
-.cuadro{
-    z-index: 1;
-    background:rgb(0, 0, 0);
-    top: 50px;
-    left: 50px;
-    box-shadow: 7px 5px 44px -12px black;
-    filter: blur(1.5rem);
-}
-
-
-.parteTexto {
-    z-index: 1;
-    max-width: 1000px;
-    font-size: 30px;
-    padding: 10px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    text-shadow: 7px 3px 5px rgb(0, 0, 0);
-}
-
-
-
-
-
-/*boton de registrar*/
-
-.buttonRegistrate,
-.buttonRegistrate::before,
-.buttonRegistrate::after,
-.buttonRegistrate span,
-.buttonRegistrate span::before,
-.buttonRegistrate span::after {
-    transition: all ease .5s;
-}
-
-.buttonRegistrate {
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    padding: 0.3em;
-    margin: 3.5em;
-    border: solid 4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-size: 40px;
-    color: #8faf69;
-
-}
-
-.buttonRegistrate:hover {
-    box-shadow: 0 0 5em .5em #353434;
-
-}
-
-.buttonRegistrate span {
-    display: inline-block;
-    width: 100%;
-    padding: 0.6em 2em;
-
-}
-
-.buttonRegistrate:hover span {
-    background-color: rgb(95, 94, 94);
-    color: #8faf69;
-}
-
-.buttonRegistrate::before,
-.buttonRegistrate::after,
-.buttonRegistrate span::before,
-.buttonRegistrate span::after {
-    content: '';
-    position: absolute;
-    border: 1px;
-}
-
-.buttonRegistrate::before,
-.buttonRegistrate span::before {
-    border-style: solid none;
-}
-
-.buttonRegistrate::before,
-.buttonRegistrate span::after {
-    left: 0;
-    top: -0.4em;
-    width: 100%;
-    height: calc(100% + 0.8em);
-}
-
-.buttonRegistrate::after,
-.buttonRegistrate span::after {
-    border-style: none solid;
-}
-
-.buttonRegistrate::after,
-.buttonRegistrate span::before {
-    top: 0;
-    left: -0.4em;
-    height: 100%;
-    width: calc(100% + 0.8em);
-}
-
-.buttonRegistrate:hover::after,
-.buttonRegistrate:hover span::after {
-    transform: scaleY(0);
-}
-
-.buttonRegistrate:hover::before,
-.buttonRegistrate:hover span::before {
-    transform: scaleX(0);
-}
-
-.buttonRegistrate:hover span::after,
-.buttonRegistrate:hover span::before {
-    opacity: 0;
-}
-
-
-/*finaliza registro*/
 
 
 
@@ -211,7 +71,7 @@
 }
 
 #btnRegistrateYa {
-    background-color: #8faf69;
+    background-color: #bdf347;
     border: 2px;
     text-align: center;
     color: #fff;
@@ -220,95 +80,28 @@
     width: 250px;
     font-size: 20px;
     flex-direction: flex;
+    line-height: 90px;
+
+
+    
 }
 
 #btnRegistrateYa:hover {
     box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
-    background: #000000;
+    background:#1d2549 ;
 }
 
 .fondoNegro {
     position: fixed;
     display: none;
     height: 100vh;
-    width: 100vw;
+    width: 100vw; 
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 50;
 }
 
-/* Formulario de Registro */
 
-#formularioInscripcion {
-    position: fixed;
-    top: 50%;
-    right: 50%;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(50%) translateY(-50%);
-    width: 100%;
-    max-width: 600px;
-    max-height: fit-content;
-    border-radius: 5px;
-    background-color: #ffffff;
-    z-index: 100;
-    padding: 30px;
 
-}
-
-#formularioInscripcion h2 {
-    text-align: center;
-    font-size: 20 px;
-}
-
-.registroPrincipal {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-}
-
-.registroPrincipal .formSection {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.registroPrincipal .field {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin-right: 20px;
-    margin-bottom: 15px;
-}
-
-.registroPrincipal .formSection:last-child .field {
-    margin-bottom: 0;
-}
-
-.registroPrincipal .formSection .field:last-child {
-    margin-right: 0;
-}
-
-.registroPrincipal .fieldEmail,
-.registroPrincipal .fieldSelect,
-.registroPrincipal .fieldFile {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.registroPrincipal .fieldRadio {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
 .registroPrincipal .fieldSelect .selectFechas {
     display: flex;
@@ -349,7 +142,7 @@
 }
 
 .registroPrincipal .field label,
-.registroPrincipal .fieldEmail label,
+.registroPrincipal .fieldEmail label, 
 .registroPrincipal .fieldRadio p,
 .registroPrincipal .fieldSelect p,
 .registroPrincipal .fieldSelect label,
@@ -366,7 +159,17 @@
     width: 100%;
 }
 
-
+.btnRegistrarse {
+    background-color: #8faf69;
+    border: 2px;
+    color: #ffffff;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px auto 0;
+}
 
 .btnRegistrarse:hover {
     background: #379914;
@@ -411,6 +214,7 @@
     display: none;
 }
 
+/*Prueba*/
 
 
 
@@ -423,29 +227,29 @@
     align-items: center;
     flex-direction: column;
     background-size: cover;
-    background: #5b5858;
+    background:#1d2549;
     width: 100%;
-    height: 850px;
+    height: 700px;
 }
 
 .textQueEs {
 
     max-width: 500px;
-    background: #dfede3;
+    background: #1d2549;
     margin: 20px 0;
     padding: 10px;
     text-align: center;
-    color: black;
+    color: #ffffff;
 }
 
-.textQueEs h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+.textQueEs h2{
+    font-size: 70px;
+    margin-bottom:10px;
     font-weight: bold;
 }
 
 .buttonInformacion {
-    background-color: #8faf69;
+    background-color: #bdf347;
     border: 2px;
     text-align: center;
     margin-top: 15px;
@@ -455,7 +259,7 @@
     width: 150px;
     font-size: 16px;
 
-
+    
 
 }
 
@@ -478,14 +282,14 @@
 .beneficioContenedor {
     display: flex;
     flex-direction: column;
-    background-color: #dfede3;
+    background-color: #1d2549;
     justify-content: center;
     align-items: center;
+    color:#ffffff;
 
 }
 
 .encabezadoBeneficio {
-    border: 1px solid #dfede3;
     max-width: 500px;
     margin: 0px;
     padding: 10px;
@@ -493,11 +297,13 @@
     text-align: center;
     flex-direction: column;
     align-items: center;
+
+
 }
 
 .encabezadoBeneficio h2 {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 70px;
     margin-bottom: 15px;
 }
 
@@ -746,7 +552,7 @@
     align-items: center;
     flex-direction: column;
     background-size: cover;
-    background-image: url(../Img/index/bottomsection.jpg);
+    background-image: url(../Img/HermesImg/ultimaseccion.jpg);
     width: 100%;
     height: 700px;
 }
@@ -764,9 +570,9 @@
 
 }
 
-.textRecomendacion h2 {
+.textRecomendacion h2{
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom:20px;
     margin-top: 40px;
 }
 
@@ -780,103 +586,101 @@
 /*Seccion de planes por Sebas*/
 /*planes*/
 
-.contenidoPlanes {
+.contenidoPlanes{
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     background-size: cover;
     background-image: url(../Img/index/planes.jpg);
     margin: auto;
     line-height: 90px;
-    display: flex;
-    text-align: center;
-    width: 100%;
-    height: 900px;
 }
 
 
-
-.titulo {
+.titulo{ 
     line-height: 90px;
-    font-family: Verdana;
-    color: #fff;
+    font-family: Verdana;  
+    color: #fff; 
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     justify-content: center;
-    width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
     display: flex;
     font-weight: bold;
-    font-size: 50px;
-
+    font-size: 50px; 
+ 
 }
 
-.texto {
+.texto { 
     display: flex;
     justify-content: center;
     font-size: 20px;
     color: #fff; 
+    line-height: 25px;
+    font-family: Verdana; 
     margin: auto; 
 }
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container-card {
-    width: 100%;
-    display: flex;
+.container-card{
+	width: 100%;
+	display: flex;
     flex-direction: column;
-    max-width: 1100px;
-    margin: auto;
-
-
+	max-width: 1100px;
+	margin: auto;
+    
+    
 }
 
-.card {
+.card{ 
     justify-content: center;
-    width: 100%;
-    margin: 50px;
-    border-radius: 9px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.2);
-    transition: all 400ms ease-out;
-    cursor: default;
+	width: 100%;
+	margin: 50px;
+	border-radius: 9px;
+	overflow: hidden;
+	background:#fff;
+	box-shadow: 0px 1px 40px rgba(0,0,0,0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
     flex-wrap: wrap;
 }
 
 
 
 /*sombra de las tarjetas*/
-.card:hover {
-
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3%);
+.card:hover{
+    
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%);
 }
 
 /*texto de las tarjetas*/
-.card .contenido-card {
-    padding: 15px;
-    text-align: center;
+.card .contenido-card{ 
+	padding: 15px;
+	text-align: center;
     margin: auto;
-
+    
 }
 
 /*alineación del texto tarjetas*/
-.card .contenido-card p {
-    line-height: 1.8;
-    font-size: 14px;
-    margin-bottom: 5px;
+.card .contenido-card p{   
+	line-height: 1.8;
+	font-size: 14px;
+	margin-bottom: 5px;
     margin: auto;
     justify-content: center;
 }
 
 
-.listasPlanes {
+.listasPlanes { 
     line-height: 30px;
     text-align: left;
     margin: auto;
@@ -919,7 +723,7 @@
     }
 
     .registroPrincipal .field label,
-    .registroPrincipal .fieldEmail label,
+    .registroPrincipal .fieldEmail label, 
     .registroPrincipal .fieldRadio p,
     .registroPrincipal .fieldSelect p,
     .registroPrincipal .fieldSelect label,
@@ -929,50 +733,50 @@
     }
 }
 
-.subtitulo {
+.subtitulo{
     justify-content: center;
-    font-size: 25px;
-    font-family: Verdana;
+    font-size: 25px; 
+    font-family: Verdana;  
     line-height: 50px;
-    color: #fff;
+    color: #fff; 
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    font-weight: bold;
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+    font-weight: bold; 
 
-
+    
 }
 
 
-.explicacionPlanes {
+.explicacion{
     display: flex;
     justify-content: center;
-    font-size: 25px;
-    font-family: Arial;
-    line-height: 50px;
+    font-size: 25px; 
+    font-family: Arial; 
+    line-height: 50px; 
     margin: auto;
 }
 
 
 /*tarjeta cuadro*/
-@media (min-width:768px) {
+@media (min-width:768px){
 
-    .container-card {
+    .container-card{
         flex-direction: row;
     }
-
-    .card {
-        margin: 15px;
-    }
+    
+	.card{
+		margin: 15px;
+	}
 
     #seccionSlider .card {
         width: 500px;
         height: 500px;
     }
-
+    
     .beneficioContenedor {
         flex-direction: column;
         align-items: center;
@@ -1018,6 +822,7 @@
 
     .textRecomendacion p {
         margin: 40px 40px 40px 40px;
+        line-height: 60px;
     }
 
     .textRecomendacion h3 {
@@ -1042,11 +847,12 @@
 
     .textQueEs p {
         margin: 40px 40px 40px 40px;
+        line-height: 40px;
     }
 
-    .textQueEs h2 {
-        margin: 40px 40px 40px 40px;
-        font-weight: bold;
+    .textQueEs h2{
+        margin:40px 40px 40px 40px;
+        font-weight:bold;
     }
 
     .buttonInformacion {
