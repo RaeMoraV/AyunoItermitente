@@ -51,8 +51,11 @@ const fondoNegro = document.querySelector('.fondoNegro');
 
 //Formulario
 const btnRegistrateYa = document.querySelector('#buttonRegistrate');
+const btnCerrarRegistro = document.querySelector('#cerrarFormularioInscripcion');
 const fotoPerfil = document.querySelector('#fotoPerfil');
 let fotoSubida = "";
+
+
 
 btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('#formularioInscripcion').style.display = 'flex';
@@ -60,11 +63,8 @@ btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('body').style.overflowY = 'hidden';
 });
 
-fondoNegro.addEventListener('click', function(){
-    document.querySelector('#formularioInscripcion').style.display = 'none';
-    document.querySelector('.fondoNegro').style.display = 'none';
-    document.querySelector('body').style.overflowY = 'initial';
-});
+fondoNegro.addEventListener('click', cerrarRegistro);
+btnCerrarRegistro.addEventListener('click', cerrarRegistro);
 
 btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('#formularioInscripcion').style.display = 'flex';
@@ -78,7 +78,13 @@ fotoPerfil.addEventListener ('change', function(){
         document.querySelector("#showPhoto").style.backgroundImage = `url(${fotoSubida})`;
      });
      reader.readAsDataURL(this.files[0]);
-})
+});
+
+function cerrarRegistro() {
+    document.querySelector('#formularioInscripcion').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}
 
 llenarSelectAnio();
 

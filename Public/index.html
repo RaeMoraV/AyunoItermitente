@@ -28,12 +28,12 @@
     <title>OM | Home</title>
 </head>
 
-<!-- barra de nav -->
+
 
 <body>
     <div class="fondoNegro"></div>
     <header>
-
+        <!-- Nav Mobile -->
         <nav class="navMobile">
             <div class="logo">
                 <a href="#">eFast</a>
@@ -51,47 +51,40 @@
             </div>
         </nav>
 
-        <nav class="navDesktop">
-            <div class="logo">
-                <a href="index.html">eFast</a>
-            </div>
-            <ul class="links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="indexhermes.html">Conócenos</a></li>
-                <li><a href="perfil.html">Ver perfil</a></li>
-            </ul>
-        </nav>
+        <!-- Banner -->
+        <section class="bannerPrincipal" id="bannerPrincipal">
+            <!-- <div class="oscurecerFondo"></div> -->
+            <nav class="navDesktop">
+                <div class="logo">
+                    <a href="index.html">eFast</a>
+                </div>
+                <ul class="links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="indexhermes.html">Conócenos</a></li>
+                    <li><a href="perfil.html">Ver perfil</a></li>
+                </ul>
+            </nav>
 
-        <!-- banner -->
-        <section class="bannerPrincipal">
-
-            <div class="titulo1">
+            <div class="titulo">
                 <h2> Ayuno Intermitente</h2>
             </div>
 
-
-
-
-            <div class="cuadro"> </div>
-
             <div class="parteTexto">
-                <p> Cuida tu salud y mejora tu estilo
+                <p> 
+                    Cuida tu salud y mejora tu estilo
                     de vida. Brindamos una guía completa, segura y beneficiosa
                     para planes de ayuno. Lleva registro de tus logros, recetas y
                     actividades que beneficiarán tu productividad, estado
-                    físico y mental.</p>
+                    físico y mental.
+                </p>
             </div>
-
-
-
 
             <div id="buttonRegistrate">
                 <span>
                     Regístrate Ya!
                 </span>
-                </a>
             </div>
-            </div>
+            
         </section>
 
         <!-- finBanner -->
@@ -100,6 +93,7 @@
         <!-- Registro -->
         <section id="formularioInscripcion">
             <h2>Formulario de Registro</h2>
+            <div id="cerrarFormularioInscripcion"><i class="fa-solid fa-xmark"></i></div>
             <form action="" class="registroPrincipal">
                 <div class="formSection">
                     <div class="field">
@@ -643,7 +637,7 @@
                 <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
             </div>
             <div class="iconContainer">
-                <a href="http://twitter.com"><i class="fa fa-twitter"></i></a>
+                <a href="#bannerPrincipal"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
     </footer>
