@@ -18,8 +18,10 @@
     <!-- Fuentes de Texto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <!-- META Info -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -29,6 +31,7 @@
 <!-- barra de nav -->
 
 <body>
+    <div class="fondoNegro"></div>
     <header>
 
         <nav class="navMobile">
@@ -66,21 +69,23 @@
                 <h2> Ayuno Intermitente</h2>
             </div>
 
-           
 
 
-            <div class="cuadro">  </div>
-            
-            <div class="parteTexto"> <p> Cuida tu salud y mejora tu estilo
-                de vida. Brindamos una guía completa, segura y beneficiosa 
-                para planes de ayuno. Lleva registro de tus logros, recetas y
-                 actividades que beneficiarán tu productividad, estado
-                físico y mental.</p> </div>  
-            
-            
+
+            <div class="cuadro"> </div>
+
+            <div class="parteTexto">
+                <p> Cuida tu salud y mejora tu estilo
+                    de vida. Brindamos una guía completa, segura y beneficiosa
+                    para planes de ayuno. Lleva registro de tus logros, recetas y
+                    actividades que beneficiarán tu productividad, estado
+                    físico y mental.</p>
+            </div>
 
 
-            <div class="buttonRegistrate">
+
+
+            <div id="buttonRegistrate">
                 <span>
                     Regístrate Ya!
                 </span>
@@ -95,14 +100,16 @@
         <!-- Registro -->
         <section id="formularioInscripcion">
             <h2>Formulario de Registro</h2>
-            <form action="" class q>
-                <div class="field">
-                    <label for="txtNombre">Nombre</label>
-                    <input type="text" name="" id="txtNombre" placeholder="Nombre" required />
-                </div>
-                <div class="field">
-                    <label for="txtApellido">Apellido</label>
-                    <input type="text" name="" id="txtApellido" placeholder="Apellido" required />
+            <form action="" class="registroPrincipal">
+                <div class="formSection">
+                    <div class="field">
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="" id="txtNombre" placeholder="Nombre" required />
+                    </div>
+                    <div class="field">
+                        <label for="txtApellido">Apellido</label>
+                        <input type="text" name="" id="txtApellido" placeholder="Apellido" required />
+                    </div>
                 </div>
                 </div>
                 <div class="formSection">
@@ -214,19 +221,14 @@
                         </div>
                     </div>
                 </div>
-                <button class="buttonRegistrate" type="button" onclick="Registrarse()">Registrarse</button>
+                <button class="submitRegistrate" type="button" onclick="Registrarse()">Registrarse</button>
             </form>
         </section>
     </header>
     <!-- finRegistro -->
-
-
-
-
-    <!-- queEs -->
     <main>
         <section class="seccionQueEs">
-
+            <!-- Seccion Que es? -->
             <div class="textQueEs">
                 <h2>
                     ¿Qué es el ayuno intermitente?
@@ -243,7 +245,6 @@
                     </a>
                 </button>
             </div>
-
         </section>
         <section class="beneficioContenedor">
             <div class="encabezadoBeneficio">
@@ -327,14 +328,9 @@
                 </div>
             </div>
         </section>
-        </section>
 
-
-
-        <!-- /planes -->
-
-
-        <div class="contenidoPlanes">
+        <!-- Seccion Planes -->
+        <section class="contenidoPlanes">
 
             <div class="titulo">
                 <h2>Planes</h2>
@@ -430,11 +426,7 @@
 
 
             </div>
-        </div>
         </section>
-        </section>
-
-
 
         <section id="seccionSlider">
             <h2>Te Recomendamos</h2>
