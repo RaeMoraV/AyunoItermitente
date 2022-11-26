@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require("express");
-const router = express.Router(); 
-const Logros = require('../models/PesoModel');
+const router = express.Router();
+const Ayuno = require('../models/AyunoModel');
 
 //post = insertar
 //put = actualizar o desactivar
@@ -10,32 +10,35 @@ const Logros = require('../models/PesoModel');
 //get = obtener o listar o buscar
 
 
-router.post('/RegistrarPeso', (req, res) => {
+router.post('/RegistrarAyuno', (req, res) => {
     let body = req.body;
-    let nuevoPeso = new Peso({
-        Peso: body.Peso,
-        FechaRegistroPeso: body.FechaRegistroPeso,
-        IMC: body.IMC
+    let nuevoAyuno = new Ayuno({
+        FechaInicioAyuno: body.FechaInicioAyuno,
+        HoraInicioAyuno: body.HoraInicioAyuno,
+        FechaFinAyuno: body.FechaFinAyuno,
+        HoraFinAyuno: body.HoraFinAyuno,
+        TipoAyuno: body.TipoAyuno,
+        EstadoAyuno: body.EstadoAyuno
     });
-    nuevoPeso.save((err, pesoDB) => {
+    nuevoAyuno.save((err, ayunoDB) => {
         if (err) {
             res.json({
                 resultado: false,
-                msj: 'No se pudo registrar el peso, ocurrió un error!: ',
+                msj: 'No se pudo registrar el ayuno, ocurrió un error!: ',
                 err
             });
         } else {
             res.json({
                 resultado: true,
                 msj: 'Registro realizado de manera correcta',
-                pesoDB
+                ayunoDB
             });
         }
     });
 });
 
-router.get('/ListarPesos', (req, res) => {
-    Peso.find((err, ListaPesosDB) => {
+router.get('/ListarAyunos', (req, res) => {
+    Ayuno.find((err, ListaAyunosDB) => {
         if (err) {
             res.json({
                 resultado: false,
@@ -46,7 +49,7 @@ router.get('/ListarPesos', (req, res) => {
             res.json({
                 resultado: true,
                 msj: 'Los datos se obtuvieron de manera correcta: ',
-                ListaPesosDB
+                ListaAyunosDB
             });
         }
     });

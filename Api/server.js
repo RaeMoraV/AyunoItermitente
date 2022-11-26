@@ -60,3 +60,10 @@ app.use('/api', pesos);
 
 const logros = require('./routes/LogrosRoute');
 app.use('/api', logros);
+//Conexión a ruta de ayunos
+const ayunos = require('./routes/AyunoRoute');
+app.use('/api', ayunos);
+
+//Conexion a ruta de enfermedades
+const enfermedades = require('./routes/EnfermedadRoute');
+app.use('/api', enfermedades);
