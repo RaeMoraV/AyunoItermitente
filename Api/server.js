@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
 //Se crea la variable db, que almacena la instancia de la base de datos, para ser reutilizada en el 'callback'
 let db;
 
-//Se conecta la base de datos antes de levantar el servidor, mediante los datos del archivo .env en la raiz del proyecto
+//Se conecta la base de datos antes de levantar el servidor, mediante los datos del archivo .env en la raíz del proyecto
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, database) {
     if (err) {
         console.log(err);
@@ -48,7 +48,12 @@ function handleError(res, reason, message, code) {
 }
 
 //conexión a todas las rutas del backend
+
 /*FORMATO DE EJEMPLO
 const personas =  require('./routes/PersonaRoute');
 app.use('/api', personas);
 */
+
+//Conexión a ruta de pesos
+const pesos = require('./routes/PesoRoute');
+app.use('/api', pesos);
