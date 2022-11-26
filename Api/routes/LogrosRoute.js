@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const Logros = require('../models/PesoModel');
+const Logro = require('../models/LogrosModel');
 
 //post = insertar
 //put = actualizar o desactivar
@@ -10,32 +10,36 @@ const Logros = require('../models/PesoModel');
 //get = obtener o listar o buscar
 
 
-router.post('/RegistrarPeso', (req, res) => {
+router.post('/RegistrarLogro', (req, res) => {
     let body = req.body;
-    let nuevoPeso = new Peso({
-        Peso: body.Peso,
-        FechaRegistroPeso: body.FechaRegistroPeso,
-        IMC: body.IMC
+    let nuevoLogro = new Logro({
+        TipoLogro: body.TipoLogro,
+        CondicionLogro: body.CondicionLogro,
+        Medalla: body.MedallaLogro,
+        Estado: body.EstadoLogro,
+
+
+
     });
-    nuevoPeso.save((err, pesoDB) => {
+    nuevoLogro.save((err, logroDB) => {
         if (err) {
             res.json({
                 resultado: false,
-                msj: 'No se pudo registrar el peso, ocurrió un error!: ',
+                msj: 'No se pudo registrar el logro, ocurrió un error!: ',
                 err
             });
         } else {
             res.json({
                 resultado: true,
                 msj: 'Registro realizado de manera correcta',
-                pesoDB
+                logroDB
             });
         }
     });
 });
 
-router.get('/ListarPesos', (req, res) => {
-    Peso.find((err, ListaPesosDB) => {
+router.get('/ListarLogros', (req, res) => {
+    Logro.find((err, ListaLogrosDB) => {
         if (err) {
             res.json({
                 resultado: false,
@@ -46,7 +50,7 @@ router.get('/ListarPesos', (req, res) => {
             res.json({
                 resultado: true,
                 msj: 'Los datos se obtuvieron de manera correcta: ',
-                ListaPesosDB
+                ListaLogrosDB
             });
         }
     });

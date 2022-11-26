@@ -57,3 +57,6 @@ app.use('/api', personas);
 //Conexión a ruta de pesos
 const pesos = require('./routes/PesoRoute');
 app.use('/api', pesos);
+
+const logros = require('./routes/LogrosRoute');
+app.use('/api', logros);
