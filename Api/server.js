@@ -58,11 +58,10 @@ app.use('/api', personas);
 const pesos = require('./routes/PesoRoute');
 app.use('/api', pesos);
 
-<<<<<<< Updated upstream
 //Conexión a ruta de ayunos
 const ayunos = require('./routes/AyunoRoute');
 app.use('/api', ayunos);
-=======
+
+//Conexion a ruta de enfermedades
 const enfermedades = require('./routes/EnfermedadRoute');
 app.use('/api', enfermedades);
->>>>>>> Stashed changes
