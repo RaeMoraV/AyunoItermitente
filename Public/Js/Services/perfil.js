@@ -7,6 +7,8 @@ let listaFecha = [];
 let listaMeses = [];
 
 
+
+
 function registrarPesoYFecha (pnPeso, psFecha) {
     let nuevoPesoYFecha = [];
     let imc = pnPeso / Math.round(Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2));
@@ -15,15 +17,11 @@ function registrarPesoYFecha (pnPeso, psFecha) {
 };
 
 function registrarPeso (pnPeso) {
-    let nuevoPeso = [];
-    nuevoPeso.push(pnPeso);
-    listaPeso.push(nuevoPeso);
+    listaPeso.push(pnPeso);
 };
 
 function registrarFecha (psFecha) {
-    let nuevaFecha = [];
-    nuevaFecha.push(psFecha);
-    listaFecha.push(nuevaFecha);
+    listaFecha.push(psFecha);
 };
 
 

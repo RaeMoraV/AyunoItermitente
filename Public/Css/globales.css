@@ -11,14 +11,28 @@
 
 html {
     box-sizing: border-box;
+    
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 *, *:before, *:after {
 box-sizing: inherit; /* COMPLEMENTO DE BOX SIZING (PAUL IRISH):  https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.5;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -37,7 +51,7 @@ a {
 
 .navMobile,
 .navDesktop {
-    background-color: var(--color-lightgreen2);
+    background-color: #8faf69;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -192,7 +206,7 @@ a {
 
 .footerContainer{
     width: 100%;
-    background-color:var(--color-lightgreen2);
+    background-color:#8faf69;
     color: #fff;
     display: flex;
     justify-content: space-between;

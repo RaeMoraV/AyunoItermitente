@@ -122,8 +122,8 @@ function blockDisplay(pOpcionSM){
             document.getElementById('recetas').style.display='block';
             break;
         default:
-            document.getElementById('informacion').style.display='block';
-            document.getElementById('peso').style.display='none';
+            document.getElementById('informacion').style.display='none';
+            document.getElementById('peso').style.display='block';
             document.getElementById('enfermedades').style.display='none';
             document.getElementById('actividadFisica').style.display='none';
             document.getElementById('logroObjetivos').style.display='none';
@@ -148,14 +148,18 @@ btnPeso.addEventListener('click', getPesoFecha);
 
 function getPesoFecha() {
     let nPeso = Number(inputPeso.value);
-    let sFecha = [];
-    sFecha = inputFechaPeso.value;
+    let sFecha = inputFechaPeso.value;
 
+
+    //Registro a distintos arrays en el js de services
     registrarPesoYFecha (nPeso, sFecha);
     registrarPeso (nPeso);
     registrarFecha (sFecha);
-
+    
+    //Actualiza la tabla de pesos
     imprimirPeso();
+    //Actualiza el grafico
+    graficoPeso();
 }
 
 function imprimirPeso() {
@@ -212,25 +216,52 @@ function orderPesoYFechaTable () {
     }
 }
 
-/* Perfil - Seccion Peso - Grafico  */
+
+/* Perfil - Sección Peso - Gráfico  */
 
 function graficoPeso() {
     let graphPeso = document.getElementById('graphPeso');
-    let yArray = listaPeso;
-    let xArray = listaMeses;
-
+    ordenarPesoFechaTabla();
+    let yArray = listarPesos();
+    let xArray = listarFechas();
+    //let yArray = [1,2,3,4];
+    //let xArray = ['2022-11-03','2022-11-04','2022-11-05']; Esto si funciona
     let data = [{
         x: xArray,
         y: yArray,
+        type: 'scatter'
     }];
 
     let layout = {
         xaxis: {range: yArray, title: "Mes"},
-        yaxis: {range: xArray, title: "Peso"}
+        yaxis: {range: xArray, title: "Peso(kg)"}
     };
 
     Plotly.newPlot(graphPeso, data, layout);
 }
+//Función para ordenar los datos antes de hacer gráficos
+function ordenarPesoFechaTabla(){
+    let posicionMin;
+    let valorFechaMin;
+    let tempFecha=[];
+    let tempPeso=[];
+    let repetir = listaFecha.length;
+    for (let i = 0; i < repetir; i++) { 
+        posicionMin = 0;
+        valorFechaMin = listaFecha[0];
+        for (let j = 1; j < repetir; j++) {
+            if(new Date(listaFecha[j])<=new Date(valorFechaMin)){
+                posicionMin=j;
+                valorFechaMin=listaFecha[j];
+            }
+        }
+        tempFecha.push(listaFecha.splice(posicionMin,1)[0]);
+        tempPeso.push(listaPeso.splice(posicionMin,1)[0]);
+    }
+    listaFecha=tempFecha;
+    listaPeso=tempPeso;
+}
+
 
 
 /* Perfil - Seccion Enfermedades - Tabla */
