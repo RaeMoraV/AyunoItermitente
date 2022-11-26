@@ -166,7 +166,7 @@
                                 <option value="12">Diciembre</option>
                             </select>
                             <select name="" id="numAnio">
-                                <option value="12">Año</option>
+                                <option value="#">Año</option>
                             </select>
                         </div>
 
@@ -177,15 +177,15 @@
                         <div class="radioOptions">
                             <p>Sexo</p>
                             <div class="option">
-                                <input type="radio" id="optionMasculino" name="generoRadio">
+                                <input type="radio" id="optionMasculino" name="generoRadio" value="Hombre">
                                 <label for="optionMasculino">Hombre</label>
                             </div>
                             <div class="option">
-                                <input type="radio" id="optionFemenino" name="generoRadio">
+                                <input type="radio" id="optionFemenino" name="generoRadio" value="Mujer">
                                 <label for="optionFemenino">Mujer</label>
                             </div>
                             <div class="option">
-                                <input type="radio" id="optionOtroSexo" name="generoRadio">
+                                <input type="radio" id="optionOtroSexo" name="generoRadio" value="Otro">
                                 <label for="optionOtroSexo">Otro</label>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="submitRegistrate" type="button" onclick="Registrarse()">Registrarse</button>
+                <button id="submitRegistrate" class="submitRegistrate" type="button">Registrarse</button>
             </form>
         </section>
     </header>
