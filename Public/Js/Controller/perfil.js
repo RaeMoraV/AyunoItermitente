@@ -243,34 +243,23 @@ function graficoPeso() {
 function ordenarPesoFechaTabla(){
     let posicionMin;
     let valorFechaMin;
-
     let tempFecha=[];
     let tempPeso=[];
     let repetir = listaFecha.length;
-
     for (let i = 0; i < repetir; i++) { 
         posicionMin = 0;
         valorFechaMin = listaFecha[0];
-
         for (let j = 1; j < repetir; j++) {
             if(new Date(listaFecha[j])<=new Date(valorFechaMin)){
                 posicionMin=j;
                 valorFechaMin=listaFecha[j];
-                console.log('Nuevo menor');
             }
-            console.log(j);
         }
         tempFecha.push(listaFecha.splice(posicionMin,1)[0]);
-        console.log(tempFecha);
         tempPeso.push(listaPeso.splice(posicionMin,1)[0]);
-        console.log(tempPeso);
-        console.log(i);
     }
-
     listaFecha=tempFecha;
-
     listaPeso=tempPeso;
-
 }
 
 
