@@ -8,4 +8,4 @@ const schemaEnfermedad = new mongoose.Schema({
     Tratamiento: {type: String, required: false, unique: false}
 });
 
-module.exports = mongoose.model('Enfermedad', schemaEnfermedades, 'Enfermedades');
+module.exports = mongoose.model('Enfermedad', schemaEnfermedad, 'Enfermedades');
