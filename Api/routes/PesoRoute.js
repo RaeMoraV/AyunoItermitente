@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require("express");
-const router = express.Router(); 
-const Logros = require('../models/PesoModel');
+const router = express.Router();
+const Peso = require('../models/PesoModel');
 
 //post = insertar
 //put = actualizar o desactivar
