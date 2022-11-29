@@ -150,7 +150,6 @@ function getPesoFecha() {
     let nPeso = Number(inputPeso.value);
     let sFecha = inputFechaPeso.value;
 
-
     //Registro a distintos arrays en el js de services
     registrarPesoYFecha (nPeso, sFecha);
     registrarPeso (nPeso);
@@ -158,6 +157,7 @@ function getPesoFecha() {
     
     //Actualiza la tabla de pesos
     imprimirPeso();
+
     //Actualiza el grafico
     graficoPeso();
 }
@@ -226,10 +226,14 @@ function graficoPeso() {
     let xArray = listarFechas();
     //let yArray = [1,2,3,4];
     //let xArray = ['2022-11-03','2022-11-04','2022-11-05']; Esto si funciona
+
     let data = [{
+        type: 'scatter',
+        mode:'lines',
+        name: 'Peso',
         x: xArray,
         y: yArray,
-        type: 'scatter'
+        
     }];
 
     let layout = {
@@ -239,6 +243,7 @@ function graficoPeso() {
 
     Plotly.newPlot(graphPeso, data, layout);
 }
+
 //Función para ordenar los datos antes de hacer gráficos
 function ordenarPesoFechaTabla(){
     let posicionMin;
@@ -465,39 +470,38 @@ function orderActividadTable () {
 /* Perfil - Logros - Tabla  ---------------------------------------*/
 
 
-/* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
+/* Perfil - Sección Ayuno - Tabla  ---------------------------------------*/
 
 let valorHoraInicioAyuno = document.getElementById("inputHoraInicioAyuno");
 let valorInicioFechaAyuno = document.getElementById("inputInicioFechaAyuno");
-
 let valorHoraFinAyuno = document.getElementById("inputHoraFinAyuno");
 let valorFinFechaAyuno = document.getElementById("inputFinFechaAyuno");
-
 let btnRegistroAyuno = document.getElementById("buttonRegistroAyuno");
+
 let validacionTotalAyuno = 0;
 let optionRadioCheckAyuno = 0;
 let estadoAyuno ='';
 
 btnRegistroAyuno.addEventListener("click",getAyunoData);
 
-//Esta funcion valida que haya informacion en las horas y fechas
+//Esta función valida que haya informacion en las horas y fechas
 
 function validarFechasAyuno(){
     validacionTotalAyuno = 0;
     if(valorHoraInicioAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la hora de inicio'});
+        Swal.fire({icon: 'error',title: 'Información requerida',text: 'Ingrese la hora de inicio'});
         validacionTotalAyuno=1;
     }
     else if(valorInicioFechaAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la fecha de inicio'});
+        Swal.fire({icon: 'error',title: 'Información requerida',text: 'Ingrese la fecha de inicio'});
         validacionTotalAyuno=1;
     }
     else if(valorHoraFinAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la hora de fin'});
+        Swal.fire({icon: 'error',title: 'Información requerida',text: 'Ingrese la hora de fin'});
         validacionTotalAyuno=1;
     }
     else if(valorFinFechaAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la fecha de fin'});
+        Swal.fire({icon: 'error',title: 'Información requerida',text: 'Ingrese la fecha de fin'});
         validacionTotalAyuno=1;
     }
 }
@@ -556,7 +560,7 @@ function getAyunoData(){
     let DateFinal = new Date(valorAnioF,valorMesF,valorDiaF,valorHoraF,valorMinF);
     
     if(DateInicio>DateFinal){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Fechas invalidas', footer: 'La fecha de fin no puede ser antes que la fecha de inicio'});
+        Swal.fire({icon: 'error',title: 'Información requerida',text: 'Fechas invalidas', footer: 'La fecha de fin no puede ser antes que la fecha de inicio'});
         validacionTotalAyuno = 1;
     }
     
