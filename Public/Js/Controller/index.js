@@ -8,10 +8,11 @@ let inputPesoDeseado = document.getElementById('txtPesoDeseado');
 let inputGenero;
 
 const anioInicio = 1900;
-let inputDia = document.getElementById('numDia').value;
-let inputMes = document.getElementById('numMes').value;
+let inputDia = document.getElementById('numDia');
+let inputMes = document.getElementById('numMes');
 let inputAnio = document.getElementById('numAnio');
-let inputFecha = new Date(`${numDia}, ${numMes}, ${numAnio}`);
+let inputFecha;
+
 
 const fondoNegro = document.querySelector('.fondoNegro');
 
@@ -29,10 +30,6 @@ btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('body').style.overflowY = 'hidden';
 });
 
-fondoNegro.addEventListener('click', cerrarRegistro);
-
-btnCerrarRegistro.addEventListener('click', cerrarRegistro);
-
 btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('#formularioInscripcion').style.display = 'flex';
     document.querySelector('.fondoNegro').style.display = 'block';
@@ -47,7 +44,9 @@ fotoPerfil.addEventListener ('change', function(){
      reader.readAsDataURL(this.files[0]);
 });
 
+fondoNegro.addEventListener('click', cerrarRegistro);
 
+btnCerrarRegistro.addEventListener('click', cerrarRegistro);
 
 function cerrarRegistro() {
     document.querySelector('#formularioInscripcion').style.display = 'none';
@@ -71,9 +70,13 @@ function genero() {
     return checkedRadio;
 };
 
-submitRegistrate.addEventListener('click', function(inputNombre, inputApellido, inputEmail, inputGenero = genero(), inputEstatura, inputPesoDeseado, formularioFecha){
+function actualizarFecha(){
+    inputFecha = `${numDia.value},${numMes.value},${numAnio.value}`;
+}
 
-});
+submitRegistrate.addEventListener('click', actualizarFecha);
+
+
 
 // submitRegistrate.addEventListener('click', function(){
     
