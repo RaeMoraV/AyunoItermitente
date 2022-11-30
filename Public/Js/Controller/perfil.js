@@ -22,113 +22,113 @@ btnSMRec.addEventListener('click', openRecetas);
 
 function openInfo() {
     let option = 1;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 function openPeso() {
     let option = 2;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 function openEnfermedades() {
     let option = 3;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 function openActividades() {
     let option = 4;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 function openLogros() {
     let option = 5;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 function openPlan() {
     let option = 6;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 function openRecetas() {
     let option = 7;
-    blockDisplay (option);
+    blockDisplay(option);
 }
 
 
-function blockDisplay(pOpcionSM){
-    switch(pOpcionSM){
+function blockDisplay(pOpcionSM) {
+    switch (pOpcionSM) {
         case 1:
-            document.getElementById('informacion').style.display='block';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'block';
+            document.getElementById('peso').style.display = 'none';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'none';
             break;
         case 2:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='block';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'block';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'none';
             break;
         case 3:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('enfermedades').style.display='block';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'none';
+            document.getElementById('enfermedades').style.display = 'block';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'none';
             break;
         case 4:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='block';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'none';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'block';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'none';
             break;
         case 5:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='block';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'none';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'block';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'none';
             break;
         case 6:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='block';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'none';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'block';
+            document.getElementById('recetas').style.display = 'none';
             break;
         case 7:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='none';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='block';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'none';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'block';
             break;
         default:
-            document.getElementById('informacion').style.display='none';
-            document.getElementById('peso').style.display='block';
-            document.getElementById('enfermedades').style.display='none';
-            document.getElementById('actividadFisica').style.display='none';
-            document.getElementById('logroObjetivos').style.display='none';
-            document.getElementById('planAyuno').style.display='none';
-            document.getElementById('recetas').style.display='none';
+            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('peso').style.display = 'block';
+            document.getElementById('enfermedades').style.display = 'none';
+            document.getElementById('actividadFisica').style.display = 'none';
+            document.getElementById('logroObjetivos').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('recetas').style.display = 'none';
             break;
     }
 }
@@ -141,25 +141,70 @@ function blockDisplay(pOpcionSM){
 let btnPeso = document.querySelector('#buttonRegistroPeso');
 let inputPeso = document.querySelector('#inputPeso');
 let inputFechaPeso = document.querySelector('#inputFecha');
+let validacionProcesoPeso = 0;
 
 graficoPeso();
 
 btnPeso.addEventListener('click', getPesoFecha);
 
+//Validar peso valido
+function validarPeso() {
+    let iPeso = Number(inputPeso.value);
+    if (iPeso == '' || iPeso == null || iPeso == 0) {
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese un peso' });
+        validacionProcesoPeso = 1;
+    }
+    else if (iPeso < 25 || iPeso > 635) {
+        Swal.fire({ icon: 'error', title: 'Información invalida', text: 'Ingrese un peso real' });
+        validacionProcesoPeso = 1;
+    }
+}
+
+//Validar fecha valida
+function validarFecha() {
+    let sInputFechaPeso = inputFechaPeso.value;
+    let anioPeso=sInputFechaPeso.split("-")[0];
+    let mesPeso=Number(sInputFechaPeso.split("-")[1])-1; // Se le resta un dia al mes porque empieza en 0=Enero
+    let diaPeso=sInputFechaPeso.split("-")[2];
+    let nuevaFechaPeso = new Date(anioPeso,mesPeso,diaPeso,0,0,0);
+
+    if(sInputFechaPeso=='' || sInputFechaPeso==null){
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese una fecha' });
+        validacionProcesoPeso = 1;
+    } else if(nuevaFechaPeso>new Date()){
+        Swal.fire({ icon: 'error', title: 'Información invalida', text: 'No se puede ingresar una fecha en el futuro' });
+        validacionProcesoPeso = 1;
+    }
+    //alert(nuevaFechaPeso); //Mon Nov 28 2022
+    //alert(sInputFechaPeso); //2022-11-29
+    //formato de sInputFechaPeso: 2022-11-29
+}
+
+
 function getPesoFecha() {
+    validacionProcesoPeso = 0;
     let nPeso = Number(inputPeso.value);
     let sFecha = inputFechaPeso.value;
 
+    validarPeso(nPeso);
+    if (validacionProcesoPeso == 0) {
+        alert("Se esta validando la fecha");
+        validarFecha();
+    }
 
-    //Registro a distintos arrays en el js de services
-    registrarPesoYFecha (nPeso, sFecha);
-    registrarPeso (nPeso);
-    registrarFecha (sFecha);
-    
-    //Actualiza la tabla de pesos
-    imprimirPeso();
-    //Actualiza el grafico
-    graficoPeso();
+    if (validacionProcesoPeso == 0) {
+
+        //Registro a distintos arrays en el js de services
+        registrarPesoYFecha(nPeso, sFecha);
+        registrarPeso(nPeso);
+        registrarFecha(sFecha);
+
+        //Actualiza la tabla de pesos
+        imprimirPeso();
+
+        //Actualiza el grafico
+        graficoPeso();
+    }
 }
 
 function imprimirPeso() {
@@ -179,10 +224,10 @@ function imprimirPeso() {
         celdaIMC.innerHTML = listaPesos[i][2];
     }
 
-    orderPesoYFechaTable ();
+    orderPesoYFechaTable();
 }
 
-function orderPesoYFechaTable () {
+function orderPesoYFechaTable() {
     let table;
     let rows;
     let switching;
@@ -190,7 +235,7 @@ function orderPesoYFechaTable () {
     let x;
     let y;
     let shouldSwitch;
-    
+
     table = document.getElementById('datosPeso');
     switching = true;
 
@@ -200,7 +245,7 @@ function orderPesoYFechaTable () {
 
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
-            
+
             x = rows[i].getElementsByTagName('TD')[0];
             y = rows[i + 1].getElementsByTagName('TD')[0];
 
@@ -226,52 +271,58 @@ function graficoPeso() {
     let xArray = listarFechas();
     //let yArray = [1,2,3,4];
     //let xArray = ['2022-11-03','2022-11-04','2022-11-05']; Esto si funciona
+
     let data = [{
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Peso',
         x: xArray,
         y: yArray,
-        type: 'scatter'
+
     }];
 
     let layout = {
-        xaxis: {range: yArray, title: "Mes"},
-        yaxis: {range: xArray, title: "Peso(kg)"}
+        xaxis: { range: yArray, title: "Mes" },
+        yaxis: { range: xArray, title: "Peso(kg)" }
+
     };
 
-    Plotly.newPlot(graphPeso, data, layout);
+    Plotly.newPlot(graphPeso, data, layout, { scrollZoom: true });
 }
+
 //Función para ordenar los datos antes de hacer gráficos
-function ordenarPesoFechaTabla(){
+function ordenarPesoFechaTabla() {
     let posicionMin;
     let valorFechaMin;
-    let tempFecha=[];
-    let tempPeso=[];
+    let tempFecha = [];
+    let tempPeso = [];
     let repetir = listaFecha.length;
-    for (let i = 0; i < repetir; i++) { 
+    for (let i = 0; i < repetir; i++) {
         posicionMin = 0;
         valorFechaMin = listaFecha[0];
         for (let j = 1; j < repetir; j++) {
-            if(new Date(listaFecha[j])<=new Date(valorFechaMin)){
-                posicionMin=j;
-                valorFechaMin=listaFecha[j];
+            if (new Date(listaFecha[j]) <= new Date(valorFechaMin)) {
+                posicionMin = j;
+                valorFechaMin = listaFecha[j];
             }
         }
-        tempFecha.push(listaFecha.splice(posicionMin,1)[0]);
-        tempPeso.push(listaPeso.splice(posicionMin,1)[0]);
+        tempFecha.push(listaFecha.splice(posicionMin, 1)[0]);
+        tempPeso.push(listaPeso.splice(posicionMin, 1)[0]);
     }
-    listaFecha=tempFecha;
-    listaPeso=tempPeso;
+    listaFecha = tempFecha;
+    listaPeso = tempPeso;
 }
 
 
 
-/* Perfil - Seccion Enfermedades - Tabla */
+/* Perfil - Sección Enfermedades - Tabla */
 
 let btnEnfermedad = document.querySelector('#buttonRegistroEnfermedad');
 let inputNombreEnfermedad = document.querySelector('#inputNombreEnfermedad');
 let inputDescripcionEnfermedad = document.querySelector('#inputDescripcionEnfermedad');
 let inputTratamientoEnfermedad = document.querySelector('#inputTratamientoEnfermedad');
 
-   
+
 function radioEstadoEval() {
     let option;
     if (document.getElementById('radioNoConcurrencia').checked) {
@@ -281,7 +332,7 @@ function radioEstadoEval() {
     }
 
     return option;
-} //Evalua cual de los dos radio buttons fue seleccionado
+} //Evalúa cual de los dos radio buttons fue seleccionado
 
 btnEnfermedad.addEventListener('click', getEnfermedad);
 
@@ -291,7 +342,7 @@ function getEnfermedad() {
     let sEstado = radioEstadoEval();
     let sTratamiento = inputTratamientoEnfermedad.value;
 
-    registrarEnfermedad (sNombre, sDescripcion, sEstado, sTratamiento);
+    registrarEnfermedad(sNombre, sDescripcion, sEstado, sTratamiento);
     imprimirEnfermedad();
 }
 
@@ -314,10 +365,10 @@ function imprimirEnfermedad() {
         celdaTratamiento.innerHTML = listaEnfermedades[i][3];
     }
 
-    orderEnfermedadTable ();
+    orderEnfermedadTable();
 }
 
-function orderEnfermedadTable () {
+function orderEnfermedadTable() {
     let table;
     let rows;
     let switching;
@@ -325,7 +376,7 @@ function orderEnfermedadTable () {
     let x;
     let y;
     let shouldSwitch;
-    
+
     table = document.getElementById('datosEnfermedad');
     switching = true;
 
@@ -335,7 +386,7 @@ function orderEnfermedadTable () {
 
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
-            
+
             x = rows[i].getElementsByTagName('TD')[0];
             y = rows[i + 1].getElementsByTagName('TD')[0];
 
@@ -351,7 +402,7 @@ function orderEnfermedadTable () {
     }
 }
 
-/* Perfil - Seccion Actividades - Tabla */
+/* Perfil - Sección Actividades - Tabla */
 
 
 
@@ -363,7 +414,7 @@ let inputInicioActividad = document.querySelector('#inicioHora').value + ':' + d
 let inputFinActividad = document.querySelector('#finHora').value + ':' + document.querySelector('#finMinutos').value + ':' + document.querySelector('#finSegundos').value;
 let totalHoras = '';
 //Variables para obtener el total de tiempo invertido en una actividad
-let startHour = document.getElementById("inicioHora"); 
+let startHour = document.getElementById("inicioHora");
 let startMinute = document.getElementById("inicioMinutos");
 let startSecond = document.getElementById("inicioSegundos");
 let endHour = document.getElementById("finHora");
@@ -371,14 +422,14 @@ let endMinute = document.getElementById("finMinutos");
 let endSecond = document.getElementById("finSegundos");
 
 
-btnActividad.addEventListener("click", () => {    
+btnActividad.addEventListener("click", () => {
     totalHoras = getTotalHoras();
-    getActividad();   
+    getActividad();
 });
 
 function getTotalHoras() {
-    let startDate = new Date(2020,05,05,startHour.value,startMinute.value,startSecond.value);
-    let endDate = new Date(2020,05,05,endHour.value,endMinute.value,endSecond.value);
+    let startDate = new Date(2020, 05, 05, startHour.value, startMinute.value, startSecond.value);
+    let endDate = new Date(2020, 05, 05, endHour.value, endMinute.value, endSecond.value);
     let difference = endDate.getTime() - startDate.getTime();
     if (difference > 0) {
         difference = difference / 1000;
@@ -388,7 +439,7 @@ function getTotalHoras() {
         difference -= minuteDifference * 60;
         return `${hourDifference}:${minuteDifference}:${difference}`;
     };
-    
+
 
 }
 
@@ -400,7 +451,7 @@ function getActividad() {
     let sFin = inputFinActividad;
     let sTotal = totalHoras;
 
-    registrarActividad (sFecha, sNombre, sInicio, sFin, sTotal);
+    registrarActividad(sFecha, sNombre, sInicio, sFin, sTotal);
     imprimirActividad();
 }
 
@@ -425,10 +476,10 @@ function imprimirActividad() {
         celdaTotal.innerHTML = listaActividades[i][4];
     }
 
-    orderActividadTable ();
+    orderActividadTable();
 }
 
-function orderActividadTable () {
+function orderActividadTable() {
     let table;
     let rows;
     let switching;
@@ -436,7 +487,7 @@ function orderActividadTable () {
     let x;
     let y;
     let shouldSwitch;
-    
+
     table = document.getElementById('datosActividad');
     switching = true;
 
@@ -446,7 +497,7 @@ function orderActividadTable () {
 
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
-            
+
             x = rows[i].getElementsByTagName('TD')[0];
             y = rows[i + 1].getElementsByTagName('TD')[0];
 
@@ -465,138 +516,139 @@ function orderActividadTable () {
 /* Perfil - Logros - Tabla  ---------------------------------------*/
 
 
-/* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
+/* Perfil - Sección Ayuno - Tabla  ---------------------------------------*/
 
 let valorHoraInicioAyuno = document.getElementById("inputHoraInicioAyuno");
 let valorInicioFechaAyuno = document.getElementById("inputInicioFechaAyuno");
-
 let valorHoraFinAyuno = document.getElementById("inputHoraFinAyuno");
 let valorFinFechaAyuno = document.getElementById("inputFinFechaAyuno");
-
 let btnRegistroAyuno = document.getElementById("buttonRegistroAyuno");
+
 let validacionTotalAyuno = 0;
 let optionRadioCheckAyuno = 0;
-let estadoAyuno ='';
+let estadoAyuno = '';
 
-btnRegistroAyuno.addEventListener("click",getAyunoData);
+btnRegistroAyuno.addEventListener("click", getAyunoData);
 
-//Esta funcion valida que haya informacion en las horas y fechas
+//Esta función valida que haya informacion en las horas y fechas
 
-function validarFechasAyuno(){
+function validarFechasAyuno() {
     validacionTotalAyuno = 0;
-    if(valorHoraInicioAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la hora de inicio'});
-        validacionTotalAyuno=1;
+    if (valorHoraInicioAyuno.value == '') {
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de inicio' });
+        validacionTotalAyuno = 1;
     }
-    else if(valorInicioFechaAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la fecha de inicio'});
-        validacionTotalAyuno=1;
+    else if (valorInicioFechaAyuno.value == '') {
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha de inicio' });
+        validacionTotalAyuno = 1;
     }
-    else if(valorHoraFinAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la hora de fin'});
-        validacionTotalAyuno=1;
+    else if (valorHoraFinAyuno.value == '') {
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de fin' });
+        validacionTotalAyuno = 1;
     }
-    else if(valorFinFechaAyuno.value==''){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese la fecha de fin'});
-        validacionTotalAyuno=1;
+    else if (valorFinFechaAyuno.value == '') {
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha de fin' });
+        validacionTotalAyuno = 1;
     }
 }
 
-//Esta funcion obtiene el valor de los radiocheck y valida que haya un opcion seleccionada
-function radioCheckAyuno(){
+//Esta función obtiene el valor de los radiocheck y valida que haya un opción seleccionada
+function radioCheckAyuno() {
     validacionTotalAyuno = 0;
-    if(document.getElementById("radio1410").checked){
-        optionRadioCheckAyuno=document.getElementById("radio1410").value;
+    if (document.getElementById("radio1410").checked) {
+        optionRadioCheckAyuno = document.getElementById("radio1410").value;
     }
-    else if(document.getElementById("radio168").checked){
-        optionRadioCheckAyuno=document.getElementById("radio168").value;
+    else if (document.getElementById("radio168").checked) {
+        optionRadioCheckAyuno = document.getElementById("radio168").value;
     }
-    else if(document.getElementById("radio186").checked){
-        optionRadioCheckAyuno=document.getElementById("radio186").value;
+    else if (document.getElementById("radio186").checked) {
+        optionRadioCheckAyuno = document.getElementById("radio186").value;
     }
-    else if(document.getElementById("radio204").checked){
-        optionRadioCheckAyuno=document.getElementById("radio204").value;
+    else if (document.getElementById("radio204").checked) {
+        optionRadioCheckAyuno = document.getElementById("radio204").value;
     }
-    else{
-        validacionTotalAyuno=1;
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Ingrese el tipo de ayuno'});
+    else {
+        validacionTotalAyuno = 1;
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese el tipo de ayuno' });
     }
 }
 
-function getAyunoData(){
+function getAyunoData() {
     validacionTotalAyuno = 0;
 
     validarFechasAyuno();
-    radioCheckAyuno();
-    
+
+    if (validacionTotalAyuno == 0) {
+        radioCheckAyuno();
+    }
+
     let sInicioHoraAyuno = valorHoraInicioAyuno.value;//String 12:22
     let sInicioFechaAyuno = valorInicioFechaAyuno.value; //String 3 nov 2022 = 2022-11-03
-    
+
     let sFinHoraAyuno = valorHoraFinAyuno.value;//String 12:24
     let sFinFechaAyuno = valorFinFechaAyuno.value; //String 3 nov 2022 = 2022-11-03
 
-    let valorHora=sInicioHoraAyuno.split(":")[0];
-    let valorMin=sInicioHoraAyuno.split(":")[1];
+    let valorHora = sInicioHoraAyuno.split(":")[0];
+    let valorMin = sInicioHoraAyuno.split(":")[1];
 
-    let valorAnio=sInicioFechaAyuno.split("-")[0];
-    let valorMes=sInicioFechaAyuno.split("-")[1];
-    valorMes=Number(valorMes)-1; // Hay que restarle 1 porque los meses empiezan en zero
-    let valorDia=sInicioFechaAyuno.split("-")[2];
+    let valorAnio = sInicioFechaAyuno.split("-")[0];
+    let valorMes = sInicioFechaAyuno.split("-")[1];
+    valorMes = Number(valorMes) - 1; // Hay que restarle 1 porque los meses empiezan en zero
+    let valorDia = sInicioFechaAyuno.split("-")[2];
 
-    let valorHoraF=sFinHoraAyuno.split(":")[0];
-    let valorMinF=sFinHoraAyuno.split(":")[1];
+    let valorHoraF = sFinHoraAyuno.split(":")[0];
+    let valorMinF = sFinHoraAyuno.split(":")[1];
 
-    let valorAnioF=sFinFechaAyuno.split("-")[0];
-    let valorMesF=sFinFechaAyuno.split("-")[1];
-    valorMesF=Number(valorMesF)-1; // Hay que restarle 1 porque los meses empiezan en zero
-    let valorDiaF=sFinFechaAyuno.split("-")[2];
+    let valorAnioF = sFinFechaAyuno.split("-")[0];
+    let valorMesF = sFinFechaAyuno.split("-")[1];
+    valorMesF = Number(valorMesF) - 1; // Hay que restarle 1 porque los meses empiezan en zero
+    let valorDiaF = sFinFechaAyuno.split("-")[2];
 
-    
-    let DateInicio = new Date(valorAnio,valorMes,valorDia,valorHora,valorMin);
-    let DateFinal = new Date(valorAnioF,valorMesF,valorDiaF,valorHoraF,valorMinF);
-    
-    if(DateInicio>DateFinal){
-        Swal.fire({icon: 'error',title: 'Informacion requerida',text: 'Fechas invalidas', footer: 'La fecha de fin no puede ser antes que la fecha de inicio'});
+
+    let DateInicio = new Date(valorAnio, valorMes, valorDia, valorHora, valorMin);
+    let DateFinal = new Date(valorAnioF, valorMesF, valorDiaF, valorHoraF, valorMinF);
+
+    if (DateInicio > DateFinal) {
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Fechas invalidas', footer: 'La fecha de fin no puede ser antes que la fecha de inicio' });
         validacionTotalAyuno = 1;
     }
-    
-    if(validacionTotalAyuno==0){
+
+    if (validacionTotalAyuno == 0) {
         let totalHorasAyunadas;
-        totalHorasAyunadas=(DateFinal.getTime()-DateInicio.getTime())/(1000*60*60);
-        if(optionRadioCheckAyuno=="14-10"){
-            if(totalHorasAyunadas>=14){
-                estadoAyuno="Logrado";
+        totalHorasAyunadas = (DateFinal.getTime() - DateInicio.getTime()) / (1000 * 60 * 60);
+        if (optionRadioCheckAyuno == "14-10") {
+            if (totalHorasAyunadas >= 14) {
+                estadoAyuno = "Logrado";
             }
-            else{
-                estadoAyuno="No logrado";
-            }
-        }
-        else if(optionRadioCheckAyuno=="16-8"){
-            if(totalHorasAyunadas>=16){
-                estadoAyuno="Logrado";
-            }
-            else{
-                estadoAyuno="No logrado";
+            else {
+                estadoAyuno = "No logrado";
             }
         }
-        else if(optionRadioCheckAyuno=="18-6"){
-            if(totalHorasAyunadas>=18){
-                estadoAyuno="Logrado";
+        else if (optionRadioCheckAyuno == "16-8") {
+            if (totalHorasAyunadas >= 16) {
+                estadoAyuno = "Logrado";
             }
-            else{
-                estadoAyuno="No logrado";
-            }
-        }
-        else if(optionRadioCheckAyuno=="20-4"){
-            if(totalHorasAyunadas>=20){
-                estadoAyuno="Logrado";
-            }
-            else{
-                estadoAyuno="No logrado";
+            else {
+                estadoAyuno = "No logrado";
             }
         }
-        //pFechaInicio,pHoraInicio,pFechaFin,pHoraFin,pTipoAyuno,pEstadoAyuno
-        registrarAyuno(sInicioFechaAyuno,sInicioHoraAyuno,sFinFechaAyuno,sFinHoraAyuno,optionRadioCheckAyuno,estadoAyuno);
+        else if (optionRadioCheckAyuno == "18-6") {
+            if (totalHorasAyunadas >= 18) {
+                estadoAyuno = "Logrado";
+            }
+            else {
+                estadoAyuno = "No logrado";
+            }
+        }
+        else if (optionRadioCheckAyuno == "20-4") {
+            if (totalHorasAyunadas >= 20) {
+                estadoAyuno = "Logrado";
+            }
+            else {
+                estadoAyuno = "No logrado";
+            }
+        }
+        registrarAyuno(sInicioFechaAyuno, sInicioHoraAyuno, sFinFechaAyuno, sFinHoraAyuno, optionRadioCheckAyuno, estadoAyuno);
         imprimirRegistroAyuno();
     }
 }
@@ -624,10 +676,10 @@ function imprimirRegistroAyuno() {
         celdaEstado.innerHTML = listaRegistroAyunos[i][5];
     }
 
-    orderRegistroAyuno ();
+    orderRegistroAyuno();
 }
 
-function orderRegistroAyuno () {
+function orderRegistroAyuno() {
     let table;
     let rows;
     let switching;
@@ -635,7 +687,7 @@ function orderRegistroAyuno () {
     let x;
     let y;
     let shouldSwitch;
-    
+
     table = document.getElementById('tablaRegistroAyuno');
     switching = true;
 
@@ -645,7 +697,7 @@ function orderRegistroAyuno () {
 
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
-            
+
             x = rows[i].getElementsByTagName('TD')[0];
             y = rows[i + 1].getElementsByTagName('TD')[0];
 
@@ -670,7 +722,7 @@ let inputIngredientesReceta = document.querySelector('#inputIngredientesReceta')
 let inputPreparacionReceta = document.querySelector('#inputPreparacionReceta');
 let inputTiempoReceta = document.querySelector('#inputTiempoReceta');
 
-   
+
 function radioTipoReceta() {
     let option;
     if (document.getElementById('inputRecetaDesayuno').checked) {
@@ -695,7 +747,7 @@ function getReceta() {
     let sTiempoReceta = inputTiempoReceta.value;
     let sTipo = radioTipoReceta();
 
-    registrarRecetas (sNombre, sIngredientes, sPreparacion, sTiempoReceta, sTipo);
+    registrarRecetas(sNombre, sIngredientes, sPreparacion, sTiempoReceta, sTipo);
     imprimirReceta();
 }
 
@@ -720,10 +772,10 @@ function imprimirReceta() {
         celdaTipo.innerHTML = listaRecetas[i][4];
     }
 
-    orderRecetaTable ();
+    orderRecetaTable();
 }
 
-function orderRecetaTable () {
+function orderRecetaTable() {
     let table;
     let rows;
     let switching;
@@ -731,7 +783,7 @@ function orderRecetaTable () {
     let x;
     let y;
     let shouldSwitch;
-    
+
     table = document.getElementById('datosReceta');
     switching = true;
 
@@ -741,7 +793,7 @@ function orderRecetaTable () {
 
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
-            
+
             x = rows[i].getElementsByTagName('TD')[0];
             y = rows[i + 1].getElementsByTagName('TD')[0];
 

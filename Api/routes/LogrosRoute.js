@@ -13,13 +13,12 @@ const Logro = require('../models/LogrosModel');
 router.post('/RegistrarLogro', (req, res) => {
     let body = req.body;
     let nuevoLogro = new Logro({
+        Logro:body.Logro,
+        NombredeLogro:body.NombredeLogro,
         TipoLogro: body.TipoLogro,
         CondicionLogro: body.CondicionLogro,
-        Medalla: body.MedallaLogro,
-        Estado: body.EstadoLogro,
-
-
-
+        Medalla: body.Medalla,
+        Estado: body.Estado,
     });
     nuevoLogro.save((err, logroDB) => {
         if (err) {

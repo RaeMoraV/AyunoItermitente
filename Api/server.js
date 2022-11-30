@@ -58,9 +58,11 @@ app.use('/api', personas);
 const pesos = require('./routes/PesoRoute');
 app.use('/api', pesos);
 
-//Conexión a ruta de pesos
+//Conexión a ruta de Actividades
 const registroActividad = require('./routes/ActividadRoute');
 app.use('/api', registroActividad);
+
+//Conexión a ruta de logros
 const logros = require('./routes/LogrosRoute');
 app.use('/api', logros);
 
