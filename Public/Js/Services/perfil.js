@@ -1,55 +1,31 @@
 'use strict';
 
-/* Perfil - Seccion Peso ---------------------------------------*/
-let listaPesoYFecha = [];
-let listaPeso = [];
-let listaFecha = [];
-let listaMeses = [];
+/* Perfil - Sección Peso ---------------------------------------*/
+let listaPFI = new Array(new Array(),new Array(),new Array());
 
-
-
-
-function registrarPesoYFecha (pnPeso, psFecha) {
-    let nuevoPesoYFecha = [];
+function registrarPFI (pnPeso, psFecha) {
     let imc = pnPeso / Math.round(Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2));
-    nuevoPesoYFecha.push(pnPeso, psFecha, imc);
-    listaPesoYFecha.push(nuevoPesoYFecha);
+    listaPFI[0].push(pnPeso);
+    listaPFI[1].push(psFecha);
+    listaPFI[2].push(imc);
 };
 
-function registrarPeso (pnPeso) {
-    listaPeso.push(pnPeso);
-};
-
-function registrarFecha (psFecha) {
-    listaFecha.push(psFecha);
-};
-
+function listarPFI() {
+    return listaPFI;
+}
 
 function listarPesos() {
-    return listaPeso;
+    return listaPFI[0];
 }
 
 function listarFechas() {
-    return listaFecha;
+    return listaPFI[1];
 }
 
-function listarMeses() {
-    let fecha = 0;
-    let newMonth = null;
-
-    for (let i = 0; i < listaFecha.length; i++) {
-        fecha = new Date(listaFecha[i]);
-        newMonth = fecha.getMonth() + 1;
-
-        listaMeses.push(newMonth);
-    };
-
-    return listaMeses;
+function listarIMC() {
+    return listaPFI[2];
 }
 
-function listarPesosYFechas() {
-    return listaPesoYFecha;
-}
 
 /* Perfil - Seccion Enfermedades ---------------------------------------*/
 let listaEnfermedades = [];

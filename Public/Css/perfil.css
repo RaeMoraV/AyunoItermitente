@@ -1,5 +1,4 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -7,28 +6,29 @@
 }
 
 main {
-    display:flex;
+    display: flex;
     min-height: 100%;
     padding: auto;
 }
 
-body{
+body {
     position: relative;
 }
 
 /* Estilos SideMenu--------------------------- */
-.sidebarQuieto{
-    position:fixed;
+.sidebarQuieto {
+    position: fixed;
     top: 100px;
     left: 15px;
 }
-.sidebar{
+
+.sidebar {
     min-width: 250px;
     background: #dfede3;
     border-radius: 20px;
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow:  13px 13px 26px #afafaf,
-                -13px -13px 26px #ffffff;
+    box-shadow: 13px 13px 26px #afafaf,
+        -13px -13px 26px #ffffff;
 }
 
 .sidebar h1 {
@@ -40,7 +40,8 @@ body{
     background: var(color-lightgreen);
     user-select: none;
 }
-.sidebar ul a{
+
+.sidebar ul a {
     display: block;
     height: 100%;
     width: 100%;
@@ -53,16 +54,17 @@ body{
     border-bottom: 1px solid rgba(203, 203, 203, 0.1);
     transition: .2s;
 }
-.sidebar ul li:hover a{
+
+.sidebar ul li:hover a {
     padding-left: 30px;
     background-color: var(--color-green);
     border-radius: 20px;
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow:  13px 13px 26px #afafaf,
-                -13px -13px 26px #ffffff;
+    box-shadow: 13px 13px 26px #afafaf,
+        -13px -13px 26px #ffffff;
 }
 
-.sidebar ul button{
+.sidebar ul button {
     display: block;
     height: 100%;
     width: 100%;
@@ -74,7 +76,8 @@ body{
     border-bottom: 1px solid rgba(203, 203, 203, 0.1);
     transition: .5s;
 }
-ul li:hover button{
+
+ul li:hover button {
     padding-left: 30px;
     background-color: var(--color-green);
 }
@@ -85,9 +88,9 @@ ul li:hover button{
 .sectionContainer {
     width: 100%;
     margin-left: 300px;
-    
+
     justify-content: center;
-    display:flex;
+    display: flex;
 }
 
 .container {
@@ -107,6 +110,7 @@ ul li:hover button{
     max-width: 1500px;
     margin: 0 auto;
 }
+
 .contenido .dosHijos {
     display: flex;
     justify-content: space-between;
@@ -206,13 +210,17 @@ ul li:hover button{
 
 /* Estilos Registros Nuevos */
 
+.errorDato {
+    border: solid 4px red;
+}
+
 .ingresoDatos {
     background-color: var(--color-green);
     max-width: 500px;
     height: fit-content;
     padding: 30px;
     border-radius: 5px;
-    box-shadow: 11px 10px 15px -2px rgba(166,166,166,0.75);
+    box-shadow: 11px 10px 15px -2px rgba(166, 166, 166, 0.75);
 }
 
 .ingresoDatos h3 {
@@ -305,8 +313,9 @@ ul li:hover button{
     width: 100%;
     padding: 60px;
 }
-#planAyuno .contenedorTiposAyuno{
-    border-radius:10px;
+
+#planAyuno .contenedorTiposAyuno {
+    border-radius: 10px;
     background-image: url(../Img/perfil/background-tiposayunos\ \(2\).jpg);
     background-size: cover;
     background-position: center;
@@ -315,20 +324,21 @@ ul li:hover button{
     width: 90%;
     border: 1px solid black;
 }
-#planAyuno .contenedorTiposAyuno .contenedorTituloTipos{
+
+#planAyuno .contenedorTiposAyuno .contenedorTituloTipos {
     opacity: 1;
 }
 
-#planAyuno .contenedorTiposAyuno h3{
+#planAyuno .contenedorTiposAyuno h3 {
     font-size: 30px;
     font-weight: 600;
     text-align: left;
     background-color: rgba(217, 234, 218, 0.8);
     padding: 10px;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-#planAyuno .tiposAyuno{
+#planAyuno .tiposAyuno {
     margin-top: 20px;
     height: 50px;
     width: 100%;
@@ -336,34 +346,37 @@ ul li:hover button{
     flex-direction: row;
     justify-content: space-between;
 }
-#planAyuno .tiposAyuno div{
+
+#planAyuno .tiposAyuno div {
     padding: 20px;
     height: 250px;
     max-width: 20%;
     background-color: rgba(217, 234, 218, 0.8);
-    border-radius:10px;
+    border-radius: 10px;
     text-align: justify;
     transition: 0.3s;
 }
-#planAyuno .tiposAyuno div:hover{
+
+#planAyuno .tiposAyuno div:hover {
     background-color: rgba(217, 234, 218, 1);
 }
 
-#planAyuno .separadorVertical{
+#planAyuno .separadorVertical {
     width: 90%;
     height: 3px;
     background-color: rgba(0, 0, 0, .3);
     margin-top: 50px;
     margin-bottom: 50px;
-    
+
 }
-#planAyuno .tablaFormularioAyuno{
+
+#planAyuno .tablaFormularioAyuno {
     width: 90%;
     height: 800px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start; 
+    align-items: flex-start;
     justify-content: space-evenly;
 }
 
@@ -385,28 +398,33 @@ ul li:hover button{
     border: none;
 }
 
-.ingresoDatosAyuno h3{
+.ingresoDatosAyuno h3 {
     font-size: 15px;
     text-align: center;
     margin-bottom: 20px;
 }
-.recomendacionAyuno h3{
+
+.recomendacionAyuno h3 {
     padding-top: 20px;
 }
-.recomendacionAyuno{
-background-color: white;
-margin-top: 20px;
-border-radius: 10px;
+
+.recomendacionAyuno {
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
 }
-.parrafoImagenAyuno{
+
+.parrafoImagenAyuno {
     display: flex;
     flex-direction: row;
 }
-.parrafoImagenAyuno p{
+
+.parrafoImagenAyuno p {
     padding: 10px;
     text-align: justify;
 }
-.parrafoImagenAyuno img{
+
+.parrafoImagenAyuno img {
     margin: 10px;
     border-radius: 5px;
     margin-top: 80px;
@@ -421,4 +439,3 @@ border-radius: 10px;
 
 
 }
-
