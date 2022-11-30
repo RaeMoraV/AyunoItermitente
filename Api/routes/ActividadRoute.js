@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const Logro = require('../models/LogrosModel');
+const ActividadRealizada = require('../models/ActividadModel');
 
 //post = insertar
 //put = actualizar o desactivar
@@ -10,35 +10,34 @@ const Logro = require('../models/LogrosModel');
 //get = obtener o listar o buscar
 
 
-router.post('/RegistrarLogro', (req, res) => {
+router.post('/RegistrarActividadRealizada', (req, res) => {
     let body = req.body;
-    let nuevoLogro = new Logro({
-        Logro:body.Logro,
-        NombredeLogro:body.NombredeLogro,
-        TipoLogro: body.TipoLogro,
-        CondicionLogro: body.CondicionLogro,
-        Medalla: body.Medalla,
-        Estado: body.Estado,
+    let nuevoRegistroActividad = new ActividadRealizada({
+        Fecha: body.Fecha,
+        HoraInicio: body.HoraInicio,
+        HoraFin: body.HoraFin,
+        Tipo: body.Tipo,
+        TotalTiempo: body.TotalTiempo
     });
-    nuevoLogro.save((err, logroDB) => {
+    nuevoRegistroActividad.save((err, actividadRealizadaDB) => {
         if (err) {
             res.json({
                 resultado: false,
-                msj: 'No se pudo registrar el logro, ocurrió un error!: ',
+                msj: 'No se pudo registrar la actividad, ocurrio un error!: ',
                 err
             });
         } else {
             res.json({
                 resultado: true,
                 msj: 'Registro realizado de manera correcta',
-                logroDB
+                actividadRealizadaDB
             });
         }
     });
 });
 
-router.get('/ListarLogros', (req, res) => {
-    Logro.find((err, ListaLogrosDB) => {
+router.get('/ListarActividadRealizada', (req, res) => {
+    ActividadRealizada.find((err, ListaRegistrosActividadesDB) => {
         if (err) {
             res.json({
                 resultado: false,
@@ -49,7 +48,7 @@ router.get('/ListarLogros', (req, res) => {
             res.json({
                 resultado: true,
                 msj: 'Los datos se obtuvieron de manera correcta: ',
-                ListaLogrosDB
+                ListaRegistrosActividadesDB
             });
         }
     });
