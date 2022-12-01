@@ -5,6 +5,8 @@
     z-index: 10;
 }
 
+
+
 .bannerPrincipal {
     position: relative;
     background-size: cover;
@@ -14,15 +16,6 @@
     text-align: center;
 }
 
-/* .bannerPrincipal .oscurecerFondo {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.531);
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-} */
-
-
 .bannerPrincipal .titulo {
     color: #fff;
     width: 100%;
@@ -30,7 +23,6 @@
     margin: auto;
     padding: 20px;
     font-weight: bold;
-    font-size: 50px;
     z-index: 10;
 
 }
@@ -52,7 +44,7 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 900px;
+    height: 500px;
 }
 
 .titulo1 {
@@ -75,8 +67,6 @@
 .parteTexto {
     z-index: 20;
     max-width: 1000px;
-    font-size: 30px;
-    padding: 10px;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -85,6 +75,9 @@
     text-shadow: 7px 3px 5px rgb(0, 0, 0);
     z-index: 10;
     margin: 0 auto;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    font-size: xx-large;
 }
 
 
@@ -107,14 +100,14 @@
     position: relative;
     display: inline-block;
     padding: 0.3em;
-    margin: 3.5em;
-    border: solid 4px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    border: solid 2px;
     text-transform: uppercase;
     cursor: pointer;
-    font-size: 40px;
     color: #8faf69;
     z-index: 10;
-
+    padding: 20px;
 }
 
 #buttonRegistrate:hover {
@@ -215,11 +208,13 @@
     width: 250px;
     font-size: 20px;
     flex-direction: flex;
+    padding: 45px;
 }
 
 #btnRegistrateYa:hover {
     box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
     background: #000000;
+    
 }
 
 .fondoNegro {
@@ -494,7 +489,6 @@
 .beneficioContenedor {
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
     align-items: center;
 
@@ -816,7 +810,7 @@
     display: flex;
     text-align: center;
     width: 100%;
-    height: 900px;
+    
 }
 
 
@@ -858,7 +852,7 @@
     flex-direction: column;
     max-width: 1100px;
     margin: auto;
-
+   
 
 }
 
