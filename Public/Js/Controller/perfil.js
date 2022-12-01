@@ -330,7 +330,6 @@ function graficoPeso() {
             size: 20,
             color: '#286412'
         },
-
     };
 
     let config = {
