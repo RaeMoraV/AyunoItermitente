@@ -1,30 +1,6 @@
 'use strict';
 
 /* Perfil - Sección Peso ---------------------------------------*/
-let listaPFI = new Array(new Array(),new Array(),new Array());
-
-function registrarPFI (pnPeso, psFecha) {
-    let imc = pnPeso / Math.round(Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2));
-    listaPFI[0].push(pnPeso);
-    listaPFI[1].push(psFecha);
-    listaPFI[2].push(imc);
-};
-
-function listarPFI() {
-    return listaPFI;
-}
-
-function listarPesos() {
-    return listaPFI[0];
-}
-
-function listarFechas() {
-    return listaPFI[1];
-}
-
-function listarIMC() {
-    return listaPFI[2];
-}
 
 
 /* Perfil - Seccion Enfermedades ---------------------------------------*/
