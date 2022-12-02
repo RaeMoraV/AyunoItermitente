@@ -161,6 +161,10 @@ async function getAyuno() {
     valorInicioFechaAyuno.value = "";
     valorHoraFinAyuno.value = "";
     valorFinFechaAyuno.value = "";
+    document.getElementById("radio1410").checked = false;
+    document.getElementById("radio168").checked = false;
+    document.getElementById("radio186").checked = false;
+    document.getElementById("radio204").checked = false;
 }
 
 
@@ -202,13 +206,13 @@ function validarAyuno(pDateInicio, pDateFinal) {
     }
     else {
         document.getElementById("radio1410").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese el tipo de ayuno' });
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Seleccione un tipo de ayuno' });
         return true;
     }
     //Valida que la fecha Inicial no sea mayor a la fecha final
     if (pDateInicio > pDateFinal) {
-        document.getElementById("inputHoraInicioAyuno").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Fechas invalidas', footer: 'La fecha de fin no puede ser antes que la fecha de inicio' });
+        document.getElementById("inputFinFechaAyuno").focus();
+        Swal.fire({ icon: 'error', title: 'Fechas invalidas', text: 'La fecha de fin no puede ser antes que la fecha de inicio' });
         return true;
     }
 }
