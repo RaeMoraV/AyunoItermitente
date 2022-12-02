@@ -122,11 +122,11 @@ function blockDisplay(pOpcionSM) {
             break;
         default:
             document.getElementById('informacion').style.display = 'none';
-            document.getElementById('peso').style.display = 'block';
+            document.getElementById('peso').style.display = 'none';
             document.getElementById('enfermedades').style.display = 'none';
             document.getElementById('actividadFisica').style.display = 'none';
             document.getElementById('logroObjetivos').style.display = 'none';
-            document.getElementById('planAyuno').style.display = 'none';
+            document.getElementById('planAyuno').style.display = 'block';
             document.getElementById('recetas').style.display = 'none';
             break;
     }

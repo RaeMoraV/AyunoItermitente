@@ -39,10 +39,12 @@ async function ImprimirPesos() {
         let celdaPeso = fila.insertCell();
         let celdaFechaRegistroPeso = fila.insertCell();
         let celdaIMC = fila.insertCell();
+        let celdaClasificacionIMC = fila.insertCell();
 
         celdaPeso.innerHTML = listaPesos[i].Peso;
         celdaFechaRegistroPeso.innerHTML = listaPesos[i].FechaRegistroPeso;
         celdaIMC.innerHTML = listaPesos[i].IMC;
+        celdaClasificacionIMC.innerHTML = listaPesos[i].Clasificacion;
     }
 }
 
@@ -55,11 +57,26 @@ async function getPesoFecha() {
     if (validarPeso() == true) {
         return;
     }
-    
+
+    let IMCCalculado = Math.round(nPeso / Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2));
+    let ClasificacionCalculado;
+    if (IMCCalculado < 18.5) {
+        ClasificacionCalculado = 'Bajo peso'
+    } else if (IMCCalculado >= 18.5 && IMCCalculado < 25) {
+        ClasificacionCalculado = 'Peso saludable'
+    }
+    else if (IMCCalculado >= 25 && IMCCalculado < 30) {
+        ClasificacionCalculado = 'Sobre peso'
+    }
+    else {
+        ClasificacionCalculado = 'Obesidad'
+    }
+
     let data = {
         Peso: nPeso,
         FechaRegistroPeso: sFecha,
-        IMC: nPeso / Math.round(Math.pow(Number(document.getElementById('alturaUsuario').textContent), 2)),
+        IMC: IMCCalculado,
+        Clasificacion: ClasificacionCalculado
     };
 
     result = await ProcessPost('RegistrarPeso', data, null);
@@ -123,11 +140,12 @@ function graficoPeso() {
             titlefont: { size: 40 },
         },
         yaxis: {
-            range: [0, Math.max(...yArray1) + 10],
+            range: [0, Math.max(...yArray1) + 20],
             autorange: false,
             title: "Peso (kg)",
             automargin: true,
             titlefont: { size: 40 },
+            dtick: Math.round((Math.max(...yArray1) + 20) / 10)
         },
         font: {
             family: 'Noto Serif',
@@ -149,7 +167,7 @@ function graficoPeso() {
             title: "IMC",
             automargin: true,
             titlefont: { size: 40 },
-            range: [0, Math.max(...yArray2)],
+            range: [0, Math.max(...yArray2) + 20],
             autorange: false,
         },
         font: {
@@ -168,7 +186,6 @@ function graficoPeso() {
     Plotly.newPlot(graphIMC, trace2, layout2, config);
 }
 
-//VALIDACIONES PENDIENTE UNIFICAR EN UNA SOLA FUNCIÓN
 //Validar peso valido
 function validarPeso() {
     let iPeso = Number(inputPeso.value);

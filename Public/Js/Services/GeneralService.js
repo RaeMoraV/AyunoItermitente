@@ -17,6 +17,7 @@ async function ProcessGet(pRouterName, pParams) {
     });
     return result;
 }
+
 async function ProcessDelete(pRouterName, pData) {
     let result = await ProcessAction('delete', pRouterName, pData);
     return result;
@@ -37,8 +38,12 @@ async function ProcessPost(pRouterName, pData, pSubDocuments) {
             //aca vamos a insertar intereses mediante subdocumentos...
         }
     }
+    else if (result.resultado == true) {
+        //aca vamos a insertar intereses mediante subdocumentos...
+    }
     return result;
-};
+}
+
 async function ProcessPut(pRouterName, pData, pSubDocuments) {
     let result = await ProcessAction('put', pRouterName, pData);
     if (pRouterName == 'ModificarPeso') { //Todavía no he creado esta opción

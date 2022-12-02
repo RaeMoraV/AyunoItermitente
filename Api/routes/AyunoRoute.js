@@ -18,6 +18,7 @@ router.post('/RegistrarAyuno', (req, res) => {
         FechaFinAyuno: body.FechaFinAyuno,
         HoraFinAyuno: body.HoraFinAyuno,
         TipoAyuno: body.TipoAyuno,
+        HorasAyunos: body.HorasAyunos,
         EstadoAyuno: body.EstadoAyuno
     });
     nuevoAyuno.save((err, ayunoDB) => {

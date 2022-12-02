@@ -15,7 +15,8 @@ router.post('/RegistrarPeso', (req, res) => {
     let nuevoPeso = new Peso({
         Peso: body.Peso,
         FechaRegistroPeso: body.FechaRegistroPeso,
-        IMC: body.IMC
+        IMC: body.IMC,
+        Clasificacion: body.Clasificacion,
     });
     nuevoPeso.save((err, pesoDB) => {
         if (err) {
