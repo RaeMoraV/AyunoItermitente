@@ -422,6 +422,11 @@
     display: none;
 }
 
+.avatar {
+    height: 60%;
+    width: 60%;    
+}
+
 
 
 
