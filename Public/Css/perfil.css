@@ -436,6 +436,51 @@ ul li:hover button {
         align-items: center;
 
     }
+}
 
+/*Estilos Imagenes Recetas */
 
+.recetaFoto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.showReceta {
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 3px solid #5b5b5b;
+    border-bottom: none;
+}
+
+.inputFotoReceta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 30px;
+    background-color: #5b5b5b;
+    cursor: pointer;
+}
+
+.inputFotoReceta:hover {
+    background-color: #9a9a9a;
+}
+
+.inputFotoReceta i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#fotoReceta {
+    display: none;
+}
+
+.receta {
+    height: 60%;
+    width: 60%;    
 }
