@@ -548,6 +548,16 @@
                                                 value="Merienda">
                                             <label for="inputRecetaMerienda">Merienda</label>
                                         </div>
+                                        <div class="fieldFile">
+                                            <p>Foto de Receta</p>
+                                            <div class="recetaFoto">
+                                                <div class="showReceta" id="showReceta"></div>
+                                                <div class="uploadReceta">
+                                                    <img id="imgReceta" class="receta">
+                                                <button class="btnSubirFoto" type="button" onclick="AbrirCloudinary('imgUser')"> Subir Foto</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <button class="buttonRegistro" id="buttonRegistroReceta" type="button">Hacer
@@ -603,6 +613,8 @@
 
     <script src="../Public/Js/Services/perfil.js"></script>
     <script src="../Public/Js/Services/globales.js"></script>
+    <script src="./Js/Services/SubirImagenService.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
     <script src="../Public/Js/Controller/globales.js"></script>
     <script src="./Js/Controller/perfilActividades.js"></script>
