@@ -5,7 +5,7 @@ let imagen;
 
 let widget_cloudinary = cloudinary.createUploadWidget({
     cloudName: 'proyectohermes',
-    uploadPreset: 'Imagenes_Proyecto1'
+    uploadPreset: 'Prueba_Imagenes'
 }, (err, result) => {
     if (!err && result && result.event === 'success') {
         console.log('Imagen subida con exito ', result.info);
