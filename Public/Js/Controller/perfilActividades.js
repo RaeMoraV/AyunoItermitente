@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';  Por alguna razon este Strict da errores en consola **Revisar
 
 /* Perfil - Sección Actividades - Tabla */
 
