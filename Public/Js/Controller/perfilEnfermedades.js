@@ -7,7 +7,93 @@ let inputNombreEnfermedad = document.querySelector('#inputNombreEnfermedad');
 let inputDescripcionEnfermedad = document.querySelector('#inputDescripcionEnfermedad');
 let inputTratamientoEnfermedad = document.querySelector('#inputTratamientoEnfermedad');
 
+let listaEnfermedades = [];
+btnEnfermedad.addEventListener('click', getEnfermedad);
 
+GetListaEnfermedades();
+
+async function GetListaEnfermedades() {
+    let result = await ProcessGet('ListarEnfermedades', null);
+    if (result != null && result.resultado == true) {
+        listaEnfermedades = result.ListaEnfermedadesDB;
+        await ImprimirEnfermedades();
+        console.log(listaEnfermedades);
+    } else {
+        ImprimirMsjError(result.msj);
+        return;
+    }
+}
+
+async function ImprimirEnfermedades() {
+    let tbody = document.querySelector('#datosEnfermedad tbody');
+    tbody.innerHTML = '';
+
+    for (let i = 0; i < listaEnfermedades.length; i++) {
+
+        let fila = tbody.insertRow();
+        let celdaNombre = fila.insertCell();
+        let celdaDescripcion = fila.insertCell();
+        let celdaEstado = fila.insertCell();
+        let celdaTratamiento = fila.insertCell();
+
+        celdaNombre.innerHTML = listaEnfermedades[i].Nombre;
+        celdaDescripcion.innerHTML = listaEnfermedades[i].Descripcion;
+        celdaEstado.innerHTML = listaEnfermedades[i].Estado;
+        celdaTratamiento.innerHTML = listaEnfermedades[i].Tratamiento;
+    }
+    //orderEnfermedadTable();
+}
+
+async function getEnfermedad() {
+    let sNombre = inputNombreEnfermedad.value;
+    let sDescripcion = inputDescripcionEnfermedad.value;
+    let sEstado = radioEstadoEval();
+    let sTratamiento = inputTratamientoEnfermedad.value;
+    let result = null;
+
+    if (validarEnfermedades(sNombre, sDescripcion, sEstado) == true) {
+        return;
+    }
+
+
+
+    //Acomodo para enviar el json con la información a la DB
+
+    let data = {
+        Nombre: sNombre,
+        Descripcion: sDescripcion,
+        Estado: sEstado,
+        Tratamiento: sTratamiento
+    };
+
+    result = await ProcessPost('RegistrarEnfermedad', data, null);
+
+    if (result == null || result == undefined) {
+        ImprimirMsjError('Ocurrió un error, intente de nuevo');
+    } else if (result.resultado == false) {
+        ImprimirMsjError(result.msj);
+        console.log(result);
+    } else {
+        swal.fire({
+            title: 'Excelente!',
+            text: result.msj,
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        }).then(res => {
+            GetListaEnfermedades();
+        });
+    }
+
+    //Resetear valores en form
+    inputNombreEnfermedad.value = "";
+    inputDescripcionEnfermedad.value = "";
+    inputTratamientoEnfermedad.value = "";
+
+    document.getElementById("radioNoConcurrencia").checked = false;
+    document.getElementById("radioConcurrencia").checked = false;
+
+}
+//Evalúa cual de los dos radio buttons fue seleccionado
 function radioEstadoEval() {
     let option;
     if (document.getElementById('radioNoConcurrencia').checked) {
@@ -15,45 +101,31 @@ function radioEstadoEval() {
     } else {
         option = document.getElementById('radioConcurrencia').value;
     }
-
     return option;
-} //Evalúa cual de los dos radio buttons fue seleccionado
-
-btnEnfermedad.addEventListener('click', getEnfermedad);
-
-function getEnfermedad() {
-    let sNombre = inputNombreEnfermedad.value;
-    let sDescripcion = inputDescripcionEnfermedad.value;
-    let sEstado = radioEstadoEval();
-    let sTratamiento = inputTratamientoEnfermedad.value;
-
-    registrarEnfermedad(sNombre, sDescripcion, sEstado, sTratamiento);
-    imprimirEnfermedad();
 }
 
-function imprimirEnfermedad() {
-    let tbody = document.querySelector('#datosEnfermedad tbody');
-    let listaEnfermedades = listarEnfermedades();
-
-    tbody.innerHTML = '';
-
-    for (let i = 0; i < listaEnfermedades.length; i++) {
-        let fila = tbody.insertRow();
-        let celdaNombre = fila.insertCell();
-        let celdaDescripcion = fila.insertCell();
-        let celdaEstado = fila.insertCell();
-        let celdaTratamiento = fila.insertCell();
-
-        celdaNombre.innerHTML = listaEnfermedades[i][0];
-        celdaDescripcion.innerHTML = listaEnfermedades[i][1];
-        celdaEstado.innerHTML = listaEnfermedades[i][2];
-        celdaTratamiento.innerHTML = listaEnfermedades[i][3];
+function validarEnfermedades(psNombre, psDescripcion, psEstado) {
+    if (psNombre == '' || psNombre == null || psNombre == undefined) {
+        document.getElementById("inputNombreEnfermedad").focus();
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese un nombre' });
+        return true;
     }
-
-    orderEnfermedadTable();
+    else if (psDescripcion == '' || psDescripcion == null || psDescripcion == undefined) {
+        document.getElementById("inputDescripcionEnfermedad").focus();
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese una descripción para la enfermedad' });
+        return true;
+    }
+    else if (!document.getElementById("radioNoConcurrencia").checked && !document.getElementById("radioConcurrencia").checked) {
+        document.getElementById("radioNoConcurrencia").focus();
+        document.getElementById("radioConcurrencia").focus();
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Elija una opción de estado de enfermedad' });
+        return true;
+    }
 }
 
-function orderEnfermedadTable() {
+
+
+/*function orderEnfermedadTable() {
     let table;
     let rows;
     let switching;
@@ -85,4 +157,4 @@ function orderEnfermedadTable() {
             switching = true;
         }
     }
-}
+}*/
