@@ -8,7 +8,7 @@ let btnMeta = document.querySelector('#buttonRegistroMeta');
 let inputTipoMeta = document.querySelector('#inputNombreMeta');
 let inputIndicadorPeso = document.querySelector('#inputIndicadorPeso');
 
-btnMeta.addEventListener('click', getMetaTipo);
+//btnMeta.addEventListener('click', getMetaTipo);
 
 function getMeta() {
     let sTipo = inputTipoMeta.value;

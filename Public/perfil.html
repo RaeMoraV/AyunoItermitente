@@ -70,7 +70,7 @@
                     <li><a href="#" id="sideMenuPeso">Peso</a></li>
                     <li><a href="#" id="sideMenuEnfermedades">Enfermedades</a></li>
                     <li><a href="#" id="sideMenuActividad">Actividad física</a></li>
-                    <li><a href="#" id="sideMenuLogros">Logros y Objetivos</a></li>
+                    <li><a href="#" id="sideMenuLogros">Logros y objetivos</a></li>
                     <li><a href="#" id="sideMenuPlan">Plan de ayuno</a></li>
                     <li><a href="#" id="sideMenuRecetas">Recetas</a></li>
                 </ul>
@@ -240,10 +240,10 @@
                             <thead>
                                 <tr>
                                     <th>Fecha</th>
-                                    <th>Actividad</th>
-                                    <th>Hora Inicio</th>
-                                    <th>Hora Fin</th>
-                                    <th>Tiempo Total</th>
+                                    <th>Hora inicio</th>
+                                    <th>Hora fin</th>
+                                    <th>Tiempo total (minutos)</th>
+                                    <th>Tipo de actividad</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -256,36 +256,33 @@
                                     <label for="inputFechaActividad">Fecha:<span> *</span> </label>
                                     <input type="date" name="" id="inputFechaActividad">
                                 </div>
+                                <div class="fieldTiempos">
+                                    <div class="field">
+                                        <label for="inputHoraInicioActividad">Hora de inicio:<span> *</span> </label>
+                                        <input type="time" name="" id="inputHoraInicioActividad">
+                                    </div>
+                                    <div class="field">
+                                        <label for="inputHoraFinActividad">Hora de fin:<span> *</span> </label>
+                                        <input type="time" name="" id="inputHoraFinActividad">
+                                    </div>
+                                </div>
                                 <div class="field">
                                     <label for="inputNombreActividad">Actividad:<span> *</span> </label>
                                     <select name="" id="inputNombreActividad">
-                                        <option value="">--Seleccione--</option>
+                                        <option value="" disabled selected hidden>--Seleccione un ejercicio--</option>
                                         <optgroup label="Predeterminadas">
                                             <option value="Ciclismo">Ciclismo</option>
-                                            <option value="Gimnasio">Gimnasio</option>
+                                            <option value="Crossfit">Crossfit</option>
                                             <option value="Yoga">Yoga</option>
                                             <option value="Caminata">Caminata</option>
                                             <option value="Correr">Correr</option>
                                             <option value="Nadar">Nadar</option>
-                                            <option value="Estilo Libre">Estilo Libre</option>
-                                        </optgroup>
-                                        <optgroup label="Personalizadas">
+                                            <option value="Entrenamiento de fuerza">Entrenamiento de fuerza</option>
+                                            <option value="Danza">Danza</option>
+                                            <option value="Ejercicios funcionales">Ejercicios funcionales</option>
+                                            <option value="Otro">Otro</option>
                                         </optgroup>
                                     </select>
-                                </div>
-                                <div class="fieldTiempos">
-                                    <div class="inicio">
-                                        <p>Inicio:</p> <br />
-                                        <input type="number" min="0" max="24" id="inicioHora" placeholder="HH" />
-                                        <input type="number" min="0" max="60" id="inicioMinutos" placeholder="MM" />
-                                        <input type="number" min="0" max="60" id="inicioSegundos" placeholder="SS" />
-                                    </div>
-                                    <div class="fin">
-                                        <p>Fin:</p> <br />
-                                        <input type="number" min="0" max="24" id="finHora" placeholder="HH" />
-                                        <input type="number" min="0" max="60" id="finMinutos" placeholder="MM" />
-                                        <input type="number" min="0" max="60" id="finSegundos" placeholder="SS" />
-                                    </div>
                                 </div>
                                 <button class="buttonRegistro" id="buttonRegistroActividad" type="button">Hacer
                                     Registro</button>
@@ -554,7 +551,8 @@
                                                 <div class="showReceta" id="showReceta"></div>
                                                 <div class="uploadReceta">
                                                     <img id="imgReceta" class="receta">
-                                                <button class="btnSubirFoto" type="button" onclick="AbrirCloudinary('imgUser')"> Subir Foto</button>
+                                                    <button class="btnSubirFoto" type="button"
+                                                        onclick="AbrirCloudinary('imgUser')"> Subir Foto</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -578,14 +576,14 @@
     <!-- FOOTER------------------------------------------------------>
     <footer class="footerContainer">
         <div class="logo">
-            <a href="#">OM</a>
+            <a href="#">eFast</a>
         </div>
         <div class="textFooter">
             <ul class="links">
-                <li><a href="./terminosCondiciones.html">Terminos y Condiciones</a></li>
+                <li><a href="./terminosCondiciones.html">Términos y Condiciones</a></li>
                 <li><a href="./perfil.html">Perfil</a></li>
             </ul>
-            <p class="disclaimer">&copy; 2022 <b>OM</b>-Todos los Derechos Reservados</p>
+            <p class="disclaimer">&copy; 2022 <b>OM</b> - Todos los derechos reservados</p>
         </div>
         <div class="social">
             <div class="iconContainer">
@@ -606,14 +604,14 @@
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script src="./Js/Constantes.js"></script>
     <script src="../Public/Js/Services/perfil.js"></script>
     <script src="../Public/Js/Services/globales.js"></script>
     <script src="./Js/Services/SubirImagenService.js"></script>
     <script src="./Js/Services/GeneralService.js"></script>
 
-    
+
     <script src="../Public/Js/Controller/globales.js"></script>
 
     <script src="./Js/Controller/perfilActividades.js"></script>
@@ -623,7 +621,7 @@
     <script src="./Js/Controller/perfilLogros.js"></script>
     <script src="./Js/Controller/perfilPeso.js"></script>
     <script src="./Js/Controller/perfilRecetas.js"></script>
-    
+
 
 
 </body>

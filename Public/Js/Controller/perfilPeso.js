@@ -36,8 +36,8 @@ async function ImprimirPesos() {
     for (let i = 0; i < listaPesos.length; i++) {
 
         let fila = tbody.insertRow();
-        let celdaPeso = fila.insertCell();
         let celdaFechaRegistroPeso = fila.insertCell();
+        let celdaPeso = fila.insertCell();
         let celdaIMC = fila.insertCell();
         let celdaClasificacionIMC = fila.insertCell();
 
