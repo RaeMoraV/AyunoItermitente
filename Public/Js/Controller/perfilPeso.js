@@ -18,7 +18,7 @@ async function GetListaPeso() {
         listaPesos = result.ListaPesosDB;
         //Esto me acomoda las fechas en orden cronológico antes de imprimir/graficar
         listaPesos = listaPesos.sort(
-            (objA, objB) => Number(new Date(objA.FechaRegistroPeso)) - Number(new Date(objB.FechaRegistroPeso)),
+            (objA, objB) => Number(new Date(objB.FechaRegistroPeso))-Number(new Date(objA.FechaRegistroPeso))  ,
         );
         await ImprimirPesos();
         graficoPeso();
@@ -134,7 +134,7 @@ function graficoPeso() {
 
     let layout1 = {
         xaxis: {
-            range: xArray,
+            range: -xArray,
             title: "Fecha",
             automargin: true,
             titlefont: { size: 40 },
@@ -156,7 +156,7 @@ function graficoPeso() {
 
     let layout2 = {
         xaxis: {
-            range: xArray,
+            range: -xArray,
             title: "Fecha",
             automargin: true,
             titlefont: { size: 40 },
