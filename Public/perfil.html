@@ -319,9 +319,10 @@
                             <h3>Agregar meta</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputNombreMeta">Tipo de meta:<span> *</span> </label>
+                                    <label for="inputNombreMeta">Tipo de logro:<span> *</span> </label>
                                     <select name="" id="inputNombreMeta">
-                                        <option value="">--Seleccione--</option>
+                                        <option value="" disabled selected hidden>--Seleccione un tipo de logro--
+                                        </option>
                                         <option value="peso">Logro por reducción de peso</option>
                                         <option value="imc">Logro por reducción o aumento del IMC</option>
                                         <option value="cantidadHoras">Logro por cantidad de horas de ayuno</option>
@@ -329,19 +330,58 @@
                                     </select>
                                 </div>
                                 <div class="field">
-                                    <label for="inputindicadorPeso">Indicador:<span> *</span> </label>
-                                    <input type="number" name="" id="inputindicadorPeso">
-
+                                    <label for="inputIndicador">Condición de logro:<span> *</span> </label>
+                                    <input type="number" name="" id="inputIndicador">
                                 </div>
-
-                                <div class="fieldTiempos">
-
+                                <div class="field">
+                                    <label for="inputNombreLogro">Nombre de logro: </label>
+                                    <input type="text" name="" id="inputNombreLogro">
                                 </div>
-                                <button class="buttonRegistro" id="buttonRegistroMeta" type="button">Hacer
-                                    Registro</button>
-                                <button class="buttonRegistro" id="buttonActualizarMetas" type="button">Actualizar
-                                    estados</button>
+                                <div class="fieldRadio">
+                                    <p>Imagen del logro:<span> *</span></p>
+                                    <div class="radioContainer">
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla1" value="1">
+                                            <label for="tipoMedalla1"><i class="fa-solid fa-weight-scale"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla2" value="2">
+                                            <label for="tipoMedalla2"><i class="fa-solid fa-heart"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla3" value="3">
+                                            <label for="tipoMedalla3"><i class="fa-solid fa-utensils"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla4" value="4">
+                                            <label for="tipoMedalla4"><i class="fa-solid fa-dumbbell"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla5" value="5">
+                                            <label for="tipoMedalla5"><i class="fa-solid fa-medal"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla6" value="6">
+                                            <label for="tipoMedalla6"><i class="fa-solid fa-apple-whole"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla7" value="7">
+                                            <label for="tipoMedalla7"><i class="fa-solid fa-dumbbell"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla8" value="8">
+                                            <label for="tipoMedalla8"><i class="fa-solid fa-heart-pulse"></i></label>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </form>
+                            <button class="buttonRegistro" id="btnMeta" type="button">
+                                Hacer registro
+                            </button>
+                            <button class="buttonRegistro" id="buttonActualizarMetas" type="button">
+                                Actualizar estados
+                            </button>
                         </div>
                     </div>
                     <div class="unHijo">
@@ -349,6 +389,8 @@
                     </div>
                 </div>
             </section>
+
+
 
 
 

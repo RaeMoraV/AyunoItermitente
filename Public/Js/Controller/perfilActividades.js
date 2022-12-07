@@ -80,9 +80,9 @@ async function getActividad() {
 
     let result = null;
 
-    /*if (validarActividad(sFecha, sInicioHora, sFinHora, sActividad, DateInicio, DateFinal) == true) {
+    if (validarActividad(sFecha, sInicioHora, sFinHora, sActividad, InicioActividad, FinActividad) == true) {
         return;
-    }*/
+    }
 
     let totalHoras = Math.round((FinActividad.getTime() - InicioActividad.getTime()) / (1000 * 60));
 
@@ -126,12 +126,12 @@ async function getActividad() {
 }
 
 
-/*function validarActividad(pDateInicio, pDateFinal) {
+function validarActividad(sFecha, sInicioHora, sFinHora, sActividad, DateInicio, DateFinal) {
 
     //Esta sección valida que haya información en las horas y fechas
-    if (valorHoraInicioAyuno.value == '') {
-        document.getElementById("inputHoraInicioAyuno").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de inicio' });
+    if (sFecha == '' ||sFecha == null||sFecha == undefined) {
+        document.getElementById("inputFechaActividad").focus();
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha' });
         return true;
     }
     else if (valorInicioFechaAyuno.value == '') {
@@ -173,7 +173,7 @@ async function getActividad() {
         Swal.fire({ icon: 'error', title: 'Fechas invalidas', text: 'La fecha de fin no puede ser antes que la fecha de inicio' });
         return true;
     }
-}*/
+}
 
 
 

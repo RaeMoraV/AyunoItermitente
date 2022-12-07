@@ -4,21 +4,14 @@ const express = require("express");
 const router = express.Router();
 const Logro = require('../models/LogrosModel');
 
-//post = insertar
-//put = actualizar o desactivar
-//delete = eliminar
-//get = obtener o listar o buscar
-
-
 router.post('/RegistrarLogro', (req, res) => {
     let body = req.body;
     let nuevoLogro = new Logro({
-        Logro:body.Logro,
-        NombredeLogro:body.NombredeLogro,
         TipoLogro: body.TipoLogro,
         CondicionLogro: body.CondicionLogro,
+        NombredeLogro: body.NombredeLogro,
         Medalla: body.Medalla,
-        Estado: body.Estado,
+        Estado: body.Estado
     });
     nuevoLogro.save((err, logroDB) => {
         if (err) {

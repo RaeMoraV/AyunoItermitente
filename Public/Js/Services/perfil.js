@@ -7,6 +7,7 @@
 
 /* Perfil - Seccion Actividades ---------------------------------------*/
 
+
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
 
 let listaRegistroAyuno=[];
