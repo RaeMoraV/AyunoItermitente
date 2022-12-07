@@ -4,17 +4,6 @@
 
 
 /* Perfil - Seccion Enfermedades ---------------------------------------*/
-let listaEnfermedades = [];
-
-function registrarEnfermedad (sNombre, sDescripcion, sEstado, sTratamiento) {
-    let nuevaEnfermedad = [];
-    nuevaEnfermedad.push(sNombre, sDescripcion, sEstado, sTratamiento);
-    listaEnfermedades.push(nuevaEnfermedad);
-};
-
-function listarEnfermedades() {
-    return listaEnfermedades;
-}
 
 /* Perfil - Seccion Actividades ---------------------------------------*/
 let listaActividades = [];
