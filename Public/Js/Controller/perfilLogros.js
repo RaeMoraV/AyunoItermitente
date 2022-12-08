@@ -52,13 +52,13 @@ async function ImprimirMetas() {
         celdaTipoLogro.innerHTML = traductorLogro(listaMetas[i].TipoLogro);
         celdaCondicionLogro.innerHTML = listaMetas[i].CondicionLogro;
         celdaNombreLogro.innerHTML = listaMetas[i].NombredeLogro;
-        if (listaMetas[i].Estado==1) {
+        if (listaMetas[i].Estado == 1) {
             let iconoMedalla = document.createElement('i');
             iconoMedalla.className = traductorIconoMedalla(listaMetas[i].Medalla);
             celdaMedalla.appendChild(iconoMedalla)
         }
         else {
-            celdaMedalla.innerHTML='';
+            celdaMedalla.innerHTML = '';
         }
         celdaEstado.innerHTML = traductorEstadoLogro(listaMetas[i].Estado);
     }
@@ -74,9 +74,9 @@ async function getMeta() {
 
     let result = null;
 
-    /*if (validarMeta(sTipoMeta) == true) {
+    if (validarMeta(sTipoMeta, nIndicador, sNombreMeta, optionMedalla, estadoPrueba) == true) {
         return;
-    }*/
+    }
 
     //Acomodo para enviar el json con la información a la DB
 
@@ -124,27 +124,38 @@ async function getMeta() {
 
 //Validar meta valida
 
-/*
-function validarMeta(psTipoMeta) {
-    let inputIndicadorPeso = Number(inputIndicadorPeso.value);
+
+function validarMeta(psTipoMeta, pnIndicador, psNombreMeta, pOptionMedalla, pEstadoPrueba) {
+
     if (psTipoMeta == '' || psTipoMeta == null || psTipoMeta == undefined) {
         document.getElementById("inputNombreMeta").focus();
         Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Seleccione un tipo de meta' });
         return true;
     }
-
-    if (iIndicadorPeso == '' || iIndicadorPeso == null || iIndicadorPeso == 0) {
-        document.getElementById("inputIndicadorPeso").focus();
-        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese una cantidad' });
+    else if (pnIndicador == '' || pnIndicador == null || pnIndicador == 0) {
+        document.getElementById("inputIndicador").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese un numero para la condición de la meta' });
         return true;
     }
-    else if (iIndicadorPeso < 1 || iIndicadorPeso > 1000) {
-        document.getElementById("inputIndicadorPeso").focus();
-        Swal.fire({ icon: 'error', title: 'Información invalida', text: 'Ingrese una cantidad valida' });
-        inputPeso.focus();
+    else if (pnIndicador <= 0) {
+        document.getElementById("inputIndicador").focus();
+        Swal.fire({ icon: 'error', title: 'Información invalida', text: 'Ingrese un numero real para la condición de la meta' });
         return true;
     }
-}*/
+    else if (psNombreMeta == '' || psNombreMeta == null || psNombreMeta == undefined) {
+        document.getElementById("inputNombreLogro").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese un nombre para la meta' });
+        return true;
+    }
+    else if (pOptionMedalla == '' || pOptionMedalla == 0 || pOptionMedalla == null || pOptionMedalla == undefined) {
+        document.getElementById("tipoMedalla1").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Seleccione un tipo de medalla' });
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 function revisarMedalla() {
     let option;
