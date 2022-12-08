@@ -1,92 +1,71 @@
-/*Estilos de la seccion Banner Principal*/
+.fondoNegro {
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+}
+
+/* NAVEGACION DESKTOP EXCLUSIVO PARA INDEX */
 
 .navDesktop {
     background-color: #00000000;
     z-index: 10;
 }
 
+.navMobile {
+    height: 10vh;
+}
 
+/* BANNER */
 
 .bannerPrincipal {
     position: relative;
-    background-size: cover;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url(../Img/index/portada.jpg);
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-}
-
-.bannerPrincipal .titulo {
-    color: #fff;
-    width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 20px;
-    font-weight: bold;
-    z-index: 10;
-
-}
-
-.explicacion {
-    display: flex;
-    justify-content: flex;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    margin: flex;
-    display: flex;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    background-color: #669999;
-    background-image: url(../Img/index/portada.jpg);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 90vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px 20px;
 }
 
-.titulo1 {
-
-    line-height: 90px;
+.bannerPrincipal .bannerTitulo {
     color: #fff;
     width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 10px;
-    display: flex;
     font-weight: bold;
-    font-size: 90px;
-    flex-direction: column;
-    text-shadow: 7px 3px 5px rgb(0, 0, 0);
-    align-items: center;
-}
-
-
-.parteTexto {
-    z-index: 20;
-    max-width: 1000px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    text-shadow: 7px 3px 5px rgb(0, 0, 0);
     z-index: 10;
-    margin: 0 auto;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    font-size: xx-large;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
+.bannerPrincipal .bannerDescripcion {
+    z-index: 20;
+    width: 100%;
+    color: #ffffff;
+    font-size: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
+/* BANNER - BOTON INSCRIPCION */
 
+#buttonRegistrate {
+    padding: 15px 40px;
+    background-color: var(--col-green);
+    max-width: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
 
-
-/*boton de registrar*/
-
-#buttonRegistrate,
+/* #buttonRegistrate,
 #buttonRegistrate::before,
 #buttonRegistrate::after,
 #buttonRegistrate span,
@@ -100,14 +79,12 @@
     position: relative;
     display: inline-block;
     padding: 0.3em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
+    margin-bottom: 30px;
     border: solid 2px;
     text-transform: uppercase;
     cursor: pointer;
     color: #8faf69;
     z-index: 10;
-    padding: 20px;
 }
 
 #buttonRegistrate:hover {
@@ -175,58 +152,26 @@
 #buttonRegistrate:hover span::after,
 #buttonRegistrate:hover span::before {
     opacity: 0;
+} */
+
+/* BANNER - BOTON INICIO SESION */
+.bannerIngreso {
+    margin-top:50px;
+    color: #ffffff;
+    font-size: 15px;
 }
 
-
-/*finaliza registro*/
-
-
-
-.textPrincipal1 h2 {
-    font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 15px;
-    text-align: center;
-
+.bannerIngreso #iniciarSesion {
+    border-bottom: 1px solid #FFFFFF;
 }
 
-.textPrincipal1 p {
-    margin-bottom: 35px;
-    padding: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.bannerIngreso #iniciarSesion:hover {
+    border-bottom: 1px solid var(--col-green);
+    color: var(--col-green);
+    cursor: pointer;
 }
 
-#btnRegistrateYa {
-    background-color: #8faf69;
-    border: 2px;
-    text-align: center;
-    color: #fff;
-    border-radius: 5%;
-    height: 80px;
-    width: 250px;
-    font-size: 20px;
-    flex-direction: flex;
-    padding: 45px;
-}
-
-#btnRegistrateYa:hover {
-    box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
-    background: #000000;
-    
-}
-
-.fondoNegro {
-    position: fixed;
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 50;
-}
-
-/* Formulario de Registro */
+/* BANNER - FORMULARIO INSCRIPCION */
 
 #formularioInscripcion {
     position: fixed;
@@ -238,7 +183,7 @@
     align-items: center;
     transform: translateX(50%) translateY(-50%);
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     max-height: fit-content;
     border-radius: 5px;
     background-color: #ffffff;
@@ -253,7 +198,7 @@
     margin-bottom: 20px;
 }
 
-#cerrarFormularioInscripcion {
+.cerrarFormulario {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -282,8 +227,8 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin-right: 20px;
-    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .registroPrincipal .formSection:last-child .field {
@@ -378,60 +323,144 @@
     height: 30px;
 }
 
-.submitRegistrate:hover {
+.registroPrincipal .submitRegistrate:hover {
     background: #24680c;
     cursor: pointer;
 }
 
-.foto {
+.registroPrincipal .foto {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
 }
 
-.showPhoto {
-    width: 100%;
-    height: 150px;
+.registroPrincipal .foto .uploadPhoto {
+    width: 25%;
+    height: 70px;
+}
+
+.registroPrincipal .showPhoto {
+    width: 75%;
+    height: 100px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     border: 3px solid #5b5b5b;
-    border-bottom: none;
 }
 
-.inputFotoPerfil {
+.registroPrincipal .inputFotoPerfil {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100%;
-    min-height: 30px;
+    width: 100%;
+    height: 100px;
     background-color: #5b5b5b;
     cursor: pointer;
 }
 
-.inputFotoPerfil:hover {
+.registroPrincipal .inputFotoPerfil:hover {
     background-color: #9a9a9a;
 }
 
-.inputFotoPerfil i {
+.registroPrincipal .inputFotoPerfil i {
     font-size: 20px;
     color: #ffffff;
 }
 
-#fotoPerfil {
+.registroPrincipal #fotoPerfil {
     display: none;
 }
 
-.avatar {
+.registroPrincipal .avatar {
     height: 60%;
     width: 60%;    
 }
 
+.registroPrincipal .bannerIngreso {
+    margin-top:50px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.registroPrincipal .bannerIngreso #iniciarSesion {
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.registroPrincipal .bannerIngreso #iniciarSesion:hover {
+    border-bottom: 1px solid #379914;
+    color: #379914;
+    cursor: pointer;
+}
+
+/* BANNER - FORMULARIO INICIO DE SESION */
+
+#formularioInicioSesion {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(50%) translateY(-50%);
+    width: 100%;
+    max-width: 500px;
+    max-height: fit-content;
+    border-radius: 5px;
+    background-color: #ffffff;
+    z-index: 100;
+    padding: 30px;
+}
+
+#formularioInicioSesion h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#formularioInicioSesion p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+#formularioInicioSesion form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#formularioInicioSesion form input {
+    width: 90%;
+    height: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #5f5f5f;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#formularioInicioSesion form input:focus {
+    outline: none;
+}
+
+#formularioInicioSesion form button {
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2;
+    font-weight: 700;
+    background-color: #379914;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+}
 
 
-
-
-/*estilos de la seccion Que es por SVC*/
+/* QUE ES */
 
 .seccionQueEs {
     display: flex;
@@ -439,14 +468,15 @@
     align-items: center;
     flex-direction: column;
     background-size: cover;
-    background: #7e7b7b;
+    background: #FFFFFF;
     width: 100%;
-    height: 850px;
+    height: fit-content;
+    padding: 20px;
 }
 
-.textQueEs {
+.tarjetaQueEs {
 
-    max-width: 500px;
+    max-width: 400px;
     margin: 20px 0;
     padding: 10px;
     text-align: center;
@@ -454,10 +484,14 @@
     font-size: 24px;
 }
 
-.textQueEs h2 {
+.tarjetaQueEs h2 {
     font-size: 32px;
     margin-bottom: 10px;
     font-weight: bold;
+}
+
+.tarjetaQueEs p {
+    font-size: 18px;
 }
 
 .buttonInformacion {
@@ -466,449 +500,568 @@
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-    border-radius: 5%;
+    border-radius: 5px;
     height: 40px;
     width: 150px;
     font-size: 16px;
-
-
-
 }
 
 .buttonText {
     color: white;
-
 }
 
 
 
 .buttonInformacion:hover {
     box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
-    background: #000000;
+    background: #aab998;
 
 }
 
-/*Termina estilos de la seccion Que es*/
+/* BENEFICIOS */
 
-/*estilos de la seccion beneficios por SVC*/
 .beneficioContenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    padding: 40px 20px;
+    background: var(--col-gray);;
 }
 
-.encabezadoBeneficio {
-   
-    max-width: 500px;
-    margin: 0px;
-    padding: 10px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
+.beneficioContenedor .encabezadoBeneficio {
+    width: 100%;
+    margin-bottom: 50px;
 }
 
-.encabezadoBeneficio h2 {
-    font-weight: bold;
+.beneficioContenedor .encabezadoBeneficio h2 {
     font-size: 32px;
-    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
 }
 
-
-.beneficio {
-
+.beneficioContenedor .listaBeneficios .beneficio {
     max-width: 300px;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     padding: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-
-.icon {
+.beneficioContenedor .listaBeneficios .beneficio i {
     border-radius: 50%;
-    min-width: 100px;
-    min-height: 100px;
-    background-color: #8faf69;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     margin-bottom: 15px;
-
+    align-self: flex-start;
+    font-size: 40px;
+    color: var(--col-green);
 }
 
-.beneficio .icon i {
-    font-size: 60px;
-    color: white;
-}
-
-
-.text h3 {
+.beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
     font-weight: bold;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--col-green);
 }
 
-.text p,
-.text h3,
-.encabezadoBeneficio p {
-    text-align: center;
-
-    padding: 0 5px 5px 5px;
-
+.beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
+    color: #ffffff;
 }
 
-/*Hasta aqui los estilos de la seccion beneficios hecho por SVC*/
-
-/* Seccion Slider de Recetas */
-
-#seccionSlider {
-    padding: 40px;
-    height: 800px;
-    width: 100%;
-    background-color: #4b4d4a;
-}
-
-#seccionSlider h2 {
-    font-size: 32px;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 50px;
-    color: white;
-}
-
-#seccionSlider .contenedorPrincipal {
-    max-width: 100%;
-    height: 500px;
-    margin: auto;
+/* PLANES */
+.seccionPlanes {
     display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
-
-
-#seccionSlider .contenedorSlider {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 600px;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
-
-
-#seccionSlider .contenedorSlider input[type='radio'] {
-    display: none;
-
-}
-
-#seccionSlider .cards {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    
-}
-
-#seccionSlider .card {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-}
-
-#seccionSlider .card img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    
-}
-
-#seccionSlider .cardInfo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    background: linear-gradient(180deg, rgba(2, 0, 36, 0) 50%, rgba(41, 41, 41, 1) 100%);
-}
-
-
-#seccionSlider .cardText {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 70%;
-    text-align: right;
-    color: white; text-shadow: black 0.1em 0.1em 0.2em
-
-}
-
-#seccionSlider .cardButton {
-    display: block;
-    color: white;
-}
-
-
-#seccionSlider .card h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    
-}
-
-#seccionSlider .card p {
-    font-size: 14px;
-}
-
-#slider-opt1:checked~.cards #slider-img7,
-#slider-opt2:checked~.cards #slider-img1,
-#slider-opt3:checked~.cards #slider-img2,
-#slider-opt4:checked~.cards #slider-img3,
-#slider-opt5:checked~.cards #slider-img4,
-#slider-opt6:checked~.cards #slider-img5,
-#slider-opt7:checked~.cards #slider-img6 {
-    transform: translateX(-115%);
-    opacity: 0.8;
-    z-index: 3;
-}
-
-#slider-opt1:checked~.cards #slider-img6,
-#slider-opt2:checked~.cards #slider-img7,
-#slider-opt3:checked~.cards #slider-img1,
-#slider-opt4:checked~.cards #slider-img2,
-#slider-opt5:checked~.cards #slider-img3,
-#slider-opt6:checked~.cards #slider-img4,
-#slider-opt7:checked~.cards #slider-img5 {
-    transform: translateX(-220%);
-    opacity: 0.4;
-    z-index: 2;
-}
-
-#slider-opt1:checked~.cards #slider-img5,
-#slider-opt2:checked~.cards #slider-img6,
-#slider-opt3:checked~.cards #slider-img7,
-#slider-opt4:checked~.cards #slider-img1,
-#slider-opt5:checked~.cards #slider-img2,
-#slider-opt6:checked~.cards #slider-img3,
-#slider-opt7:checked~.cards #slider-img4 {
-    transform: translateX(-325%);
-    opacity: 0.2;
-    z-index: 1;
-    opacity: 0;
-}
-
-#slider-opt1:checked~.cards #slider-img4,
-#slider-opt2:checked~.cards #slider-img5,
-#slider-opt3:checked~.cards #slider-img6,
-#slider-opt4:checked~.cards #slider-img7,
-#slider-opt5:checked~.cards #slider-img1,
-#slider-opt6:checked~.cards #slider-img2,
-#slider-opt7:checked~.cards #slider-img3 {
-    transform: translateX(325%);
-    opacity: 0.2;
-    z-index: 1;
-    opacity: 0;
-}
-
-#slider-opt1:checked~.cards #slider-img3,
-#slider-opt2:checked~.cards #slider-img4,
-#slider-opt3:checked~.cards #slider-img5,
-#slider-opt4:checked~.cards #slider-img6,
-#slider-opt5:checked~.cards #slider-img7,
-#slider-opt6:checked~.cards #slider-img1,
-#slider-opt7:checked~.cards #slider-img2 {
-    transform: translateX(220%);
-    opacity: 0.4;
-    z-index: 2;
-}
-
-#slider-opt1:checked~.cards #slider-img2,
-#slider-opt2:checked~.cards #slider-img3,
-#slider-opt3:checked~.cards #slider-img4,
-#slider-opt4:checked~.cards #slider-img5,
-#slider-opt5:checked~.cards #slider-img6,
-#slider-opt6:checked~.cards #slider-img7,
-#slider-opt7:checked~.cards #slider-img1 {
-    transform: translateX(115%);
-    opacity: 0.8;
-    z-index: 3;
-}
-
-
-#slider-opt1:checked~.cards #slider-img1,
-#slider-opt2:checked~.cards #slider-img2,
-#slider-opt3:checked~.cards #slider-img3,
-#slider-opt4:checked~.cards #slider-img4,
-#slider-opt5:checked~.cards #slider-img5,
-#slider-opt6:checked~.cards #slider-img6,
-#slider-opt7:checked~.cards #slider-img7 {
-    transform: translateX(0);
-    z-index: 5;
-}
-
-
-/* Hasta aqui los estilos del Slider de Recetas hecho por Andres */
-
-/*Seccion Recomendacion de usuario hecho por SVC*/
-
-.seccionRecommendUser {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-size: cover;
-    background-image: url(../Img/index/bottomsection.jpg);
-    width: 100%;
-    height: 700px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px 10px;
 }
 
-.textRecomendacion {
-
-    max-width: 500px;
-    background: rgba(0, 0, 0, .8);
-    margin: 20px 0;
-    padding: 10px;
-    text-align: center;
-    color: #fff;
-    border-radius: 5%;
-
-
-}
-
-.textRecomendacion h2 {
-    font-size: 32px;
+.planesEncabezado {
     margin-bottom: 20px;
-    margin-top: 40px;
 }
 
+.planesEncabezado h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.planesEncabezado p {
+    font-size: 16px;
+    text-align: center; 
+}
 
-/*Fin de Seccion Recomendacion de usuario hecho por SVC*/
+.tarjetasPlanes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-
-
-
-/*Seccion de planes por Sebas*/
-/*planes*/
+.tarjetaPlan {
+    width: 90%;
+    margin-bottom: 30px;
+    box-shadow: 9px 11px 28px -10px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    padding: 10px;
+}
 
 .contenidoPlanes {
-    justify-content: center;
-    flex-direction: column;
-    background-size: cover;
-    background-image: url(../Img/index/planes.jpg);
-    margin: auto;
-    line-height: 90px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contenidoPlanes h3 {
     text-align: center;
-    width: 100%;
+    width: 30%;
+}
+
+.explicacionPlanes {
+    font-size: 12px;
+    width: 60%;
+}
+
+.explicacionPlanes p{
+    margin-bottom: 10px;
+}
+
+.explicacionPlanes ul li {
+    list-style: '- ';
+    margin-left: 5px;
+}
+
+.separadorPlanes {
+    width: 1px;
+    height: 100px;
+    background-color: #bdbdbd;
+    margin: 0 20px;
+}
+
+.disclaimerPlanes {
+    font-size: 10px;
+    color: #bdbdbd;
+    text-align: justify;
+}
+
+/* CITAS TEXTUALES */
+
+.seccionCitasUsuarios {
+    background-color: var(--col-green);
+    padding: 40px 10px;
+}
+
+.seccionCitasUsuarios h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.tarjetasCitas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjetaCita {
+    margin-bottom: 20px;
+    background-color: var(--col-gray);
+    padding: 50px 15px 15px;
+    position: relative;
+    max-width: 300px;
+}
+
+.tarjetaCita:last-child {
+    margin-bottom: 20px;
+}
+
+.tarjetaCita i {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    display: block;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.tarjetaCita q {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.tarjetaCita p {
+    color: var(--col-green);
+    font-size: 18px;
+}
+
+/* CONTACTO */
+.seccionContacto {
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+
+.seccionContacto video {
+    display: none;
+}
+
+.contenidoContacto {
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.contenidoContacto h2 {
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-bottom: 100px;
     
 }
 
-
-
-.titulo {
-    line-height: 90px;
-    font-family: Verdana;
-    color: #fff;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    justify-content: center;
-    width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    font-weight: bold;
-    font-size: 50px;
-
+.fieldContacto {
+    margin-bottom: 40px;
 }
 
-.texto {
-    display: flex;
-    justify-content: center;
+.fieldContacto h3 {
     font-size: 20px;
-    color: #fff;
-    margin: auto;
+    font-weight: 700;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* SLIDER */
 
-.container-card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    max-width: 1100px;
-    margin: auto;
-   
-
-}
-
-.card {
-    justify-content: center;
-    width: 100%;
-    margin: 50px;
-    border-radius: 9px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.2);
-    transition: all 400ms ease-out;
-    cursor: default;
-    flex-wrap: wrap;
+#seccionSlider {
+    display: none;
 }
 
 
 
-/*sombra de las tarjetas*/
-.card:hover {
 
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3%);
+/* MEDIA QUERIES */
+
+@media (min-width: 576px) {
+    #buttonRegistrate {
+        padding: 20px 40px;
+        max-width: 250px;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+    .bannerPrincipal .bannerTitulo {
+        font-size: 40px;
+    }
+    
+    .bannerPrincipal .bannerDescripcion {
+        font-size: 20px;
+    }
+
+    .planesEncabezado h2 {
+        font-size: 32px;
+    }
+
+    .planesEncabezado p {
+        font-size: 18px; 
+    }
+
+    .tarjetasPlanes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenidoPlanes {
+        margin-bottom: 20px;
+    }
+
+    .contenidoPlanes h3 {
+        font-size: 24px;
+    }
+
+    .explicacionPlanes {
+        font-size: 15px;
+        line-height: 1.25;
+    }
+
+    .separadorPlanes {
+        height: 150px;
+    }
+
+    .disclaimerPlanes {
+        font-size: 14px;
+    }
+    
+    
+    .tarjetaCita {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 350px;
+        height: 350px;
+    }
+    
+    .tarjetaCita i {
+        top: -25px;
+        left: 25px;
+        font-size: 50px;
+    }
+    
+    .tarjetaCita q {
+        font-size: 18px;
+    }
+    
+    .tarjetaCita p {
+        font-size: 22px;
+    }
+    
+    /* CONTACTO */
+    
+    .seccionContacto video {
+        display: none;
+    }
+    
+    .contenidoContacto h2 {
+        text-transform: uppercase;
+        font-size: 32px;
+        margin-bottom: 100px;
+    }
+    
+    .fieldContacto {
+        margin-bottom: 40px;
+    }
+    
+    .fieldContacto h3 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .fieldContacto p {
+        font-size: 18px;
+    }
 }
 
-/*texto de las tarjetas*/
-.card .contenido-card {
-    padding: 15px;
-    text-align: center;
-    margin: auto;
+@media (min-width: 768px) {
+    .tarjetaQueEs {
+        box-shadow: 12px 8px 20px -5px rgba(138,138,138,0.75);
+        border-radius: 5px;
+    }
 
+    .tarjetaQueEs h2 {
+        margin-bottom: 20px;
+    }
+
+    .beneficioContenedor {
+        padding: 40px;
+    }
+
+    .beneficioContenedor .listaBeneficios .beneficio {
+        max-width: 350px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio i {
+        font-size: 50px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
+        font-weight: bold;
+        font-size: 28px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
+        font-size: 20px;
+    }
+
+    .seccionPlanes {
+        padding: 40px;
+    }
+
+    .contenidoPlanes h3 {
+        font-size: 32px;
+    }
+
+    .explicacionPlanes {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    .disclaimerPlanes {
+        font-size: 15px;
+    }
+
+    .seccionContacto {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .seccionContacto video {
+        display: block;
+        position: relative;
+        width: 50%;
+        height: fit-content;
+    }
+
+    .seccionContacto video:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+
+
+    .contenidoContacto {
+        position: relative;
+        width: 50%;
+    }
+
+    .contenidoContacto h2 {
+        margin-top: 40px;
+        margin-bottom: 80px;
+        font-size: 24px;
+    }
+
+    .fieldContacto {
+        margin-bottom: 20px;
+    }
+
+    .fieldContacto h3 {
+        font-size: 18px;
+
+    }
+    .fieldContacto p {
+        font-size: 14px;
+    }
 }
 
-/*alineación del texto tarjetas*/
-.card .contenido-card p {
-    line-height: 1.8;
-    font-size: 14px;
-    margin-bottom: 5px;
-    margin: auto;
-    justify-content: center;
+@media (min-width: 992px) {
+    .seccionQueEs {
+        height: 80vh;
+    }
+
+    .beneficioContenedor {
+        padding: 100px 40px 40px;
+    }
+
+    .beneficioContenedor .listaBeneficios {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .beneficioContenedor .listaBeneficios .beneficio {
+        max-width: 250px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio i {
+        font-size: 30px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
+        font-size: 20px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
+        font-size: 15px;
+    }
+    
+    .seccionPlanes{
+        padding: 40px;
+    }
+
+    .planesEncabezado {
+        margin-bottom: 50px;
+        width: 75%;
+    }
+
+    .tarjetasPlanes {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .tarjetaPlan {
+        width: 20%;
+        height: 425px;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .contenidoPlanes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .contenidoPlanes h3 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+    
+    .explicacionPlanes {
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    .explicacionPlanes p{
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    
+    .explicacionPlanes ul li {
+        font-size: 14px;
+    }
+    
+    .separadorPlanes {
+        display: none;
+    }
+    
+    .disclaimerPlanes {
+        font-size: 12px
+    }
+
+    .tarjetasCitas {
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+
+    .tarjetaCita {
+        max-width: 300px;
+    }
+
+    .tarjetaCita i {
+        font-size: 50px;
+    }
+
+    .tarjetaCita q {
+        font-size: 16px;
+    }
+
+    .tarjetaCita p {
+        font-size: 24px;
+    }
 }
 
+@media (min-width: 1080px) {
 
-.listasPlanes {
-    line-height: 30px;
-    text-align: left;
-    margin: auto;
-    justify-content: center;
-}
+    .bannerPrincipal {
+        height: 100vh;
+    }
 
-@media (min-width:576px) {
+    #formularioInscripcion {
+        max-width: 600px;
+        padding: 40px;
+    
+    }
+
     #formularioInscripcion h2 {
         font-size: 30px;
     }
@@ -952,130 +1105,276 @@
         font-size: 18px;
         margin-bottom: 5px;
     }
-}
 
-.subtitulo {
-    justify-content: center;
-    font-size: 25px;
-    font-family: Verdana;
-    line-height: 50px;
-    color: #fff;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    width: 100%;
-    max-width: 1080px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    font-weight: bold;
-
-
-}
-
-
-.explicacionPlanes {
-    display: flex;
-    justify-content: center;
-    font-size: 25px;
-    font-family: Arial;
-    line-height: 50px;
-    margin: auto;
-}
-
-
-/*tarjeta cuadro*/
-@media (min-width:768px) {
-
-    .container-card {
-        flex-direction: row;
+    #formularioInicioSesion {
+        max-width: 600px;
     }
 
-    .card {
-        margin: 15px;
+    #formularioInicioSesion h2 {
+        font-size: 32px;
     }
 
-    #seccionSlider .card {
-        width: 500px;
-        height: 500px;
+    #formularioInicioSesion p {
+        font-size: 18px;
+    }
+
+    #formularioInicioSesion form input {
+        width: 90%;
+        height: 40px;
+    }
+
+    #formularioInicioSesion form button {
+        height: 40px;
     }
 
     .beneficioContenedor {
-        flex-direction: column;
-        align-items: center;
-
+        padding: 100px 40px;
     }
 
-    .encabezadoBeneficio {
-        flex-direction: column;
-        width: 800px;
-
+    .beneficioContenedor .listaBeneficios {
+        max-width: 1000px;
     }
 
-    .beneficio {
-
-        margin-right: 20px;
-
+    .beneficioContenedor .listaBeneficios .beneficio {
+        max-width: 275px;
+        margin-bottom: none;
     }
 
-    .beneficio:last-child {
-        margin-right: 0;
+    .beneficioContenedor .listaBeneficios .beneficio i {
+        font-size: 50px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
+        font-size: 24px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
+        font-size: 18px;
     }
 
-
-    .row {
-        display: flex;
-        flex-direction: row;
+    .beneficioContenedor .encabezadoBeneficio {
+        max-width: 1000px;
     }
 
+    .beneficioContenedor .encabezadoBeneficio h2 {
+        font-size: 42px;
+    }
 
-    .fa fa-heartbeat {
-        margin-right: 10px;
-        margin-left: 20px;
+    .planesEncabezado h2 {
+        font-size: 42px;
+    }
+
+    .tarjetasPlanes {
+        max-width: 1000px;
+    }
+
+    .seccionCitasUsuarios {
+        padding: 100px 0;
+    }
+
+    .seccionCitasUsuarios h2 {
+        font-size: 42px;
+    }
+
+    .contenidoContacto h2 {
+        font-size: 42px;
+    }
+
+    .fieldContacto {
+        margin-bottom: 50px;
+    }
+
+    .fieldContacto h3 {
+        font-size: 24px;
+    }
+
+    .fieldContacto p {
+        font-size: 18px;
     }
 }
 
-@media (min-width :992px) {
-
-    .textRecomendacion {
-        height: 700px;
-        margin: 80px 40px 80px 600px;
-
+@media (min-width: 1920px) {
+    .bannerPrincipal .bannerTitulo {
+        font-size: 96px;
     }
 
-    .textRecomendacion p {
-        margin: 40px 40px 40px 40px;
+    .bannerPrincipal .bannerDescripcion {
+        font-size: 24px;
+        max-width: 800px;
     }
 
-    .textRecomendacion h3 {
-        font-size: 25px;
-        margin: 40px 40px 40px 40px;
+    #buttonRegistrate {
+        padding: 20px 50px;
+        background-color: var(--col-green);
+        max-width: 300px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        transition: all .1s;
     }
 
-    #seccionSlider .card {
-        width: 400px;
-        height: 400px;
+    #buttonRegistrate:hover {
+        background-color: #aab998;
     }
 
-    #fondoSeccionQueEs {
-        background-size: cover;
+    .seccionQueEs {
+        height: 100vh;
     }
 
-    .textQueEs {
-        height: 700px;
-        margin: 80px 40px 80px 40px;
-
+    .tarjetaQueEs {
+        max-width: 600px;
+        padding: 20px;
     }
 
-    .textQueEs p {
-        margin: 40px 40px 40px 40px;
+    .tarjetaQueEs h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
     }
-
-    .textQueEs h2 {
-        margin: 40px 40px 40px 40px;
-        font-weight: bold;
+    
+    .tarjetaQueEs p {
+        font-size: 26px;
+        margin-bottom: 20px;
     }
 
     .buttonInformacion {
         height: 50px;
         width: 200px;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .beneficioContenedor {
+        height: 100vh;
+    }
+
+    .beneficioContenedor .encabezadoBeneficio {
+        max-width: 1500px;
+        margin-bottom: 150px;
+    }
+
+    .beneficioContenedor .encabezadoBeneficio h2 {
+        font-size: 72px;
+    }
+
+    .beneficioContenedor .listaBeneficios {
+        max-width: 1500px;
+    }
+
+    .beneficioContenedor .listaBeneficios .beneficio {
+        max-width: 425px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio i {
+        font-size: 60px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
+        font-size: 38px;
+    }
+    
+    .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
+        font-size: 24px;
+    }
+    
+    .seccionPlanes {
+        height: 100vh;
+        padding: 40px;
+    }
+
+    .planesEncabezado {
+        margin-bottom: 100px;
+    }
+    
+    .planesEncabezado h2 {
+        font-size: 60px;
+    }
+    
+    .planesEncabezado p {
+        font-size: 24px;
+    }
+
+    .tarjetasPlanes {
+        max-width: 1500px;
+    }
+
+    .tarjetaPlan {
+        padding: 10px;
+        height: 600px;
+    }
+    
+    .contenidoPlanes h3 {
+        font-size: 38px;
+        margin-bottom: 50px;
+    }
+    
+    .explicacionPlanes {
+        font-size: 12px;
+        width: 90%;
+    }
+    
+    .explicacionPlanes p{
+        font-size: 20px;
+    }
+    
+    .explicacionPlanes ul li {
+        font-size: 18px;
+    }
+    
+    .disclaimerPlanes {
+        font-size: 15px;
+    }
+
+    .seccionCitasUsuarios {
+        height: 100vh;
+    }
+
+    .seccionCitasUsuarios h2 {
+        font-size: 60px;
+        margin-bottom: 150px;
+    }
+
+    .tarjetasCitas {
+        max-width: 1500px;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    
+    .tarjetaCita {
+        margin-bottom: 20px;
+        padding: 70px 15px 15px;
+        max-width: 425px;
+        height: 425px;
+    }
+
+    .tarjetaCita i {
+        top: -30px;
+        left: 40px;
+        font-size: 60px;
+    }
+    
+    .tarjetaCita q {
+        font-size: 20px;
+    }
+    
+    .tarjetaCita p {
+        color: var(--col-green);
+        font-size: 30px;
+    }
+
+    .contenidoContacto {
+        padding-top: 60px;
+        padding-left: 100px;
+    }
+
+    .contenidoContacto h2 {
+        margin-bottom: 150px;
+    }
+
+    .fieldContacto h3 {
+        font-size: 34px;
+    }
+
+    .fieldContacto p {
+        font-size: 24px;
     }
 }
