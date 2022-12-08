@@ -11,6 +11,10 @@ let btnRegistrarActividad = document.getElementById("buttonRegistroActividad");
 
 let listaActividades = [];
 
+let listaHorasActividad = [];
+let listaCantidadActividad = [];
+let listatipoActividad = [];
+
 
 btnRegistrarActividad.addEventListener("click", getActividad);
 
@@ -25,6 +29,7 @@ async function GetListaActividad() {
             (objA, objB) => Number(new Date(objB.Fecha)) - Number(new Date(objA.Fecha)),
         );
         await ImprimirActividades();
+        graficoActividades();
         console.log(listaActividades);
     } else {
         ImprimirMsjError(result.msj);
@@ -122,93 +127,144 @@ async function getActividad() {
     valorHoraFinActividad.value = "";
     valorActividad.value = "";
 
-    
+
 }
 
 
 function validarActividad(sFecha, sInicioHora, sFinHora, sActividad, DateInicio, DateFinal) {
 
     //Esta sección valida que haya información en las horas y fechas
-    if (sFecha == '' ||sFecha == null||sFecha == undefined) {
+    if (sFecha == '' || sFecha == null || sFecha == undefined) {
         document.getElementById("inputFechaActividad").focus();
         Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha' });
         return true;
     }
-    else if (valorInicioFechaAyuno.value == '') {
-        document.getElementById("inputInicioFechaAyuno").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha de inicio' });
+    else if (sInicioHora == '' || sInicioHora == null || sInicioHora == undefined) {
+        document.getElementById("inputHoraInicioActividad").focus();
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de inicio' });
         return true;
     }
-    else if (valorHoraFinAyuno.value == '') {
-        document.getElementById("inputHoraFinAyuno").focus();
+    else if (sFinHora == '' || sFinHora == null || sFinHora == undefined) {
+        document.getElementById("inputHoraFinActividad").focus();
         Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de fin' });
         return true;
     }
-    else if (valorFinFechaAyuno.value == '') {
-        document.getElementById("inputFinFechaAyuno").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha de fin' });
-        return true;
-    }
-    //Esta sección obtiene el valor de los radiocheck y valida que haya un opción seleccionada
-    else if (document.getElementById("radio1410").checked) {
-        optionRadioCheckAyuno = document.getElementById("radio1410").value;
-    }
-    else if (document.getElementById("radio168").checked) {
-        optionRadioCheckAyuno = document.getElementById("radio168").value;
-    }
-    else if (document.getElementById("radio186").checked) {
-        optionRadioCheckAyuno = document.getElementById("radio186").value;
-    }
-    else if (document.getElementById("radio204").checked) {
-        optionRadioCheckAyuno = document.getElementById("radio204").value;
-    }
-    else {
-        document.getElementById("radio1410").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Seleccione un tipo de ayuno' });
+    else if (sActividad == '' || sActividad == null || sActividad == undefined) {
+        document.getElementById("inputNombreActividad").focus();
+        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Seleccione un ejercicio' });
         return true;
     }
     //Valida que la fecha Inicial no sea mayor a la fecha final
-    if (pDateInicio > pDateFinal) {
-        document.getElementById("inputFinFechaAyuno").focus();
-        Swal.fire({ icon: 'error', title: 'Fechas invalidas', text: 'La fecha de fin no puede ser antes que la fecha de inicio' });
+    else if (DateInicio >= DateFinal) {
+        document.getElementById("inputHoraInicioActividad").focus();
+        Swal.fire({ icon: 'error', title: 'Horas invalidas', text: 'La hora de fin no puede ser antes que la hora de inicio' });
+        return true;
+    }
+    else if (DateInicio > new Date()) {
+        document.getElementById("inputHoraInicioActividad").focus();
+        Swal.fire({ icon: 'error', title: 'Horas invalidas', text: 'La fecha no puede ser en el futuro' });
         return true;
     }
 }
+/*
+let listaActividades = [];
 
-
-
-
-
-function orderActividadTable() {
-    let table;
-    let rows;
-    let switching;
-    let i;
-    let x;
-    let y;
-    let shouldSwitch;
-
-    table = document.getElementById('datosActividad');
-    switching = true;
-
-    while (switching) {
-        switching = false;
-        rows = table.rows;
-
-        for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-
-            x = rows[i].getElementsByTagName('TD')[0];
-            y = rows[i + 1].getElementsByTagName('TD')[0];
-
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-            }
+let listaHorasActividad = [];
+let listaCantidadActividad = [];
+let listatipoActividad = [];
+*/
+function crearArreglosActividad() {
+    let position;
+    for (let i = 0; i < listaActividades.length; i++) {
+        if (listatipoActividad.includes(listaActividades[i].Tipo)) {
+            position=listatipoActividad.indexOf(listaActividades[i].Tipo);
+            listaHorasActividad[position]=Number(listaActividades[i].TotalTiempo)+Number(listaHorasActividad[position])
+            listaCantidadActividad[position]+=1;
         }
-        if (shouldSwitch) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
+        else {
+            listatipoActividad.push(listaActividades[i].Tipo);
+            listaHorasActividad.push(listaActividades[i].TotalTiempo);
+            listaCantidadActividad.push(1);
         }
     }
 }
+function graficoActividades() {
+
+    let graphPeso = document.getElementById('graphActividad1');
+    let graphIMC = document.getElementById('graphActividad2');
+
+    crearArreglosActividad();
+
+    let yArray1 = listaHorasActividad;
+    let yArray2 = listaCantidadActividad;
+    let xArray = listatipoActividad;
+
+    let trace1 = [{
+        type: 'bar',
+        name: 'Peso',
+        x: xArray,
+        y: yArray1,
+    }];
+
+    let trace2 = [{
+        type: 'bar',
+        name: 'IMC',
+        x: xArray,
+        y: yArray2,
+
+    }];
+
+    let layout1 = {
+        title: 'Total de tiempo por actividad',
+        xaxis: {
+            range: -xArray,
+            title: "Tipo de actividad",
+            automargin: true,
+            titlefont: { size: 40 },
+        },
+        yaxis: {
+            autorange: true,
+            title: "Minutos",
+            automargin: true,
+            titlefont: { size: 40 },
+        },
+        font: {
+            family: 'Noto Serif',
+            size: 20,
+            color: '#286412'
+        },
+    };
+
+    let layout2 = {
+        title: 'Cantidad de repeticiones por actividad ',
+        margin: 40,
+        xaxis: {
+            range: xArray,
+            title: "Tipo de actividad",
+            automargin: true,
+            titlefont: { size: 40 }
+        },
+        yaxis: {
+            //range: yArray2,
+            title: "Minutos",
+            automargin: true,
+            titlefont: { size: 40 },
+            autorange: true
+        },
+        font: {
+            family: 'Noto Serif',
+            size: 20,
+            color: '#286412'
+        },
+    };
+
+    let config = {
+        scrollZoom: true,
+        responsive: true,
+        displaylogo: false
+    }
+    Plotly.newPlot(graphPeso, trace1, layout1, config);
+    Plotly.newPlot(graphIMC, trace2, layout2, config);
+}
+
+
