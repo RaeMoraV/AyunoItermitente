@@ -177,9 +177,9 @@ function crearArreglosActividad() {
     let position;
     for (let i = 0; i < listaActividades.length; i++) {
         if (listatipoActividad.includes(listaActividades[i].Tipo)) {
-            position=listatipoActividad.indexOf(listaActividades[i].Tipo);
-            listaHorasActividad[position]=Number(listaActividades[i].TotalTiempo)+Number(listaHorasActividad[position])
-            listaCantidadActividad[position]+=1;
+            position = listatipoActividad.indexOf(listaActividades[i].Tipo);
+            listaHorasActividad[position] = Number(listaActividades[i].TotalTiempo) + Number(listaHorasActividad[position])
+            listaCantidadActividad[position] += 1;
         }
         else {
             listatipoActividad.push(listaActividades[i].Tipo);
@@ -204,6 +204,14 @@ function graficoActividades() {
         name: 'Peso',
         x: xArray,
         y: yArray1,
+        marker: {
+            color: 'rgba(119,194,137,.5)',
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1
+            }
+
+        }
     }];
 
     let trace2 = [{
@@ -211,22 +219,30 @@ function graficoActividades() {
         name: 'IMC',
         x: xArray,
         y: yArray2,
+        marker: {
+            color: 'rgba(119,194,137,.5)',
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1
+            }
+        }
 
     }];
 
     let layout1 = {
         title: 'Total de tiempo por actividad',
+        titlefont: { size: 40 },
         xaxis: {
             range: -xArray,
             title: "Tipo de actividad",
             automargin: true,
-            titlefont: { size: 40 },
+            titlefont: { size: 30 },
         },
         yaxis: {
             autorange: true,
             title: "Minutos",
             automargin: true,
-            titlefont: { size: 40 },
+            titlefont: { size: 30 },
         },
         font: {
             family: 'Noto Serif',
@@ -237,18 +253,19 @@ function graficoActividades() {
 
     let layout2 = {
         title: 'Cantidad de repeticiones por actividad ',
+        titlefont: { size: 40 },
         margin: 40,
         xaxis: {
             range: xArray,
             title: "Tipo de actividad",
             automargin: true,
-            titlefont: { size: 40 }
+            titlefont: { size: 30 }
         },
         yaxis: {
             //range: yArray2,
-            title: "Minutos",
+            title: "Repeticiones",
             automargin: true,
-            titlefont: { size: 40 },
+            titlefont: { size: 30 },
             autorange: true
         },
         font: {
