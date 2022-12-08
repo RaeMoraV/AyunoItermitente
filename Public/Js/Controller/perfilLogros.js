@@ -17,10 +17,10 @@ let inputMedalla5 = document.querySelector('#tipoMedalla5');
 let inputMedalla6 = document.querySelector('#tipoMedalla6');
 let inputMedalla7 = document.querySelector('#tipoMedalla7');
 let inputMedalla8 = document.querySelector('#tipoMedalla8');
-let optionMedalla;
+
 
 let btnMeta = document.getElementById('btnMeta');
-btnMeta.addEventListener('click',getMeta);
+btnMeta.addEventListener('click', getMeta);
 
 GetListaLogros();
 
@@ -52,10 +52,15 @@ async function ImprimirMetas() {
         celdaTipoLogro.innerHTML = traductorLogro(listaMetas[i].TipoLogro);
         celdaCondicionLogro.innerHTML = listaMetas[i].CondicionLogro;
         celdaNombreLogro.innerHTML = listaMetas[i].NombredeLogro;
-        let iconoMedalla = document.createElement('i');
-        iconoMedalla.className = traductorIconoMedalla(listaMetas[i].Medalla);
-        celdaMedalla.appendChild(iconoMedalla)
-        celdaEstado.innerHTML = listaMetas[i].Estado;
+        if (listaMetas[i].Estado==1) {
+            let iconoMedalla = document.createElement('i');
+            iconoMedalla.className = traductorIconoMedalla(listaMetas[i].Medalla);
+            celdaMedalla.appendChild(iconoMedalla)
+        }
+        else {
+            celdaMedalla.innerHTML='';
+        }
+        celdaEstado.innerHTML = traductorEstadoLogro(listaMetas[i].Estado);
     }
 }
 
@@ -63,8 +68,9 @@ async function getMeta() {
     let sTipoMeta = inputTipoMeta.value;
     let nIndicador = inputIndicador.value;
     let sNombreMeta = inputNombreLogro.value;
-    let estadoPrueba = Number(0);
-    revisarMedalla();
+    let optionMedalla = revisarMedalla();
+    let estadoPrueba = revisarEstadoPrueba(sTipoMeta, nIndicador);
+
 
     let result = null;
 
@@ -141,28 +147,77 @@ function validarMeta(psTipoMeta) {
 }*/
 
 function revisarMedalla() {
+    let option;
     if (inputMedalla1.checked) {
-        optionMedalla = inputMedalla1.value;
+        option = inputMedalla1.value;
     } else if (inputMedalla2.checked) {
-        optionMedalla = inputMedalla2.value;
+        option = inputMedalla2.value;
     } else if (inputMedalla3.checked) {
-        optionMedalla = inputMedalla3.value;
+        option = inputMedalla3.value;
     }
     else if (inputMedalla4.checked) {
-        optionMedalla = inputMedalla4.value;
+        option = inputMedalla4.value;
     }
     else if (inputMedalla5.checked) {
-        optionMedalla = inputMedalla5.value;
+        option = inputMedalla5.value;
     }
     else if (inputMedalla6.checked) {
-        optionMedalla = inputMedalla6.value;
+        option = inputMedalla6.value;
     }
     else if (inputMedalla7.checked) {
-        optionMedalla = inputMedalla7.value;
+        option = inputMedalla7.value;
     }
     else if (inputMedalla8.checked) {
-        optionMedalla = inputMedalla8.value;
+        option = inputMedalla8.value;
     } else {
-        optionMedalla = 0;
+        option = 0;
     }
+    return option;
+}
+
+function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
+    let estadoPrueba = 0;
+    let sumaHoras = 0;
+    let ayunoCompletados = 0;
+    if (psTipoMeta == "peso") {
+        if (Number(listaPesos[0].Peso) <= Number(pnIndicador)) {
+            estadoPrueba = 1;
+        }
+        else {
+            estadoPrueba = 0;
+        }
+    }
+    else if (psTipoMeta == "imc") {
+        if (Number(listaPesos[0].IMC) <= Number(pnIndicador)) {
+            estadoPrueba = 1;
+        }
+        else {
+            estadoPrueba = 0;
+        }
+    }
+    else if (psTipoMeta == "cantidadHoras") {
+        for (let i = 0; i < listaAyunos.length; i++) {
+            sumaHoras += Number(listaAyunos[i].HorasAyunos);
+        }
+        if (Number(sumaHoras) >= Number(pnIndicador)) {
+            estadoPrueba = 1;
+        }
+        else {
+            estadoPrueba = 0;
+        }
+    }
+    else if (psTipoMeta == "diasAyuno") {
+        for (let i = 0; i < listaAyunos.length; i++) {
+            if (listaAyunos[i].EstadoAyuno == "Logrado") {
+                ayunoCompletados += 1;
+            }
+        }
+        if (Number(ayunoCompletados) >= Number(pnIndicador)) {
+            estadoPrueba = 1;
+        }
+        else {
+            estadoPrueba = 0;
+        }
+    }
+    return estadoPrueba;
 }

@@ -65,3 +65,12 @@ function traductorIconoMedalla(pMedalla) {
     }
 }
 
+function traductorEstadoLogro(pEstado){
+    if(pEstado==0){
+        return "Incompleto";
+    }
+    else{
+        return "Completado";
+    }
+}
+

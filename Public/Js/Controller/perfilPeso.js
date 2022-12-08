@@ -122,6 +122,13 @@ function graficoPeso() {
         name: 'Peso',
         x: xArray,
         y: yArray1,
+        marker: {
+            color: 'rgba(119,194,137,.5)',
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1
+            }
+        }
     }];
 
     let trace2 = [{
@@ -129,7 +136,13 @@ function graficoPeso() {
         name: 'IMC',
         x: xArray,
         y: yArray2,
-
+        marker: {
+            color: 'rgba(119,194,137,.5)',
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1
+            }
+        }
     }];
 
     let layout1 = {
@@ -145,7 +158,7 @@ function graficoPeso() {
             title: "Peso (kg)",
             automargin: true,
             titlefont: { size: 40 },
-            dtick: Math.round((Math.max(...yArray1) + 20) / 10)
+            
         },
         font: {
             family: 'Noto Serif',
