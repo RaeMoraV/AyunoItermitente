@@ -117,7 +117,7 @@ a {
     padding: 55px 20px;
     width: 250px;
     height: 100vh;
-    background: var(--color-lightgreen1);
+    background: var(--col-lightgray);
     z-index: 100;
     transition: all .5s;
 }
@@ -136,13 +136,14 @@ a {
 
 #menu a {
     font-size: 20px;
-    color: var(--color-black);
+    color: var(--col-darkgray);
     margin-bottom: 25px;
+    font-weight: 700;
 }
 
 #menu a:hover {
     font-size: 20px;
-    color: var(--color-green);
+    color: var(--col-green);
 }
 
 /* NAV DESKTOP ONLY */
