@@ -15,6 +15,7 @@ body {
     position: relative;
 }
 
+
 /* Estilos SideMenu--------------------------- */
 .sidebarQuieto {
     position: fixed;
@@ -482,5 +483,121 @@ ul li:hover button {
 
 .receta {
     height: 60%;
-    width: 60%;    
+    width: 60%;
+}
+
+/*CSS para generar recetas display*/
+
+.RecetaInput {
+    background-color: rgba(0, 255, 51, 0.5);
+    margin: 40px;
+}
+
+.recetaGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.nombreReceta {
+    grid-area: 1 / 1 / 2 / 9;
+}
+
+.nombreReceta h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 2px;
+    color: #000000;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.imgReceta {
+    grid-area: 2 / 1 / 10 / 5;
+   
+}
+
+.imgReceta img {
+    max-height: 90%;
+    
+    border-radius: 30px;
+    margin: auto;
+    border: 3px solid green;
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.categoriaReceta,
+.tipoReceta,
+.tiempoReceta {
+    text-align: left;
+}
+
+.categoriaReceta {
+    grid-area: 2 / 5 / 3 / 7;
+}
+
+.tipoReceta {
+    grid-area: 2 / 8 / 3 / 9;
+}
+
+.tiempoReceta {
+    grid-area: 2 / 7 / 3 / 8;
+}
+
+.pasosReceta {
+    grid-area: 3 / 5 / 10 / 7;
+    height: 300px;
+}
+
+.pasosReceta h2,
+.pasosReceta p {
+    text-align: justify;
+}
+
+.ingredientesReceta {
+    grid-area: 3 / 7 / 10 / 9;
+    height: 300px;
+}
+
+.ingredientesReceta h2,
+.ingredientesReceta p {
+    text-align: justify;
+}
+
+.buttonEliminar {
+    grid-area: 10 / 1 / 11 / 9;
+}
+
+.buttonEliminar button {
+    float: right;
+    margin-right: 50px;
+    border: none;
+}
+
+.buttonEliminar button {
+    float: right;
+    margin-right: 50px;
+    border: none;
+}
+
+.buttonEliminar i {
+    font-size: 50px;
+    background-color: rgba(0, 255, 51, 0.5);
+}
+
+.fa-solid:hover {
+    color: #3e8e41;
+}
+
+.fa-solid:active {
+    transform: translateY(4px);
 }

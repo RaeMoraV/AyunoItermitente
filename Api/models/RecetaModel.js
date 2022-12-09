@@ -6,16 +6,9 @@ const schemaReceta = new mongoose.Schema({
     Imagen: { type: String, required: true, unique: true },
     TipoComida: { type: String, required: true, unique: false },
     Categoria: { type: String, required: true, unique: false },
-    ListaIngredientes: [
-        {
-            Ingredientes: { type: String, required: true, unique: false }
-        }
-    ],
-    ListaPasos: [
-        {
-            Pasos: { type: String, required: true, unique: false },
-        }
-    ] 
+    Ingredientes: { type: String, required: true, unique: false },
+    Tiempo: { type: Number, required: true, unique: false },
+    Pasos: { type: String, required: true, unique: false }
 });
 
 module.exports = mongoose.model('Receta', schemaReceta, 'Recetas');

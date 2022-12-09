@@ -58,6 +58,10 @@ app.use('/api', personas);
 const pesos = require('./routes/PesoRoute');
 app.use('/api', pesos);
 
+//Conexión a ruta de enfermedades
+const enfermedades = require('./routes/EnfermedadRoute');
+app.use('/api', enfermedades);
+
 //Conexión a ruta de Actividades
 const registroActividad = require('./routes/ActividadRoute');
 app.use('/api', registroActividad);
@@ -70,6 +74,6 @@ app.use('/api', logros);
 const ayunos = require('./routes/AyunoRoute');
 app.use('/api', ayunos);
 
-//Conexión a ruta de enfermedades
-const enfermedades = require('./routes/EnfermedadRoute');
-app.use('/api', enfermedades);
+//Conexión a ruta de recetas
+const recetas = require('./routes/RecetaRoute');
+app.use('/api', recetas);
