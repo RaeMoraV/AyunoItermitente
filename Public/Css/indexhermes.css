@@ -14,10 +14,23 @@
     background-size: cover;
     background-image: url(../Img/HermesImg/primerseccion.jpg);
     width: 100%;
-    height: 100vh;
-    text-align: center;   
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content:center;
+
     
 }
+
+.textBannerPrincipal {
+    height:100%;
+    width:50%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 
 .textPrincipal1 {
     max-width: 600px;
@@ -28,9 +41,9 @@
     color: #bdf347; 
 	width: 100%;
 	max-width: 1080px;
-	padding: 20px;
     font-weight: bold;
     font-size: 100px; 
+    margin-bottom: 40px;
 
  
 }
@@ -41,12 +54,8 @@
     font-size: 20px;
     color:#ffffff; 
     line-height: 25px;
-    font-family: Verdana; 
-    margin: flex; 
-    
+    margin-bottom: 60px;   
 }
-
-
 
 
 .textPrincipal1 h2 {
@@ -117,7 +126,7 @@
 
 /*estilos de la seccion Que es por SVC*/
 
-.seccionQueEs {
+.seccionServicios {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,46 +134,29 @@
     background-size: cover;
     background:#1d2549;
     width: 100%;
-    height: 700px;
+    height: 70vh;
+    
+}
+.servicios{
+    display: flex;
+    max-width: 1200px;
+    min-width: 900px;
+    justify-content: space-between;
+    width: 100%;
+}
+.recuadroServicio{
+    width: 300px;
+    height: 300px;
 }
 
-.textQueEs {
-
-    max-width: 500px;
-    background: #1d2549;
-    margin: 20px 0;
-    padding: 10px;
-    text-align: center;
-    color: #ffffff;
+.recuadroServicio img{
+    width: 100%;
+    
 }
 
-.textBannerPrincipal {
-    height: 700px;
-    margin: 0px 40px 80px 200px;
-    padding-top: 80px;
 
-}
-
-.textQueEs h2{
-    font-size: 70px;
-    font-weight: bold;
-}
-
-.buttonInformacion {
-    background-color: #bdf347;
-    border: 2px;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    border-radius: 5%;
-    height: 40px;
-    width: 150px;
-    font-size: 16px;
 
     
-
-}
-
 .buttonText {
     color: white;
 
@@ -465,7 +457,6 @@
     font-size: 25px; 
     font-family: Arial; 
     line-height: 50px; 
-    margin: auto;
 }
 
 
@@ -538,33 +529,5 @@
         margin: 40px 40px 40px 40px;
     }
 
-    #seccionSlider .card {
-        width: 400px;
-        height: 400px;
-    }
 
-    #fondoSeccionQueEs {
-        background-size: cover;
-    }
-
-    .textQueEs {
-        height: 700px;
-        margin: 80px 40px 80px 40px;
-
-    }
-
-    .textQueEs p {
-        margin: 40px 40px 40px 40px;
-        line-height: 40px;
-    }
-
-    .textQueEs h2{
-        margin:40px 40px 40px 40px;
-        font-weight:bold;
-    }
-
-    .buttonInformacion {
-        height: 50px;
-        width: 200px;
-    }
 }
