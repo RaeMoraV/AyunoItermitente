@@ -6,17 +6,7 @@
 /* Perfil - Seccion Enfermedades ---------------------------------------*/
 
 /* Perfil - Seccion Actividades ---------------------------------------*/
-let listaActividades = [];
 
-function registrarActividad (sFecha, sNombre, sInicio, sFin, total) {
-    let nuevaActividad = [];
-    nuevaActividad.push(sFecha, sNombre, sInicio, sFin, total);
-    listaActividades.push(nuevaActividad);
-};
-
-function listarActividades() {
-    return listaActividades;
-}
 
 /* Perfil - Seccion Ayuno - Tabla  ---------------------------------------*/
 

@@ -70,7 +70,7 @@
                     <li><a href="#" id="sideMenuPeso">Peso</a></li>
                     <li><a href="#" id="sideMenuEnfermedades">Enfermedades</a></li>
                     <li><a href="#" id="sideMenuActividad">Actividad física</a></li>
-                    <li><a href="#" id="sideMenuLogros">Logros y Objetivos</a></li>
+                    <li><a href="#" id="sideMenuLogros">Logros y objetivos</a></li>
                     <li><a href="#" id="sideMenuPlan">Plan de ayuno</a></li>
                     <li><a href="#" id="sideMenuRecetas">Recetas</a></li>
                 </ul>
@@ -225,9 +225,6 @@
                             </form>
                         </div>
                     </div>
-                    <div class="unHijo">
-                        <div id="graphPeso"></div>
-                    </div>
                 </div>
             </section>
 
@@ -240,10 +237,10 @@
                             <thead>
                                 <tr>
                                     <th>Fecha</th>
-                                    <th>Actividad</th>
-                                    <th>Hora Inicio</th>
-                                    <th>Hora Fin</th>
-                                    <th>Tiempo Total</th>
+                                    <th>Hora inicio</th>
+                                    <th>Hora fin</th>
+                                    <th>Tiempo total (minutos)</th>
+                                    <th>Tipo de actividad</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -256,44 +253,45 @@
                                     <label for="inputFechaActividad">Fecha:<span> *</span> </label>
                                     <input type="date" name="" id="inputFechaActividad">
                                 </div>
+                                <div class="fieldTiempos">
+                                    <div class="field">
+                                        <label for="inputHoraInicioActividad">Hora de inicio:<span> *</span> </label>
+                                        <input type="time" name="" id="inputHoraInicioActividad">
+                                    </div>
+                                    <div class="field">
+                                        <label for="inputHoraFinActividad">Hora de fin:<span> *</span> </label>
+                                        <input type="time" name="" id="inputHoraFinActividad">
+                                    </div>
+                                </div>
                                 <div class="field">
                                     <label for="inputNombreActividad">Actividad:<span> *</span> </label>
                                     <select name="" id="inputNombreActividad">
-                                        <option value="">--Seleccione--</option>
+                                        <option value="" disabled selected hidden>--Seleccione un ejercicio--</option>
                                         <optgroup label="Predeterminadas">
                                             <option value="Ciclismo">Ciclismo</option>
-                                            <option value="Gimnasio">Gimnasio</option>
+                                            <option value="Crossfit">Crossfit</option>
                                             <option value="Yoga">Yoga</option>
                                             <option value="Caminata">Caminata</option>
                                             <option value="Correr">Correr</option>
                                             <option value="Nadar">Nadar</option>
-                                            <option value="Estilo Libre">Estilo Libre</option>
-                                        </optgroup>
-                                        <optgroup label="Personalizadas">
+                                            <option value="Entrenamiento de fuerza">Entrenamiento de fuerza</option>
+                                            <option value="Danza">Danza</option>
+                                            <option value="Ejercicios funcionales">Ejercicios funcionales</option>
+                                            <option value="Otro">Otro</option>
                                         </optgroup>
                                     </select>
                                 </div>
-                                <div class="fieldTiempos">
-                                    <div class="inicio">
-                                        <p>Inicio:</p> <br />
-                                        <input type="number" min="0" max="24" id="inicioHora" placeholder="HH" />
-                                        <input type="number" min="0" max="60" id="inicioMinutos" placeholder="MM" />
-                                        <input type="number" min="0" max="60" id="inicioSegundos" placeholder="SS" />
-                                    </div>
-                                    <div class="fin">
-                                        <p>Fin:</p> <br />
-                                        <input type="number" min="0" max="24" id="finHora" placeholder="HH" />
-                                        <input type="number" min="0" max="60" id="finMinutos" placeholder="MM" />
-                                        <input type="number" min="0" max="60" id="finSegundos" placeholder="SS" />
-                                    </div>
-                                </div>
                                 <button class="buttonRegistro" id="buttonRegistroActividad" type="button">Hacer
-                                    Registro</button>
+                                    Registro
+                                </button>
                             </form>
                         </div>
                     </div>
                     <div class="unHijo">
-                        <div id="graphActividad"></div>
+                        <div id="graphActividad1"></div>
+                    </div>
+                    <div class="unHijo">
+                        <div id="graphActividad2"></div>
                     </div>
                 </div>
 
@@ -322,29 +320,69 @@
                             <h3>Agregar meta</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputNombreMeta">Tipo de meta:<span> *</span> </label>
+                                    <label for="inputNombreMeta">Tipo de logro:<span> *</span> </label>
                                     <select name="" id="inputNombreMeta">
-                                        <option value="">--Seleccione--</option>
+                                        <option value="" disabled selected hidden>--Seleccione un tipo de logro--
+                                        </option>
                                         <option value="peso">Logro por reducción de peso</option>
-                                        <option value="imc">Logro por reducción o aumento del IMC</option>
+                                        <option value="imc">Logro por reducción IMC</option>
                                         <option value="cantidadHoras">Logro por cantidad de horas de ayuno</option>
                                         <option value="diasAyuno">Logro por días de ayuno finalizados</option>
                                     </select>
                                 </div>
                                 <div class="field">
-                                    <label for="inputindicadorPeso">Indicador:<span> *</span> </label>
-                                    <input type="number" name="" id="inputindicadorPeso">
-
+                                    <label for="inputIndicador">Condición de logro:<span> *</span> </label>
+                                    <input type="number" name="" id="inputIndicador">
                                 </div>
-
-                                <div class="fieldTiempos">
-
+                                <div class="field">
+                                    <label for="inputNombreLogro">Nombre de logro: </label>
+                                    <input type="text" name="" id="inputNombreLogro">
                                 </div>
-                                <button class="buttonRegistro" id="buttonRegistroMeta" type="button">Hacer
-                                    Registro</button>
-                                <button class="buttonRegistro" id="buttonActualizarMetas" type="button">Actualizar
-                                    estados</button>
+                                <div class="fieldRadio">
+                                    <p>Imagen del logro:<span> *</span></p>
+                                    <div class="radioContainer">
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla1" value="1">
+                                            <label for="tipoMedalla1"><i class="fa-solid fa-weight-scale"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla2" value="2">
+                                            <label for="tipoMedalla2"><i class="fa-solid fa-heart"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla3" value="3">
+                                            <label for="tipoMedalla3"><i class="fa-solid fa-utensils"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla4" value="4">
+                                            <label for="tipoMedalla4"><i class="fa-solid fa-dumbbell"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla5" value="5">
+                                            <label for="tipoMedalla5"><i class="fa-solid fa-medal"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla6" value="6">
+                                            <label for="tipoMedalla6"><i class="fa-solid fa-apple-whole"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla7" value="7">
+                                            <label for="tipoMedalla7"><i class="fa-solid fa-dumbbell"></i></label>
+                                        </div>
+                                        <div class="radioOption">
+                                            <input type="radio" name="inputMedalla" id="tipoMedalla8" value="8">
+                                            <label for="tipoMedalla8"><i class="fa-solid fa-heart-pulse"></i></label>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </form>
+                            <button class="buttonRegistro" id="btnMeta" type="button">
+                                Hacer registro
+                            </button>
+                            <button class="buttonRegistro" id="buttonActualizarMetas" type="button">
+                                Actualizar estados
+                            </button>
                         </div>
                     </div>
                     <div class="unHijo">
@@ -352,6 +390,8 @@
                     </div>
                 </div>
             </section>
+
+
 
 
 
@@ -493,80 +533,167 @@
             <section class="container" id="recetas">
                 <h2>Recetas</h2>
                 <div class="contenido">
-                    <div class="dosHijos">
-                        <table class="datosTabla tableRecetas" id="datosReceta">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Ingredientes</th>
-                                    <th>Pasos para prepararla</th>
-                                    <th>Tiempo Total</th>
-                                    <th>Tipo de comida</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <div class="ingresoDatos">
-                            <h3>Registrar Receta</h3>
-                            <form>
-                                    <div class="field">
-                                        <label for="inputNombreReceta">Nombre:<span> *</span> </label>
-                                        <input type="text" name="" id="inputNombreReceta">
+                    <div class="ingresoDatos">
+                        <h3>Registrar Receta</h3>
+                        <form>
+                            <div class="field">
+                                <label for="inputNombreReceta">Nombre:<span> *</span> </label>
+                                <input type="text" name="" id="inputNombreReceta">
+                            </div>
+                            <div class="field">
+                                <label for="">Ingredientes:<span> *</span> </label>
+                            </div>
+                            <div class="field">
+                                <label for="inputIngrediente1">Ingrediente 1: </label>
+                                <input type="text" name="" id="inputIngrediente1">
+                            </div>
+                            <div class="field">
+                                <label for="inputIngrediente2">Ingrediente 2: </label>
+                                <input type="text" name="" id="inputIngrediente2">
+                            </div>
+                            <div class="field">
+                                <label for="inputIngrediente3">Ingrediente 3: </label>
+                                <input type="text" name="" id="inputIngrediente3">
+                            </div>
+                            <div class="field">
+                                <label for="inputIngrediente4">Ingrediente 4: </label>
+                                <input type="text" name="" id="inputIngrediente4">
+                            </div>
+                            <div class="field">
+                                <label for="inputIngrediente5">Ingrediente 5: </label>
+                                <input type="text" name="" id="inputIngrediente5">
+                            </div>
+                            <div class="field">
+                                <label for="inputIngrediente6">Ingrediente 6: </label>
+                                <input type="text" name="" id="inputIngrediente6">
+                            </div>
+                            <div class="field">
+                                <label for="">Preparacion<span> *</span> </label>
+                            </div>
+                            <div class="field">
+                                <label for="inputPaso1">Paso 1: </label>
+                                <input type="text" name="" id="inputPaso1">
+                            </div>
+                            <div class="field">
+                                <label for="inputPaso2">Paso 2: </label>
+                                <input type="text" name="" id="inputPaso2">
+                            </div>
+                            <div class="field">
+                                <label for="inputPaso3">Paso 3: </label>
+                                <input type="text" name="" id="inputPaso3">
+                            </div>
+                            <div class="field">
+                                <label for="inputPaso4">Paso 4: </label>
+                                <input type="text" name="" id="inputPaso4">
+                            </div>
+                            <div class="field">
+                                <label for="inputPaso5">Paso 5: </label>
+                                <input type="text" name="" id="inputPaso5">
+                            </div>
+                            <div class="field">
+                                <label for="inputPaso6">Paso 6: </label>
+                                <input type="text" name="" id="inputPaso6">
+                            </div>
+                            <div class="field">
+                                <label for="inputTiempoReceta">Tiempo de preparacion:<span> *</span> </label>
+                                <input type="number" name="" id="inputTiempoReceta">
+                            </div>
+                            <div class="field">
+                                <label for="inputNombreMeta">Tipo de comida:<span> *</span> </label>
+                                <select name="" id="inputTipoReceta">
+                                    <option value="" disabled selected hidden>--Seleccione un tipo de comida--
+                                    </option>
+                                    <option value="Desayuno">Desayuno</option>
+                                    <option value="Almuerzo">Almuerzo</option>
+                                    <option value="Merienda">Merienda</option>
+                                    <option value="Cena">Cena</option>
+                                    <option value="Postre">Postre</option>
+                                </select>
+                            </div>
+                            <div class="fieldRadio">
+                                <p>Categoría:<span> *</span></p>
+                                <div class="checkContainer">
+                                    <input type="checkbox" id="recetaCategoria1" name="recetaCategoria1"
+                                        value="Vegetariana">
+                                    <label for="recetaCategoria1"> Vegetariana</label><br>
+                                    <input type="checkbox" id="recetaCategoria2" name="recetaCategoria2" value="Vegana">
+                                    <label for="recetaCategoria2"> Vegana</label><br>
+                                    <input type="checkbox" id="recetaCategoria3" name="recetaCategoria3" value="Keto">
+                                    <label for="recetaCategoria3"> Keto</label>
+                                    <input type="checkbox" id="recetaCategoria4" name="recetaCategoria4"
+                                        value="Tradicional">
+                                    <label for="recetaCategoria4"> Tradicional</label>
+                                    <input type="checkbox" id="recetaCategoria5" name="recetaCategoria5"
+                                        value="Libre de gluten">
+                                    <label for="recetaCategoria5"> Libre de gluten</label>
+                                    <input type="checkbox" id="recetaCategoria6" name="recetaCategoria6"
+                                        value="Mediterránea">
+                                    <label for="recetaCategoria6"> Mediterránea</label>
+                                    <input type="checkbox" id="recetaCategoria7" name="recetaCategoria7" value="Paleo">
+                                    <label for="recetaCategoria7"> Paleo</label>
+                                </div>
+                            </div>
+                            <div class="fieldFile">
+                                <p>Foto de Receta</p>
+                                <div class="recetaFoto">
+                                    <div class="showReceta" id="showReceta"></div>
+                                    <div class="uploadReceta">
+                                        <img id="imgInputReceta" class="receta">
+                                        <button class="btnSubirFoto" type="button"
+                                            onclick="AbrirCloudinary('imgInputReceta')"> Subir Foto</button>
                                     </div>
-                                    <div class="field">
-                                        <label for="inputIngredientesReceta">Ingredientes:<span> *</span> </label>
-                                        <input type="text" name="" id="inputIngredientesReceta">
-                                    </div>
-                                    <div class="field">
-                                        <label for="inputPreparacionReceta">Preparacion:<span> *</span> </label>
-                                        <input type="text" name="" id="inputPreparacionReceta">
-                                    </div>
-                                    <div>
-                                        <div class="field">
-                                            <label for="inputTiempoReceta">Tiempo Preparacion:<span> *</span> </label>
-                                            <input type="number" name="" id="inputTiempoReceta">
-                                        </div>
-                                        <div class="fieldRadio">
-                                            <p>Tipo de Ayuno:<span> *</span></p>
-                                            <div class="radioContainer">
-                                                <div class="radioOption">
-                                                    <input type="radio" name="inputReceta" id="inputRecetaDesayuno"
-                                                        value="Desayuno">
-                                                    <label for="inputRecetaDesayuno">Desayuno</label>
-                                                </div>
-                                                <div class="radioOption">
-                                                    <input type="radio" name="inputReceta" id="inputRecetaAlmuerzo"
-                                                        value="Almuerzo">
-                                                    <label for="inputRecetaAlmuerzo">Almuerzo</label>
-                                                </div>
-                                                <div class="radioOption">
-                                                    <input type="radio" name="inputReceta" id="inputRecetaCena" value="Cena">
-                                                    <label for="inputRecetaCena">Cena</label>
-                                                </div>
-                                                <div class="radioOption">
-                                                    <input type="radio" name="inputReceta" id="inputRecetaMerienda"
-                                                        value="Merienda">
-                                                    <label for="inputRecetaMerienda">Merienda</label>
-                                                </div>
-                                                <div class="fieldFile">
-                                                    <p>Foto de Receta</p>
-                                                    <div class="recetaFoto">
-                                                        <div class="showReceta" id="showReceta"></div>
-                                                        <div class="uploadReceta">
-                                                            <img id="imgReceta" class="receta">
-                                                        <button class="btnSubirFoto" type="button" onclick="AbrirCloudinary('imgUser')"> Subir Foto</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                        </div>
-          
-                                    <button class="buttonRegistro" id="buttonRegistroReceta" type="button">Hacer
-                                        Registro</button>
-                                    </div>  
-                            </form>
-                        </div>         
+                                </div>
+                            </div>
+                            <button class="buttonRegistro" id="buttonRegistroReceta" type="button">Hacer
+                                Registro
+                            </button>
+                        </form>
                     </div>
+
+                </div>
+                <div class="RecetaInput">
+                    <div class="recetaGrid">
+                        <div class="nombreReceta">
+                            <h1>Gallo Pinto</h1>
+                        </div>
+                        <div class="imgReceta"><img src="./Img/perfil/GalloPinto.png" alt=""></div>
+                        <div class="categoriaReceta">
+                            <h3>Tiempo de Preparacion:</h3>
+                            <p>20 minutos</p>
+                        </div>
+                        <div class="tipoReceta">
+                            <h3>Tipo:</h3>
+                            <p>Desayuno</p>
+                        </div>
+                        <div class="tiempoReceta">
+                            <h3>Categoria:</h3>
+                            <p>Vegetariana</p>
+                            <p>Vegana</p>
+                        </div>
+                        <div class="pasosReceta">
+                            <h2>Preparacion</h2>
+                            <p>Paso 1. Cocinar arroz</p>
+                            <p>Paso 2. Cocinar frijoles</p>
+                            <p>Paso 3. Picar cilantro, cebolla y chile</p>
+                            <p>Paso 4. Cocinar todo en una sarten</p>
+                            <p>Paso 5. Echar salsa lizano</p>
+                        </div>
+                        <div class="ingredientesReceta">
+                            <h2>Ingredientes</h2>
+                            <p>Arroz</p>
+                            <p>Frijoles</p>
+                            <p>Cebolla</p>
+                            <p>Chile</p>
+                            <p>Cilantro</p>
+                            <p>Salsa Lizano</p>
+                        </div>
+                        <div class="buttonEliminar">
+                            <button type="button" value='IDdeReceta'> <i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="RecetaInput" id="imprimirRecetas">
+
                 </div>
             </section>
     </main>
@@ -579,14 +706,14 @@
     <!-- FOOTER------------------------------------------------------>
     <footer class="footerContainer">
         <div class="logo">
-            <a href="#">OM</a>
+            <a href="#">eFast</a>
         </div>
         <div class="textFooter">
             <ul class="links">
-                <li><a href="./terminosCondiciones.html">Terminos y Condiciones</a></li>
+                <li><a href="./terminosCondiciones.html">Términos y Condiciones</a></li>
                 <li><a href="./perfil.html">Perfil</a></li>
             </ul>
-            <p class="disclaimer">&copy; 2022 <b>OM</b>-Todos los Derechos Reservados</p>
+            <p class="disclaimer">&copy; 2022 <b>OM</b> - Todos los derechos reservados</p>
         </div>
         <div class="social">
             <div class="iconContainer">
@@ -607,14 +734,14 @@
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script src="./Js/Constantes.js"></script>
     <script src="../Public/Js/Services/perfil.js"></script>
     <script src="../Public/Js/Services/globales.js"></script>
     <script src="./Js/Services/SubirImagenService.js"></script>
     <script src="./Js/Services/GeneralService.js"></script>
 
-    
+
     <script src="../Public/Js/Controller/globales.js"></script>
 
     <script src="./Js/Controller/perfilActividades.js"></script>
@@ -624,7 +751,7 @@
     <script src="./Js/Controller/perfilLogros.js"></script>
     <script src="./Js/Controller/perfilPeso.js"></script>
     <script src="./Js/Controller/perfilRecetas.js"></script>
-    
+
 
 
 </body>

@@ -17,7 +17,7 @@ let inputFecha;
 const fondoNegro = document.querySelector('.fondoNegro');
 
 llenarSelectAnio();
-//Formulario
+//Formulario Registro
 const btnRegistrateYa = document.querySelector('#buttonRegistrate');
 const btnCerrarRegistro = document.querySelector('#cerrarFormularioInscripcion');
 const submitRegistrate = document.querySelector('#submitRegistrate');
@@ -35,18 +35,20 @@ btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('.fondoNegro').style.display = 'block';
 });
 
-fotoPerfil.addEventListener ('change', function(){
-     const reader = new FileReader();
-     reader.addEventListener('load', () => {
-        fotoSubida = reader.result;
-        document.querySelector("#showPhoto").style.backgroundImage = `url(${fotoSubida})`;
-     });
-     reader.readAsDataURL(this.files[0]);
-});
+// fotoPerfil.addEventListener ('change', function(){
+//     const reader = new FileReader();
+//     reader.addEventListener('load', () => {
+//        fotoSubida = reader.result;
+//        document.querySelector("#showPhoto").style.backgroundImage = `url(${fotoSubida})`;
+//     });
+//     reader.readAsDataURL(this.files[0]);
+// });
 
 fondoNegro.addEventListener('click', cerrarRegistro);
 
 btnCerrarRegistro.addEventListener('click', cerrarRegistro);
+
+
 
 function cerrarRegistro() {
     document.querySelector('#formularioInscripcion').style.display = 'none';
@@ -116,6 +118,29 @@ submitRegistrate.addEventListener('click', function(inputNombre, inputApellido, 
     
 // });
 
+//Formulario Inicio Sesion
+const inicioSesion = document.getElementById('iniciarSesion');
+const cerrarFormInicioSesion = document.getElementById('cerrarFormularioInicioSesion');
+
+inicioSesion.addEventListener('click', abrirInicioSesion);
+cerrarFormInicioSesion.addEventListener('click', cerrarInicioSesion);
+fondoNegro.addEventListener('click', cerrarInicioSesion);
+
+function abrirInicioSesion() {
+    document.querySelector('#formularioInicioSesion').style.display = 'flex';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+};
+
+function cerrarInicioSesion() {
+    document.querySelector('#formularioInicioSesion').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+};
+
+// Validation Functions
+
+
 function imprimirMsjError(pmensaje) {
     Swal.fire({
         title: 'Error',
@@ -147,3 +172,6 @@ function resaltarInputIncorrecto(pInputID) {
 
     elementInput.style = 'border: 1px solid red;';
 }
+
+
+//Formulario Registro

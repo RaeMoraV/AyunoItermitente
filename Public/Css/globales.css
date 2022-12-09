@@ -7,6 +7,12 @@
     --color-green: #22a241;
     --color-darkgreen: #286412;
     --color-white: #ffffff;
+
+    --col-black:#000000;
+    --col-darkgray:#303030;
+    --col-gray:#5b5858;
+    --col-green:#8faf69;
+    --col-lightgray:#f4f4f4;
 }
 
 html {
@@ -51,7 +57,7 @@ a {
 
 .navMobile,
 .navDesktop {
-    background-color: #8faf69;
+    background-color: var(--col-lightgray);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,7 +76,7 @@ a {
 .navMobile .logo a,
 .navDesktop .logo a {
     font-size: 40px;
-    color: var(--color-lightgreen1);
+    color: var(--col-green);
 }
 
 /* NAV MOBILE ONLY */
@@ -88,7 +94,7 @@ a {
 }
 
 .navMobile #menuButton .whiteBar {
-    background-color: var(--color-lightgreen1);
+    background-color: var(--col-green);
     height: 5px;
     width: 40px;
     position: absolute;
@@ -111,7 +117,7 @@ a {
     padding: 55px 20px;
     width: 250px;
     height: 100vh;
-    background: var(--color-lightgreen1);
+    background: var(--col-lightgray);
     z-index: 100;
     transition: all .5s;
 }
@@ -130,13 +136,14 @@ a {
 
 #menu a {
     font-size: 20px;
-    color: var(--color-black);
+    color: var(--col-darkgray);
     margin-bottom: 25px;
+    font-weight: 700;
 }
 
 #menu a:hover {
     font-size: 20px;
-    color: var(--color-green);
+    color: var(--col-green);
 }
 
 /* NAV DESKTOP ONLY */
@@ -179,6 +186,95 @@ a {
 
 
 
+
+
+
+/* FOOTER */
+
+.footerContainer{
+    width: 100%;
+    background-color: var(--col-lightgray);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10px;
+    height: fit-content;
+}
+
+.footerContainer .footerContent .logo{
+    height: 45px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.footerContainer .footerContent .logo a{
+    color: var(--col-green);
+}
+
+.footerContainer .footerContent .textFooter {  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.footerContainer .footerContent .textFooter .links {  
+    font-size: 14px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.footerContainer .footerContent .textFooter .links li {  
+    margin-right: 10px;
+}
+
+.footerContainer .footerContent .textFooter .links li:last-child{
+    margin-right: 0;
+}
+
+.footerContainer .footerContent .textFooter .links a{
+    color: var(--col-green);
+    text-decoration: underline;
+}
+
+.footerContainer .footerContent .textFooter .disclaimer{
+    font-size: 14px;
+    color: var(--col-green);
+}
+
+.footerContainer .social{
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer .social .iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:35px;
+    height:35px;
+    background-color: var(--col-green);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.footerContainer .social .iconContainer a {
+    font-size: 20px;
+    color: var(--col-lightgray);
+}
+
+
 @media (min-width: 768px) {
     .navDesktop {
         display: flex;
@@ -199,159 +295,33 @@ a {
     .navDesktop .links a:hover {
         color: var(--color-lightgreen2);
     }
-}
 
-
-/* FOOTER */
-
-.footerContainer{
-    width: 100%;
-    background-color:#8faf69;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-}
-
-.footerContainer .logo{
-    height: 45px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    font-size: 40px;
-    margin-left: 40px;
-    height: 60px;
-}
-
-.footerContainer .logo a{
-    color: var(--color-lightgreen1);
-}
-
-.footerContainer .textFooter {  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
-    height: 60px;
-}
-
-.footerContainer .textFooter .links {  
-    font-size: 20px;
-    line-height: 30px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    align-content: space-between;
-    width: 100%;
-}
-
-.footerContainer .textFooter .links li {  
-    margin-right: 10px;
-}
-
-.footerContainer .textFooter .links li:last-child{
-    margin-right: 0;
-}
-
-.footerContainer .textFooter .links a{
-    color: var(--color-lightgreen1);
-    text-decoration: underline;
-}
-
-
-
-.footerContainer .social{
-    margin-right: 40px;
-    display: flex;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-}
-
-.footerContainer .social .iconContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:45px;
-    height:45px;
-    background-color: var(--color-lightgreen1);
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.footerContainer .social .iconContainer a {
-    font-size: 20px;
-    color: var(--color-lightgreen2);
-}
-
-
-
-
-
-@media (max-width: 768px) {
-    .footerContainer .footerContainerDos{
+    .footerContainer .footerContent{
         display: flex;
-        height: 50px;
-        display:block;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
     }
 
-
-    .footerContainer .footerIntern{
-        display: block;
+    .footerContainer{
+        padding: 20px 40px;
     }
 
-
-    .footerIntern .social{
-        margin-left: 2px;
+    .footerContainer .footerContent .textFooter .links{
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .footerIntern .links li {
-        margin-right: 120px;
+    .footerContainer .footerContent .textFooter .disclaimer{
+        width: 100%;
+        text-align: center;
     }
 
+    .footerContainer .social .iconContainer{
+        width: 45px;
+        height: 45px;
+    }
 }
+
 
 /* FOOTER Final*/
-
-
-
-
-/* Modal Content  para esconder el formulario prueba*/
-
-.modal{
-    display: none;
-    position: absolute;
-    z-index: -1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    overflow: auto;
-}
-/* Modal Content */
-.modalContent{
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    overflow-y: auto;
-    max-height: calc(100vh - 200px);
-}
-/* Close button */
-.close{
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover, .close:focus{
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
