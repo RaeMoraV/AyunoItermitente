@@ -21,7 +21,7 @@ router.post('/RegistrarReceta', (req, res) => {
         if (err) {
             res.json({
                 resultado: false,
-                msj: 'No se pudo registrar el peso, ocurrió un error!: ',
+                msj: 'No se pudo registrar la receta, ocurrió un error!: ',
                 err
             });
         } else {
@@ -47,6 +47,25 @@ router.get('/ListarRecetas', (req, res) => {
                 resultado: true,
                 msj: 'Los datos se obtuvieron de manera correcta: ',
                 ListaRecetasDB
+            });
+        }
+    });
+});
+
+router.delete('/EliminarReceta', (req, res) => {
+    let body = req.body;
+    Receta.remove({ _id: body._id }, (err, result) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'Ocurrió un error inesperado y no se elimino a la receta',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Receta eliminada de manera correcta',
+                result
             });
         }
     });

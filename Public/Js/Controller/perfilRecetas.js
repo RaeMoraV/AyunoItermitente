@@ -70,11 +70,11 @@ async function ImprimirRecetas() {
         let divimgReceta = document.createElement('div');
         divimgReceta.classList.add('imgReceta');
         let imgReceta = document.createElement("img");
-        imgReceta.src=listaRecetasAyuno[i].Imagen;
+        imgReceta.src = listaRecetasAyuno[i].Imagen;
         divimgReceta.appendChild(imgReceta);
 
         let divcategoriaReceta = document.createElement('div');
-        divcategoriaReceta.className="categoriaReceta";
+        divcategoriaReceta.className = "categoriaReceta";
         let h3categoriaReceta = document.createElement("h3");
         h3categoriaReceta.innerText = "Tiempo de Preparacion:";
         let pcategoriaReceta = document.createElement("p");
@@ -83,7 +83,7 @@ async function ImprimirRecetas() {
         divcategoriaReceta.appendChild(pcategoriaReceta);
 
         let divtipoReceta = document.createElement('div');
-        divtipoReceta.className="tipoReceta";
+        divtipoReceta.className = "tipoReceta";
         let h3tipoReceta = document.createElement("h3");
         h3tipoReceta.innerText = "Tipo:";
         let ptipoReceta = document.createElement("p");
@@ -92,7 +92,7 @@ async function ImprimirRecetas() {
         divtipoReceta.appendChild(ptipoReceta);
 
         let divtiempoReceta = document.createElement('div');
-        divtiempoReceta.className="tiempoReceta";
+        divtiempoReceta.className = "tiempoReceta";
         let h3tiempoReceta = document.createElement("h3");
         h3tiempoReceta.innerText = "Categoria:";
         divtiempoReceta.appendChild(h3tiempoReceta);
@@ -104,7 +104,7 @@ async function ImprimirRecetas() {
         }
 
         let divpasosReceta = document.createElement('div');
-        divpasosReceta.className="pasosReceta";
+        divpasosReceta.className = "pasosReceta";
         let h2pasosReceta = document.createElement("h2");
         h2pasosReceta.innerText = "Preparacion:";
         divpasosReceta.appendChild(h2pasosReceta);
@@ -116,7 +116,7 @@ async function ImprimirRecetas() {
         }
 
         let divingredientesReceta = document.createElement('div');
-        divingredientesReceta.className="ingredientesReceta";
+        divingredientesReceta.className = "ingredientesReceta";
         let h2ingredientesReceta = document.createElement("h2");
         h2ingredientesReceta.innerText = "Ingredientes:";
         divingredientesReceta.appendChild(h2ingredientesReceta);
@@ -128,13 +128,39 @@ async function ImprimirRecetas() {
         }
 
         let divButtonEliminar = document.createElement('div');
-        divButtonEliminar.className="buttonEliminar";
+        divButtonEliminar.className = "buttonEliminar";
         let buttonbuttonEliminar = document.createElement("button");
-        buttonbuttonEliminar.type="button";
-        buttonbuttonEliminar.value = 0; //Luego cambiar por ID
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de receta',
+                text: 'Desea eliminar la receta de ' + listaRecetasAyuno[i].Nombre + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaRecetasAyuno[i]._id
+                };
+                let result = await ProcessDelete('EliminarReceta', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaReceta();
+            }
+        };
 
         let iButtonEliminar = document.createElement("i");
-        iButtonEliminar.className="fa-solid fa-trash";
+        iButtonEliminar.className = "fa-solid fa-trash";
         buttonbuttonEliminar.appendChild(iButtonEliminar);
         divButtonEliminar.appendChild(buttonbuttonEliminar);
 
@@ -153,7 +179,6 @@ async function ImprimirRecetas() {
 async function getReceta() {
 
     let sValorNombreReceta = valorNombreReceta.value;
-
     let svalorIngrediente1 = valorIngrediente1.value;
     let svalorIngrediente2 = valorIngrediente2.value;
     let svalorIngrediente3 = valorIngrediente3.value;
@@ -178,27 +203,16 @@ async function getReceta() {
 
     let svalorTipo = valorTipo.value;
 
-    let svalorCategoria1 = valorCategoria1.value;
-    let svalorCategoria2 = valorCategoria2.value;
-    let svalorCategoria3 = valorCategoria3.value;
-    let svalorCategoria4 = valorCategoria4.value;
-    let svalorCategoria5 = valorCategoria5.value;
-    let svalorCategoria6 = valorCategoria6.value;
-    let svalorCategoria7 = valorCategoria7.value;
+    let sCategoriaTotal = leerCheckBoxCategorias();
 
-    let categoriaTotal = acomodarArregloReceta(svalorCategoria1, svalorCategoria2, svalorCategoria3,
-        svalorCategoria4, svalorCategoria5, svalorCategoria6, svalorCategoria7);
 
     let svalorImgReceta = valorImgReceta.src;
 
     let result = null;
 
-    /*if (validarAyuno(DateInicio, DateFinal) == true) {
+    if (validarReceta(sValorNombreReceta, ingredientesTotal, pasosTotal, svalorTiempoPrep, svalorTipo, sCategoriaTotal, svalorImgReceta) == true) {
         return;
     }
-}
-
-    */
 
     //Acomodo para enviar el json con la información a la DB
 
@@ -206,7 +220,7 @@ async function getReceta() {
         Nombre: sValorNombreReceta,
         Imagen: svalorImgReceta,
         TipoComida: svalorTipo,
-        Categoria: categoriaTotal,
+        Categoria: sCategoriaTotal,
         Ingredientes: ingredientesTotal,
         Tiempo: svalorTiempoPrep,
         Pasos: pasosTotal
@@ -231,16 +245,32 @@ async function getReceta() {
     }
 
     //Resetear valores en form
-    /*
-    valorHoraInicioAyuno.value = "";
-    valorInicioFechaAyuno.value = "";
-    valorHoraFinAyuno.value = "";
-    valorFinFechaAyuno.value = "";
-    document.getElementById("radio1410").checked = false;
-    document.getElementById("radio168").checked = false;
-    document.getElementById("radio186").checked = false;
-    document.getElementById("radio204").checked = false;
-    */
+
+    document.getElementById("inputNombreReceta").value = "";
+    document.getElementById("imgInputReceta").value = "";
+    document.getElementById("inputTipoReceta").value = "";
+    document.getElementById("inputPaso6").value = "";
+    document.getElementById("inputPaso5").value = "";
+    document.getElementById("inputPaso4").value = "";
+    document.getElementById("inputPaso3").value = "";
+    document.getElementById("inputPaso2").value = "";
+    document.getElementById("inputPaso1").value = "";
+    document.getElementById("inputIngrediente6").value = "";
+    document.getElementById("inputIngrediente5").value = "";
+    document.getElementById("inputIngrediente4").value = "";
+    document.getElementById("inputIngrediente3").value = "";
+    document.getElementById("inputIngrediente2").value = "";
+    document.getElementById("inputIngrediente1").value = "";
+    document.getElementById("inputNombreReceta").value = "";
+    document.getElementById("inputTiempoReceta").value = "";
+    document.getElementById("recetaCategoria1").checked = false;
+    document.getElementById("recetaCategoria2").checked = false;
+    document.getElementById("recetaCategoria3").checked = false;
+    document.getElementById("recetaCategoria4").checked = false;
+    document.getElementById("recetaCategoria5").checked = false;
+    document.getElementById("recetaCategoria6").checked = false;
+    document.getElementById("recetaCategoria7").checked = false;
+    
 }
 
 function acomodarArregloReceta(p1, p2, p3, p4, p5, p6, p7) {
@@ -264,4 +294,75 @@ function acomodarArregloReceta(p1, p2, p3, p4, p5, p6, p7) {
         cadena += ";" + p7;
     }
     return cadena;
+}
+
+function leerCheckBoxCategorias() {
+    let cadena = "";
+    if (valorCategoria1.checked) {
+        cadena += valorCategoria1.value + ";";
+    }
+    if (valorCategoria2.checked) {
+        cadena += valorCategoria2.value + ";";
+    }
+    if (valorCategoria3.checked) {
+        cadena += valorCategoria3.value + ";";
+    }
+    if (valorCategoria4.checked) {
+        cadena += valorCategoria4.value + ";";
+    }
+    if (valorCategoria5.checked) {
+        cadena += valorCategoria5.value + ";";
+    }
+    if (valorCategoria6.checked) {
+        cadena += valorCategoria6.value + ";";
+    }
+    if (valorCategoria7.checked) {
+        cadena += valorCategoria7.value;
+    }
+    if (cadena[cadena.length - 1] == ";") {
+        cadena.slice(0, -1);
+    }
+    return cadena;
+}
+
+function validarReceta(nombre, ingredientes, pasos, tiempo, tipo, categoria, img) {
+    if (nombre == '' || nombre == null || nombre == undefined) {
+        document.getElementById("inputNombreReceta").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese el nombre de la receta' });
+        return true;
+    } else if (ingredientes == '' || ingredientes == null || ingredientes == undefined) {
+        document.getElementById("inputIngrediente1").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'La receta debe incluir al menos un ingrediente' });
+        return true;
+    } else if (pasos == '' || pasos == null || pasos == undefined) {
+        document.getElementById("inputPaso1").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'La receta debe incluir al menos un paso o instrucción' });
+        return true;
+    }
+    else if (tiempo == '' || tiempo == null || tiempo == undefined) {
+        document.getElementById("inputTiempoReceta").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese el tiempo estimado de preparación' });
+        return true;
+    }
+    else if (tipo == '' || tipo == null || tipo == undefined) {
+        document.getElementById("inputTipoReceta").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Seleccione el tipo de comida' });
+        return true;
+    }
+    else if (categoria == '' || categoria == null || categoria == undefined) {
+        document.getElementById("recetaCategoria1").focus();
+        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Seleccione al menos una categoria para la receta' });
+        return true;
+    }
+    else if (img == '' || img == null || img == undefined) {
+        document.getElementById("showReceta").focus();
+        Swal.fire({ icon: 'error', title: 'Imagen faltante', text: 'Suba una imagen para la receta' });
+        return true;
+    }
+    else if (tiempo <= 0 || tiempo > 10000) {
+        document.getElementById("inputTiempoReceta").focus();
+        Swal.fire({ icon: 'error', title: 'Valor invalido', text: 'Ingrese un tiempo real para la preparacion de la receta' });
+        return true;
+    }
+
 }

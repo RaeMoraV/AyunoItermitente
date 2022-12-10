@@ -23,7 +23,7 @@ router.post('/RegistrarActividadRealizada', (req, res) => {
         if (err) {
             res.json({
                 resultado: false,
-                msj: 'No se pudo registrar la actividad, ocurrio un error!: ',
+                msj: 'No se pudo registrar la actividad, ocurrió un error!: ',
                 err
             });
         } else {
