@@ -5,6 +5,22 @@
 .footerContainer {
     background-color: #1d2549;
 }
+.navMobile .logo,
+.navDesktop .logo {
+    height: 45px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logoHermes a{
+
+    font-size: 40px;
+    background:linear-gradient(rgba(124,99,32,1), rgba(252,243,218,1), rgba(131,101,17,1) 79%);
+}
+    /*color: linear-gradient(90deg, rgba(124,99,32,1) 21%, rgba(252,243,218,1) 53%, rgba(131,101,17,1) 79%);
+}
 
 
 /*Estilos de la seccion Banner Principal*/
@@ -39,6 +55,7 @@
 .titulo1{  
     line-height: 90px;
     color: #bdf347; 
+    text-decoration: underline #fff;
 	width: 100%;
 	max-width: 1080px;
     font-weight: bold;
@@ -84,47 +101,15 @@
     width: 250px;
     font-size: 20px;
     flex-direction: flex;
-    line-height: 90px;
-
-
-    
+    line-height: 90px;    
 }
 
 #btnRegistrateYa:hover {
     box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
-    background:#1d2549 ;
+    background: #6a9906;
 }
 
-.fondoNegro {
-    position: fixed;
-    display: none;
-    height: 100vh;
-    width: 100vw; 
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 50;
-}
-
-
-.btnRegistrarse {
-    background-color: #8faf69;
-    border: 2px;
-    color: #ffffff;
-    border-radius: 5px;
-    height: 40px;
-    width: 200px;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 20px auto 0;
-}
-
-.btnRegistrarse:hover {
-    background: #379914;
-}
-
-/*Prueba*/
-
-
-/*estilos de la seccion Que es por SVC*/
+/*estilos de la seccion servicios por SVC*/
 
 .seccionServicios {
     display: flex;
@@ -134,8 +119,7 @@
     background-size: cover;
     background:#1d2549;
     width: 100%;
-    height: 70vh;
-    
+    height: 100vh;  
 }
 .servicios{
     display: flex;
@@ -147,171 +131,95 @@
 .recuadroServicio{
     width: 300px;
     height: 300px;
+    
+}
+.ttlImagenServicio{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom:20px;
+    height:60%;
+    width:80%;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-content: flex-end;
+}
+.tituloServicios {
+    color: #fff;
+    font-size: 80px;
+    text-decoration: underline #bdf347;
+    margin-bottom: 20px;
+    height:30%;
+    width:80%;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
 }
 
 .recuadroServicio img{
-    width: 100%;
-    
+    width: 100%;  
+    margin-bottom: 30px; 
 }
 
+/*Finaliza estilos de la seccion servicios por SVC*/
 
-
-    
-.buttonText {
-    color: white;
-
-}
-
-
-
-.buttonInformacion:hover {
-    box-shadow: inset 1px 4px 6px 2px rgba(0, 0, 0, .1);
-    background: #000000;
-
-}
-
-/*Termina estilos de la seccion Que es*/
-
-/*estilos de la seccion beneficios por SVC*/
-.beneficioContenedor {
-    display: flex;
-    flex-direction: column;
-    background-color: #1d2549;
-    justify-content: center;
-    align-items: center;
-    color:#ffffff;
-
-}
-
-.encabezadoBeneficio {
-    max-width: 500px;
-    margin: 0px;
-    padding: 10px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-
-
-}
-
-.encabezadoBeneficio h2 {
-    font-weight: bold;
-    font-size: 70px;
-    margin-bottom: 15px;
-}
-
-
-.beneficio {
-
-    max-width: 300px;
-    margin-bottom: 35px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-
-.icon {
-    border-radius: 50%;
-    min-width: 100px;
-    min-height: 100px;
-    background-color: #8faf69;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-
-}
-
-.beneficio .icon i {
-    font-size: 60px;
-    color: white;
-}
-
-
-.text h3 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.text p,
-.text h3,
-.encabezadoBeneficio p {
-    text-align: center;
-
-    padding: 0 5px 5px 5px;
-
-}
-
-/*Hasta aqui los estilos de la seccion beneficios hecho por SVC*/
-
-/*Seccion Recomendacion de usuario hecho por SVC*/
-
-.seccionRecommendUser {
+/*estilos de la seccion conocenos por SVC*/
+.seccionConoceEquipo{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-size: cover;
-    background-image: url(../Img/HermesImg/ultimaseccion.jpg);
+    background:#1d2549;
     width: 100%;
-    height: 700px;
+    height: 100vh;
+    padding: 40px 20px;
+}
+.equipo{
+    display: flex;
+    max-width: 1400px;
+    min-width: 800px;
+    width: 100%;
+    justify-content:space-evenly;
+}
+.recuadroEquipo{
+    width: 450px;
+    height: 400px; 
 }
 
-.textRecomendacion {
-
-    max-width: 500px;
-    background: rgba(0, 0, 0, .8);
-    margin: 20px 0;
-    padding: 10px;
-    text-align: center;
-    color: #fff;
+.recuadroEquipo img{
+    width: 90%;
+    height: 85%;
+    margin-bottom: 80px; 
     border-radius: 5%;
-
-
 }
 
-.textRecomendacion h2{
-    font-size: 32px;
+.ttlPerfil{
+    color: #fff;
+    font-size: 40px;
     margin-bottom:20px;
-    margin-top: 40px;
-}
-
-
-
-/*Fin de Seccion Recomendacion de usuario hecho por SVC*/
-
-
-
-.contenidoPlanes{
-    justify-content: center;
-    flex-direction: row;
-    background-size: cover;
-    background-color: #1d2549;
-    margin: auto;
-    line-height: 90px;
-}
-
-.titulo{ 
-    line-height: 90px;
-    font-family: Verdana;  
-    color: #fff; 
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    justify-content: center;
-	width: 100%;
-	max-width: 1080px;
-	margin: auto;
-	padding: 20px;
-	text-align: center;
+    height:60%;
+    width:80%;
     display: flex;
-    font-weight: bold;
-    font-size: 50px; 
- 
+    justify-content: left;
+    flex-direction: row;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   
 }
+.tituloConoceEquipo{
+    color: #fff;
+    font-size: 80px;
+    text-decoration: underline #bdf347;
+    height:60%;
+    width:80%;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+}
+/*Hasta aqui los estilos de la seccion conocenos hecho por SVC*/
+
+
 
 .texto { 
     display: flex;
@@ -338,177 +246,6 @@
 	margin: auto;
     
     
-}
-
-.card{ 
-    justify-content: center;
-	width: 100%;
-	margin: 50px;
-	border-radius: 9px;
-	overflow: hidden;
-	background:#fff;
-	box-shadow: 0px 1px 40px rgba(0,0,0,0.2);
-	transition: all 400ms ease-out;
-	cursor: default;
-    flex-wrap: wrap;
-}
-
-
-
-/*sombra de las tarjetas*/
-.card:hover{
-    
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-	transform: translateY(-3%);
-}
-
-/*texto de las tarjetas*/
-.card .contenido-card{ 
-	padding: 15px;
-	text-align: center;
-    margin: auto;
-    
-}
-
-/*alineación del texto tarjetas*/
-.card .contenido-card p{   
-	line-height: 1.8;
-	font-size: 14px;
-	margin-bottom: 5px;
-    margin: auto;
-    justify-content: center;
-}
-
-
-.listasPlanes { 
-    line-height: 30px;
-    text-align: left;
-    margin: auto;
-    justify-content: center;
-}
-
-@media (min-width:576px) {
-    #formularioInscripcion h2 {
-        font-size: 30px;
-    }
-
-    .registroPrincipal .formSection {
-        flex-direction: row;
-    }
-
-    .registroPrincipal .field {
-        width: 50%;
-        margin-bottom: 20px;
-    }
-
-    .registroPrincipal .fieldEmail,
-    .registroPrincipal .fieldSelect,
-    .registroPrincipal .fieldFile {
-        margin-bottom: 20px;
-    }
-
-    .registroPrincipal .fieldRadio {
-        margin-bottom: 20px;
-    }
-
-    .registroPrincipal .fieldRadio .option label {
-        font-size: 16px;
-    }
-
-    .registroPrincipal .field input,
-    .registroPrincipal .fieldEmail input,
-    .registroPrincipal .fieldSelect .selectFechas select {
-        font-size: 16px;
-        height: 40px;
-    }
-
-    .registroPrincipal .field label,
-    .registroPrincipal .fieldEmail label, 
-    .registroPrincipal .fieldRadio p,
-    .registroPrincipal .fieldSelect p,
-    .registroPrincipal .fieldSelect label,
-    .fieldFile p {
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-}
-
-.subtitulo{
-    justify-content: center;
-    font-size: 25px; 
-    font-family: Verdana;  
-    line-height: 50px;
-    color: #fff; 
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-	width: 100%;
-	max-width: 1080px;
-	margin: auto;
-	padding: 20px;
-	text-align: center;
-    font-weight: bold; 
-
-    
-}
-
-
-.explicacion{
-    display: flex;
-    justify-content: center;
-    font-size: 25px; 
-    font-family: Arial; 
-    line-height: 50px; 
-}
-
-
-/*tarjeta cuadro*/
-@media (min-width:768px){
-
-    .container-card{
-        flex-direction: row;
-    }
-    
-	.card{
-		margin: 15px;
-	}
-
-    #seccionSlider .card {
-        width: 500px;
-        height: 500px;
-    }
-    
-    .beneficioContenedor {
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .encabezadoBeneficio {
-        flex-direction: column;
-        width: 800px;
-
-    }
-
-    .beneficio {
-
-        margin-right: 20px;
-
-    }
-
-    .beneficio:last-child {
-        margin-right: 0;
-    }
-
-
-    .row {
-        display: flex;
-        flex-direction: row;
-    }
-
-
-    .fa fa-heartbeat {
-        margin-right: 10px;
-        margin-left: 20px;
-    }
 }
 
 @media (min-width :992px) {
