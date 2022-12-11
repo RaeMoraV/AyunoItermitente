@@ -232,3 +232,27 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
     }
     return estadoPrueba;
 }
+
+
+
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioLogros = document.querySelector('#btnRegistroAbrirLogro');
+const fondoNegroLogros = document.querySelector('.fondoNegro');
+const xCerrarFormularioLogros = document.querySelector('#xFormularioLogros');
+
+abrirFormularioLogros.addEventListener('click', abrirFormularioLogrosFunc);
+fondoNegroLogros.addEventListener('click', cerrarFormularioLogrosFunc);
+xCerrarFormularioLogros.addEventListener('click', cerrarFormularioLogrosFunc);
+
+function abrirFormularioLogrosFunc() {
+    document.querySelector('#ingresoDatosLogrosObjetivos').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioLogrosFunc() {
+    document.querySelector('#ingresoDatosLogrosObjetivos').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}

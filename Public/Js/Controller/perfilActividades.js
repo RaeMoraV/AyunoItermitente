@@ -285,3 +285,24 @@ function graficoActividades() {
 }
 
 
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioActividad = document.querySelector('#btnRegistroAbrirEjercicio');
+const fondoNegroActividad = document.querySelector('.fondoNegro');
+const xCerrarFormularioActividad = document.querySelector('#xFormularioActividad');
+
+abrirFormularioActividad.addEventListener('click', abrirFormularioActividadFunc);
+fondoNegroActividad.addEventListener('click', cerrarFormularioActividadFunc);
+xCerrarFormularioActividad.addEventListener('click', cerrarFormularioActividadFunc);
+
+function abrirFormularioActividadFunc() {
+    document.querySelector('#ingresoDatosActividades').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioActividadFunc() {
+    document.querySelector('#ingresoDatosActividades').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}

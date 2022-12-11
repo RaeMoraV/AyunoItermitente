@@ -231,3 +231,24 @@ function validarPeso() {
     return false;
 }
 
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioPeso = document.querySelector('#btnRegistroAbrirPeso');
+const fondoNegroPeso = document.querySelector('.fondoNegro');
+const xCerrarFormularioPeso = document.querySelector('#xFormularioPeso');
+
+abrirFormularioPeso.addEventListener('click', abrirFormularioPesoFunc);
+fondoNegroPeso.addEventListener('click', cerrarFormularioPesoFunc);
+xCerrarFormularioPeso.addEventListener('click', cerrarFormularioPesoFunc);
+
+function abrirFormularioPesoFunc() {
+    document.querySelector('#ingresoDatosPeso').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioPesoFunc() {
+    document.querySelector('#ingresoDatosPeso').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}

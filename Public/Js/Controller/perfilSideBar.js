@@ -11,6 +11,11 @@ let btnSMLog = document.getElementById('sideMenuLogros');
 let btnSMPlan = document.getElementById('sideMenuPlan');
 let btnSMRec = document.getElementById('sideMenuRecetas');
 
+const toggle = document.querySelector(".toggle")
+const menuDashboard = document.querySelector(".menu-dashboard")
+const iconoMenu = toggle.querySelector("i")
+const enlacesMenu = document.querySelectorAll(".enlace")
+
 btnSMInfo.addEventListener('click', openInfo);
 btnSMPeso.addEventListener('click', openPeso);
 btnSMEnf.addEventListener('click', openEnfermedades);
@@ -18,6 +23,8 @@ btnSMAct.addEventListener('click', openActividades);
 btnSMLog.addEventListener('click', openLogros);
 btnSMPlan.addEventListener('click', openPlan);
 btnSMRec.addEventListener('click', openRecetas);
+toggle.addEventListener("click", abrirSidebar);
+
 
 function openInfo() {
     let option = 1;
@@ -131,3 +138,22 @@ function blockDisplay(pOpcionSM) {
             break;
     }
 }
+
+function abrirSidebar() {
+    menuDashboard.classList.toggle("open")
+
+    if(iconoMenu.classList.contains("fa-caret-right")){
+        iconoMenu.classList.replace("fa-caret-right", "fa-xmark")
+    }else {
+        iconoMenu.classList.replace("fa-xmark", "fa-caret-right")
+    }
+}
+
+
+
+enlacesMenu.forEach(enlace => {
+    enlace.addEventListener("click", () => {
+        menuDashboard.classList.add("open")
+        iconoMenu.classList.replace("fa-caret-right", "fa-xmark")
+    })
+})

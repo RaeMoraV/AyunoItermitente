@@ -158,3 +158,28 @@ function validarEnfermedades(psNombre, psDescripcion, psEstado) {
         }
     }
 }*/
+
+
+
+
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioEnfermedades = document.querySelector('#btnRegistroAbrirEnfermedad');
+const fondoNegroEnfermedades = document.querySelector('.fondoNegro');
+const xCerrarFormularioEnfermedades = document.querySelector('#xFormularioEnfermedades');
+
+abrirFormularioEnfermedades.addEventListener('click', abrirFormularioEnfermedadesFunc);
+fondoNegroEnfermedades.addEventListener('click', cerrarFormularioEnfermedadesFunc);
+xCerrarFormularioEnfermedades.addEventListener('click', cerrarFormularioEnfermedadesFunc);
+
+function abrirFormularioEnfermedadesFunc() {
+    document.querySelector('#ingresoDatosEnfermedades').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioEnfermedadesFunc() {
+    document.querySelector('#ingresoDatosEnfermedades').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}

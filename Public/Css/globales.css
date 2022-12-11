@@ -163,7 +163,7 @@ a {
 
 .navDesktop .links li:last-child {
     margin-right: 0;
-    border: 2px solid var(--color-lightgreen1);
+    border: 2px solid var(--color-lightgreen2);
     border-radius: 5px;
 }
 
@@ -172,13 +172,13 @@ a {
     width: 120px;
     padding: 10px 0;
     display: block;
-    color: var(--color-lightgreen1);
+    color: var(--color-lightgreen2);
 }
 
 .navDesktop .links a:last-child {
     text-align: center;
     width: 120px;
-    color: var(--color-lightgreen1);
+    color: var(--color-lightgreen2);
 }
 
 
@@ -325,3 +325,14 @@ a {
 
 
 /* FOOTER Final*/
+
+
+
+.fondoNegro {
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+}
