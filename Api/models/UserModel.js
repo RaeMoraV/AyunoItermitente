@@ -8,8 +8,8 @@ const schemaUser = new mongoose.Schema({
     Correo: { type: String, required: true, unique: true },
     Sexo: { type: String, required: true, unique: false },
     Estatura: { type: Number, required: true, unique: false },
-    Foto: { type: String, required: true, unique: true },
-    PesoIdeal: { type: Number, required: true, unique: true }
+    Foto: { type: String, required: false, unique: true },
+    PesoIdeal: { type: Number, required: true, unique: false }
 });
 
 module.exports = mongoose.model('User', schemaUser, 'Users');

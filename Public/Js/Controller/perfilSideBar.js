@@ -21,6 +21,7 @@ btnSMRec.addEventListener('click', openRecetas);
 
 function openInfo() {
     let option = 1;
+    GetListaUser();
     blockDisplay(option);
 }
 
@@ -41,6 +42,7 @@ function openActividades() {
 
 function openLogros() {
     let option = 5;
+    GetListaLogros();
     blockDisplay(option);
 }
 

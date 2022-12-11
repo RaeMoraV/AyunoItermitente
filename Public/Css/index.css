@@ -59,7 +59,7 @@
 
 /* BANNER - BOTON INSCRIPCION */
 
-#buttonRegistrate {
+#buttonRegistrate,#buttonPerfilIndex {
     padding: 15px 40px;
     background-color: var(--col-green);
     max-width: 200px;
@@ -762,7 +762,7 @@
 /* MEDIA QUERIES */
 
 @media (min-width: 576px) {
-    #buttonRegistrate {
+    #buttonRegistrate, buttonPerfilIndex {
         padding: 20px 40px;
         max-width: 250px;
         text-transform: uppercase;
@@ -1219,7 +1219,7 @@
         max-width: 800px;
     }
 
-    #buttonRegistrate {
+    #buttonRegistrate,#buttonPerfilIndex {
         padding: 20px 50px;
         background-color: var(--col-green);
         max-width: 300px;
@@ -1229,6 +1229,9 @@
     }
 
     #buttonRegistrate:hover {
+        background-color: #aab998;
+    }
+    #buttonPerfilIndex:hover {
         background-color: #aab998;
     }
 

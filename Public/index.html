@@ -87,6 +87,9 @@
                         Regístrate Ya!
                     </span>
                 </div>
+                <div  hidden id="buttonPerfilIndex">
+                    <a href="./perfil.html">Perfil</a>
+                </div>
                 <!--<p>Ya tienes cuenta? <span id="iniciarSesion">Click aqui</span></p>-->
 
             </div>
@@ -98,7 +101,7 @@
 
         <!-- Registro -->
         <section id="formularioInscripcion">
-            <h2>Formulario de Registro</h2>
+            <h2>Formulario de registro</h2>
             <div id="cerrarFormularioInscripcion" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
             <form action="" class="registroPrincipal">
                 <div class="formSection">
@@ -119,11 +122,11 @@
                     </div>
                 </div>
                 <div class="formSection">
-                    <div class="fieldSelect">
-                        <p>Fecha de Nacimiento</p>
+                    <div class="fieldSelect" id="inputFechaNacimiento">
+                        <p>Fecha de nacimiento</p>
                         <div class="selectFechas">
                             <select name="" id="numDia">
-                                <option value="null">Dia</option>
+                                <option value=''>Dia</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
                                 <option value="03">3</option>
@@ -157,7 +160,7 @@
                                 <option value="31">31</option>
                             </select>
                             <select name="" id="numMes" class="fecha">
-                                <option value="null">Mes</option>
+                                <option value="">Mes</option>
                                 <option value="01">Enero</option>
                                 <option value="02">Febrero</option>
                                 <option value="03">Marzo</option>
@@ -172,7 +175,7 @@
                                 <option value="12">Diciembre</option>
                             </select>
                             <select name="" id="numAnio">
-                                <option value="null">Año</option>
+                                <option value="">Año</option>
                             </select>
                         </div>
 
@@ -180,7 +183,7 @@
                 </div>
                 <div class="formSection">
                     <div class="fieldRadio">
-                        <div class="radioOptions">
+                        <div class="radioOptions" id="selectorGenero">
                             <p>Sexo</p>
                             <div class="option">
                                 <input type="radio" id="optionMasculino" name="generoRadio" value="Hombre">
@@ -203,14 +206,14 @@
                         <input type="number" name="" id="txtEstatura" placeholder="Estatura" required />
                     </div>
                     <div class="field">
-                        <label for="txtPesoDeseado">Peso Deseado</label>
+                        <label for="txtPesoDeseado">Peso deseado</label>
                         <input type="number" name="" id="txtPesoDeseado" placeholder="Peso Deseado" required />
                     </div>
                 </div>
                 <div class="formSection">
-                    <div class="fieldFile">
-                        <p>Foto de Perfil</p>
-                        <div class="foto">
+                    <div class="fieldFile" id="inputFotoPerfil">
+                        <p>Foto de perfil</p>
+                        <div class="foto" >
                             <div class="showPhoto">
                                 <img src="" alt="" id="imgUserIndex">
                             </div>

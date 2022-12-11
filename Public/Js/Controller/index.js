@@ -58,13 +58,9 @@ async function GetListaUser() {
 async function ActualizarMenu() {
     if (listaUser != '') {
         document.getElementById("perfilOculto").removeAttribute("hidden");
-        let aPerfil = document.createElement('a');
-        aPerfil.href = "perfil.html";
-        aPerfil.innerText = "Perfil";
-        document.getElementById("buttonRegistrate").innerHTML = "";
-        document.getElementById("buttonRegistrate").appendChild(aPerfil);
+        document.getElementById("buttonPerfilIndex").removeAttribute("hidden");
+        document.getElementById("buttonRegistrate").setAttribute("hidden", "");
     }
-
 }
 
 async function getUser() {
@@ -87,10 +83,11 @@ async function getUser() {
 
     let result = null;
 
-    /*
-    if (validarUser() == true) {
+
+    if (validarUser(sInputNombre, sInputApellido, sInputEmail, iInputDia, iInputMes
+        , iInputAnio, sInputSexo, iInputEstatura, iInputPesoDeseado, sFotoPerfil, dFechaNac) == true) {
         return;
-    }*/
+    }
 
     let data = {
         Nombre: sInputNombre,
@@ -117,12 +114,13 @@ async function getUser() {
             icon: 'success',
             confirmButtonText: 'Ok'
         }).then(res => {
+            cerrarRegistro()
             GetListaUser();
         });
     }
 
     //Resetear valores en form
-
+    //En index no hace falta porque solo se registra un usuario
 }
 
 
@@ -156,16 +154,6 @@ function llenarSelectAnio() {
     }
 }
 
-/*
-function actualizarFecha() {
-    inputFecha = `${numDia.value},${numMes.value},${numAnio.value}`;
-}
-
-submitRegistrate.addEventListener('click', actualizarFecha);
-*/
-
-
-
 
 //Formulario Inicio Sesion NO ESTA EN USO
 /*
@@ -190,37 +178,128 @@ function cerrarInicioSesion() {
 */
 
 // Validation Functions
-/*
-function validarUser(inputNombre, inputApellido, inputEmail, inputEstatura, inputPesoDeseado, inputGenero, inputFecha, fotoPerfil) {
-    if (inputNombre.value == '' || inputNombre.value == null || inputNombre.value == undefined) {
-        imprimirMsjError('El campo Nombre es requerido');
+
+function validarUser(nombre, apellido, email, dia, mes
+    , anio, sexo, estatura, peso, foto, fecha) {
+    let bandera = false;
+    let bandera2 = false;
+    let cadena = '';
+    let cadena2 = '';
+    let hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    let fechaInput = new Date(fecha);
+    fechaInput.setHours(0, 0, 0, 0);
+
+    if (nombre == '' || nombre == null || nombre == undefined) {
+        resaltarInputIncorrecto("txtNombre");
+        cadena += 'El campo Nombre es requerido<br>';
+        bandera = true;
     }
-    if (inputApellido.value == '' || inputApellido.value == null || inputApellido.value == undefined) {
-        imprimirMsjError('El campo Apellido es requerido');
+    else {
+        corregirInputcorrecto("txtNombre");
     }
-    if (inputEmail.value == '' || inputEmail.value == null || inputEmail.value == undefined) {
-        imprimirMsjError('El campo Correo es requerido');
+
+    if (apellido == '' || apellido == null || apellido == undefined) {
+        resaltarInputIncorrecto("txtApellido");
+        cadena += 'El campo Apellido es requerido<br>';
+        bandera = true;
     }
-    if (inputEstatura.value == '' || inputEstatura.value == null || inputEstatura.value == undefined) {
-        imprimirMsjError('El campo Estatura es requerido');
+    else {
+        corregirInputcorrecto("txtApellido");
     }
-    if (inputPesoDeseado.value == '' || inputPesoDeseado.value == null || inputPesoDeseado.value == undefined) {
-        imprimirMsjError('El campo Peso es requerido');
+
+    if (email == '' || email == null || email == undefined) {
+        resaltarInputIncorrecto("txtEmail");
+        cadena += 'El campo Correo es requerido<br>';
+        bandera = true;
     }
-    if (inputGenero.value == '' || inputGenero.value == null || inputGenero.value == undefined) {
-        imprimirMsjError('El campo Genero es requerido');
+    else {
+        corregirInputcorrecto("txtEmail");
     }
-    if (inputDia.value == '' || inputDia.value == null || inputDia.value == undefined) {
-        imprimirMsjError('El campo Dia es requerido');
+
+    if (dia == '' || dia == null || dia == undefined) {
+        resaltarInputIncorrecto("numDia");
+        cadena += 'El campo Dia es requerido<br>';
+        bandera = true;
     }
-    if (inputMes.value == '' || inputMes.value == null || inputMes.value == undefined) {
-        imprimirMsjError('El campo Mes es requerido');
+    else {
+        corregirInputcorrecto("numDia");
     }
-    if (inputAnio.value == '' || inputAnio.value == null || inputAnio.value == undefined) {
-        imprimirMsjError('El campo Año es requerido');
+
+    if (mes == '' || mes == null || mes == undefined) {
+        resaltarInputIncorrecto("numMes");
+        cadena += 'El campo Mes es requerido<br>';
+        bandera = true;
     }
-    if (fotoPerfil.value == '' || fotoPerfil.value == null || fotoPerfil.value == undefined) {
-        imprimirMsjError('Por favor ingrese una foto de perfil!');
+    else {
+        corregirInputcorrecto("numMes");
     }
+
+    if (anio == '' || anio == null || anio == undefined) {
+        resaltarInputIncorrecto("numAnio");
+        cadena += 'El campo Año es requerido<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("numAnio");
+    }
+
+    if (sexo == '' || sexo == null || sexo == undefined) {
+        resaltarInputIncorrecto("selectorGenero");
+        cadena += 'Selección un genero<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("selectorGenero");
+    }
+
+    if (estatura == '' || estatura == null || estatura == undefined) {
+        resaltarInputIncorrecto("txtEstatura");
+        cadena += 'El campo Estatura es requerido<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("txtEstatura");
+    }
+    if (estatura<=0 ||estatura>4) {
+        resaltarInputIncorrecto("txtEstatura");
+        cadena += 'Estatura invalida, ingrese una estatura real<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("txtEstatura");
+    }
+
+    if (peso == '' || peso == null || peso == undefined) {
+        resaltarInputIncorrecto("txtPesoDeseado");
+        cadena += 'El campo Peso deseado es requerido<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("txtPesoDeseado");
+    }
+    if (peso<=0 ||peso>1000) {
+        resaltarInputIncorrecto("txtPesoDeseado");
+        cadena += 'Peso invalido, ingrese un peso real<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("txtPesoDeseado");
+    }
+
+    if (fechaInput >= hoy) {
+        resaltarInputIncorrecto("inputFechaNacimiento");
+        cadena += 'La fecha ingresa es invalida, es en el futuro<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputcorrecto("inputFechaNacimiento");
+    }
+
+
+    if (bandera == true) {
+        imprimirMsjError(cadena);
+    } 
+
+    return bandera;
 }
-*/

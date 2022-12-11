@@ -191,7 +191,7 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
     let sumaHoras = 0;
     let ayunoCompletados = 0;
     if (psTipoMeta == "peso") {
-        if (Number(listaPesos[0].Peso) <= Number(pnIndicador)) {
+        if (Number(listaPeso[0].Peso) <= Number(pnIndicador)) {
             estadoPrueba = 1;
         }
         else {
@@ -199,7 +199,7 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
         }
     }
     else if (psTipoMeta == "imc") {
-        if (Number(listaPesos[0].IMC) <= Number(pnIndicador)) {
+        if (Number(listaPeso[0].IMC) <= Number(pnIndicador)) {
             estadoPrueba = 1;
         }
         else {

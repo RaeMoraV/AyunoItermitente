@@ -3,6 +3,8 @@
 
 const apiUrl = 'http://localhost:3000/api/';
 
+
+
 function ImprimirMsjError(pMsj) {
     Swal.fire({
         title: 'Error!',
@@ -75,12 +77,15 @@ function traductorEstadoLogro(pEstado) {
 }
 
 function imprimirMsjError(pmensaje) {
+
     Swal.fire({
         title: 'Error',
-        text: pmensaje,
+        html: pmensaje,
         icon: 'error',
         confirmButtonText: 'OK'
     });
+
+
 }
 
 function imprimirMsjCorrecto(pmensaje) {
@@ -94,15 +99,26 @@ function imprimirMsjCorrecto(pmensaje) {
 
 function resaltarLabelIncorrecto(pLabelID) {
     let elementLabel = document.getElementById(pLabelID);
-    let sytleOrigin = elementLabel.style;
+    let styleOrigin = elementLabel.style;
 
     elementLabel.style = 'color:red;';
 }
 
 function resaltarInputIncorrecto(pInputID) {
     let elementInput = document.getElementById(pInputID);
-    let sytleOrigin = elementInput.style;
+    let styleOrigin = elementInput.style;
 
-    elementInput.style = 'border: 1px solid red;';
+    elementInput.style = 'border: 5px solid red;';
+}
+
+function corregirInputcorrecto(pInputID) {
+    let elementInput = document.getElementById(pInputID);
+    let sytleOrigin = elementInput.style;
+    if (pInputID == 'selectorGenero' || pInputID == 'inputFotoPerfil' || pInputID == 'inputFechaNacimiento') {
+        elementInput.style = 'border: 0px ';
+    }
+    else {
+        elementInput.style = 'border: 1px solid black;';
+    }
 }
 

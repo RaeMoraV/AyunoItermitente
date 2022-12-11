@@ -1,7 +1,6 @@
 'use strict';
 
 
-// SECCIÓN DE PESO
 // -------------------------------aca los métodos del protocolo http
 async function ProcessGet(pRouterName, pParams) {
     let result = null;
