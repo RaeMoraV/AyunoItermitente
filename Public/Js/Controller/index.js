@@ -35,15 +35,6 @@ btnRegistrateYa.addEventListener('click', function(){
     document.querySelector('.fondoNegro').style.display = 'block';
 });
 
-// fotoPerfil.addEventListener ('change', function(){
-//     const reader = new FileReader();
-//     reader.addEventListener('load', () => {
-//        fotoSubida = reader.result;
-//        document.querySelector("#showPhoto").style.backgroundImage = `url(${fotoSubida})`;
-//     });
-//     reader.readAsDataURL(this.files[0]);
-// });
-
 fondoNegro.addEventListener('click', cerrarRegistro);
 
 btnCerrarRegistro.addEventListener('click', cerrarRegistro);

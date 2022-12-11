@@ -209,11 +209,14 @@
                     <div class="fieldFile">
                         <p>Foto de Perfil</p>
                         <div class="foto">
-                            <div class="showPhoto" id="showPhoto"></div>
+                            <div class="showPhoto" >
+                                <img src="" alt="" id="imgUserIndex">
+                            </div>                  
+                        </div>
+                        <div butonUploadPhoto>
                             <div class="uploadPhoto">
-                                <label for="fotoPerfil" class="inputFotoPerfil" onclick="AbrirCloudinary('imgUser')">
+                                <label for="fotoPerfil" class="inputFotoPerfil" onclick="AbrirCloudinary('imgUserIndex')">
                                     <i class="fa-solid fa-camera-retro"></i>
-                                    <input type="file" id="fotoPerfil" capture>
                                 </label>
                             </div>
                         </div>
