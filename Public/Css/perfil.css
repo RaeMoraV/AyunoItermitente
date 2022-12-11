@@ -671,25 +671,30 @@ tbody.datosTabla tr:nth-child(odd) {
 }
 
 
-
 /*CSS para generar recetas display*/
-
-.RecetaInput {
-    background-color: rgba(0, 255, 51, 0.5);
-    margin: 40px;
-}
-
+/*NO TOCAR, ES LA ESTRUCTURA DE LAS RECETAS*/
 .recetaGrid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-}
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    height: 600px;
+    background-color: rgba(0, 255, 51, 0.5);
+    margin: 40px;
+    border-radius: 40px;
+    }
+    
+    .nombreReceta { grid-area: 1 / 1 / 2 / 11; }
+    .imgReceta { grid-area: 2 / 1 / 5 / 5; }
+    .categoriaReceta { grid-area: 2 / 5 / 3 / 7; }
+    .tipoReceta { grid-area: 2 / 7 / 3 / 9; }
+    .tiempoReceta { grid-area: 2 / 9 / 3 / 11; }
+    .divpasosReceta { grid-area: 3 / 5 / 4 / 8; }
+    .ingredientesReceta { grid-area: 3 / 8 / 4 / 11; }
+    .buttonEliminar { grid-area: 4 / 5 / 5 / 11; }
+/*NO TOCAR, PUEDE EDITAR LO QUE ESTA ABAJO*/
 
-.nombreReceta {
-    grid-area: 1 / 1 / 2 / 9;
-}
 
 .nombreReceta h1 {
     font-size: 48px;
@@ -698,22 +703,15 @@ tbody.datosTabla tr:nth-child(odd) {
     text-transform: none;
     letter-spacing: 2px;
     color: #000000;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-}
-
-.imgReceta {
-    grid-area: 2 / 1 / 10 / 5;
-   
+    padding: 40px; 
 }
 
 .imgReceta img {
     max-height: 90%;
     
-    border-radius: 30px;
+    border-radius: 40px;
     margin: auto;
-    border: 3px solid green;
+    
     padding: 20px;
     display: block;
     margin-left: auto;
@@ -727,40 +725,14 @@ tbody.datosTabla tr:nth-child(odd) {
     text-align: left;
 }
 
-.categoriaReceta {
-    grid-area: 2 / 5 / 3 / 7;
-}
-
-.tipoReceta {
-    grid-area: 2 / 8 / 3 / 9;
-}
-
-.tiempoReceta {
-    grid-area: 2 / 7 / 3 / 8;
-}
-
-.pasosReceta {
-    grid-area: 3 / 5 / 10 / 7;
-    height: 300px;
-}
-
 .pasosReceta h2,
 .pasosReceta p {
     text-align: justify;
 }
 
-.ingredientesReceta {
-    grid-area: 3 / 7 / 10 / 9;
-    height: 300px;
-}
-
 .ingredientesReceta h2,
 .ingredientesReceta p {
     text-align: justify;
-}
-
-.buttonEliminar {
-    grid-area: 10 / 1 / 11 / 9;
 }
 
 .buttonEliminar button {

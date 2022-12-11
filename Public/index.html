@@ -47,7 +47,8 @@
             <div id="menu">
                 <a href="index.html">Inicio</a>
                 <a href="conocenos.html">Conócenos</a>
-                <a href="perfil.html">Ver perfil</a>
+                <a hidden href="perfil.html" class="perfilOculto">Ver perfil</a>
+
             </div>
         </nav>
 
@@ -61,7 +62,7 @@
                 <ul class="links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="indexhermes.html">Conócenos</a></li>
-                    <li><a href="perfil.html">Ver perfil</a></li>
+                    <li hidden id="perfilOculto"><a href="perfil.html">Ver perfil</a></li>
                 </ul>
             </nav>
 
@@ -86,9 +87,13 @@
                         Regístrate Ya!
                     </span>
                 </div>
-                <p>Ya tienes cuenta? <span id="iniciarSesion">Click aqui</span></p>
+                <div  hidden id="buttonPerfilIndex">
+                    <a href="./perfil.html">Perfil</a>
+                </div>
+                <!--<p>Ya tienes cuenta? <span id="iniciarSesion">Click aqui</span></p>-->
+
             </div>
-            
+
         </section>
 
         <!-- finBanner -->
@@ -96,7 +101,7 @@
 
         <!-- Registro -->
         <section id="formularioInscripcion">
-            <h2>Formulario de Registro</h2>
+            <h2>Formulario de registro</h2>
             <div id="cerrarFormularioInscripcion" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
             <form action="" class="registroPrincipal">
                 <div class="formSection">
@@ -117,11 +122,11 @@
                     </div>
                 </div>
                 <div class="formSection">
-                    <div class="fieldSelect">
-                        <p>Fecha de Nacimiento</p>
+                    <div class="fieldSelect" id="inputFechaNacimiento">
+                        <p>Fecha de nacimiento</p>
                         <div class="selectFechas">
                             <select name="" id="numDia">
-                                <option value="null">Dia</option>
+                                <option value=''>Dia</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
                                 <option value="03">3</option>
@@ -155,7 +160,7 @@
                                 <option value="31">31</option>
                             </select>
                             <select name="" id="numMes" class="fecha">
-                                <option value="null">Mes</option>
+                                <option value="">Mes</option>
                                 <option value="01">Enero</option>
                                 <option value="02">Febrero</option>
                                 <option value="03">Marzo</option>
@@ -170,7 +175,7 @@
                                 <option value="12">Diciembre</option>
                             </select>
                             <select name="" id="numAnio">
-                                <option value="null">Año</option>
+                                <option value="">Año</option>
                             </select>
                         </div>
 
@@ -178,7 +183,7 @@
                 </div>
                 <div class="formSection">
                     <div class="fieldRadio">
-                        <div class="radioOptions">
+                        <div class="radioOptions" id="selectorGenero">
                             <p>Sexo</p>
                             <div class="option">
                                 <input type="radio" id="optionMasculino" name="generoRadio" value="Hombre">
@@ -201,19 +206,23 @@
                         <input type="number" name="" id="txtEstatura" placeholder="Estatura" required />
                     </div>
                     <div class="field">
-                        <label for="txtPesoDeseado">Peso Deseado</label>
+                        <label for="txtPesoDeseado">Peso deseado</label>
                         <input type="number" name="" id="txtPesoDeseado" placeholder="Peso Deseado" required />
                     </div>
                 </div>
                 <div class="formSection">
-                    <div class="fieldFile">
-                        <p>Foto de Perfil</p>
-                        <div class="foto">
-                            <div class="showPhoto" id="showPhoto"></div>
+                    <div class="fieldFile" id="inputFotoPerfil">
+                        <p>Foto de perfil</p>
+                        <div class="foto" >
+                            <div class="showPhoto">
+                                <img src="" alt="" id="imgUserIndex">
+                            </div>
+                        </div>
+                        <div butonUploadPhoto>
                             <div class="uploadPhoto">
-                                <label for="fotoPerfil" class="inputFotoPerfil" onclick="AbrirCloudinary('imgUser')">
+                                <label for="fotoPerfil" class="inputFotoPerfil"
+                                    onclick="AbrirCloudinary('imgUserIndex')">
                                     <i class="fa-solid fa-camera-retro"></i>
-                                    <input type="file" id="fotoPerfil" capture>
                                 </label>
                             </div>
                         </div>
@@ -222,7 +231,7 @@
                 <button id="submitRegistrate" class="submitRegistrate" type="button">Registrarse</button>
             </form>
         </section>
-
+        <!-- 
         <section id="formularioInicioSesion">
             <h2>Inicio de Sesion</h2>
             <p>Ingresa tu correo electronico para iniciar sesion en tu cuenta y continues progresando:</p>
@@ -231,7 +240,7 @@
                 <input type="email" name="" id="inputInicioSesion" placeholder="Correo Electronico" required />
                 <button>Iniciar Sesion</button>
             </form>
-        </section> 
+        </section>-->
     </header>
     <!-- finRegistro -->
     <main>
@@ -294,10 +303,12 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#5b5858" fill-opacity="1" d="M0,64L15,58.7C30,53,60,43,90,42.7C120,43,150,53,180,58.7C210,64,240,64,270,101.3C300,139,330,213,360,240C390,267,420,245,450,202.7C480,160,510,96,540,74.7C570,53,600,75,630,117.3C660,160,690,224,720,256C750,288,780,288,810,250.7C840,213,870,139,900,96C930,53,960,43,990,58.7C1020,75,1050,117,1080,117.3C1110,117,1140,75,1170,96C1200,117,1230,203,1260,224C1290,245,1320,203,1350,176C1380,149,1410,139,1425,133.3L1440,128L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"></path>
+            <path fill="#5b5858" fill-opacity="1"
+                d="M0,64L15,58.7C30,53,60,43,90,42.7C120,43,150,53,180,58.7C210,64,240,64,270,101.3C300,139,330,213,360,240C390,267,420,245,450,202.7C480,160,510,96,540,74.7C570,53,600,75,630,117.3C660,160,690,224,720,256C750,288,780,288,810,250.7C840,213,870,139,900,96C930,53,960,43,990,58.7C1020,75,1050,117,1080,117.3C1110,117,1140,75,1170,96C1200,117,1230,203,1260,224C1290,245,1320,203,1350,176C1380,149,1410,139,1425,133.3L1440,128L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z">
+            </path>
         </svg>
 
         <!-- Seccion Planes -->
@@ -324,7 +335,8 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum voluptatum dolores.</p>
+                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                        rerum voluptatum dolores.</p>
                 </div>
 
                 <div class="tarjetaPlan">
@@ -340,7 +352,8 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum voluptatum dolores.</p>
+                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                        rerum voluptatum dolores.</p>
                 </div>
 
                 <div class="tarjetaPlan">
@@ -356,7 +369,8 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum voluptatum dolores.</p>
+                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                        rerum voluptatum dolores.</p>
                 </div>
 
                 <div class="tarjetaPlan">
@@ -366,13 +380,14 @@
                         <div class="explicacionPlanes">
                             <p> Si ya se tiene experiencia en el ayuno este plan se recomienda como el mas efectivo</p>
                             <ul>
-                                <li>Beneficia la salud del corazon en una semana.</li>
+                                <li>Beneficia la salud del corazón en una semana.</li>
                                 <li>Pérdida de peso en la primera semana .</li>
                                 <li>No se recomienda para personas con problemas de azúcar baja.</li>
                             </ul>
                         </div>
                     </div>
-                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum voluptatum dolores.</p>
+                    <p class="disclaimerPlanes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                        rerum voluptatum dolores.</p>
                 </div>
 
 
@@ -642,12 +657,17 @@
         </div>
     </footer>
 
-
-    <script src="Js/Controller/globales.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="Js/Controller/index.js"></script>
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="./Js/Services/SubirImagenService.js"></script>
+    <script src="./Js/Services/GeneralService.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="./Js/Constantes.js"></script>
+
+    <script src="./Js/Controller/globales.js"></script>
+    <script src="Js/Controller/index.js"></script>
+
 
 </body>
 
