@@ -54,6 +54,10 @@ const personas =  require('./routes/PersonaRoute');
 app.use('/api', personas);
 */
 
+//Conexión a ruta de User
+const user = require('./routes/UserRoute');
+app.use('/api', user);
+
 //Conexión a ruta de pesos
 const pesos = require('./routes/PesoRoute');
 app.use('/api', pesos);
