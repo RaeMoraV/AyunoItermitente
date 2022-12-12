@@ -58,7 +58,7 @@ async function ImprimirRecetas() {
     for (let i = 0; i < listaRecetasAyuno.length; i++) {
 
         let divRecetaGrid = document.createElement('div');
-        divRecetaGrid.classList.add('recetaGrid');
+        divRecetaGrid.classList.add('recetaLayout');
 
         let divnombreReceta = document.createElement('div');
         divnombreReceta.classList.add('nombreReceta');

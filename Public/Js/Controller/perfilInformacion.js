@@ -174,29 +174,6 @@ async function getUser() {
 
 
 
-//__________Funciones para abrir el formulario___________________________________________________
-btnRegistrateYa.addEventListener('click', function () {
-    document.querySelector('#formularioInscripcion').style.display = 'flex';
-    document.querySelector('.fondoNegro').style.display = 'block';
-    document.querySelector('body').style.overflowY = 'hidden';
-});
-btnRegistrateYa.addEventListener('click', function () {
-    document.querySelector('#formularioInscripcion').style.display = 'flex';
-    document.querySelector('.fondoNegro').style.display = 'block';
-});
-
-//Funciones para cerrar el formulario
-fondoNegro.addEventListener('click', cerrarRegistro);
-btnCerrarRegistro.addEventListener('click', cerrarRegistro);
-function cerrarRegistro() {
-    document.querySelector('#formularioInscripcion').style.display = 'none';
-    document.querySelector('.fondoNegro').style.display = 'none';
-    document.querySelector('body').style.overflowY = 'initial';
-}
-
-
-
-
 // Validation Functions
 
 function validarUser(nombre, apellido, email, dia, mes
@@ -322,4 +299,26 @@ function validarUser(nombre, apellido, email, dia, mes
     }
 
     return bandera;
+}
+// ABRIR Y CERRAR FORMULARIOS
+
+const abrirFormularioInformacion = document.querySelector('#btnEditarInformacion');
+const fondoNegroInformacion = document.querySelector('.fondoNegro');
+const xCerrarFormularioInformacion = document.querySelector('#xFormularioEditarInfo');
+
+abrirFormularioInformacion.addEventListener('click', abrirFormularioInformacionFunc);
+fondoNegroInformacion.addEventListener('click', cerrarFormularioInformacionFunc);
+xCerrarFormularioInformacion.addEventListener('click', cerrarFormularioInformacionFunc);
+
+function abrirFormularioInformacionFunc() {
+    document.querySelector('#editarDatosInformacion').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioInformacionFunc() {
+    document.querySelector('#editarDatosInformacion').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
 }
