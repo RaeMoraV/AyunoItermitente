@@ -10,7 +10,6 @@ let inputTratamientoEnfermedad = document.querySelector('#inputTratamientoEnferm
 let listaEnfermedades = [];
 btnEnfermedad.addEventListener('click', getEnfermedad);
 
-GetListaEnfermedades();
 
 async function GetListaEnfermedades() {
     let result = await ProcessGet('ListarEnfermedades', null);
@@ -81,6 +80,7 @@ async function getEnfermedad() {
             confirmButtonText: 'Ok'
         }).then(res => {
             GetListaEnfermedades();
+            cerrarFormularioEnfermedadesFunc();
         });
     }
 

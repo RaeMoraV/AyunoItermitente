@@ -18,8 +18,6 @@ let listatipoActividad = [];
 
 btnRegistrarActividad.addEventListener("click", getActividad);
 
-GetListaActividad();
-
 async function GetListaActividad() {
     let result = await ProcessGet('ListarActividadRealizada', null);
     if (result != null && result.resultado == true) {
@@ -117,6 +115,7 @@ async function getActividad() {
             icon: 'success',
             confirmButtonText: 'Ok'
         }).then(res => {
+            cerrarFormularioActividadFunc();
             GetListaActividad();
         });
     }
@@ -166,15 +165,12 @@ function validarActividad(sFecha, sInicioHora, sFinHora, sActividad, DateInicio,
         return true;
     }
 }
-/*
-let listaActividades = [];
 
-let listaHorasActividad = [];
-let listaCantidadActividad = [];
-let listatipoActividad = [];
-*/
 function crearArreglosActividad() {
     let position;
+    listaHorasActividad = [];
+    listaCantidadActividad = [];
+    listatipoActividad = [];
     for (let i = 0; i < listaActividades.length; i++) {
         if (listatipoActividad.includes(listaActividades[i].Tipo)) {
             position = listatipoActividad.indexOf(listaActividades[i].Tipo);

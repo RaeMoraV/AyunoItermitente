@@ -37,7 +37,7 @@ let listaRecetasAyuno = [];
 
 btnRegistrarReceta.addEventListener("click", getReceta);
 
-GetListaReceta();
+
 
 
 async function GetListaReceta() {

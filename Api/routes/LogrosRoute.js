@@ -48,4 +48,25 @@ router.get('/ListarLogros', (req, res) => {
     });
 });
 
+router.put('/ModificarLogros', (req, res) => {
+    let body = req.body;
+    Logro.updateOne({ _id: body._id }, {
+        $set: body
+    }, function (err, info) {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'Ocurrió un error inesperado y no se pudieron actualizar los datos',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Los datos se actualizaron de manera correcta',
+                info
+            });
+        }
+    });
+});
+
 module.exports = router

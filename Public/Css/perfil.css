@@ -110,7 +110,8 @@ h1, h2, h3, h4, h5, h6 {
     background: #d4d4d4;
 }
 
-.menu .enlace i {
+.menu .enlace i,
+.menu .enlace a {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 25px;

@@ -10,7 +10,6 @@ let inputFechaPeso = document.querySelector('#inputFecha');
 
 btnPeso.addEventListener('click', getPesoFecha);
 
-GetListaPeso();
 
 
 async function GetListaPeso() {
@@ -94,6 +93,7 @@ async function getPesoFecha() {
             icon: 'success',
             confirmButtonText: 'Ok'
         }).then(res => {
+            cerrarFormularioPesoFunc();
             GetListaPeso();
         });
     }

@@ -7,14 +7,13 @@ let valorInicioFechaAyuno = document.getElementById("inputInicioFechaAyuno");
 let valorHoraFinAyuno = document.getElementById("inputHoraFinAyuno");
 let valorFinFechaAyuno = document.getElementById("inputFinFechaAyuno");
 let btnRegistroAyuno = document.getElementById("buttonRegistroAyuno");
-
+let btnRegistroAbrirAyuno = document.getElementById("btnRegistroAbrirAyuno");
 let listaAyunos = [];
 let optionRadioCheckAyuno;
 let estadoAyuno;
 
 btnRegistroAyuno.addEventListener("click", getAyuno);
 
-GetListaAyuno();
 
 async function GetListaAyuno() {
     let result = await ProcessGet('ListarAyunos', null);

@@ -25,7 +25,18 @@ btnSMPlan.addEventListener('click', openPlan);
 btnSMRec.addEventListener('click', openRecetas);
 toggle.addEventListener("click", abrirSidebar);
 
+cargarTodo();
+function cargarTodo() {
+    GetListaUser();
+    GetListaPeso();
+    GetListaActividad();
+    GetListaAyuno();
+    GetListaLogros();
+    GetListaReceta();
+    GetListaEnfermedades();
+    
 
+}
 function openInfo() {
     let option = 1;
     GetListaUser();
@@ -34,15 +45,18 @@ function openInfo() {
 
 function openPeso() {
     let option = 2;
+    GetListaPeso();
     blockDisplay(option);
 }
 
 function openEnfermedades() {
+    GetListaEnfermedades();
     let option = 3;
     blockDisplay(option);
 }
 
 function openActividades() {
+    GetListaActividad();
     let option = 4;
     blockDisplay(option);
 }
@@ -55,11 +69,13 @@ function openLogros() {
 
 function openPlan() {
     let option = 6;
+    GetListaAyuno();
     blockDisplay(option);
 }
 
 function openRecetas() {
     let option = 7;
+    GetListaReceta();
     blockDisplay(option);
 }
 
@@ -144,9 +160,9 @@ function blockDisplay(pOpcionSM) {
 function abrirSidebar() {
     menuDashboard.classList.toggle("open")
 
-    if(iconoMenu.classList.contains("fa-caret-right")){
+    if (iconoMenu.classList.contains("fa-caret-right")) {
         iconoMenu.classList.replace("fa-caret-right", "fa-xmark")
-    }else {
+    } else {
         iconoMenu.classList.replace("fa-xmark", "fa-caret-right")
     }
 }

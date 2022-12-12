@@ -67,7 +67,7 @@
                 </div>
                 <div class="enlace">
                     <i class="fa-solid fa-circle-left"></i>
-                    <span>Volver</span>
+                    <a href="./index.html"><span>Volver</span></a>
                 </div>
             </div>
         </aside>
@@ -93,9 +93,10 @@
                                     <h3>Genero:</h3>
                                     <h3>Estatura:</h3>
                                     <h3>IMC:</h3>
+                                    <h3>Clasificación:</h3>
                                     <h3>Correo Electrónico:</h3>
                                     <h3>Peso Deseado:</h3>
-                                    <h3>Actividad Física:</h3>
+
                                 </div>
                                 <div class="valores">
                                     <p id="perfilNombre"></p>
@@ -104,6 +105,7 @@
                                     <p id="perfilSexo"></p>
                                     <p id="alturaUsuario"></p>
                                     <p id="perfilIMC"></p>
+                                    <p id="perfilClasificacion"></p>
                                     <p id="perfilCorreo"></p>
                                     <p id="perfilPeso"></p>
                                 </div>
@@ -115,12 +117,12 @@
                                 <div class="recomendaciones">
                                     <h3>Recomendaciones</h3>
                                     <div class="proteina">
-                                        <h4>Proteína: </h4>
+                                        <h4>Proteína con actividad física: </h4>
                                         <p id="proteCon"></p>
 
                                     </div>
                                     <div class="proteina">
-                                        <h4>Proteina: </h4>
+                                        <h4>Proteina sin actividad física: </h4>
                                         <p id="proteSin"></p>
                                     </div>
                                     <div class="agua">
@@ -908,13 +910,12 @@
 
 
     <!-- ENLACES A JAVASCRIPT------------------------------------------------------>
-    <script src="./Js/Controller/perfilSideBar.js"></script>
+
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="./Js/Constantes.js"></script>
-    <script src="../Public/Js/Services/perfil.js"></script>
     <script src="../Public/Js/Services/globales.js"></script>
     <script src="./Js/Services/SubirImagenService.js"></script>
     <script src="./Js/Services/GeneralService.js"></script>
@@ -922,12 +923,12 @@
 
     <script src="./Js/Controller/perfilActividades.js"></script>
     <script src="./Js/Controller/perfilAyuno.js"></script>
-    <script src="./Js/Controller/perfilEnfermedades.js"></script>
-    <script src="./Js/Controller/perfilInformacion.js"></script>
-    <script src="./Js/Controller/perfilLogros.js"></script>
     <script src="./Js/Controller/perfilPeso.js"></script>
+    <script src="./Js/Controller/perfilEnfermedades.js"></script>
     <script src="./Js/Controller/perfilRecetas.js"></script>
-
+    <script src="./Js/Controller/perfilLogros.js"></script>
+    <script src="./Js/Controller/perfilInformacion.js"></script>
+    <script src="./Js/Controller/perfilSideBar.js"></script>
 
 
 </body>

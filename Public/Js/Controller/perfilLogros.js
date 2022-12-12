@@ -22,14 +22,14 @@ let inputMedalla8 = document.querySelector('#tipoMedalla8');
 let btnMeta = document.getElementById('btnMeta');
 btnMeta.addEventListener('click', getMeta);
 
-GetListaLogros();
+
 
 async function GetListaLogros() {
     let result = await ProcessGet('ListarLogros', null);
     if (result != null && result.resultado == true) {
         listaMetas = result.ListaLogrosDB;
         await ImprimirMetas();
-        console.log(listaMetas);
+        actualizarMetas();
     } else {
         ImprimirMsjError(result.msj);
         return;
@@ -102,6 +102,7 @@ async function getMeta() {
             icon: 'success',
             confirmButtonText: 'Ok'
         }).then(res => {
+            cerrarFormularioLogrosFunc();
             GetListaLogros();
         });
     }
@@ -186,54 +187,81 @@ function revisarMedalla() {
     return option;
 }
 
+
 function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
     let estadoPrueba = 0;
     let sumaHoras = 0;
     let ayunoCompletados = 0;
-    if (psTipoMeta == "peso") {
-        if (Number(listaPeso[0].Peso) <= Number(pnIndicador)) {
-            estadoPrueba = 1;
-        }
-        else {
-            estadoPrueba = 0;
-        }
+    if (listaPeso.length < 1) {
+        console.log("La lista de peso no se habia cargado");
     }
-    else if (psTipoMeta == "imc") {
-        if (Number(listaPeso[0].IMC) <= Number(pnIndicador)) {
-            estadoPrueba = 1;
-        }
-        else {
-            estadoPrueba = 0;
-        }
-    }
-    else if (psTipoMeta == "cantidadHoras") {
-        for (let i = 0; i < listaAyunos.length; i++) {
-            sumaHoras += Number(listaAyunos[i].HorasAyunos);
-        }
-        if (Number(sumaHoras) >= Number(pnIndicador)) {
-            estadoPrueba = 1;
-        }
-        else {
-            estadoPrueba = 0;
-        }
-    }
-    else if (psTipoMeta == "diasAyuno") {
-        for (let i = 0; i < listaAyunos.length; i++) {
-            if (listaAyunos[i].EstadoAyuno == "Logrado") {
-                ayunoCompletados += 1;
+    else {
+        if (psTipoMeta == "peso") {
+            if (Number(listaPeso[0].Peso) <= Number(pnIndicador)) {
+                estadoPrueba = 1;
+            }
+            else {
+                estadoPrueba = 0;
             }
         }
-        if (Number(ayunoCompletados) >= Number(pnIndicador)) {
-            estadoPrueba = 1;
+        else if (psTipoMeta == "imc") {
+            if (Number(listaPeso[0].IMC) <= Number(pnIndicador)) {
+                estadoPrueba = 1;
+            }
+            else {
+                estadoPrueba = 0;
+            }
         }
-        else {
-            estadoPrueba = 0;
+        else if (psTipoMeta == "cantidadHoras") {
+            for (let i = 0; i < listaAyunos.length; i++) {
+                sumaHoras += Number(listaAyunos[i].HorasAyunos);
+            }
+            if (Number(sumaHoras) >= Number(pnIndicador)) {
+                estadoPrueba = 1;
+            }
+            else {
+                estadoPrueba = 0;
+            }
         }
+        else if (psTipoMeta == "diasAyuno") {
+            for (let i = 0; i < listaAyunos.length; i++) {
+                if (listaAyunos[i].EstadoAyuno == "Logrado") {
+                    ayunoCompletados += 1;
+                }
+            }
+            if (Number(ayunoCompletados) >= Number(pnIndicador)) {
+                estadoPrueba = 1;
+            }
+            else {
+                estadoPrueba = 0;
+            }
+        }
+        return estadoPrueba;
     }
-    return estadoPrueba;
+
 }
 
-
+async function actualizarMetas() {
+    if (listaMetas.length > 0) {
+        for (let i = 0; i < listaMetas.length; i++) {
+            let sTipoMeta = listaMetas[0].TipoLogro;
+            let nIndicador = listaMetas[0].CondicionLogro;
+            let sNombreMeta = listaMetas[0].NombredeLogro;
+            let optionMedalla = listaMetas[0].Medalla;
+            let estadoPrueba = revisarEstadoPrueba(sTipoMeta, nIndicador);
+            let s_id = listaMetas[0]._id;
+            let data = {
+                _id: s_id,
+                TipoLogro: sTipoMeta,
+                CondicionLogro: nIndicador,
+                NombredeLogro: sNombreMeta,
+                Medalla: optionMedalla,
+                Estado: estadoPrueba
+            };
+            let result = await ProcessPut('ModificarLogros', data, null);
+        }
+    }
+}
 
 // ABRIR Y CERRAR FORMULARIOS
 const abrirFormularioLogros = document.querySelector('#btnRegistroAbrirLogro');

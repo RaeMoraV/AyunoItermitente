@@ -13,7 +13,7 @@ let inputEmail = document.getElementById('txtEmail');
 let inputEstatura = document.getElementById('txtEstatura');
 let inputPesoDeseado = document.getElementById('txtPesoDeseado');
 let inputGenero;
-
+//let pesoReciente = listaPeso[0].Peso;
 const anioInicio = 1900;//Anio limite para el formulario de registro
 
 let inputDia = document.getElementById('numDia');
@@ -67,9 +67,11 @@ function imprimirUser() {
     document.getElementById("alturaUsuario").innerText = listaUser[0].Estatura;
     if (listaPeso.length == 0) {
         document.getElementById("perfilIMC").innerText = "No se ha ingresado un peso";
+        document.getElementById("perfilClasificacion").innerText = "No se ha ingresado un peso";
     }
     else {
         document.getElementById("perfilIMC").innerText = listaPeso[0].IMC;
+        document.getElementById("perfilClasificacion").innerText = listaPeso[0].Clasificacion;
     }
     document.getElementById("perfilCorreo").innerText = listaUser[0].Correo;
     document.getElementById("perfilPeso").innerText = listaUser[0].PesoIdeal;
@@ -92,15 +94,23 @@ function imprimirUser() {
     document.getElementById("txtPesoDeseado").value = listaUser[0].PesoIdeal;
     document.getElementById("imgUserIndex").src = listaUser[0].Foto;
 
-    if (listaUser[0].Sexo == "Hombre") {
-        document.getElementById("proteCon").innerText = "entre " + 1.7 * listaPeso[0].Peso + "g y " + 2.5 * listaPeso[0].Peso + "g";
-    } else if (listaUser[0].Sexo == "Mujer") {
-        document.getElementById("proteCon").innerText = "entre " + 1.6 * listaPeso[0].Peso + "g y " + 1.8 * listaPeso[0].Peso + "g";
-    } else {
-        document.getElementById("proteCon").innerText = "entre " + 1.6 * listaPeso[0].Peso + "g y " + 2.5 * listaPeso[0].Peso + "g";
+
+
+    if (listaPeso.length < 1) {
+        console.log("La lista de peso no se habia cargado");
     }
-    document.getElementById("proteSin").innerText = 0.8 * listaPeso[0].Peso + "g";
-    document.getElementById("agua").innerText = Math.round(listaPeso[0].Peso / 7) + ' vasos de 250ml';
+    else {
+        if (listaUser[0].Sexo == "Hombre") {
+            document.getElementById("proteCon").innerText = "entre " + Math.floor(Number(1.7 * listaPeso[0].Peso)) + "g y " + Math.round(2.5 * listaPeso[0].Peso) + "g";
+        } else if (listaUser[0].Sexo == "Mujer") {
+            document.getElementById("proteCon").innerText = "entre " + Math.floor(Number(1.6 * listaPeso[0].Peso)) + "g y " + Math.floor(Number(1.8 * listaPeso[0].Peso)) + "g";
+        } else {
+            document.getElementById("proteCon").innerText = "entre " + Math.floor(Number(1.6 * listaPeso[0].Peso)) + "g y " + Math.floor(Number(2.5 * listaPeso[0].Peso)) + "g";
+        }
+        document.getElementById("proteSin").innerText = 0.8 * listaPeso[0].Peso + "g";
+        document.getElementById("agua").innerText = Math.round(listaPeso[0].Peso / 7) + ' vasos de 250ml';
+    }
+    /*
 
     /*
 - No actividad física - Ambos Sexos: (0.8g de proteína) *(peso usuario en kg)
@@ -163,7 +173,8 @@ async function getUser() {
             icon: 'success',
             confirmButtonText: 'Ok'
         }).then(res => {
-            cerrarRegistro()
+            //cerrarRegistro();
+            cerrarFormularioInformacionFunc();
             GetListaUser();
         });
     }
