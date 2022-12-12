@@ -53,4 +53,23 @@ router.get('/ListarPesos', (req, res) => {
     });
 });
 
+router.delete('/EliminarPeso', (req, res) => {
+    let body = req.body;
+    Peso.remove({ _id: body._id }, (err, result) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'Ocurrió un error inesperado y no se elimino el peso',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Peso eliminado de manera correcta',
+                result
+            });
+        }
+    });
+});
+
 module.exports = router

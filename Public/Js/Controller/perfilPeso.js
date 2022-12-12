@@ -40,6 +40,49 @@ async function ImprimirPesos() {
         let celdaPeso = fila.insertCell();
         let celdaIMC = fila.insertCell();
         let celdaClasificacionIMC = fila.insertCell();
+        let celdaAcciones = fila.insertCell();
+
+        let divButtonEliminar = document.createElement('div');
+        divButtonEliminar.className = "buttonEliminar";
+        let buttonbuttonEliminar = document.createElement("button");
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de registro del peso',
+                text: 'Desea eliminar el peso registrado el  ' + listaPeso[i].FechaRegistroPeso + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaPeso[i]._id
+                };
+                let result = await ProcessDelete('EliminarPeso', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaPeso();
+            }
+        };
+        let iButtonEliminar = document.createElement("i");
+        iButtonEliminar.className = "fa-solid fa-trash-can";
+        buttonbuttonEliminar.appendChild(iButtonEliminar);
+        divButtonEliminar.appendChild(buttonbuttonEliminar);
+
+        celdaAcciones.appendChild(divButtonEliminar);
+
+
+
+
 
         celdaPeso.innerHTML = listaPeso[i].Peso;
         celdaFechaRegistroPeso.innerHTML = listaPeso[i].FechaRegistroPeso;

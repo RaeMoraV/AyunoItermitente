@@ -28,6 +28,19 @@ async function GetListaLogros() {
     let result = await ProcessGet('ListarLogros', null);
     if (result != null && result.resultado == true) {
         listaMetas = result.ListaLogrosDB;
+
+        listaMetas = listaMetas.sort(function (a, b) {
+            const nameA = a.TipoLogro.toUpperCase(); // ignore upper and lowercase
+            const nameB = b.TipoLogro.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            // names must be equal
+            return 0;
+        });
         await ImprimirMetas();
         actualizarMetas();
     } else {
@@ -189,13 +202,34 @@ function revisarMedalla() {
 
 
 function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
+    console.log(psTipoMeta);
+    console.log(pnIndicador);
+
     let estadoPrueba = 0;
     let sumaHoras = 0;
     let ayunoCompletados = 0;
+
+
+    for (let i = 0; i < listaAyunos.length; i++) {
+        sumaHoras += Number(listaAyunos[i].HorasAyunos);
+    }
+    for (let i = 0; i < listaAyunos.length; i++) {
+        if (listaAyunos[i].EstadoAyuno == "Logrado") {
+            ayunoCompletados += 1;
+        }
+    }
+
+    console.log(sumaHoras);
+    console.log(ayunoCompletados);
+
     if (listaPeso.length < 1) {
         console.log("La lista de peso no se habia cargado");
     }
     else {
+        console.log("Esta cargada");
+        console.log(Number(listaPeso[0].Peso));
+        console.log(Number(listaPeso[0].IMC));
+
         if (psTipoMeta == "peso") {
             if (Number(listaPeso[0].Peso) <= Number(pnIndicador)) {
                 estadoPrueba = 1;
@@ -204,7 +238,7 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
                 estadoPrueba = 0;
             }
         }
-        else if (psTipoMeta == "imc") {
+        if (psTipoMeta == "imc") {
             if (Number(listaPeso[0].IMC) <= Number(pnIndicador)) {
                 estadoPrueba = 1;
             }
@@ -212,10 +246,9 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
                 estadoPrueba = 0;
             }
         }
-        else if (psTipoMeta == "cantidadHoras") {
-            for (let i = 0; i < listaAyunos.length; i++) {
-                sumaHoras += Number(listaAyunos[i].HorasAyunos);
-            }
+        if (psTipoMeta == "cantidadHoras") {
+            console.log('Entre a revisar cantidad horas');
+
             if (Number(sumaHoras) >= Number(pnIndicador)) {
                 estadoPrueba = 1;
             }
@@ -223,12 +256,7 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
                 estadoPrueba = 0;
             }
         }
-        else if (psTipoMeta == "diasAyuno") {
-            for (let i = 0; i < listaAyunos.length; i++) {
-                if (listaAyunos[i].EstadoAyuno == "Logrado") {
-                    ayunoCompletados += 1;
-                }
-            }
+        if (psTipoMeta == "diasAyuno") {
             if (Number(ayunoCompletados) >= Number(pnIndicador)) {
                 estadoPrueba = 1;
             }
@@ -236,6 +264,16 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
                 estadoPrueba = 0;
             }
         }
+
+
+        if (estadoPrueba == 1) {
+            console.log("Logrado");
+        }
+        else {
+            console.log("No Logrado");
+        }
+
+        console.log("-------------------------------------");
         return estadoPrueba;
     }
 
@@ -244,12 +282,12 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
 async function actualizarMetas() {
     if (listaMetas.length > 0) {
         for (let i = 0; i < listaMetas.length; i++) {
-            let sTipoMeta = listaMetas[0].TipoLogro;
-            let nIndicador = listaMetas[0].CondicionLogro;
-            let sNombreMeta = listaMetas[0].NombredeLogro;
-            let optionMedalla = listaMetas[0].Medalla;
+            let sTipoMeta = listaMetas[i].TipoLogro;
+            let nIndicador = listaMetas[i].CondicionLogro;
+            let sNombreMeta = listaMetas[i].NombredeLogro;
+            let optionMedalla = listaMetas[i].Medalla;
             let estadoPrueba = revisarEstadoPrueba(sTipoMeta, nIndicador);
-            let s_id = listaMetas[0]._id;
+            let s_id = listaMetas[i]._id;
             let data = {
                 _id: s_id,
                 TipoLogro: sTipoMeta,

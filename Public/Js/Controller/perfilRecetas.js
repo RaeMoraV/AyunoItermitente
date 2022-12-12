@@ -37,15 +37,12 @@ let listaRecetasAyuno = [];
 
 btnRegistrarReceta.addEventListener("click", getReceta);
 
-
-
-
 async function GetListaReceta() {
     let result = await ProcessGet('ListarRecetas', null);
     if (result != null && result.resultado == true) {
         listaRecetasAyuno = result.ListaRecetasDB;
         await ImprimirRecetas();
-        console.log(listaRecetasAyuno);
+        cerrarFormularioRecetaFunc()
     } else {
         ImprimirMsjError(result.msj);
         return;
@@ -365,4 +362,26 @@ function validarReceta(nombre, ingredientes, pasos, tiempo, tipo, categoria, img
         return true;
     }
 
+}
+
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioReceta = document.querySelector('#btnRegistroAbrirReceta');
+const fondoNegroReceta = document.querySelector('.fondoNegro');
+const xCerrarFormularioReceta = document.querySelector('#xFormularioRecetas');
+
+abrirFormularioReceta.addEventListener('click', abrirFormularioRecetaFunc);
+fondoNegroReceta.addEventListener('click', cerrarFormularioRecetaFunc);
+xCerrarFormularioReceta.addEventListener('click', cerrarFormularioRecetaFunc);
+
+function abrirFormularioRecetaFunc() {
+    document.querySelector('#ingresoDatosRecetas').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioRecetaFunc() {
+    document.querySelector('#ingresoDatosRecetas').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
 }

@@ -24,7 +24,7 @@ async function GetListaAyuno() {
             (objA, objB) => Number(new Date(objB.FechaInicioAyuno)) - Number(new Date(objA.FechaInicioAyuno)),
         );
         await ImprimirAyunos();
-        console.log(listaAyunos);
+        cerrarFormularioAyunoFunc();
     } else {
         ImprimirMsjError(result.msj);
         return;
@@ -51,7 +51,7 @@ async function ImprimirAyunos() {
         celdaFechaFinAyuno.innerHTML = listaAyunos[i].FechaFinAyuno;
         celdaHoraFinAyuno.innerHTML = listaAyunos[i].HoraFinAyuno;
         celdaTipoAyuno.innerHTML = listaAyunos[i].TipoAyuno;
-        celdaHorasAyunos.innerHTML = listaAyunos[i].HorasAyunos;
+        celdaHorasAyunos.innerHTML = Math.round(listaAyunos[i].HorasAyunos);
         celdaEstadoAyuno.innerHTML = listaAyunos[i].EstadoAyuno;
     }
 }
@@ -216,6 +216,27 @@ function validarAyuno(pDateInicio, pDateFinal) {
     }
 }
 
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioAyuno = document.querySelector('#btnRegistroAbrirAyuno');
+const fondoNegroAyuno = document.querySelector('.fondoNegro');
+const xCerrarFormularioAyuno = document.querySelector('#xFormularioAyuno');
+
+abrirFormularioAyuno.addEventListener('click', abrirFormularioAyunoFunc);
+fondoNegroAyuno.addEventListener('click', cerrarFormularioAyunoFunc);
+xCerrarFormularioAyuno.addEventListener('click', cerrarFormularioAyunoFunc);
+
+function abrirFormularioAyunoFunc() {
+    document.querySelector('#ingresoDatosAyuno').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioAyunoFunc() {
+    document.querySelector('#ingresoDatosAyuno').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}
 
 
 
