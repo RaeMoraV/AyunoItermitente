@@ -1,84 +1,233 @@
-.contenidoContactenos {
-  max-width: 900px;
-  margin-bottom: 35px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #dfede3;
-  line-height: 40px;
-  border-radius: 10px;
+/* menuNav */
+
+.hidden {
+  display: "none";
 }
 
+.navDesktop {
+  background-color: #00000000;
+  z-index: 10;
+}
 
-.conocenosInfo {
-  flex-direction: column;
-  height: 900px;
-  width: 100%;
+.navMobile {
+  height: 10vh;
+}
+
+.navMobile .logo a,
+.navDesktop .logo a {
+  color: var(--col-green);
+}
+
+.navMobile #menuButton .whiteBar {
+  background-color: var(--col-green);
+}
+
+#menu {
+  background: var(--col-lightgray);
+}
+
+#menu a {
   font-size: 20px;
+  color: var(--col-darkgray);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+#menu a:hover {
+  color: var(--col-green);
+}
+
+.navDesktop .links li:last-child {
+  border: 2px solid var(--color-lightgreen1);
+}
+
+.navDesktop .links a {
+  color: var(--color-lightgreen1);
+}
+
+.navDesktop .links a:last-child {
+  color: var(--color-lightgreen1);
+}
+
+/* FOOTER */
+
+.footerContainer {
+  width: 100%;
+  background-color: var(--col-lightgray);
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 10px;
+  height: fit-content;
+}
+
+.footerContainer .footerContent .logo {
+  height: 45px;
+  width: fit-content;
+  display: flex;
   align-items: center;
+  font-size: 36px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.footerContainer .footerContent .logo a {
+  color: var(--col-green);
+}
+
+.footerContainer .footerContent .textFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.footerContainer .footerContent .textFooter .links {
+  font-size: 14px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.footerContainer .footerContent .textFooter .links li {
+  margin-right: 10px;
+}
+
+.footerContainer .footerContent .textFooter .links li:last-child {
+  margin-right: 0;
+}
+
+.footerContainer .footerContent .textFooter .links a {
+  color: var(--col-green);
+  text-decoration: underline;
+}
+
+.footerContainer .footerContent .textFooter .disclaimer {
+  font-size: 14px;
+  color: var(--col-green);
+}
+
+.footerContainer .social {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContainer .social .iconContainer {
   display: flex;
   justify-content: center;
-  text-align: center
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: var(--col-green);
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.titulo{
-  flex-direction: column;
-  font-size: 60px;
-  text-align:center;
-  top: 250px;
+.footerContainer .social .iconContainer a {
+  font-size: 20px;
+  color: var(--col-lightgray);
+}
+
+/* BANNER */
+
+.bannerPrincipal {
   position: relative;
-}
-
-.texto{
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 20px;
-  text-align:center;
-  display: flex;
-  height: 200px;
-  width: 900px;
-}
-
-.contenedorImage {
-  max-width: 900px;
-  margin: 20px 0;
-  padding: 10px;
-}
-
-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../Img/conocenos/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.conocenosContenido {
+  height: 90vh;
+  text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 45px 20px;
+}
+
+.bannerPrincipal .bannerTitulo {
+  color: #fff;
+  width: 100%;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 65px;
+  text-align: center;
+}
+
+.bannerPrincipal .bannerDescripcion {
+  z-index: 20;
+  width: 100%;
+  color: #ffffff;
+  font-size: 15px;
+  max-width: 900px;
+  margin:  auto;
+}
+
+.bannerTitulo{
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.tarjetaimg{
+
+    background:  url(../Img/conocenos/keto.jpg);
+    padding: 300px 300px;
+    float: left; 
+
+
+}
+
+.seccionEmpezar {
+  background-color: var(--col-green);
+  padding: 100px 90px;
+}
+
+.seccionEmpezar p2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+.seccionEmpezar p1 {
+  color: #000000;
+  text-align: center;
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+
+  font-weight: bold;
+}
+
+.tarjetasEmpezar {
+  display: flex;
+  float: right;
   align-items: center;
 }
 
-.imag{
+.tarjetaEmpezar {
+  margin-bottom: 80px;
+  padding: 50px 15px 15px;
+  position: relative;
+  max-width: 700px;
+}
+
+.tarjetaEmpezar:last-child {
+  margin-bottom: 20px;
+}
+
+.tarjetaEmpezar i {
   position: absolute;
-  top: 120%;
-  left: 25%;
-  transform: translate(-50%, -50%);
+  top: -20px;
+  left: 20px;
+  display: block;
+  font-size: 40px;
+  color: #ffffff;
 }
 
 
-.textoImg{
-  position: absolute;
-  top: 120%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-}
-
-.footerContainer{
-  height: 7rem;
-  position: absolute;
-  top: 170%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
