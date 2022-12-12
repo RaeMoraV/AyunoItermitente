@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./Css/reset.css">
     <link rel="stylesheet" href="./Css/globales.css">
     <link rel="stylesheet" href="./Css/perfil.css">
-
+    <link rel="stylesheet" href="./Css/index.css">
     <!-- Icons Repository (https://fontawesome.com/)-->
     <script src="https://kit.fontawesome.com/0e797b15b3.js" crossorigin="anonymous"></script>
 
@@ -23,6 +23,7 @@
 </head>
 
 <body id="body">
+    <div class="fondoNegro"></div>
 
     <!-- HEADER------------------------------------------------------>
     <header>
@@ -30,10 +31,39 @@
             <div class="logo">
                 <a href="#">eFast</a>
             </div>
-            <div id="menuButton">
-                <div class="whiteBar"></div>
-                <div class="whiteBar"></div>
-                <div class="whiteBar"></div>
+            <div class="menu">
+                <div class="enlace" id="sideMenuInformacion">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Información</span>
+                </div>
+                <div class="enlace" id="sideMenuPeso">
+                    <i class="fa-solid fa-weight-scale"></i>
+                    <span>Peso</span>
+                </div>
+                <div class="enlace" id="sideMenuEnfermedades">
+                    <i class="fa-solid fa-head-side-cough"></i>
+                    <span>Enfermedades</span>
+                </div>
+                <div class="enlace" id="sideMenuActividad">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span>Actividad física</span>
+                </div>
+                <div class="enlace" id="sideMenuLogros">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>Logros y objetivos</span>
+                </div>
+                <div class="enlace" id="sideMenuPlan">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Plan de ayuno</span>
+                </div>
+                <div class="enlace" id="sideMenuRecetas">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Recetas</span>
+                </div>
+                <div class="enlace">
+                    <i class="fa-solid fa-circle-left"></i>
+                    <span>Volver</span>
+                </div>
             </div>
             <div id="backMenu"></div>
             <div id="menu">
@@ -55,6 +85,223 @@
         </nav>
         <section class="banner">
 
+        </section>
+        <!-- Registro -->
+        <section id="formularioInscripcion">
+            <h2>Editar perfil</h2>
+            <div id="cerrarFormularioInscripcion" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
+            <form action="" class="registroPrincipal">
+                <div class="formSection">
+                    <div class="field">
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="" id="txtNombre" placeholder="Nombre" required />
+                    </div>
+                    <div class="field">
+                        <label for="txtApellido">Apellido</label>
+                        <input type="text" name="" id="txtApellido" placeholder="Apellido" required />
+                    </div>
+                </div>
+                </div>
+                <div class="formSection">
+                    <div class="fieldEmail">
+                        <label for="txtEmail">Email</label>
+                        <input type="email" name="" id="txtEmail" placeholder="Correo electrónico" required />
+                    </div>
+                </div>
+                <div class="formSection">
+                    <div class="fieldSelect" id="inputFechaNacimiento">
+                        <p>Fecha de nacimiento</p>
+                        <div class="selectFechas">
+                            <select name="" id="numDia">
+                                <option value=''>Dia</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select name="" id="numMes" class="fecha">
+                                <option value="">Mes</option>
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero</option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Setiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <select name="" id="numAnio">
+                                <option value="">Año</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1992">1992</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                                <option value="1989">1989</option>
+                                <option value="1988">1988</option>
+                                <option value="1987">1987</option>
+                                <option value="1986">1986</option>
+                                <option value="1985">1985</option>
+                                <option value="1984">1984</option>
+                                <option value="1983">1983</option>
+                                <option value="1982">1982</option>
+                                <option value="1981">1981</option>
+                                <option value="1980">1980</option>
+                                <option value="1979">1979</option>
+                                <option value="1978">1978</option>
+                                <option value="1977">1977</option>
+                                <option value="1976">1976</option>
+                                <option value="1975">1975</option>
+                                <option value="1974">1974</option>
+                                <option value="1973">1973</option>
+                                <option value="1972">1972</option>
+                                <option value="1971">1971</option>
+                                <option value="1970">1970</option>
+                                <option value="1969">1969</option>
+                                <option value="1968">1968</option>
+                                <option value="1967">1967</option>
+                                <option value="1966">1966</option>
+                                <option value="1965">1965</option>
+                                <option value="1964">1964</option>
+                                <option value="1963">1963</option>
+                                <option value="1962">1962</option>
+                                <option value="1961">1961</option>
+                                <option value="1960">1960</option>
+                                <option value="1959">1959</option>
+                                <option value="1958">1958</option>
+                                <option value="1957">1957</option>
+                                <option value="1956">1956</option>
+                                <option value="1955">1955</option>
+                                <option value="1954">1954</option>
+                                <option value="1953">1953</option>
+                                <option value="1952">1952</option>
+                                <option value="1951">1951</option>
+                                <option value="1950">1950</option>
+                                <option value="1949">1949</option>
+                                <option value="1948">1948</option>
+                                <option value="1947">1947</option>
+                                <option value="1946">1946</option>
+                                <option value="1945">1945</option>
+                                <option value="1944">1944</option>
+                                <option value="1943">1943</option>
+                                <option value="1942">1942</option>
+                                <option value="1941">1941</option>
+                                <option value="1940">1940</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="formSection">
+                    <div class="fieldRadio">
+                        <div class="radioOptions" id="selectorGenero">
+                            <p>Sexo</p>
+                            <div class="option">
+                                <input type="radio" id="optionMasculino" name="generoRadio" value="Hombre">
+                                <label for="optionMasculino">Hombre</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="optionFemenino" name="generoRadio" value="Mujer">
+                                <label for="optionFemenino">Mujer</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="optionOtroSexo" name="generoRadio" value="Otro">
+                                <label for="optionOtroSexo">Otro</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formSection">
+                    <div class="field">
+                        <label for="txtEstatura">Estatura</label>
+                        <input type="number" name="" id="txtEstatura" placeholder="Estatura" required />
+                    </div>
+                    <div class="field">
+                        <label for="txtPesoDeseado">Peso deseado</label>
+                        <input type="number" name="" id="txtPesoDeseado" placeholder="Peso Deseado" required />
+                    </div>
+                </div>
+                <div class="formSection">
+                    <div class="fieldFile" id="inputFotoPerfil">
+                        <p>Foto de perfil</p>
+                        <div class="foto">
+                            <div class="showPhoto">
+                                <img src="" alt="" id="imgUserIndex">
+                            </div>
+                        </div>
+                        <div butonUploadPhoto>
+                            <div class="uploadPhoto">
+                                <label for="fotoPerfil" class="inputFotoPerfil"
+                                    onclick="AbrirCloudinary('imgUserIndex')">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="submitRegistrate" class="submitRegistrate" type="button">Editar</button>
+            </form>
         </section>
     </header>
 
@@ -80,8 +327,8 @@
         <!--CONTENEDOR SECCIONES-------------------------------------------------->
         <div class="sectionContainer">
 
-
             <!-- INFORMACIÓN-------------------------------------------------->
+
             <section class="container" id="informacion">
                 <h2>Información</h2>
                 <div class="contenido">
@@ -94,36 +341,51 @@
                         <h3>IMC:</h3>
                         <h3>Correo Electrónico:</h3>
                         <h3>Peso Deseado:</h3>
-                        <h3>Actividad Física:</h3>
+
                     </div>
                     <div class="separador"></div>
                     <div class="valores">
-                        <p>Marcos</p>
-                        <p>Alvarez Solano</p>
-                        <p>25</p>
-                        <p>Masculino</p>
-                        <p id="alturaUsuario">1.90</p>
-                        <p>15</p>
-                        <p>malvsol@gmail.com</p>
-                        <p>80</p>
-                        <p>Si</p>
+                        <p id="perfilNombre"></p>
+                        <p id="perfilApellidos"></p>
+                        <p id="perfilEdad"></p>
+                        <p id="perfilSexo"></p>
+                        <p id="alturaUsuario"></p>
+                        <p id="perfilIMC"></p>
+                        <p id="perfilCorreo"></p>
+                        <p id="perfilPeso"></p>
+
                     </div>
                     <div class="fotoRecomendaciones">
                         <figure class="foto">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                                alt="">
+                            <img id="perfilFoto" src="" alt="No se ha subido la foto">
                         </figure>
                         <div class="recomendaciones">
-                            <h3>Recomendaciones</h3>
+                            <h3>Con actividad física</h3>
                             <div class="proteina">
-                                <h4>Proteina: </h4>
-                                <p>##</p>
+                                <h4>Proteína : </h4>
+                                <p id="proteCon"></p>
+
                             </div>
-                            <div class="agua">
+                            <h3>Sin actividad física</h3>
+                            <div class="proteina">
+                                <h4>Proteína : </h4>
+                                <p id="proteSin"></p>
+                            </div>
+                            <h3>Cantidad agua recomendada</h3>
+                            <div class=" agua">
                                 <h4>Agua: </h4>
-                                <p>##</p>
+                                <p id="agua"></p>
+                            </div>
+
+                            <div class="bannerIngreso">
+                                <div id="buttonRegistrate">
+                                    <span>
+                                        Editar
+                                    </span>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -162,35 +424,29 @@
                                     Registro</button>
                             </form>
                         </div>
-                    </div>
-                    <div class="unHijo">
-                        <div id="graphPeso"></div>
-                    </div>
-                    <div class="unHijo">
-                        <div id="graphIMC"></div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- ENFERMEDADES-------------------------------------------------->
-            <section class="container" id="enfermedades">
-                <h2>Enfermedades</h2>
-                <div class="contenido">
-                    <div class="dosHijos">
-                        <table class="datosTabla tableEnfermedades" id="datosEnfermedad">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Descripción</th>
-                                    <th>Estado</th>
-                                    <th>Tratamiento</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <div class="ingresoDatos">
+                    </section>
+                    <!-- ENFERMEDADES-------------------------------------------------->
+                    <section class="container" id="enfermedades">
+                        <h2>Enfermedades</h2>
+                        
+                        <div class="contenido">
+                            <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirEnfermedad">Registro Nuevo</button>
+                            <button type="button" class="btnAbrirEditar" id="btnEditarEnfermedad">Editar Datos</button>
+                                <table class="datosTabla tableEnfermedades" id="datosEnfermedad">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Descripción</th>
+                                            <th>Estado</th>
+                                            <th>Tratamiento</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="ingresoDatos" id="ingresoDatosEnfermedades">
+                            <div id="xFormularioEnfermedades" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
                             <h3>Registrar Enfermedad</h3>
                             <form>
                                 <div class="field">
@@ -224,29 +480,38 @@
                                     Registro</button>
                             </form>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
+                    <!-- ACTIVIDAD FÍSICA---------------------------------------------->
+                    <section class="container" id="actividadFisica">
+                        <h2>Actividad Física</h2>
+                        
+                        <div class="contenido">
+                            <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirEjercicio">Registro Nuevo</button>
+                            <button type="button" class="btnAbrirEditar" id="btnEditarEjercicio">Editar Datos</button>
+                                <table class="datosTabla tableActividades" id="datosActividad">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Hora inicio</th>
+                                            <th>Hora fin</th>
+                                            <th>Tiempo total (minutos)</th>
+                                            <th>Tipo de actividad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                        
+                            <div class="unHijo">
+                                <div id="graphActividad1"></div>
+                            </div>
+                            <div class="unHijo">
+                                <div id="graphActividad2"></div>
+                            </div>
+                        </div>
 
-            <!-- ACTIVIDAD FÍSICA---------------------------------------------->
-            <section class="container" id="actividadFisica">
-                <h2>Actividad Física</h2>
-                <div class="contenido">
-                    <div class="dosHijos">
-                        <table class="datosTabla tableActividades" id="datosActividad">
-                            <thead>
-                                <tr>
-                                    <th>Fecha</th>
-                                    <th>Hora inicio</th>
-                                    <th>Hora fin</th>
-                                    <th>Tiempo total (minutos)</th>
-                                    <th>Tipo de actividad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <div class="ingresoDatos">
+                        <div class="ingresoDatos" id="ingresoDatosActividades">
+                            <div id="xFormularioActividad" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
                             <h3>Registrar Actividad</h3>
                             <form>
                                 <div class="field">
@@ -286,37 +551,32 @@
                                 </button>
                             </form>
                         </div>
-                    </div>
-                    <div class="unHijo">
-                        <div id="graphActividad1"></div>
-                    </div>
-                    <div class="unHijo">
-                        <div id="graphActividad2"></div>
-                    </div>
-                </div>
-
-            </section>
-
-
-            <!-- LOGROS Y OBJETIVOS-------------------------------------------->
-            <section class="container" id="logroObjetivos">
-                <h2>Logros y objetivos</h2>
-                <div class="contenido">
-                    <div class="dosHijos">
-                        <table class="datosTabla tableActividades" id="datosLogros">
-                            <thead>
-                                <tr>
-                                    <th>Tipo de logro</th>
-                                    <th>Condición de logro</th>
-                                    <th>Nombre del logro</th>
-                                    <th>Medalla</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <div class="ingresoDatos">
+                    </section>
+                    <!-- LOGROS Y OBJETIVOS-------------------------------------------->
+                    <section class="container" id="logroObjetivos">
+                        <h2>Logros y objetivos</h2>
+                        <div class="contenido">
+                            <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirLogro">Registro Nuevo</button>
+                            <button type="button" class="btnAbrirEditar" id="btnEditarLogro">Editar Datos</button>
+                                <table class="datosTabla tableActividades" id="datosLogros">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de logro</th>
+                                            <th>Condición de logro</th>
+                                            <th>Nombre del logro</th>
+                                            <th>Medalla</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            <div class="unHijo">
+                                <div id="graphActividad"></div>
+                            </div>
+                        </div>
+                        <div class="ingresoDatos" id="ingresoDatosLogrosObjetivos">
+                            <div id="xFormularioLogros" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
                             <h3>Agregar meta</h3>
                             <form>
                                 <div class="field">
@@ -373,7 +633,6 @@
                                             <input type="radio" name="inputMedalla" id="tipoMedalla8" value="8">
                                             <label for="tipoMedalla8"><i class="fa-solid fa-heart-pulse"></i></label>
                                         </div>
-
                                     </div>
                                 </div>
                             </form>
@@ -384,131 +643,297 @@
                                 Actualizar estados
                             </button>
                         </div>
-                    </div>
-                    <div class="unHijo">
-                        <div id="graphActividad"></div>
-                    </div>
-                </div>
-            </section>
-
-
-
-
-
-            <!-- PLAN DE AYUNO------------------------------------------------->
-            <section class="container" id="planAyuno">
-                <div>
-                    <h2>Plan de Ayuno</h2>
-                </div>
-                <div class="contenedorTiposAyuno">
-                    <div class="contenedorTituloTipos">
-                        <h3>Opciones</h3>
-                    </div>
-                    <div class="tiposAyuno">
-                        <div>
-                            <h2>Plan 14/10</h2>
-                            <p> Este plan consiste en no ingerir alimentos por 14 Horas
-                                y las próximas 10 horas ingerir alimentos bajos en calorías.
-                                Se sugiere que las horas de ayuno sean nocturnas. Se procede con el plan
-                                por 6 días y al séptimo se ayuna totalmente.
-
-                            </p>
+                    </section>
+                    <!-- PLAN DE AYUNO------------------------------------------------->
+                    <section class="container" id="planAyuno">
+                        <h2>Plan de Ayuno</h2>
+                        <div class="contenedorTiposAyuno">
+                            <div class="contenedorTituloTipos">
+                                <h3>Opciones</h3>
+                            </div>
+                            <div class="tiposAyuno">
+                                <div>
+                                    <h2>Plan 14/10</h2>
+                                    <p> Este plan consiste en no ingerir alimentos por 14 Horas
+                                        y las próximas 10 horas ingerir alimentos bajos en calorías.
+                                        Se sugiere que las horas de ayuno sean nocturnas. Se procede con el plan
+                                        por 6 días y al séptimo se ayuna totalmente.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h2>Plan 16/8</h2>
+                                    <p> Este plan consiste en no ingerir alimentos por 16 Horas
+                                        y las próximas 8 horas ingerir alimentos bajos en calorías.
+                                        Se sugiere que las horas de ayuno sean nocturnas. Se procede con el plan
+                                        por 6 días y al séptimo se ayuna totalmente.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h2>Plan 18/6</h2>
+                                    <p>
+                                        Este plan consiste en no ingerir alimentos por 18 Horas
+                                        y las próximas 6 horas ingerir alimentos bajos en calorías.
+                                        Se sugiere que las horas de ayuno sean nocturnas en su mayoría.
+                                        Se procede con el plan por 6 días y al séptimo se ayuna totalmente.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h2>Plan 20/4</h2>
+                                    <p>
+                                        Este plan consiste en no ingerir alimentos por 20 Horas
+                                        y las próximas 4 horas ingerir alimentos no tan bajos en calorías.
+                                        Se sugiere que las horas de ayuno sean las nocturnas en su mayoría.
+                                        Se procede con el plan los 7 días de la semana.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h2>Plan 16/8</h2>
-                            <p> Este plan consiste en no ingerir alimentos por 16 Horas
-                                y las próximas 8 horas ingerir alimentos bajos en calorías.
-                                Se sugiere que las horas de ayuno sean nocturnas. Se procede con el plan
-                                por 6 días y al séptimo se ayuna totalmente.
-
-                            </p>
+                        <div class="separadorVertical"></div>
+                        <div class="contenido">
+                            <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirAyuno">Registro Nuevo</button>
+                            <button type="button" class="btnAbrirEditar" id="btnEditarAyuno">Editar Datos</button>
+                                <table class="datosTabla" id="tablaRegistroAyuno">
+                                    <thead>
+                                        <th>Fecha inicio</th>
+                                        <th>Hora inicio</th>
+                                        <th>Fecha final</th>
+                                        <th>Hora final</th>
+                                        <th>Tipo</th>
+                                        <th>Total de horas</th>
+                                        <th>Estado</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                         </div>
-                        <div>
-                            <h2>Plan 18/6</h2>
-                            <p>
-                                Este plan consiste en no ingerir alimentos por 18 Horas
-                                y las próximas 6 horas ingerir alimentos bajos en calorías.
-                                Se sugiere que las horas de ayuno sean nocturnas en su mayoría.
-                                Se procede con el plan por 6 días y al séptimo se ayuna totalmente.
-
-                            </p>
+                        <div class="ingresoDatos" id="ingresoDatosAyuno">
+                            <div id="xFormularioAyuno" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
+                            <div class="ingresoDatosAyuno">
+                                <h3>Registrar ayuno</h3>
+                                <form>
+                                    <div class="field">
+                                        <label for="inputHoraInicioAyuno">Hora de inicio:<span> *</span> </label>
+                                        <input type="time" name="" id="inputHoraInicioAyuno">
+                                    </div>
+                                    <div class="field">
+                                        <label for="inputInicioFechaAyuno">Fecha de inicio:<span> *</span> </label>
+                                        <input type="date" name="" id="inputInicioFechaAyuno">
+                                    </div>
+                                    <div class="field">
+                                        <label for="inputHoraFinAyuno">Hora de fin:<span> *</span> </label>
+                                        <input type="time" name="" id="inputHoraFinAyuno">
+                                    </div>
+                                    <div class="field">
+                                        <label for="inputFinFechaAyuno">Fecha de fin:<span> *</span> </label>
+                                        <input type="date" name="" id="inputFinFechaAyuno">
+                                    </div>
+                                    <div class="fieldRadio">
+                                        <p>Tipo de Ayuno:<span> *</span></p>
+                                        <div class="radioContainer">
+                                            <div class="radioOption">
+                                                <input type="radio" name="inputTipoAyuno" id="radio1410" value="14-10">
+                                                <label for="radio1410">14-10</label>
+                                            </div>
+                                            <div class="radioOption">
+                                                <input type="radio" name="inputTipoAyuno" id="radio168" value="16-8">
+                                                <label for="radio168">16-8</label>
+                                            </div>
+                                            <div class="radioOption">
+                                                <input type="radio" name="inputTipoAyuno" id="radio186" value="18-6">
+                                                <label for="radio186">18-6</label>
+                                            </div>
+                                            <div class="radioOption">
+                                                <input type="radio" name="inputTipoAyuno" id="radio204" value="20-4">
+                                                <label for="radio204">20-4</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer
+                                        Registro</button>
+                                </form>
+                            </div>
+                            <div class="recomendacionAyuno">
+                                <h3>Recomendaciones</h3>
+                                <div class="parrafoImagenAyuno">
+                                    <p>
+                                        El ayuno intermitente no está indicado para todas las personas. No se recomienda
+                                        para mujeres que se encuentren en periodos de gestación o lactancia, que padecen
+                                        de ansiedad o trastornos alimenticios. Tampoco se recomienda para niños. Se
+                                        recomienda tomar
+                                        mucha agua y consultar con su nutricionista antes de iniciar un plan de ayuno.
+                                    </p>
+                                    <img src="./Img/perfil/becareful.jpg" alt="Becareful" style="width:128px;height:128px;">
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h2>Plan 20/4</h2>
-                            <p>
-                                Este plan consiste en no ingerir alimentos por 20 Horas
-                                y las próximas 4 horas ingerir alimentos no tan bajos en calorías.
-                                Se sugiere que las horas de ayuno sean las nocturnas en su mayoría.
-                                Se procede con el plan los 7 días de la semana.
-                            </p>
+                    </section>
+                    <!-- RECETAS------------------------------------------------------>
+                    <section class="container" id="recetas">
+                        <h2>Recetas</h2>
+                        <div class="contenido">
+                            <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirReceta">Registro Nuevo</button>
+                            <button type="button" class="btnAbrirEditar" id="btnEditarReceta">Editar Datos</button>
+                            <div class="RecetaInput">
+                            <div class="recetaGrid">
+                                <div class="nombreReceta">
+                                    <h1>Gallo Pinto</h1>
+                                </div>
+                                <div class="imgReceta"><img src="./Img/perfil/GalloPinto.png" alt=""></div>
+                                <div class="categoriaReceta">
+                                    <h3>Tiempo de Preparacion:</h3>
+                                    <p>20 minutos</p>
+                                </div>
+                                <div class="tipoReceta">
+                                    <h3>Tipo:</h3>
+                                    <p>Desayuno</p>
+                                </div>
+                                <div class="tiempoReceta">
+                                    <h3>Categoria:</h3>
+                                    <p>Vegetariana</p>
+                                    <p>Vegana</p>
+                                </div>
+                                <div class="pasosReceta">
+                                    <h2>Preparacion</h2>
+                                    <p>Paso 1. Cocinar arroz</p>
+                                    <p>Paso 2. Cocinar frijoles</p>
+                                    <p>Paso 3. Picar cilantro, cebolla y chile</p>
+                                    <p>Paso 4. Cocinar todo en una sarten</p>
+                                    <p>Paso 5. Echar salsa lizano</p>
+                                </div>
+                                <div class="ingredientesReceta">
+                                    <h2>Ingredientes</h2>
+                                    <p>Arroz</p>
+                                    <p>Frijoles</p>
+                                    <p>Cebolla</p>
+                                    <p>Chile</p>
+                                    <p>Cilantro</p>
+                                    <p>Salsa Lizano</p>
+                                </div>
+                                <div class="buttonEliminar">
+                                    <button type="button" value='IDdeReceta'> <i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                        
+                        <div class="RecetaInput" id="imprimirRecetas">
+                        </div>
 
-                <div class="separadorVertical"></div>
-
-                <div class="tablaFormularioAyuno">
-                    <div tablaAyuno>
-                        <table class="datosTabla" id="tablaRegistroAyuno">
-                            <thead>
-                                <th>Fecha inicio</th>
-                                <th>Hora inicio</th>
-                                <th>Fecha final</th>
-                                <th>Hora final</th>
-                                <th>Tipo</th>
-                                <th>Total de horas</th>
-                                <th>Estado</th>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-                    <div class="ingresoDatos">
-                        <div class="ingresoDatosAyuno">
-                            <h3>Registrar ayuno</h3>
+                        <div class="ingresoDatos" id="ingresoDatosRecetas">
+                            <div id="xFormularioRecetas" class="cerrarFormulario"><i class="fa-solid fa-xmark"></i></div>
+                            <h3>Registrar Receta</h3>
                             <form>
                                 <div class="field">
-                                    <label for="inputHoraInicioAyuno">Hora de inicio:<span> *</span> </label>
-                                    <input type="time" name="" id="inputHoraInicioAyuno">
+                                    <label for="inputNombreReceta">Nombre:<span> *</span> </label>
+                                    <input type="text" name="" id="inputNombreReceta">
                                 </div>
                                 <div class="field">
-                                    <label for="inputInicioFechaAyuno">Fecha de inicio:<span> *</span> </label>
-                                    <input type="date" name="" id="inputInicioFechaAyuno">
+                                    <label for="">Ingredientes:<span> *</span> </label>
                                 </div>
                                 <div class="field">
-                                    <label for="inputHoraFinAyuno">Hora de fin:<span> *</span> </label>
-                                    <input type="time" name="" id="inputHoraFinAyuno">
+                                    <label for="inputIngrediente1">Ingrediente 1: </label>
+                                    <input type="text" name="" id="inputIngrediente1">
                                 </div>
                                 <div class="field">
-                                    <label for="inputFinFechaAyuno">Fecha de fin:<span> *</span> </label>
-                                    <input type="date" name="" id="inputFinFechaAyuno">
+                                    <label for="inputIngrediente2">Ingrediente 2: </label>
+                                    <input type="text" name="" id="inputIngrediente2">
                                 </div>
-
+                                <div class="field">
+                                    <label for="inputIngrediente3">Ingrediente 3: </label>
+                                    <input type="text" name="" id="inputIngrediente3">
+                                </div>
+                                <div class="field">
+                                    <label for="inputIngrediente4">Ingrediente 4: </label>
+                                    <input type="text" name="" id="inputIngrediente4">
+                                </div>
+                                <div class="field">
+                                    <label for="inputIngrediente5">Ingrediente 5: </label>
+                                    <input type="text" name="" id="inputIngrediente5">
+                                </div>
+                                <div class="field">
+                                    <label for="inputIngrediente6">Ingrediente 6: </label>
+                                    <input type="text" name="" id="inputIngrediente6">
+                                </div>
+                                <div class="field">
+                                    <label for="">Preparacion<span> *</span> </label>
+                                </div>
+                                <div class="field">
+                                    <label for="inputPaso1">Paso 1: </label>
+                                    <input type="text" name="" id="inputPaso1">
+                                </div>
+                                <div class="field">
+                                    <label for="inputPaso2">Paso 2: </label>
+                                    <input type="text" name="" id="inputPaso2">
+                                </div>
+                                <div class="field">
+                                    <label for="inputPaso3">Paso 3: </label>
+                                    <input type="text" name="" id="inputPaso3">
+                                </div>
+                                <div class="field">
+                                    <label for="inputPaso4">Paso 4: </label>
+                                    <input type="text" name="" id="inputPaso4">
+                                </div>
+                                <div class="field">
+                                    <label for="inputPaso5">Paso 5: </label>
+                                    <input type="text" name="" id="inputPaso5">
+                                </div>
+                                <div class="field">
+                                    <label for="inputPaso6">Paso 6: </label>
+                                    <input type="text" name="" id="inputPaso6">
+                                </div>
+                                <div class="field">
+                                    <label for="inputTiempoReceta">Tiempo de preparacion:<span> *</span> </label>
+                                    <input type="number" name="" id="inputTiempoReceta">
+                                </div>
+                                <div class="field">
+                                    <label for="inputNombreMeta">Tipo de comida:<span> *</span> </label>
+                                    <select name="" id="inputTipoReceta">
+                                        <option value="" disabled selected hidden>--Seleccione un tipo de comida--
+                                        </option>
+                                        <option value="Desayuno">Desayuno</option>
+                                        <option value="Almuerzo">Almuerzo</option>
+                                        <option value="Merienda">Merienda</option>
+                                        <option value="Cena">Cena</option>
+                                        <option value="Postre">Postre</option>
+                                    </select>
+                                </div>
                                 <div class="fieldRadio">
-                                    <p>Tipo de Ayuno:<span> *</span></p>
-                                    <div class="radioContainer">
-                                        <div class="radioOption">
-                                            <input type="radio" name="inputTipoAyuno" id="radio1410" value="14-10">
-                                            <label for="radio1410">14-10</label>
-                                        </div>
-                                        <div class="radioOption">
-                                            <input type="radio" name="inputTipoAyuno" id="radio168" value="16-8">
-                                            <label for="radio168">16-8</label>
-                                        </div>
-                                        <div class="radioOption">
-                                            <input type="radio" name="inputTipoAyuno" id="radio186" value="18-6">
-                                            <label for="radio186">18-6</label>
-                                        </div>
-                                        <div class="radioOption">
-                                            <input type="radio" name="inputTipoAyuno" id="radio204" value="20-4">
-                                            <label for="radio204">20-4</label>
+                                    <p>Categoría:<span> *</span></p>
+                                    <div class="checkContainer">
+                                        <input type="checkbox" id="recetaCategoria1" name="recetaCategoria1"
+                                            value="Vegetariana">
+                                        <label for="recetaCategoria1"> Vegetariana</label><br>
+                                        <input type="checkbox" id="recetaCategoria2" name="recetaCategoria2" value="Vegana">
+                                        <label for="recetaCategoria2"> Vegana</label><br>
+                                        <input type="checkbox" id="recetaCategoria3" name="recetaCategoria3" value="Keto">
+                                        <label for="recetaCategoria3"> Keto</label>
+                                        <input type="checkbox" id="recetaCategoria4" name="recetaCategoria4"
+                                            value="Tradicional">
+                                        <label for="recetaCategoria4"> Tradicional</label>
+                                        <input type="checkbox" id="recetaCategoria5" name="recetaCategoria5"
+                                            value="Libre de gluten">
+                                        <label for="recetaCategoria5"> Libre de gluten</label>
+                                        <input type="checkbox" id="recetaCategoria6" name="recetaCategoria6"
+                                            value="Mediterránea">
+                                        <label for="recetaCategoria6"> Mediterránea</label>
+                                        <input type="checkbox" id="recetaCategoria7" name="recetaCategoria7" value="Paleo">
+                                        <label for="recetaCategoria7"> Paleo</label>
+                                    </div>
+                                </div>
+                                <div class="fieldFile">
+                                    <p>Foto de Receta</p>
+                                    <div class="recetaFoto">
+                                        <div class="showReceta" id="showReceta"></div>
+                                        <div class="uploadReceta">
+                                            <img id="imgInputReceta" class="receta">
+                                            <button class="btnSubirFoto" type="button"
+                                                onclick="AbrirCloudinary('imgInputReceta')"> Subir Foto</button>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="buttonRegistro" id="buttonRegistroAyuno" type="button">Hacer
-                                    Registro</button>
+                                <button class="buttonRegistro" id="buttonRegistroReceta" type="button">Hacer
+                                    Registro
+                                </button>
                             </form>
                         </div>
                         <div class="recomendacionAyuno">
@@ -704,7 +1129,7 @@
     </style>
 
     <!-- FOOTER------------------------------------------------------>
-    <footer class="footerContainer">
+    <!-- <footer class="footerContainer">
         <div class="logo">
             <a href="#">eFast</a>
         </div>
@@ -726,10 +1151,11 @@
                 <a href="http://twitter.com"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
 
     <!-- ENLACES A JAVASCRIPT------------------------------------------------------>
+
     <script src="./Js/Controller/perfilSideBar.js"></script>
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -741,16 +1167,15 @@
     <script src="./Js/Services/SubirImagenService.js"></script>
     <script src="./Js/Services/GeneralService.js"></script>
 
-
-    <script src="../Public/Js/Controller/globales.js"></script>
-
-    <script src="./Js/Controller/perfilActividades.js"></script>
-    <script src="./Js/Controller/perfilAyuno.js"></script>
-    <script src="./Js/Controller/perfilEnfermedades.js"></script>
-    <script src="./Js/Controller/perfilInformacion.js"></script>
-    <script src="./Js/Controller/perfilLogros.js"></script>
     <script src="./Js/Controller/perfilPeso.js"></script>
+    <script src="./Js/Controller/perfilInformacion.js"></script>
+
+    <script src="./Js/Controller/perfilEnfermedades.js"></script>
+    <script src="./Js/Controller/perfilActividades.js"></script>
+    <script src="./Js/Controller/perfilLogros.js"></script>
+    <script src="./Js/Controller/perfilAyuno.js"></script>
     <script src="./Js/Controller/perfilRecetas.js"></script>
+
 
 
 

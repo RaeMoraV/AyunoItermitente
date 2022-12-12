@@ -1,10 +1,6 @@
-.fondoNegro {
-    position: fixed;
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 50;
+
+.hidden {
+    display: "none";
 }
 
 
@@ -19,11 +15,149 @@
     height: 10vh;
 }
 
+
+
+
+/* NAV */
+
+
+.navMobile .logo a,
+.navDesktop .logo a {
+    color: var(--col-green);
+}
+
+/* NAV MOBILE ONLY */
+
+.navMobile #menuButton .whiteBar {
+    background-color: var(--col-green);
+}
+
+#menu {
+    background: var(--col-lightgray);
+}
+
+
+#menu a {
+    font-size: 20px;
+    color: var(--col-darkgray);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+#menu a:hover {
+    color: var(--col-green);
+}
+
+.navDesktop .links li:last-child {
+    border: 2px solid var(--color-lightgreen1);
+}
+
+.navDesktop .links a {
+    color: var(--color-lightgreen1);
+}
+
+.navDesktop .links a:last-child {
+    color: var(--color-lightgreen1);
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+.footerContainer{
+    width: 100%;
+    background-color: var(--col-lightgray);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10px;
+    height: fit-content;
+}
+
+.footerContainer .footerContent .logo{
+    height: 45px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.footerContainer .footerContent .logo a{
+    color: var(--col-green);
+}
+
+.footerContainer .footerContent .textFooter {  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.footerContainer .footerContent .textFooter .links {  
+    font-size: 14px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.footerContainer .footerContent .textFooter .links li {  
+    margin-right: 10px;
+}
+
+.footerContainer .footerContent .textFooter .links li:last-child{
+    margin-right: 0;
+}
+
+.footerContainer .footerContent .textFooter .links a{
+    color: var(--col-green);
+    text-decoration: underline;
+}
+
+.footerContainer .footerContent .textFooter .disclaimer{
+    font-size: 14px;
+    color: var(--col-green);
+}
+
+.footerContainer .social{
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer .social .iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:35px;
+    height:35px;
+    background-color: var(--col-green);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.footerContainer .social .iconContainer a {
+    font-size: 20px;
+    color: var(--col-lightgray);
+}
+
 /* BANNER */
 
 .bannerPrincipal {
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url(../Img/index/portada.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../Img/index/portada.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -56,7 +190,7 @@
 
 /* BANNER - BOTON INSCRIPCION */
 
-#buttonRegistrate {
+#buttonRegistrate,#buttonPerfilIndex {
     padding: 15px 40px;
     background-color: var(--col-green);
     max-width: 200px;
@@ -157,7 +291,7 @@
 
 /* BANNER - BOTON INICIO SESION */
 .bannerIngreso {
-    margin-top:50px;
+    margin-top: 50px;
     color: #ffffff;
     font-size: 15px;
 }
@@ -335,18 +469,28 @@
     width: 100%;
 }
 
-.registroPrincipal .foto .uploadPhoto {
-    width: 25%;
-    height: 70px;
+.butonUploadPhoto {
+    height: 30px;
 }
 
+.registroPrincipal .uploadPhoto {
+    width: 100%;
+    height: 30px;
+}
+
+
+
 .registroPrincipal .showPhoto {
-    width: 75%;
-    height: 100px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 350px;
     border: 3px solid #5b5b5b;
+}
+
+.showPhoto img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .registroPrincipal .inputFotoPerfil {
@@ -354,7 +498,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 30px;
     background-color: #5b5b5b;
     cursor: pointer;
 }
@@ -374,11 +518,11 @@
 
 .registroPrincipal .avatar {
     height: 60%;
-    width: 60%;    
+    width: 60%;
 }
 
 .registroPrincipal .bannerIngreso {
-    margin-top:50px;
+    margin-top: 50px;
     color: #ffffff;
     font-size: 20px;
 }
@@ -527,7 +671,8 @@
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background: var(--col-gray);;
+    background: var(--col-gray);
+    ;
 }
 
 .beneficioContenedor .encabezadoBeneficio {
@@ -594,7 +739,7 @@
 
 .planesEncabezado p {
     font-size: 16px;
-    text-align: center; 
+    text-align: center;
 }
 
 .tarjetasPlanes {
@@ -606,7 +751,7 @@
 .tarjetaPlan {
     width: 90%;
     margin-bottom: 30px;
-    box-shadow: 9px 11px 28px -10px rgba(0,0,0,0.75);
+    box-shadow: 9px 11px 28px -10px rgba(0, 0, 0, 0.75);
     border-radius: 10px;
     padding: 10px;
 }
@@ -628,7 +773,7 @@
     width: 60%;
 }
 
-.explicacionPlanes p{
+.explicacionPlanes p {
     margin-bottom: 10px;
 }
 
@@ -724,7 +869,7 @@
     text-transform: uppercase;
     font-size: 32px;
     margin-bottom: 100px;
-    
+
 }
 
 .fieldContacto {
@@ -748,7 +893,7 @@
 /* MEDIA QUERIES */
 
 @media (min-width: 576px) {
-    #buttonRegistrate {
+    #buttonRegistrate, buttonPerfilIndex {
         padding: 20px 40px;
         max-width: 250px;
         text-transform: uppercase;
@@ -758,7 +903,7 @@
     .bannerPrincipal .bannerTitulo {
         font-size: 40px;
     }
-    
+
     .bannerPrincipal .bannerDescripcion {
         font-size: 20px;
     }
@@ -768,7 +913,7 @@
     }
 
     .planesEncabezado p {
-        font-size: 18px; 
+        font-size: 18px;
     }
 
     .tarjetasPlanes {
@@ -797,8 +942,8 @@
     .disclaimerPlanes {
         font-size: 14px;
     }
-    
-    
+
+
     .tarjetaCita {
         display: flex;
         flex-direction: column;
@@ -806,37 +951,37 @@
         max-width: 350px;
         height: 350px;
     }
-    
+
     .tarjetaCita i {
         top: -25px;
         left: 25px;
         font-size: 50px;
     }
-    
+
     .tarjetaCita q {
         font-size: 18px;
     }
-    
+
     .tarjetaCita p {
         font-size: 22px;
     }
-    
+
     /* CONTACTO */
-    
+
     .seccionContacto video {
         display: none;
     }
-    
+
     .contenidoContacto h2 {
         text-transform: uppercase;
         font-size: 32px;
         margin-bottom: 100px;
     }
-    
+
     .fieldContacto {
         margin-bottom: 40px;
     }
-    
+
     .fieldContacto h3 {
         font-size: 24px;
         font-weight: 700;
@@ -849,7 +994,7 @@
 
 @media (min-width: 768px) {
     .tarjetaQueEs {
-        box-shadow: 12px 8px 20px -5px rgba(138,138,138,0.75);
+        box-shadow: 12px 8px 20px -5px rgba(138, 138, 138, 0.75);
         border-radius: 5px;
     }
 
@@ -864,16 +1009,16 @@
     .beneficioContenedor .listaBeneficios .beneficio {
         max-width: 350px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio i {
         font-size: 50px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
         font-weight: bold;
         font-size: 28px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
         font-size: 20px;
     }
@@ -934,6 +1079,7 @@
         font-size: 18px;
 
     }
+
     .fieldContacto p {
         font-size: 14px;
     }
@@ -957,20 +1103,20 @@
     .beneficioContenedor .listaBeneficios .beneficio {
         max-width: 250px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio i {
         font-size: 30px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
         font-size: 20px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
         font-size: 15px;
     }
-    
-    .seccionPlanes{
+
+    .seccionPlanes {
         padding: 40px;
     }
 
@@ -992,37 +1138,37 @@
         flex-direction: column;
         justify-content: space-between;
     }
-    
+
     .contenidoPlanes {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 15px;
     }
-    
+
     .contenidoPlanes h3 {
         font-size: 28px;
         margin-bottom: 24px;
     }
-    
+
     .explicacionPlanes {
         font-size: 12px;
         width: 100%;
     }
-    
-    .explicacionPlanes p{
+
+    .explicacionPlanes p {
         margin-bottom: 20px;
         font-size: 14px;
     }
-    
+
     .explicacionPlanes ul li {
         font-size: 14px;
     }
-    
+
     .separadorPlanes {
         display: none;
     }
-    
+
     .disclaimerPlanes {
         font-size: 12px
     }
@@ -1060,7 +1206,7 @@
     #formularioInscripcion {
         max-width: 600px;
         padding: 40px;
-    
+
     }
 
     #formularioInscripcion h2 {
@@ -1144,11 +1290,11 @@
     .beneficioContenedor .listaBeneficios .beneficio i {
         font-size: 50px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
         font-size: 24px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
         font-size: 18px;
     }
@@ -1204,7 +1350,7 @@
         max-width: 800px;
     }
 
-    #buttonRegistrate {
+    #buttonRegistrate,#buttonPerfilIndex {
         padding: 20px 50px;
         background-color: var(--col-green);
         max-width: 300px;
@@ -1214,6 +1360,9 @@
     }
 
     #buttonRegistrate:hover {
+        background-color: #aab998;
+    }
+    #buttonPerfilIndex:hover {
         background-color: #aab998;
     }
 
@@ -1230,7 +1379,7 @@
         font-size: 36px;
         margin-bottom: 50px;
     }
-    
+
     .tarjetaQueEs p {
         font-size: 26px;
         margin-bottom: 20px;
@@ -1264,19 +1413,19 @@
     .beneficioContenedor .listaBeneficios .beneficio {
         max-width: 425px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio i {
         font-size: 60px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios h3 {
         font-size: 38px;
     }
-    
+
     .beneficioContenedor .listaBeneficios .beneficio .textBeneficios p {
         font-size: 24px;
     }
-    
+
     .seccionPlanes {
         height: 100vh;
         padding: 40px;
@@ -1285,11 +1434,11 @@
     .planesEncabezado {
         margin-bottom: 100px;
     }
-    
+
     .planesEncabezado h2 {
         font-size: 60px;
     }
-    
+
     .planesEncabezado p {
         font-size: 24px;
     }
@@ -1302,25 +1451,25 @@
         padding: 10px;
         height: 600px;
     }
-    
+
     .contenidoPlanes h3 {
         font-size: 38px;
         margin-bottom: 50px;
     }
-    
+
     .explicacionPlanes {
         font-size: 12px;
         width: 90%;
     }
-    
-    .explicacionPlanes p{
+
+    .explicacionPlanes p {
         font-size: 20px;
     }
-    
+
     .explicacionPlanes ul li {
         font-size: 18px;
     }
-    
+
     .disclaimerPlanes {
         font-size: 15px;
     }
@@ -1339,7 +1488,7 @@
         justify-content: space-between;
         margin: 0 auto;
     }
-    
+
     .tarjetaCita {
         margin-bottom: 20px;
         padding: 70px 15px 15px;
@@ -1352,11 +1501,11 @@
         left: 40px;
         font-size: 60px;
     }
-    
+
     .tarjetaCita q {
         font-size: 20px;
     }
-    
+
     .tarjetaCita p {
         color: var(--col-green);
         font-size: 30px;

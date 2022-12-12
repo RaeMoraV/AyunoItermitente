@@ -11,6 +11,11 @@ let btnSMLog = document.getElementById('sideMenuLogros');
 let btnSMPlan = document.getElementById('sideMenuPlan');
 let btnSMRec = document.getElementById('sideMenuRecetas');
 
+const toggle = document.querySelector(".toggle")
+const menuDashboard = document.querySelector(".menu-dashboard")
+const iconoMenu = toggle.querySelector("i")
+const enlacesMenu = document.querySelectorAll(".enlace")
+
 btnSMInfo.addEventListener('click', openInfo);
 btnSMPeso.addEventListener('click', openPeso);
 btnSMEnf.addEventListener('click', openEnfermedades);
@@ -18,9 +23,12 @@ btnSMAct.addEventListener('click', openActividades);
 btnSMLog.addEventListener('click', openLogros);
 btnSMPlan.addEventListener('click', openPlan);
 btnSMRec.addEventListener('click', openRecetas);
+toggle.addEventListener("click", abrirSidebar);
+
 
 function openInfo() {
     let option = 1;
+    GetListaUser();
     blockDisplay(option);
 }
 
@@ -41,6 +49,7 @@ function openActividades() {
 
 function openLogros() {
     let option = 5;
+    GetListaLogros();
     blockDisplay(option);
 }
 
@@ -121,13 +130,32 @@ function blockDisplay(pOpcionSM) {
             document.getElementById('recetas').style.display = 'block';
             break;
         default:
-            document.getElementById('informacion').style.display = 'none';
+            document.getElementById('informacion').style.display = 'block';
             document.getElementById('peso').style.display = 'none';
             document.getElementById('enfermedades').style.display = 'none';
             document.getElementById('actividadFisica').style.display = 'none';
             document.getElementById('logroObjetivos').style.display = 'none';
             document.getElementById('planAyuno').style.display = 'none';
-            document.getElementById('recetas').style.display = 'block';
+            document.getElementById('recetas').style.display = 'none';
             break;
     }
 }
+
+function abrirSidebar() {
+    menuDashboard.classList.toggle("open")
+
+    if(iconoMenu.classList.contains("fa-caret-right")){
+        iconoMenu.classList.replace("fa-caret-right", "fa-xmark")
+    }else {
+        iconoMenu.classList.replace("fa-xmark", "fa-caret-right")
+    }
+}
+
+
+
+enlacesMenu.forEach(enlace => {
+    enlace.addEventListener("click", () => {
+        menuDashboard.classList.add("open")
+        iconoMenu.classList.replace("fa-caret-right", "fa-xmark")
+    })
+})

@@ -3,6 +3,8 @@
 
 const apiUrl = 'http://localhost:3000/api/';
 
+
+
 function ImprimirMsjError(pMsj) {
     Swal.fire({
         title: 'Error!',
@@ -65,12 +67,58 @@ function traductorIconoMedalla(pMedalla) {
     }
 }
 
-function traductorEstadoLogro(pEstado){
-    if(pEstado==0){
+function traductorEstadoLogro(pEstado) {
+    if (pEstado == 0) {
         return "Incompleto";
     }
-    else{
+    else {
         return "Completado";
+    }
+}
+
+function imprimirMsjError(pmensaje) {
+
+    Swal.fire({
+        title: 'Error',
+        html: pmensaje,
+        icon: 'error',
+        confirmButtonText: 'OK'
+    });
+
+
+}
+
+function imprimirMsjCorrecto(pmensaje) {
+    Swal.fire({
+        title: 'Genial!',
+        text: pmensaje,
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+}
+
+function resaltarLabelIncorrecto(pLabelID) {
+    let elementLabel = document.getElementById(pLabelID);
+    let styleOrigin = elementLabel.style;
+
+    elementLabel.style = 'color:red;';
+}
+
+function resaltarInputIncorrecto(pInputID) {
+    let elementInput = document.getElementById(pInputID);
+    let styleOrigin = elementInput.style;
+
+    elementInput.style = 'border: 5px solid red;';
+}
+
+function corregirInputcorrecto(pInputID) {
+    let elementInput = document.getElementById(pInputID);
+    let sytleOrigin = elementInput.style;
+    if (pInputID == 'selectorGenero' || pInputID == 'inputFotoPerfil' || pInputID == 'inputFechaNacimiento') {
+        elementInput.style = 'border: 0px ';
+    }
+    else {
+        elementInput.style = 'border: 1px solid black;';
     }
 }
 

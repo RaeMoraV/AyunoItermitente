@@ -2,7 +2,7 @@
 
 /* Perfil - Sección Peso - Tabla */
 
-let listaPesos = [];
+let listaPeso = [];
 
 let btnPeso = document.querySelector('#buttonRegistroPeso');
 let inputPeso = document.querySelector('#inputPeso');
@@ -12,17 +12,18 @@ btnPeso.addEventListener('click', getPesoFecha);
 
 GetListaPeso();
 
+
 async function GetListaPeso() {
     let result = await ProcessGet('ListarPesos', null);
     if (result != null && result.resultado == true) {
-        listaPesos = result.ListaPesosDB;
+        listaPeso = result.ListaPesosDB;
         //Esto me acomoda las fechas en orden cronológico antes de imprimir/graficar
-        listaPesos = listaPesos.sort(
-            (objA, objB) => Number(new Date(objB.FechaRegistroPeso))-Number(new Date(objA.FechaRegistroPeso))  ,
+        listaPeso = listaPeso.sort(
+            (objA, objB) => Number(new Date(objB.FechaRegistroPeso)) - Number(new Date(objA.FechaRegistroPeso)),
         );
-        await ImprimirPesos();
+        console.log(listaPeso);
+        ImprimirPesos();
         graficoPeso();
-        console.log(listaPesos);
     } else {
         ImprimirMsjError(result.msj);
         return;
@@ -33,7 +34,7 @@ async function ImprimirPesos() {
     let tbody = document.querySelector('#datosPeso tbody');
     tbody.innerHTML = '';
 
-    for (let i = 0; i < listaPesos.length; i++) {
+    for (let i = 0; i < listaPeso.length; i++) {
 
         let fila = tbody.insertRow();
         let celdaFechaRegistroPeso = fila.insertCell();
@@ -41,10 +42,10 @@ async function ImprimirPesos() {
         let celdaIMC = fila.insertCell();
         let celdaClasificacionIMC = fila.insertCell();
 
-        celdaPeso.innerHTML = listaPesos[i].Peso;
-        celdaFechaRegistroPeso.innerHTML = listaPesos[i].FechaRegistroPeso;
-        celdaIMC.innerHTML = listaPesos[i].IMC;
-        celdaClasificacionIMC.innerHTML = listaPesos[i].Clasificacion;
+        celdaPeso.innerHTML = listaPeso[i].Peso;
+        celdaFechaRegistroPeso.innerHTML = listaPeso[i].FechaRegistroPeso;
+        celdaIMC.innerHTML = listaPeso[i].IMC;
+        celdaClasificacionIMC.innerHTML = listaPeso[i].Clasificacion;
     }
 }
 
@@ -106,16 +107,17 @@ async function getPesoFecha() {
 
 /* Perfil - Sección Peso - Gráfico  */
 
+
 function graficoPeso() {
     let graphPeso = document.getElementById('graphPeso');
     let graphIMC = document.getElementById('graphIMC');
     let yArray1 = [];
     let yArray2 = [];
     let xArray = [];
-    for (let i = 0; i < listaPesos.length; i++) {
-        yArray1.push(listaPesos[i].Peso);
-        yArray2.push(listaPesos[i].IMC);
-        xArray.push(listaPesos[i].FechaRegistroPeso);
+    for (let i = 0; i < listaPeso.length; i++) {
+        yArray1.push(listaPeso[i].Peso);
+        yArray2.push(listaPeso[i].IMC);
+        xArray.push(listaPeso[i].FechaRegistroPeso);
     }
     let trace1 = [{
         type: 'scatter',
@@ -158,7 +160,7 @@ function graficoPeso() {
             title: "Peso (kg)",
             automargin: true,
             titlefont: { size: 40 },
-            
+
         },
         font: {
             family: 'Noto Serif',
@@ -231,3 +233,24 @@ function validarPeso() {
     return false;
 }
 
+// ABRIR Y CERRAR FORMULARIOS
+const abrirFormularioPeso = document.querySelector('#btnRegistroAbrirPeso');
+const fondoNegroPeso = document.querySelector('.fondoNegro');
+const xCerrarFormularioPeso = document.querySelector('#xFormularioPeso');
+
+abrirFormularioPeso.addEventListener('click', abrirFormularioPesoFunc);
+fondoNegroPeso.addEventListener('click', cerrarFormularioPesoFunc);
+xCerrarFormularioPeso.addEventListener('click', cerrarFormularioPesoFunc);
+
+function abrirFormularioPesoFunc() {
+    document.querySelector('#ingresoDatosPeso').style.display = 'block';
+    document.querySelector('.fondoNegro').style.display = 'block';
+    document.querySelector('body').style.overflowY = 'hidden';
+
+}
+
+function cerrarFormularioPesoFunc() {
+    document.querySelector('#ingresoDatosPeso').style.display = 'none';
+    document.querySelector('.fondoNegro').style.display = 'none';
+    document.querySelector('body').style.overflowY = 'initial';
+}
