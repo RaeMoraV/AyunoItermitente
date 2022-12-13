@@ -896,69 +896,131 @@ tbody.datosTabla tr:nth-child(odd) {
     .buttonEliminar { grid-area: 4 / 5 / 5 / 11; } */
 /*NO TOCAR, PUEDE EDITAR LO QUE ESTA ABAJO*/
 
-
-.nombreReceta h1 {
-    font-size: 48px;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: none;
-    letter-spacing: 2px;
-    color: #000000;
-    padding: 40px; 
+.RecetaInput {
+    display: flex;
+    gap: 30px;
 }
 
-.imgReceta img {
-    max-height: 90%;
-    
-    border-radius: 40px;
-    margin: auto;
-    
-    padding: 20px;
+.recetaLayout {
+    max-width: 400px;
+    box-shadow: 8px 7px 19px 0px rgba(153,153,153,0.75);
+    border-radius: 10px;
+    height: fit-content;
+    position: relative;
+    padding:  40px 15px 20px;
+}
+
+.recetaLayout .nombreReceta h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--col-gray);
+}
+
+
+.recetaLayout .imgReceta img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 50%;
+    
+    border-radius: 50%;
+    margin: 0 auto 35px;
+    background-color: #ffffff;
 }
 
-.categoriaReceta,
-.tipoReceta,
-.tiempoReceta {
+.recetaLayout .categoriaReceta,
+.recetaLayout .tipoReceta,
+.recetaLayout .tiempoReceta {
     text-align: left;
+    display: flex;
+    margin-bottom: 10px;
 }
 
-.pasosReceta h2,
-.pasosReceta p {
-    text-align: justify;
+.recetaLayout .categoriaReceta h3,
+.recetaLayout .tipoReceta h3, 
+.recetaLayout .tiempoReceta h3 {
+    text-align: left;
+    display: flex;
+    width: 100px;
+    color: var(--col-gray);
+    line-height: 1;
+    height: fit-content;
 }
 
-.ingredientesReceta h2,
-.ingredientesReceta p {
-    text-align: justify;
+
+
+.recetaLayout .tiempoReceta {
+    display: flex;
+    flex-direction: column;
+
 }
 
-.buttonEliminar button {
-    float: right;
-    margin-right: 50px;
+.recetaLayout .tiempoReceta p {
+    margin-left: 20px;
+}
+
+.recetaLayout .tiempoReceta p::before {
+    content: '- ';
+}
+
+.recetaLayout .tipoReceta {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: var(--col-green);
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.recetaLayout .tipoReceta p {
+    height: fit-content;
+    line-height: 1;
+}
+
+.recetaLayout .tipoReceta h3 {
+    width: 50px;
+    color: #ffffff;
+}
+
+.recetaLayout .pasosReceta,
+.recetaLayout .ingredientesReceta {
+    background-color: var(--col-green);
+    color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.recetaLayout .pasosReceta h2,
+.recetaLayout .ingredientesReceta h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #FFFFFF;
+}
+
+.recetaLayout .pasosReceta p,
+.recetaLayout .ingredientesReceta p {
+    font-size: 16px;
+}
+
+.recetaLayout .ingredientesReceta p::before {
+    content: '- ';
+}
+
+.recetaLayout .buttonEliminar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.recetaLayout .buttonEliminar button {
+    color: #ffffff;
+    background-color: #3e8e41;
     border: none;
+    padding:3px 5px;
+    border-radius: 5px;
 }
 
-.buttonEliminar button {
-    float: right;
-    margin-right: 50px;
-    border: none;
+.recetaLayout .buttonEliminar button:hover {
+    background-color: #a3cea5;
 }
-
-.buttonEliminar i {
-    font-size: 50px;
-    background-color: rgba(0, 255, 51, 0.5);
-}
-
-.fa-solid:hover {
-    color: #3e8e41;
-}
-
-.fa-solid:active {
-    transform: translateY(4px);
-}
-
-/* FOOTER EXCLUSIVO PARA PERFIL */
