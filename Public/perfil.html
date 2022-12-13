@@ -355,7 +355,6 @@
                         <div class="contenido">
                             <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirPeso">Registro
                                 Nuevo</button>
-                            <button type="button" class="btnAbrirEditar" id="btnEditarPeso">Editar Datos</button>
                             <table class="datosTabla tablePeso" id="datosPeso">
                                 <thead>
                                     <tr>
@@ -399,7 +398,7 @@
                         <div class="contenido">
                             <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirEnfermedad">Registro
                                 Nuevo</button>
-                            <button type="button" class="btnAbrirEditar" id="btnEditarEnfermedad">Editar Datos</button>
+                    
                             <table class="datosTabla tableEnfermedades" id="datosEnfermedad">
                                 <thead>
                                     <tr>
@@ -458,7 +457,6 @@
                         <div class="contenido">
                             <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirEjercicio">Registro
                                 Nuevo</button>
-                            <button type="button" class="btnAbrirEditar" id="btnEditarEjercicio">Editar Datos</button>
                             <table class="datosTabla tableActividades" id="datosActividad">
                                 <thead>
                                     <tr>
@@ -529,7 +527,6 @@
                         <div class="contenido">
                             <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirLogro">Registro
                                 Nuevo</button>
-                            <button type="button" class="btnAbrirEditar" id="btnEditarLogro">Editar Datos</button>
                             <table class="datosTabla tableActividades" id="datosLogros">
                                 <thead>
                                     <tr>
@@ -664,7 +661,6 @@
                         <div class="contenido">
                             <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirAyuno">Registro
                                 Nuevo</button>
-                            <button type="button" class="btnAbrirEditar" id="btnEditarAyuno">Editar Datos</button>
                             <table class="datosTabla" id="tablaRegistroAyuno">
                                 <thead>
                                     <th>Fecha inicio</th>
@@ -737,7 +733,6 @@
                             </div>
                             <button type="button" class="buttonAbrirForm" id="btnRegistroAbrirReceta">Registro
                                 Nuevo</button>
-                            <button type="button" class="btnAbrirEditar" id="btnEditarReceta">Editar Datos</button>
                             <div class="RecetaInput" id="imprimirRecetas">
                             </div>
                         </div>
@@ -747,69 +742,75 @@
                             </div>
                             <h3>Registrar Receta</h3>
                             <form>
-                                <div class="field">
-                                    <label for="inputNombreReceta">Nombre:<span> *</span> </label>
-                                    <input type="text" name="" id="inputNombreReceta">
-                                </div>
-                                <div class="field">
-                                    <label for="">Ingredientes:<span> *</span> </label>
-                                </div>
-                                <div class="field">
-                                    <label for="inputIngrediente1">Ingrediente 1: </label>
-                                    <input type="text" name="" id="inputIngrediente1">
-                                </div>
-                                <div class="field">
-                                    <label for="inputIngrediente2">Ingrediente 2: </label>
-                                    <input type="text" name="" id="inputIngrediente2">
-                                </div>
-                                <div class="field">
-                                    <label for="inputIngrediente3">Ingrediente 3: </label>
-                                    <input type="text" name="" id="inputIngrediente3">
-                                </div>
-                                <div class="field">
-                                    <label for="inputIngrediente4">Ingrediente 4: </label>
-                                    <input type="text" name="" id="inputIngrediente4">
-                                </div>
-                                <div class="field">
-                                    <label for="inputIngrediente5">Ingrediente 5: </label>
-                                    <input type="text" name="" id="inputIngrediente5">
-                                </div>
-                                <div class="field">
-                                    <label for="inputIngrediente6">Ingrediente 6: </label>
-                                    <input type="text" name="" id="inputIngrediente6">
-                                </div>
-                                <div class="field">
-                                    <label for="">Preparacion<span> *</span> </label>
-                                </div>
-                                <div class="field">
-                                    <label for="inputPaso1">Paso 1: </label>
-                                    <input type="text" name="" id="inputPaso1">
-                                </div>
-                                <div class="field">
-                                    <label for="inputPaso2">Paso 2: </label>
-                                    <input type="text" name="" id="inputPaso2">
-                                </div>
-                                <div class="field">
-                                    <label for="inputPaso3">Paso 3: </label>
-                                    <input type="text" name="" id="inputPaso3">
-                                </div>
-                                <div class="field">
-                                    <label for="inputPaso4">Paso 4: </label>
-                                    <input type="text" name="" id="inputPaso4">
-                                </div>
-                                <div class="field">
-                                    <label for="inputPaso5">Paso 5: </label>
-                                    <input type="text" name="" id="inputPaso5">
-                                </div>
-                                <div class="field">
-                                    <label for="inputPaso6">Paso 6: </label>
-                                    <input type="text" name="" id="inputPaso6">
+                                <div class="prepReceta">
+                                    <div>
+                                        <div class="field">
+                                            <label for="inputNombreReceta">Nombre:<span> *</span> </label>
+                                            <input type="text" name="" id="inputNombreReceta">
+                                        </div>
+                                        <div class="field">
+                                            <label for="">Ingredientes:<span> *</span> </label>
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputIngrediente1">Ingrediente 1: </label>
+                                            <input type="text" name="" id="inputIngrediente1">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputIngrediente2">Ingrediente 2: </label>
+                                            <input type="text" name="" id="inputIngrediente2">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputIngrediente3">Ingrediente 3: </label>
+                                            <input type="text" name="" id="inputIngrediente3">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputIngrediente4">Ingrediente 4: </label>
+                                            <input type="text" name="" id="inputIngrediente4">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputIngrediente5">Ingrediente 5: </label>
+                                            <input type="text" name="" id="inputIngrediente5">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputIngrediente6">Ingrediente 6: </label>
+                                            <input type="text" name="" id="inputIngrediente6">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="field">
+                                            <label for="">Preparacion<span> *</span> </label>
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputPaso1">Paso 1: </label>
+                                            <input type="text" name="" id="inputPaso1">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputPaso2">Paso 2: </label>
+                                            <input type="text" name="" id="inputPaso2">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputPaso3">Paso 3: </label>
+                                            <input type="text" name="" id="inputPaso3">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputPaso4">Paso 4: </label>
+                                            <input type="text" name="" id="inputPaso4">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputPaso5">Paso 5: </label>
+                                            <input type="text" name="" id="inputPaso5">
+                                        </div>
+                                        <div class="field">
+                                            <label for="inputPaso6">Paso 6: </label>
+                                            <input type="text" name="" id="inputPaso6">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="field">
                                     <label for="inputTiempoReceta">Tiempo de preparacion:<span> *</span> </label>
                                     <input type="number" name="" id="inputTiempoReceta">
                                 </div>
-                                <div class="field">
+                                <div class="fieldSelect">
                                     <label for="inputNombreMeta">Tipo de comida:<span> *</span> </label>
                                     <select name="" id="inputTipoReceta">
                                         <option value="" disabled selected hidden>--Seleccione un tipo de comida--

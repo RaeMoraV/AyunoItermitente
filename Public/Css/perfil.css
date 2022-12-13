@@ -338,7 +338,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .ingresoDatos {
     background-color: var(--col-lightgray);
-    max-width: 500px;
+    max-width: 600px;
     height: fit-content;
     padding: 30px;
     border-radius: 5px;
@@ -453,7 +453,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .ingresoDatos .field label {
     color: var(--col-gray);
-    width: 70px;
+    width: 120px;
     text-transform: uppercase;
     font-size: 15px;
 }
@@ -490,16 +490,16 @@ tbody.datosTabla tr:nth-child(odd) {
 }
 
 .ingresoDatos .fieldRadio label {
-    color: var(--color-lightgreen1);
+    color: var(--col-gray);
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .ingresoDatos .fieldRadio p {
-    color: var(--color-lightgreen1);
-    font-weight: 600;
+    color: var(--col-gray);
     margin-bottom: 5px;
     text-transform: uppercase;
+    font-size: 15px;
 }
 
 
@@ -546,6 +546,17 @@ tbody.datosTabla tr:nth-child(odd) {
     height: 35px;
     padding: 0 10px;
 }
+
+.field select {
+    width: 300px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 2px;
+    padding-left: 5px;
+    height: 35px;
+    padding: 0 10px;
+}
+
 
 #editarDatosInformacion .fieldSelect .selectFechas {
     width: 100%;
@@ -601,6 +612,10 @@ tbody.datosTabla tr:nth-child(odd) {
     align-items: center;
 }
 
+.fieldRadio .radioOption {
+    display: flex;
+    align-items: center;
+}
 
 #editarDatosInformacion .fieldRadio input {
     margin-left: 10px;
@@ -877,6 +892,15 @@ tbody.datosTabla tr:nth-child(odd) {
     width: 60%;
 }
 
+#ingresoDatosRecetas {
+    max-width: 1400px;
+}
+
+.prepReceta {
+    display: flex;
+    flex-direction: row;
+}
+
 
 /*CSS para generar recetas display*/
 /*NO TOCAR, ES LA ESTRUCTURA DE LAS RECETAS*/
@@ -905,15 +929,19 @@ tbody.datosTabla tr:nth-child(odd) {
 .RecetaInput {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
 }
 
 .recetaLayout {
-    max-width: 400px;
+    width: 400px;
     box-shadow: 8px 7px 19px 0px rgba(153,153,153,0.75);
     border-radius: 10px;
-    height: fit-content;
+    height: 800px;
     position: relative;
     padding:  40px 15px 20px;
+    overflow-y: auto;
 }
 
 .recetaLayout .nombreReceta h1 {
@@ -926,7 +954,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .recetaLayout .imgReceta img {
     display: block;
-    width: 50%;
+    width: 35%;
     
     border-radius: 50%;
     margin: 0 auto 35px;
@@ -1030,16 +1058,7 @@ tbody.datosTabla tr:nth-child(odd) {
 .recetaLayout .buttonEliminar button:hover {
     background-color: #a3cea5;
 }
-.buttonEliminar button {
-    float: right;
-    margin-right: 50px;
-    border: none;
-}
 
-.buttonEliminar i {
-    font-size: 50px;
-    background-color: #f4f4f4;
-}
 
 .fa-solid:hover {
     color: #3e8e41;
@@ -1049,17 +1068,14 @@ tbody.datosTabla tr:nth-child(odd) {
     transform: translateY(4px);
 }
 
-.buttonEliminar .fa-solid {
-    font-size: 30px;
-    align-items: center;
-}
 
 #datosLogros .fa-solid {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 #ingresoDatosLogrosObjetivos .fa-solid {
-    font-size: 50px;
+    font-size: 30px;
+    margin-left: 20px;
 }
 
 #datosLogros .fa-heart,
