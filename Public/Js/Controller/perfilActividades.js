@@ -47,12 +47,49 @@ async function ImprimirActividades() {
         let celdaFechaFin = fila.insertCell();
         let celdaTiempoTotal = fila.insertCell();
         let celdaTipo = fila.insertCell();
-
+        let celdaAcciones = fila.insertCell();
         celdaFecha.innerHTML = listaActividades[i].Fecha;
         celdaHoraInicio.innerHTML = listaActividades[i].HoraInicio;
         celdaFechaFin.innerHTML = listaActividades[i].HoraFin;
         celdaTiempoTotal.innerHTML = listaActividades[i].TotalTiempo;
         celdaTipo.innerHTML = listaActividades[i].Tipo;
+
+        let divButtonEliminar = document.createElement('div');
+        divButtonEliminar.className = "buttonEliminar";
+        let buttonbuttonEliminar = document.createElement("button");
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de registro de actividad física',
+                text: 'Desea eliminar la actividad ' + listaActividades[i].Tipo + ' registrada el ' + listaActividades[i].Fecha + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaActividades[i]._id
+                };
+                let result = await ProcessDelete('EliminarActividad', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaActividad();
+            }
+        };
+        let iButtonEliminar = document.createElement("i");
+        iButtonEliminar.className = "fa-solid fa-trash-can";
+        buttonbuttonEliminar.appendChild(iButtonEliminar);
+        divButtonEliminar.appendChild(buttonbuttonEliminar);
+        celdaAcciones.appendChild(divButtonEliminar);
     }
 }
 
