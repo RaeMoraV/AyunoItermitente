@@ -131,39 +131,63 @@ async function getActividad() {
 
 
 function validarActividad(sFecha, sInicioHora, sFinHora, sActividad, DateInicio, DateFinal) {
-
+    let bandera = false;
+    let cadena = '';
     //Esta sección valida que haya información en las horas y fechas
     if (sFecha == '' || sFecha == null || sFecha == undefined) {
-        document.getElementById("inputFechaActividad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la fecha' });
-        return true;
+        resaltarInputIncorrecto("inputFechaActividad");
+        cadena += 'Ingrese la fecha<br>';
+        bandera = true;
     }
-    else if (sInicioHora == '' || sInicioHora == null || sInicioHora == undefined) {
-        document.getElementById("inputHoraInicioActividad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de inicio' });
-        return true;
+    else {
+        corregirInputPeso("inputFechaActividad");
     }
-    else if (sFinHora == '' || sFinHora == null || sFinHora == undefined) {
-        document.getElementById("inputHoraFinActividad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese la hora de fin' });
-        return true;
+
+    if (sFinHora == '' || sFinHora == null || sFinHora == undefined) {
+        resaltarInputIncorrecto("inputHoraFinActividad");
+        cadena += 'Ingrese la hora de fin<br>';
+        bandera = true;
     }
-    else if (sActividad == '' || sActividad == null || sActividad == undefined) {
-        document.getElementById("inputNombreActividad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Seleccione un ejercicio' });
-        return true;
+    else {
+        corregirInputPeso("inputHoraFinActividad");
     }
-    //Valida que la fecha Inicial no sea mayor a la fecha final
-    else if (DateInicio >= DateFinal) {
-        document.getElementById("inputHoraInicioActividad").focus();
-        Swal.fire({ icon: 'error', title: 'Horas invalidas', text: 'La hora de fin no puede ser antes que la hora de inicio' });
-        return true;
+
+    if (sActividad == '' || sActividad == null || sActividad == undefined) {
+        resaltarInputIncorrecto("inputNombreActividad");
+        cadena += 'Seleccione un ejercicio<br>';
+        bandera = true;
     }
-    else if (DateInicio > new Date()) {
-        document.getElementById("inputHoraInicioActividad").focus();
-        Swal.fire({ icon: 'error', title: 'Horas invalidas', text: 'La fecha no puede ser en el futuro' });
-        return true;
+    else {
+        corregirInputPeso("inputNombreActividad");
     }
+    if (sInicioHora == '' || sInicioHora == null || sInicioHora == undefined) {
+        resaltarInputIncorrecto("inputHoraInicioActividad");
+        cadena += 'Ingrese la hora de inicio<br>';
+        bandera = true;
+    }
+    else {
+        if (DateInicio >= DateFinal) {
+            resaltarInputIncorrecto("inputHoraInicioActividad");
+            cadena += 'La hora de fin no puede ser antes que la hora de inicio<br>';
+            bandera = true;
+        }
+        else {
+            if (DateInicio > new Date()) {
+                resaltarInputIncorrecto("inputHoraInicioActividad");
+                cadena += 'La fecha no puede ser en el futuro<br>';
+                bandera = true;
+            }
+            else {
+                corregirInputPeso("inputHoraInicioActividad");
+            }
+        }
+
+    }
+
+    if (bandera == true) {
+        imprimirMsjError(cadena);
+    }
+    return bandera;
 }
 
 function crearArreglosActividad() {

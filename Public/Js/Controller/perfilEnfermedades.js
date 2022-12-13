@@ -123,7 +123,7 @@ function validarEnfermedades(psNombre, psDescripcion, psEstado,pTratamiento) {
     if (psNombre == '' || psNombre == null || psNombre == undefined) {
 
         resaltarInputIncorrecto("inputNombreEnfermedad");
-        cadena += 'Ingrese un nombre<br>'
+        cadena += 'Ingrese un nombre<br>';
         bandera = true;
     }
     else {
@@ -132,7 +132,7 @@ function validarEnfermedades(psNombre, psDescripcion, psEstado,pTratamiento) {
 
     if (psDescripcion == '' || psDescripcion == null || psDescripcion == undefined) {
         resaltarInputIncorrecto("inputDescripcionEnfermedad");
-        cadena += 'Ingrese una descripción para la enfermedad<br>'
+        cadena += 'Ingrese una descripción para la enfermedad<br>';
         bandera = true;
     }
     else {
@@ -141,7 +141,7 @@ function validarEnfermedades(psNombre, psDescripcion, psEstado,pTratamiento) {
     }
     if (!document.getElementById("radioNoConcurrencia").checked && !document.getElementById("radioConcurrencia").checked) {
         resaltarInputIncorrecto("cajitaRadio");
-        cadena += 'Elija una opción de estado de enfermedad<br>'
+        cadena += 'Elija una opción de estado de enfermedad<br>';
         bandera = true;
     }
     else {
@@ -150,7 +150,7 @@ function validarEnfermedades(psNombre, psDescripcion, psEstado,pTratamiento) {
 
     if (pTratamiento == '' || pTratamiento == null || pTratamiento == undefined) {
         resaltarInputIncorrecto("inputTratamientoEnfermedad");
-        cadena += 'Ingrese el tratamiento a esta enfermedad<br>'
+        cadena += 'Ingrese el tratamiento a esta enfermedad<br>';
         bandera = true;
     }
     else {
