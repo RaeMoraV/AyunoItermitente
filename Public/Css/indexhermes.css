@@ -124,14 +124,11 @@ h2, h3, p{
 }
 .ttlImagenServicio{
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 6;
     height:60%;
     width:80%;
-    display: flex;
-    justify-content: left;
-    flex-direction: row;
-    align-content: flex-end;
+    text-align: center;
 }
 .tituloServicios {
     color: #fff;
@@ -160,7 +157,7 @@ h2, h3, p{
     align-items: center;
     flex-direction: column;
     background-size: cover;
-    background:linear-gradient(rgb(29,37,73), rgb(252, 252, 252),rgb(29,37,73));
+    background-image: linear-gradient(rgb(252, 252, 252),rgb(29,37,73));
     width: 100%;
     height: 120vh;
     padding: 40px 20px;
@@ -182,16 +179,16 @@ h2, h3, p{
 
 .recuadroEquipo img{
     width: 90%;
-    height: 90%;
+    height: 80%;
     margin-bottom: 80px; 
-    border-radius: 5%;
 }
 
 .ttlPerfil{
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom:20px;
     height:90%;
     width:80%;
+    color:#fff;
     display: flex;
     justify-content: left;
     flex-direction: row;
@@ -211,7 +208,10 @@ h2, h3, p{
     align-content: flex-end;
 }
 /*Hasta aqui los estilos de la seccion conocenos hecho por SVC*/
-
+.telContact{
+    font-weight: bold;
+    font-size: 30px;
+}
 .seccionContactenos{
     position: relative;
     width: 100%;
