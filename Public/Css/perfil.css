@@ -1059,6 +1059,22 @@ tbody.datosTabla tr:nth-child(odd) {
     background-color: #a3cea5;
 }
 
+#FiltroTablas {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#FiltroTablas label {
+    font-size: 20px;
+    color: var(--col-gray);
+
+}
+
+#FiltroTablas input {
+    height: 30px;
+    
+}
 
 .fa-solid:hover {
     color: #3e8e41;
