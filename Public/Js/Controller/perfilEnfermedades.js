@@ -46,13 +46,50 @@ async function ImprimirEnfermedades() {
         let celdaDescripcion = fila.insertCell();
         let celdaEstado = fila.insertCell();
         let celdaTratamiento = fila.insertCell();
+        let celdaAcciones = fila.insertCell();
 
         celdaNombre.innerHTML = listaEnfermedades[i].Nombre;
         celdaDescripcion.innerHTML = listaEnfermedades[i].Descripcion;
         celdaEstado.innerHTML = listaEnfermedades[i].Estado;
         celdaTratamiento.innerHTML = listaEnfermedades[i].Tratamiento;
+
+        let divButtonEliminar = document.createElement('div');
+        divButtonEliminar.className = "buttonEliminar";
+        let buttonbuttonEliminar = document.createElement("button");
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de registro de enfermedad',
+                text: 'Desea eliminar la enfermedad registrada ' + listaEnfermedades[i].Nombre + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaEnfermedades[i]._id
+                };
+                let result = await ProcessDelete('EliminarEnfermedad', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaEnfermedades();
+            }
+        };
+        let iButtonEliminar = document.createElement("i");
+        iButtonEliminar.className = "fa-solid fa-trash-can";
+        buttonbuttonEliminar.appendChild(iButtonEliminar);
+        divButtonEliminar.appendChild(buttonbuttonEliminar);
+        celdaAcciones.appendChild(divButtonEliminar);
     }
-    //orderEnfermedadTable();
 }
 
 async function getEnfermedad() {
@@ -62,7 +99,7 @@ async function getEnfermedad() {
     let sTratamiento = inputTratamientoEnfermedad.value;
     let result = null;
 
-    if (validarEnfermedades(sNombre, sDescripcion, sEstado,sTratamiento) == true) {
+    if (validarEnfermedades(sNombre, sDescripcion, sEstado, sTratamiento) == true) {
         return;
     }
 
@@ -116,7 +153,7 @@ function radioEstadoEval() {
     return option;
 }
 
-function validarEnfermedades(psNombre, psDescripcion, psEstado,pTratamiento) {
+function validarEnfermedades(psNombre, psDescripcion, psEstado, pTratamiento) {
     let bandera = false;
     let cadena = '';
 

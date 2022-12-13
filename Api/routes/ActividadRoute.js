@@ -53,5 +53,23 @@ router.get('/ListarActividadRealizada', (req, res) => {
         }
     });
 });
+router.delete('/EliminarActividad', (req, res) => {
+    let body = req.body;
+    ActividadRealizada.remove({ _id: body._id }, (err, result) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'Ocurrió un error inesperado y no se elimino la actividad',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Actividad eliminada de manera correcta',
+                result
+            });
+        }
+    });
+});
 
 module.exports = router
