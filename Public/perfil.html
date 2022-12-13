@@ -65,16 +65,12 @@
                     <i class="fa-solid fa-utensils"></i>
                     <span>Recetas</span>
                 </div>
-                <div class="enlace">
-                    <i class="fa-solid fa-circle-left"></i>
-                    <a href="./index.html"><span>Volver</span></a>
-                </div>
             </div>
         </aside>
         <!-- MAIN------------------------------------------------------>
         <div class="mainContainer">
             <header class="perfilNav">
-                <a href="">Inicio</a>
+                <a href="index.html">Inicio</a>
             </header>
             <main>
                 <!--CONTENEDOR SECCIONES-------------------------------------------------->
@@ -411,6 +407,7 @@
                                         <th>Descripción</th>
                                         <th>Estado</th>
                                         <th>Tratamiento</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -430,9 +427,9 @@
                                     <label for="inputDescripcionEnfermedad">Descripción:<span> *</span> </label>
                                     <input type="text" name="" id="inputDescripcionEnfermedad">
                                 </div>
-                                <div class="fieldRadio">
+                                <div class="fieldRadio" id="cajitaRadio">
                                     <p>Estado:<span> *</span></p>
-                                    <div class="radioContainer">
+                                    <div class="radioContainer" >
                                         <div class="radioOption">
                                             <input type="radio" name="inputEstadoEnfermedad" id="radioNoConcurrencia"
                                                 value="Activa">
@@ -470,6 +467,7 @@
                                         <th>Hora fin</th>
                                         <th>Tiempo total (minutos)</th>
                                         <th>Tipo de actividad</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -589,7 +587,8 @@
                                         </div>
                                         <div class="radioOption">
                                             <input type="radio" name="inputMedalla" id="tipoMedalla4" value="4">
-                                            <label for="tipoMedalla4"><i class="fa-solid fa-dumbbell"></i></label>
+                                            <label for="tipoMedalla4"><i class="fa-solid fa-face-smile-beam"></i>
+                                            </label>
                                         </div>
                                         <div class="radioOption">
                                             <input type="radio" name="inputMedalla" id="tipoMedalla5" value="5">

@@ -252,28 +252,45 @@ function validarPeso() {
     let mesPeso = Number(sInputFechaPeso.split("-")[1]) - 1; // Se le resta un dia al mes porque empieza en 0=Enero
     let diaPeso = sInputFechaPeso.split("-")[2];
     let nuevaFechaPeso = new Date(anioPeso, mesPeso, diaPeso, 0, 0, 0);
+    let cadena = '';
+    let bandera = false;
 
-    if (iPeso == '' || iPeso == null || iPeso == 0) {
-        document.getElementById("inputPeso").focus();
-        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese un peso' });
-        return true;
+
+    if (iPeso < 25 || iPeso > 635) {
+        resaltarInputIncorrecto("inputPeso");
+        cadena += 'Ingrese un peso real<br>';
+        bandera = true;
     }
-    else if (iPeso < 25 || iPeso > 635) {
-        document.getElementById("inputPeso").focus();
-        Swal.fire({ icon: 'error', title: 'Información invalida', text: 'Ingrese un peso real' });
-        inputPeso.focus();
-        return true;
+    else {
+        if (iPeso == '' || iPeso == null || iPeso == 0) {
+            resaltarInputIncorrecto("inputPeso");
+            cadena += 'Ingrese un peso<br>';
+            bandera = true;
+        }
+        else {
+            corregirInputPeso("inputPeso");
+        }
     }
-    else if (sInputFechaPeso == '' || sInputFechaPeso == null) {
-        document.getElementById("inputFecha").focus();
-        Swal.fire({ icon: 'error', title: 'Información faltante', text: 'Ingrese una fecha' });
-        return true;
-    } else if (nuevaFechaPeso > new Date()) {
-        document.getElementById("inputFecha").focus();
-        Swal.fire({ icon: 'error', title: 'Información invalida', text: 'No se puede ingresar una fecha en el futuro' });
-        return true;
+
+    if (nuevaFechaPeso > new Date()) {
+        resaltarInputIncorrecto("inputFecha");
+        cadena += 'No se puede ingresar una fecha en el futuro';
+        bandera = true;
     }
-    return false;
+    else {
+        if (sInputFechaPeso == '' || sInputFechaPeso == null) {
+            resaltarInputIncorrecto("inputFecha");
+            cadena += 'Ingrese una fecha<br>';
+            bandera = true;
+        } else {
+            corregirInputPeso("inputFecha");
+        }
+    }
+
+    if (bandera == true) {
+        Swal.fire({ icon: 'error', title: 'Información faltante', html: cadena });
+    }
+    return bandera;
 }
 
 // ABRIR Y CERRAR FORMULARIOS

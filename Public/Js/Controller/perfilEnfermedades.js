@@ -15,6 +15,18 @@ async function GetListaEnfermedades() {
     let result = await ProcessGet('ListarEnfermedades', null);
     if (result != null && result.resultado == true) {
         listaEnfermedades = result.ListaEnfermedadesDB;
+        listaEnfermedades = listaEnfermedades.sort(function (a, b) {
+            const nameA = a.Nombre.toUpperCase(); // ignore upper and lowercase
+            const nameB = b.Nombre.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            // names must be equal
+            return 0;
+        });
         await ImprimirEnfermedades();
         console.log(listaEnfermedades);
     } else {
@@ -34,13 +46,50 @@ async function ImprimirEnfermedades() {
         let celdaDescripcion = fila.insertCell();
         let celdaEstado = fila.insertCell();
         let celdaTratamiento = fila.insertCell();
+        let celdaAcciones = fila.insertCell();
 
         celdaNombre.innerHTML = listaEnfermedades[i].Nombre;
         celdaDescripcion.innerHTML = listaEnfermedades[i].Descripcion;
         celdaEstado.innerHTML = listaEnfermedades[i].Estado;
         celdaTratamiento.innerHTML = listaEnfermedades[i].Tratamiento;
+
+        let divButtonEliminar = document.createElement('div');
+        divButtonEliminar.className = "buttonEliminar";
+        let buttonbuttonEliminar = document.createElement("button");
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de registro de enfermedad',
+                text: 'Desea eliminar la enfermedad registrada ' + listaEnfermedades[i].Nombre + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaEnfermedades[i]._id
+                };
+                let result = await ProcessDelete('EliminarEnfermedad', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaEnfermedades();
+            }
+        };
+        let iButtonEliminar = document.createElement("i");
+        iButtonEliminar.className = "fa-solid fa-trash-can";
+        buttonbuttonEliminar.appendChild(iButtonEliminar);
+        divButtonEliminar.appendChild(buttonbuttonEliminar);
+        celdaAcciones.appendChild(divButtonEliminar);
     }
-    //orderEnfermedadTable();
 }
 
 async function getEnfermedad() {
@@ -50,7 +99,7 @@ async function getEnfermedad() {
     let sTratamiento = inputTratamientoEnfermedad.value;
     let result = null;
 
-    if (validarEnfermedades(sNombre, sDescripcion, sEstado) == true) {
+    if (validarEnfermedades(sNombre, sDescripcion, sEstado, sTratamiento) == true) {
         return;
     }
 
@@ -104,61 +153,52 @@ function radioEstadoEval() {
     return option;
 }
 
-function validarEnfermedades(psNombre, psDescripcion, psEstado) {
+function validarEnfermedades(psNombre, psDescripcion, psEstado, pTratamiento) {
+    let bandera = false;
+    let cadena = '';
+
     if (psNombre == '' || psNombre == null || psNombre == undefined) {
-        document.getElementById("inputNombreEnfermedad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese un nombre' });
-        return true;
+
+        resaltarInputIncorrecto("inputNombreEnfermedad");
+        cadena += 'Ingrese un nombre<br>';
+        bandera = true;
     }
-    else if (psDescripcion == '' || psDescripcion == null || psDescripcion == undefined) {
-        document.getElementById("inputDescripcionEnfermedad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese una descripción para la enfermedad' });
-        return true;
+    else {
+        corregirInputPeso("inputNombreEnfermedad");
     }
-    else if (!document.getElementById("radioNoConcurrencia").checked && !document.getElementById("radioConcurrencia").checked) {
-        document.getElementById("radioNoConcurrencia").focus();
-        document.getElementById("radioConcurrencia").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Elija una opción de estado de enfermedad' });
-        return true;
+
+    if (psDescripcion == '' || psDescripcion == null || psDescripcion == undefined) {
+        resaltarInputIncorrecto("inputDescripcionEnfermedad");
+        cadena += 'Ingrese una descripción para la enfermedad<br>';
+        bandera = true;
     }
+    else {
+        corregirInputPeso("inputDescripcionEnfermedad");
+
+    }
+    if (!document.getElementById("radioNoConcurrencia").checked && !document.getElementById("radioConcurrencia").checked) {
+        resaltarInputIncorrecto("cajitaRadio");
+        cadena += 'Elija una opción de estado de enfermedad<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputPeso("cajitaRadio");
+    }
+
+    if (pTratamiento == '' || pTratamiento == null || pTratamiento == undefined) {
+        resaltarInputIncorrecto("inputTratamientoEnfermedad");
+        cadena += 'Ingrese el tratamiento a esta enfermedad<br>';
+        bandera = true;
+    }
+    else {
+        corregirInputPeso("inputTratamientoEnfermedad");
+    }
+
+    if (bandera == true) {
+        imprimirMsjError(cadena);
+    }
+    return bandera;
 }
-
-
-
-/*function orderEnfermedadTable() {
-    let table;
-    let rows;
-    let switching;
-    let i;
-    let x;
-    let y;
-    let shouldSwitch;
-
-    table = document.getElementById('datosEnfermedad');
-    switching = true;
-
-    while (switching) {
-        switching = false;
-        rows = table.rows;
-
-        for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-
-            x = rows[i].getElementsByTagName('TD')[0];
-            y = rows[i + 1].getElementsByTagName('TD')[0];
-
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-            }
-        }
-        if (shouldSwitch) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-        }
-    }
-}*/
-
 
 
 

@@ -52,5 +52,23 @@ router.get('/ListarEnfermedades', (req, res) => {
         }
     });
 });
+router.delete('/EliminarEnfermedad', (req, res) => {
+    let body = req.body;
+    Enfermedad.remove({ _id: body._id }, (err, result) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'Ocurrió un error inesperado y no se elimino el peso',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Peso eliminado de manera correcta',
+                result
+            });
+        }
+    });
+});
 
 module.exports = router

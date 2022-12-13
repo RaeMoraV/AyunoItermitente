@@ -1,4 +1,3 @@
-
 main {
     display: flex;
     min-height: 100%;
@@ -9,7 +8,12 @@ body {
     position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
 }
@@ -51,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     transition: max-width .3s ease;
     z-index: 20;
-    
+
 }
 
 .top-menu {
@@ -318,7 +322,8 @@ tbody.datosTabla tr:nth-child(odd) {
     padding: 10px 20px;
     border: none;
 }
-.btnAbrirEditar{
+
+.btnAbrirEditar {
     top: 5px;
     right: 175px;
     padding: 10px 20px;
@@ -342,6 +347,7 @@ tbody.datosTabla tr:nth-child(odd) {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 #editarDatosInformacion {
     display: none;
     z-index: 100;
@@ -377,31 +383,31 @@ tbody.datosTabla tr:nth-child(odd) {
     z-index: 100;
 }
 
-#editarDatosInformacion .cerrarFormulario{
+#editarDatosInformacion .cerrarFormulario {
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
-#ingresoDatosPeso .cerrarFormulario{
+#ingresoDatosPeso .cerrarFormulario {
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
-#ingresoDatosEnfermedades .cerrarFormulario{
+#ingresoDatosEnfermedades .cerrarFormulario {
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
-#ingresoDatosActividades .cerrarFormulario{
+#ingresoDatosActividades .cerrarFormulario {
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
-#ingresoDatosLogrosObjetivos .cerrarFormulario{
+#ingresoDatosLogrosObjetivos .cerrarFormulario {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -413,7 +419,7 @@ tbody.datosTabla tr:nth-child(odd) {
     right: 10px;
 }
 
-#ingresoDatosRecetas .cerrarFormulario{
+#ingresoDatosRecetas .cerrarFormulario {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -430,8 +436,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .ingresoDatos .field,
 .ingresoDatos .fieldEmail,
-.ingresoDatos .fieldSelect
- {
+.ingresoDatos .fieldSelect {
     display: flex;
     margin-bottom: 10px;
     align-items: center;
@@ -523,7 +528,7 @@ tbody.datosTabla tr:nth-child(odd) {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-    
+
 #editarDatosInformacion .field label {
     display: block;
     color: var(--col-gray);
@@ -615,7 +620,7 @@ tbody.datosTabla tr:nth-child(odd) {
 }
 
 #editarDatosInformacion .fieldFile .foto .showPhoto img {
-   width: 50%;
+    width: 50%;
 }
 
 
@@ -695,6 +700,7 @@ tbody.datosTabla tr:nth-child(odd) {
     border-radius: 5px;
     border: none;
 }
+
 /*  */
 
 /* Estilos Plan de ayuno---------------------------- */
@@ -868,7 +874,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .receta {
     height: 60%;
-    width: 60%;    
+    width: 60%;
 }
 
 
@@ -896,52 +902,134 @@ tbody.datosTabla tr:nth-child(odd) {
     .buttonEliminar { grid-area: 4 / 5 / 5 / 11; } */
 /*NO TOCAR, PUEDE EDITAR LO QUE ESTA ABAJO*/
 
-
-.nombreReceta h1 {
-    font-size: 48px;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: none;
-    letter-spacing: 2px;
-    color: #000000;
-    padding: 40px; 
+.RecetaInput {
+    display: flex;
+    gap: 30px;
 }
 
-.imgReceta img {
-    max-height: 90%;
-    
-    border-radius: 40px;
-    margin: auto;
-    
-    padding: 20px;
+.recetaLayout {
+    max-width: 400px;
+    box-shadow: 8px 7px 19px 0px rgba(153,153,153,0.75);
+    border-radius: 10px;
+    height: fit-content;
+    position: relative;
+    padding:  40px 15px 20px;
+}
+
+.recetaLayout .nombreReceta h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--col-gray);
+}
+
+
+.recetaLayout .imgReceta img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 50%;
+    
+    border-radius: 50%;
+    margin: 0 auto 35px;
+    background-color: #ffffff;
 }
 
-.categoriaReceta,
-.tipoReceta,
-.tiempoReceta {
+.recetaLayout .categoriaReceta,
+.recetaLayout .tipoReceta,
+.recetaLayout .tiempoReceta {
     text-align: left;
+    display: flex;
+    margin-bottom: 10px;
 }
 
-.pasosReceta h2,
-.pasosReceta p {
-    text-align: justify;
+.recetaLayout .categoriaReceta h3,
+.recetaLayout .tipoReceta h3, 
+.recetaLayout .tiempoReceta h3 {
+    text-align: left;
+    display: flex;
+    width: 100px;
+    color: var(--col-gray);
+    line-height: 1;
+    height: fit-content;
 }
 
-.ingredientesReceta h2,
-.ingredientesReceta p {
-    text-align: justify;
+
+
+.recetaLayout .tiempoReceta {
+    display: flex;
+    flex-direction: column;
+
 }
 
-.buttonEliminar button {
-    float: right;
-    margin-right: 50px;
+.recetaLayout .tiempoReceta p {
+    margin-left: 20px;
+}
+
+.recetaLayout .tiempoReceta p::before {
+    content: '- ';
+}
+
+.recetaLayout .tipoReceta {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: var(--col-green);
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.recetaLayout .tipoReceta p {
+    height: fit-content;
+    line-height: 1;
+}
+
+.recetaLayout .tipoReceta h3 {
+    width: 50px;
+    color: #ffffff;
+}
+
+.recetaLayout .pasosReceta,
+.recetaLayout .ingredientesReceta {
+    background-color: var(--col-green);
+    color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.recetaLayout .pasosReceta h2,
+.recetaLayout .ingredientesReceta h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #FFFFFF;
+}
+
+.recetaLayout .pasosReceta p,
+.recetaLayout .ingredientesReceta p {
+    font-size: 16px;
+}
+
+.recetaLayout .ingredientesReceta p::before {
+    content: '- ';
+}
+
+.recetaLayout .buttonEliminar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.recetaLayout .buttonEliminar button {
+    color: #ffffff;
+    background-color: #3e8e41;
     border: none;
+    padding:3px 5px;
+    border-radius: 5px;
 }
 
+.recetaLayout .buttonEliminar button:hover {
+    background-color: #a3cea5;
+}
 .buttonEliminar button {
     float: right;
     margin-right: 50px;
@@ -950,7 +1038,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .buttonEliminar i {
     font-size: 50px;
-    background-color: rgba(0, 255, 51, 0.5);
+    background-color: #f4f4f4;
 }
 
 .fa-solid:hover {
@@ -959,6 +1047,63 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .fa-solid:active {
     transform: translateY(4px);
+}
+
+.buttonEliminar .fa-solid {
+    font-size: 30px;
+    align-items: center;
+}
+
+#datosLogros .fa-solid {
+    font-size: 50px;
+}
+
+#ingresoDatosLogrosObjetivos .fa-solid {
+    font-size: 50px;
+}
+
+#datosLogros .fa-heart,
+#ingresoDatosLogrosObjetivos .fa-heart {
+    color: red;
+}
+
+#datosLogros .fa-face-smile-beam,
+#ingresoDatosLogrosObjetivos .fa-face-smile-beam {
+    color: orange;
+}
+#datosLogros .fa-weight-scale,
+#ingresoDatosLogrosObjetivos .fa-weight-scale {
+    color: purple;
+}
+
+#datosLogros .fa-utensils,
+#ingresoDatosLogrosObjetivos .fa-utensils {
+    color: silver;
+}
+
+#datosLogros .fa-medal,
+#ingresoDatosLogrosObjetivos .fa-medal {
+    color: gold;
+}
+
+#datosLogros .fa-apple-whole,
+#ingresoDatosLogrosObjetivos .fa-apple-whole {
+    color: red;
+}
+
+#datosLogros .fa-dumbbell,
+#ingresoDatosLogrosObjetivos .fa-dumbbell {
+    color: brown;
+}
+
+#datosLogros .fa-heart-pulse,
+#ingresoDatosLogrosObjetivos .fa-heart-pulse {
+    color: blue;
+}
+
+#cajitaRadio label,
+#cajitaRadio p{
+    color:#000000;
 }
 
 /* FOOTER EXCLUSIVO PARA PERFIL */

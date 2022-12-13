@@ -146,7 +146,6 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 45px 20px;
 }
 
@@ -155,23 +154,28 @@
   width: 100%;
   font-weight: bold;
   z-index: 10;
-  font-size: 65px;
+  font-size: 40px;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .bannerPrincipal .bannerDescripcion {
   z-index: 20;
   width: 100%;
   color: #ffffff;
-  font-size: 15px;
-  max-width: 900px;
+  font-size: 20px;
+  max-width: 600px;
   margin:  auto;
 }
 
 .bannerTitulo{
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.bannerText {
+  margin-top: 130px;
 }
 
 
@@ -194,12 +198,12 @@
   text-align: center;
   font-size: 25px;
   margin-bottom: 40px;
+  line-height: 1.5;
 }
-.seccionEmpezar p1 {
-  color: #000000;
+.seccionEmpezar h2 {
+  color: #ffffff;
   text-align: center;
   font-size: 32px;
-  color: rgb(0, 0, 0);
 
   font-weight: bold;
 }
@@ -212,7 +216,7 @@
 
 .tarjetaEmpezar {
   margin-bottom: 80px;
-  padding: 50px 15px 15px;
+  padding: 0 20px;
   position: relative;
   max-width: 700px;
 }

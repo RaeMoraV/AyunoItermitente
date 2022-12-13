@@ -48,7 +48,7 @@ function traductorIconoMedalla(pMedalla) {
             return "fa-solid fa-utensils";
             break;
         case 4:
-            return "fa-solid fa-feather-pointed";
+            return "fa-solid fa-face-smile-beam";
             break;
         case 5:
             return "fa-solid fa-medal";
@@ -119,6 +119,19 @@ function corregirInputcorrecto(pInputID) {
     }
     else {
         elementInput.style = 'border: 1px solid black;';
+    }
+}
+
+
+
+function corregirInputPeso(pInputID) {
+    let elementInput = document.getElementById(pInputID);
+    let sytleOrigin = elementInput.style;
+    if (pInputID == 'selectorGenero' || pInputID == 'inputFotoPerfil' || pInputID == 'inputFechaNacimiento') {
+        elementInput.style = 'border: 0px ';
+    }
+    else {
+        elementInput.style = 'border: 0px;';
     }
 }
 
