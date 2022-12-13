@@ -950,7 +950,7 @@ tbody.datosTabla tr:nth-child(odd) {
 
 .buttonEliminar i {
     font-size: 50px;
-    background-color: rgba(0, 255, 51, 0.5);
+    background-color: #f4f4f4;
 }
 
 .fa-solid:hover {

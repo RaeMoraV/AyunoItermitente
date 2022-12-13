@@ -122,3 +122,16 @@ function corregirInputcorrecto(pInputID) {
     }
 }
 
+
+
+function corregirInputPeso(pInputID) {
+    let elementInput = document.getElementById(pInputID);
+    let sytleOrigin = elementInput.style;
+    if (pInputID == 'selectorGenero' || pInputID == 'inputFotoPerfil' || pInputID == 'inputFechaNacimiento') {
+        elementInput.style = 'border: 0px ';
+    }
+    else {
+        elementInput.style = 'border: 0px;';
+    }
+}
+

@@ -15,6 +15,18 @@ async function GetListaEnfermedades() {
     let result = await ProcessGet('ListarEnfermedades', null);
     if (result != null && result.resultado == true) {
         listaEnfermedades = result.ListaEnfermedadesDB;
+        listaEnfermedades = listaEnfermedades.sort(function (a, b) {
+            const nameA = a.Nombre.toUpperCase(); // ignore upper and lowercase
+            const nameB = b.Nombre.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            // names must be equal
+            return 0;
+        });
         await ImprimirEnfermedades();
         console.log(listaEnfermedades);
     } else {

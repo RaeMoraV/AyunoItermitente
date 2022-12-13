@@ -253,38 +253,38 @@ function validarUser(nombre, apellido, email, dia, mes
         corregirInputcorrecto("selectorGenero");
     }
 
-    if (estatura == '' || estatura == null || estatura == undefined) {
-        resaltarInputIncorrecto("txtEstatura");
-        cadena += 'El campo Estatura es requerido<br>';
-        bandera = true;
-    }
-    else {
-        corregirInputcorrecto("txtEstatura");
-    }
-    if (estatura<=0 ||estatura>4) {
+
+    if (estatura <= 0 || estatura > 4) {
         resaltarInputIncorrecto("txtEstatura");
         cadena += 'Estatura invalida, ingrese una estatura real<br>';
         bandera = true;
     }
     else {
-        corregirInputcorrecto("txtEstatura");
+        if (estatura == '' || estatura == null || estatura == undefined) {
+            resaltarInputIncorrecto("txtEstatura");
+            cadena += 'El campo Estatura es requerido<br>';
+            bandera = true;
+        }
+        else {
+            corregirInputcorrecto("txtEstatura");
+        }
     }
 
-    if (peso == '' || peso == null || peso == undefined) {
-        resaltarInputIncorrecto("txtPesoDeseado");
-        cadena += 'El campo Peso deseado es requerido<br>';
-        bandera = true;
-    }
-    else {
-        corregirInputcorrecto("txtPesoDeseado");
-    }
-    if (peso<=0 ||peso>1000) {
+
+    if (peso <= 0 || peso > 1000) {
         resaltarInputIncorrecto("txtPesoDeseado");
         cadena += 'Peso invalido, ingrese un peso real<br>';
         bandera = true;
     }
     else {
-        corregirInputcorrecto("txtPesoDeseado");
+        if (peso == '' || peso == null || peso == undefined) {
+            resaltarInputIncorrecto("txtPesoDeseado");
+            cadena += 'El campo Peso deseado es requerido<br>';
+            bandera = true;
+        }
+        else {
+            corregirInputcorrecto("txtPesoDeseado");
+        }
     }
 
     if (fechaInput >= hoy) {
@@ -299,7 +299,7 @@ function validarUser(nombre, apellido, email, dia, mes
 
     if (bandera == true) {
         imprimirMsjError(cadena);
-    } 
+    }
 
     return bandera;
 }
