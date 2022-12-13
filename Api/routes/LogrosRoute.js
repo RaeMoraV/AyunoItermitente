@@ -69,4 +69,23 @@ router.put('/ModificarLogros', (req, res) => {
     });
 });
 
+router.delete('/EliminarLogro', (req, res) => {
+    let body = req.body;
+    Logro.remove({ _id: body._id }, (err, result) => {
+        if (err) {
+            res.json({
+                resultado: false,
+                msj: 'Ocurrió un error inesperado y no se elimino la meta',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                msj: 'Meta eliminada de manera correcta',
+                result
+            });
+        }
+    });
+});
+
 module.exports = router
