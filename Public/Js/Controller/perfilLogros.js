@@ -61,7 +61,7 @@ async function ImprimirMetas() {
         let celdaNombreLogro = fila.insertCell();
         let celdaMedalla = fila.insertCell();
         let celdaEstado = fila.insertCell();
-
+        let celdaAcciones = fila.insertCell();
         celdaTipoLogro.innerHTML = traductorLogro(listaMetas[i].TipoLogro);
         celdaCondicionLogro.innerHTML = listaMetas[i].CondicionLogro;
         celdaNombreLogro.innerHTML = listaMetas[i].NombredeLogro;
@@ -74,6 +74,43 @@ async function ImprimirMetas() {
             celdaMedalla.innerHTML = '';
         }
         celdaEstado.innerHTML = traductorEstadoLogro(listaMetas[i].Estado);
+
+        let divButtonEliminar = document.createElement('div');
+        divButtonEliminar.className = "buttonEliminar";
+        let buttonbuttonEliminar = document.createElement("button");
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de registro de meta',
+                text: 'Desea eliminar la meta ' + listaMetas[i].TipoLogro + ' con el objetivo ' + listaMetas[i].CondicionLogro + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaMetas[i]._id
+                };
+                let result = await ProcessDelete('EliminarLogro', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaLogros();
+            }
+        };
+        let iButtonEliminar = document.createElement("i");
+        iButtonEliminar.className = "fa-solid fa-trash-can";
+        buttonbuttonEliminar.appendChild(iButtonEliminar);
+        divButtonEliminar.appendChild(buttonbuttonEliminar);
+        celdaAcciones.appendChild(divButtonEliminar);
     }
 }
 
@@ -258,7 +295,7 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
         }
 
 
-       
+
 
         return estadoPrueba;
     }

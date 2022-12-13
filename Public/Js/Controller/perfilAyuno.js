@@ -45,7 +45,7 @@ async function ImprimirAyunos() {
         let celdaTipoAyuno = fila.insertCell();
         let celdaHorasAyunos = fila.insertCell();
         let celdaEstadoAyuno = fila.insertCell();
-
+        let celdaAcciones = fila.insertCell();
         celdaFechaInicioAyuno.innerHTML = listaAyunos[i].FechaInicioAyuno;
         celdaHoraInicioAyuno.innerHTML = listaAyunos[i].HoraInicioAyuno;
         celdaFechaFinAyuno.innerHTML = listaAyunos[i].FechaFinAyuno;
@@ -53,6 +53,43 @@ async function ImprimirAyunos() {
         celdaTipoAyuno.innerHTML = listaAyunos[i].TipoAyuno;
         celdaHorasAyunos.innerHTML = Math.floor(listaAyunos[i].HorasAyunos);
         celdaEstadoAyuno.innerHTML = listaAyunos[i].EstadoAyuno;
+
+        let divButtonEliminar = document.createElement('div');
+        divButtonEliminar.className = "buttonEliminar";
+        let buttonbuttonEliminar = document.createElement("button");
+        buttonbuttonEliminar.type = "button";
+
+        buttonbuttonEliminar.onclick = async function () {
+            let confirmacion = false;
+            await Swal.fire({
+                title: 'Eliminación de registro de ayuno',
+                text: 'Desea eliminar el ayuno que empezó el ' + listaAyunos[i].FechaInicioAyuno + ' de tipo ' + listaAyunos[i].TipoAyuno + '?',
+                icon: 'warning',
+                showDenyButton: true,
+                denyButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar'
+            }).then((res) => {
+                confirmacion = res.isConfirmed;
+            });
+
+            if (confirmacion == true) {
+                let data = {
+                    '_id': listaAyunos[i]._id
+                };
+                let result = await ProcessDelete('EliminarAyuno', data);
+                if (result.resultado == true) {
+                    ImprimirMsjSuccess(result.msj);
+                } else {
+                    ImprimirMsjError(result.msj);
+                }
+                await GetListaAyuno();
+            }
+        };
+        let iButtonEliminar = document.createElement("i");
+        iButtonEliminar.className = "fa-solid fa-trash-can";
+        buttonbuttonEliminar.appendChild(iButtonEliminar);
+        divButtonEliminar.appendChild(buttonbuttonEliminar);
+        celdaAcciones.appendChild(divButtonEliminar);
     }
 }
 
@@ -126,7 +163,7 @@ async function getAyuno() {
     }
 
     //Acomodo para enviar el json con la información a la DB
-    
+
     let data = {
         FechaInicioAyuno: sInicioFechaAyuno,
         HoraInicioAyuno: sInicioHoraAyuno,
