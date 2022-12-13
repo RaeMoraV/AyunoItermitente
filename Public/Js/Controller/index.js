@@ -182,9 +182,9 @@ function cerrarInicioSesion() {
 function validarUser(nombre, apellido, email, dia, mes
     , anio, sexo, estatura, peso, foto, fecha) {
     let bandera = false;
-    let bandera2 = false;
+
     let cadena = '';
-    let cadena2 = '';
+
     let hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     let fechaInput = new Date(fecha);

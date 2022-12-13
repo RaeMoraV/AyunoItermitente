@@ -62,7 +62,7 @@ async function getEnfermedad() {
     let sTratamiento = inputTratamientoEnfermedad.value;
     let result = null;
 
-    if (validarEnfermedades(sNombre, sDescripcion, sEstado) == true) {
+    if (validarEnfermedades(sNombre, sDescripcion, sEstado,sTratamiento) == true) {
         return;
     }
 
@@ -116,61 +116,52 @@ function radioEstadoEval() {
     return option;
 }
 
-function validarEnfermedades(psNombre, psDescripcion, psEstado) {
+function validarEnfermedades(psNombre, psDescripcion, psEstado,pTratamiento) {
+    let bandera = false;
+    let cadena = '';
+
     if (psNombre == '' || psNombre == null || psNombre == undefined) {
-        document.getElementById("inputNombreEnfermedad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese un nombre' });
-        return true;
+
+        resaltarInputIncorrecto("inputNombreEnfermedad");
+        cadena += 'Ingrese un nombre<br>'
+        bandera = true;
     }
-    else if (psDescripcion == '' || psDescripcion == null || psDescripcion == undefined) {
-        document.getElementById("inputDescripcionEnfermedad").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Ingrese una descripción para la enfermedad' });
-        return true;
+    else {
+        corregirInputPeso("inputNombreEnfermedad");
     }
-    else if (!document.getElementById("radioNoConcurrencia").checked && !document.getElementById("radioConcurrencia").checked) {
-        document.getElementById("radioNoConcurrencia").focus();
-        document.getElementById("radioConcurrencia").focus();
-        Swal.fire({ icon: 'error', title: 'Información requerida', text: 'Elija una opción de estado de enfermedad' });
-        return true;
+
+    if (psDescripcion == '' || psDescripcion == null || psDescripcion == undefined) {
+        resaltarInputIncorrecto("inputDescripcionEnfermedad");
+        cadena += 'Ingrese una descripción para la enfermedad<br>'
+        bandera = true;
     }
+    else {
+        corregirInputPeso("inputDescripcionEnfermedad");
+
+    }
+    if (!document.getElementById("radioNoConcurrencia").checked && !document.getElementById("radioConcurrencia").checked) {
+        resaltarInputIncorrecto("cajitaRadio");
+        cadena += 'Elija una opción de estado de enfermedad<br>'
+        bandera = true;
+    }
+    else {
+        corregirInputPeso("cajitaRadio");
+    }
+
+    if (pTratamiento == '' || pTratamiento == null || pTratamiento == undefined) {
+        resaltarInputIncorrecto("inputTratamientoEnfermedad");
+        cadena += 'Ingrese el tratamiento a esta enfermedad<br>'
+        bandera = true;
+    }
+    else {
+        corregirInputPeso("inputTratamientoEnfermedad");
+    }
+
+    if (bandera == true) {
+        imprimirMsjError(cadena);
+    }
+    return bandera;
 }
-
-
-
-/*function orderEnfermedadTable() {
-    let table;
-    let rows;
-    let switching;
-    let i;
-    let x;
-    let y;
-    let shouldSwitch;
-
-    table = document.getElementById('datosEnfermedad');
-    switching = true;
-
-    while (switching) {
-        switching = false;
-        rows = table.rows;
-
-        for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-
-            x = rows[i].getElementsByTagName('TD')[0];
-            y = rows[i + 1].getElementsByTagName('TD')[0];
-
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-            }
-        }
-        if (shouldSwitch) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-        }
-    }
-}*/
-
 
 
 
