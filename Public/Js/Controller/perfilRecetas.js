@@ -32,9 +32,9 @@ let valorCategoria7 = document.getElementById("recetaCategoria7");
 
 let valorImgReceta = document.getElementById("imgInputReceta");
 let btnRegistrarReceta = document.getElementById("buttonRegistroReceta");
-
+let inputFiltroRecetas = document.getElementById("txtFiltroRecetas");
 let listaRecetasAyuno = [];
-
+inputFiltroRecetas.addEventListener('keyup', ImprimirRecetas);
 btnRegistrarReceta.addEventListener("click", getReceta);
 
 async function GetListaReceta() {
@@ -52,124 +52,131 @@ async function GetListaReceta() {
 async function ImprimirRecetas() {
     let tbody = document.querySelector('#imprimirRecetas');
     tbody.innerHTML = '';
+    let filtro = inputFiltroRecetas.value;
+    console.log(filtro);
+
     for (let i = 0; i < listaRecetasAyuno.length; i++) {
+        if (listaRecetasAyuno[i].TipoComida.toLowerCase().includes(filtro) ||
+            listaRecetasAyuno[i].Categoria.toLowerCase().includes(filtro) ||
+            listaRecetasAyuno[i].Nombre.toLowerCase().includes(filtro)
+        ) {
+            let divRecetaGrid = document.createElement('div');
+            divRecetaGrid.classList.add('recetaLayout');
 
-        let divRecetaGrid = document.createElement('div');
-        divRecetaGrid.classList.add('recetaLayout');
+            let divnombreReceta = document.createElement('div');
+            divnombreReceta.classList.add('nombreReceta');
 
-        let divnombreReceta = document.createElement('div');
-        divnombreReceta.classList.add('nombreReceta');
+            let h1NombreReceta = document.createElement("h1");
+            h1NombreReceta.innerText = listaRecetasAyuno[i].Nombre;
+            divnombreReceta.appendChild(h1NombreReceta);
 
-        let h1NombreReceta = document.createElement("h1");
-        h1NombreReceta.innerText = listaRecetasAyuno[i].Nombre;
-        divnombreReceta.appendChild(h1NombreReceta);
+            let divimgReceta = document.createElement('div');
+            divimgReceta.classList.add('imgReceta');
+            let imgReceta = document.createElement("img");
+            imgReceta.src = listaRecetasAyuno[i].Imagen;
+            divimgReceta.appendChild(imgReceta);
 
-        let divimgReceta = document.createElement('div');
-        divimgReceta.classList.add('imgReceta');
-        let imgReceta = document.createElement("img");
-        imgReceta.src = listaRecetasAyuno[i].Imagen;
-        divimgReceta.appendChild(imgReceta);
+            let divcategoriaReceta = document.createElement('div');
+            divcategoriaReceta.className = "categoriaReceta";
+            let h3categoriaReceta = document.createElement("h3");
+            h3categoriaReceta.innerText = "Tiempo de Preparacion:";
+            let pcategoriaReceta = document.createElement("p");
+            pcategoriaReceta.innerText = listaRecetasAyuno[i].Tiempo + " minutos";
+            divcategoriaReceta.appendChild(h3categoriaReceta);
+            divcategoriaReceta.appendChild(pcategoriaReceta);
 
-        let divcategoriaReceta = document.createElement('div');
-        divcategoriaReceta.className = "categoriaReceta";
-        let h3categoriaReceta = document.createElement("h3");
-        h3categoriaReceta.innerText = "Tiempo de Preparacion:";
-        let pcategoriaReceta = document.createElement("p");
-        pcategoriaReceta.innerText = listaRecetasAyuno[i].Tiempo + " minutos";
-        divcategoriaReceta.appendChild(h3categoriaReceta);
-        divcategoriaReceta.appendChild(pcategoriaReceta);
+            let divtipoReceta = document.createElement('div');
+            divtipoReceta.className = "tipoReceta";
+            let h3tipoReceta = document.createElement("h3");
+            h3tipoReceta.innerText = "Tipo:";
+            let ptipoReceta = document.createElement("p");
+            ptipoReceta.innerText = listaRecetasAyuno[i].TipoComida;
+            divtipoReceta.appendChild(h3tipoReceta);
+            divtipoReceta.appendChild(ptipoReceta);
 
-        let divtipoReceta = document.createElement('div');
-        divtipoReceta.className = "tipoReceta";
-        let h3tipoReceta = document.createElement("h3");
-        h3tipoReceta.innerText = "Tipo:";
-        let ptipoReceta = document.createElement("p");
-        ptipoReceta.innerText = listaRecetasAyuno[i].TipoComida;
-        divtipoReceta.appendChild(h3tipoReceta);
-        divtipoReceta.appendChild(ptipoReceta);
-
-        let divtiempoReceta = document.createElement('div');
-        divtiempoReceta.className = "tiempoReceta";
-        let h3tiempoReceta = document.createElement("h3");
-        h3tiempoReceta.innerText = "Categoria:";
-        divtiempoReceta.appendChild(h3tiempoReceta);
-        let cantidadCategorias = listaRecetasAyuno[i].Categoria.split(";");
-        for (let i = 0; i < cantidadCategorias.length; i++) {
-            let ptiempoReceta = document.createElement("p");
-            ptiempoReceta.innerText = cantidadCategorias[i];
-            divtiempoReceta.appendChild(ptiempoReceta);
-        }
-
-        let divpasosReceta = document.createElement('div');
-        divpasosReceta.className = "pasosReceta";
-        let h2pasosReceta = document.createElement("h2");
-        h2pasosReceta.innerText = "Preparacion:";
-        divpasosReceta.appendChild(h2pasosReceta);
-        let cantidadPasos = listaRecetasAyuno[i].Pasos.split(";");
-        for (let i = 0; i < cantidadPasos.length; i++) {
-            let ppasosReceta = document.createElement("p");
-            ppasosReceta.innerText = "Paso " + (Number(i) + 1) + ". " + cantidadPasos[i];
-            divpasosReceta.appendChild(ppasosReceta);
-        }
-
-        let divingredientesReceta = document.createElement('div');
-        divingredientesReceta.className = "ingredientesReceta";
-        let h2ingredientesReceta = document.createElement("h2");
-        h2ingredientesReceta.innerText = "Ingredientes:";
-        divingredientesReceta.appendChild(h2ingredientesReceta);
-        let cantidadIngredientes = listaRecetasAyuno[i].Ingredientes.split(";");
-        for (let i = 0; i < cantidadIngredientes.length; i++) {
-            let pingredientesReceta = document.createElement("p");
-            pingredientesReceta.innerText = cantidadIngredientes[i];
-            divingredientesReceta.appendChild(pingredientesReceta);
-        }
-
-        let divButtonEliminar = document.createElement('div');
-        divButtonEliminar.className = "buttonEliminar";
-        let buttonbuttonEliminar = document.createElement("button");
-        buttonbuttonEliminar.type = "button";
-
-        buttonbuttonEliminar.onclick = async function () {
-            let confirmacion = false;
-            await Swal.fire({
-                title: 'Eliminación de receta',
-                text: 'Desea eliminar la receta de ' + listaRecetasAyuno[i].Nombre + '?',
-                icon: 'warning',
-                showDenyButton: true,
-                denyButtonText: 'Cancelar',
-                confirmButtonText: 'Confirmar'
-            }).then((res) => {
-                confirmacion = res.isConfirmed;
-            });
-
-            if (confirmacion == true) {
-                let data = {
-                    '_id': listaRecetasAyuno[i]._id
-                };
-                let result = await ProcessDelete('EliminarReceta', data);
-                if (result.resultado == true) {
-                    ImprimirMsjSuccess(result.msj);
-                } else {
-                    ImprimirMsjError(result.msj);
-                }
-                await GetListaReceta();
+            let divtiempoReceta = document.createElement('div');
+            divtiempoReceta.className = "tiempoReceta";
+            let h3tiempoReceta = document.createElement("h3");
+            h3tiempoReceta.innerText = "Categoria:";
+            divtiempoReceta.appendChild(h3tiempoReceta);
+            let cantidadCategorias = listaRecetasAyuno[i].Categoria.split(";");
+            for (let i = 0; i < cantidadCategorias.length; i++) {
+                let ptiempoReceta = document.createElement("p");
+                ptiempoReceta.innerText = cantidadCategorias[i];
+                divtiempoReceta.appendChild(ptiempoReceta);
             }
-        };
 
-        let iButtonEliminar = document.createElement("i");
-        iButtonEliminar.className = "fa-solid fa-trash";
-        buttonbuttonEliminar.appendChild(iButtonEliminar);
-        divButtonEliminar.appendChild(buttonbuttonEliminar);
+            let divpasosReceta = document.createElement('div');
+            divpasosReceta.className = "pasosReceta";
+            let h2pasosReceta = document.createElement("h2");
+            h2pasosReceta.innerText = "Preparacion:";
+            divpasosReceta.appendChild(h2pasosReceta);
+            let cantidadPasos = listaRecetasAyuno[i].Pasos.split(";");
+            for (let i = 0; i < cantidadPasos.length; i++) {
+                let ppasosReceta = document.createElement("p");
+                ppasosReceta.innerText = "Paso " + (Number(i) + 1) + ". " + cantidadPasos[i];
+                divpasosReceta.appendChild(ppasosReceta);
+            }
 
-        divRecetaGrid.appendChild(divnombreReceta);
-        divRecetaGrid.appendChild(divimgReceta);
-        divRecetaGrid.appendChild(divcategoriaReceta);
-        divRecetaGrid.appendChild(divtipoReceta);
-        divRecetaGrid.appendChild(divtiempoReceta);
-        divRecetaGrid.appendChild(divpasosReceta);
-        divRecetaGrid.appendChild(divingredientesReceta);
-        divRecetaGrid.appendChild(divButtonEliminar);
-        tbody.appendChild(divRecetaGrid);
+            let divingredientesReceta = document.createElement('div');
+            divingredientesReceta.className = "ingredientesReceta";
+            let h2ingredientesReceta = document.createElement("h2");
+            h2ingredientesReceta.innerText = "Ingredientes:";
+            divingredientesReceta.appendChild(h2ingredientesReceta);
+            let cantidadIngredientes = listaRecetasAyuno[i].Ingredientes.split(";");
+            for (let i = 0; i < cantidadIngredientes.length; i++) {
+                let pingredientesReceta = document.createElement("p");
+                pingredientesReceta.innerText = cantidadIngredientes[i];
+                divingredientesReceta.appendChild(pingredientesReceta);
+            }
+
+            let divButtonEliminar = document.createElement('div');
+            divButtonEliminar.className = "buttonEliminar";
+            let buttonbuttonEliminar = document.createElement("button");
+            buttonbuttonEliminar.type = "button";
+
+            buttonbuttonEliminar.onclick = async function () {
+                let confirmacion = false;
+                await Swal.fire({
+                    title: 'Eliminación de receta',
+                    text: 'Desea eliminar la receta de ' + listaRecetasAyuno[i].Nombre + '?',
+                    icon: 'warning',
+                    showDenyButton: true,
+                    denyButtonText: 'Cancelar',
+                    confirmButtonText: 'Confirmar'
+                }).then((res) => {
+                    confirmacion = res.isConfirmed;
+                });
+
+                if (confirmacion == true) {
+                    let data = {
+                        '_id': listaRecetasAyuno[i]._id
+                    };
+                    let result = await ProcessDelete('EliminarReceta', data);
+                    if (result.resultado == true) {
+                        ImprimirMsjSuccess(result.msj);
+                    } else {
+                        ImprimirMsjError(result.msj);
+                    }
+                    await GetListaReceta();
+                }
+            };
+
+            let iButtonEliminar = document.createElement("i");
+            iButtonEliminar.className = "fa-solid fa-trash";
+            buttonbuttonEliminar.appendChild(iButtonEliminar);
+            divButtonEliminar.appendChild(buttonbuttonEliminar);
+
+            divRecetaGrid.appendChild(divnombreReceta);
+            divRecetaGrid.appendChild(divimgReceta);
+            divRecetaGrid.appendChild(divcategoriaReceta);
+            divRecetaGrid.appendChild(divtipoReceta);
+            divRecetaGrid.appendChild(divtiempoReceta);
+            divRecetaGrid.appendChild(divpasosReceta);
+            divRecetaGrid.appendChild(divingredientesReceta);
+            divRecetaGrid.appendChild(divButtonEliminar);
+            tbody.appendChild(divRecetaGrid);
+        }
     }
 }
 
@@ -267,7 +274,7 @@ async function getReceta() {
     document.getElementById("recetaCategoria5").checked = false;
     document.getElementById("recetaCategoria6").checked = false;
     document.getElementById("recetaCategoria7").checked = false;
-    
+
 }
 
 function acomodarArregloReceta(p1, p2, p3, p4, p5, p6, p7) {

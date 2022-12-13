@@ -202,33 +202,26 @@ function revisarMedalla() {
 
 
 function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
-    console.log(psTipoMeta);
-    console.log(pnIndicador);
+
 
     let estadoPrueba = 0;
     let sumaHoras = 0;
     let ayunoCompletados = 0;
 
 
-    for (let i = 0; i < listaAyunos.length; i++) {
-        sumaHoras += Number(listaAyunos[i].HorasAyunos);
-    }
-    for (let i = 0; i < listaAyunos.length; i++) {
-        if (listaAyunos[i].EstadoAyuno == "Logrado") {
-            ayunoCompletados += 1;
-        }
-    }
 
-    console.log(sumaHoras);
-    console.log(ayunoCompletados);
 
     if (listaPeso.length < 1) {
-        console.log("La lista de peso no se habia cargado");
     }
     else {
-        console.log("Esta cargada");
-        console.log(Number(listaPeso[0].Peso));
-        console.log(Number(listaPeso[0].IMC));
+        for (let i = 0; i < listaAyunos.length; i++) {
+            sumaHoras += Number(listaAyunos[i].HorasAyunos);
+        }
+        for (let i = 0; i < listaAyunos.length; i++) {
+            if (listaAyunos[i].EstadoAyuno == "Logrado") {
+                ayunoCompletados += 1;
+            }
+        }
 
         if (psTipoMeta == "peso") {
             if (Number(listaPeso[0].Peso) <= Number(pnIndicador)) {
@@ -247,7 +240,6 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
             }
         }
         if (psTipoMeta == "cantidadHoras") {
-            console.log('Entre a revisar cantidad horas');
 
             if (Number(sumaHoras) >= Number(pnIndicador)) {
                 estadoPrueba = 1;
@@ -266,14 +258,8 @@ function revisarEstadoPrueba(psTipoMeta, pnIndicador) {
         }
 
 
-        if (estadoPrueba == 1) {
-            console.log("Logrado");
-        }
-        else {
-            console.log("No Logrado");
-        }
+       
 
-        console.log("-------------------------------------");
         return estadoPrueba;
     }
 
