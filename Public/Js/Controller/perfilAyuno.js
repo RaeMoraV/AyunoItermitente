@@ -51,7 +51,7 @@ async function ImprimirAyunos() {
         celdaFechaFinAyuno.innerHTML = listaAyunos[i].FechaFinAyuno;
         celdaHoraFinAyuno.innerHTML = listaAyunos[i].HoraFinAyuno;
         celdaTipoAyuno.innerHTML = listaAyunos[i].TipoAyuno;
-        celdaHorasAyunos.innerHTML = Math.round(listaAyunos[i].HorasAyunos);
+        celdaHorasAyunos.innerHTML = Math.floor(listaAyunos[i].HorasAyunos);
         celdaEstadoAyuno.innerHTML = listaAyunos[i].EstadoAyuno;
     }
 }

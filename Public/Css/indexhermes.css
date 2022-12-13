@@ -164,6 +164,7 @@ h2, h3, p{
     width: 100%;
     height: 120vh;
     padding: 40px 20px;
+    color: #1d2549;
     
 }
 .equipo{
@@ -177,7 +178,6 @@ h2, h3, p{
 .recuadroEquipo{
     width: 450px;
     height: 300px; 
-    color: #fff;
 }
 
 .recuadroEquipo img{
@@ -200,7 +200,6 @@ h2, h3, p{
    
 }
 .tituloConoceEquipo{
-    color: #1d2549;
     font-size: calc(3rem + 1vmin);
     text-decoration: underline #bdf347;
     display: flex;
@@ -276,6 +275,53 @@ h2, h3, p{
     align-items: center;
     width: 100%;
     height: 120vh; 
+}
+@media (max-width: 576px){
+
+    
+    /*toda la secion1 principal con foto o img*/
+    .bannerPrincipal{
+
+    }
+    /*div que encierra texto*/
+    .textBannerPrincipal{
+
+    }
+    /*div del titulo grandote*/
+    .titulo1{
+
+    }
+    /*div que encierra texto de seccion 1*/
+    .explicacion{
+
+    }
+    /*button seccion1 */
+    #btnRegistrateYa{
+
+    }
+
+
+    /*toda la secion2 de contactenos con foto*/
+
+    .seccionContactenos{
+
+    }
+    /*div que encierra todo el texto*/
+    .textBannerContactenos{
+
+    }
+    /*secion1 de conocenos con foto*/
+    .tituloContactenos{
+
+    }
+    /*secion1 de conocenos con foto*/
+    .divTiposContactos{
+
+    }
+    /*secion1 de conocenos con foto*/
+    .fieldContacto{
+
+    }
 }
 /*
 @media (max-width: 576px){
